@@ -1,0 +1,71 @@
+Encapsulation  ---Encapsulation  refers to enclosing all the functionalities of an object within that object so that the object’s internal workings (its methods and properties) are hidden from the rest of the application.
+
+means closing all function method and object inside the other function so that internal working of all method and object are not visible the outside the function. and this concept is call encapsulation.
+
+(function() {
+  // ... 
+})(this);
+
+It's called a self invoking anonymous function expression. Also example of Encapsulation. 
+
+(function() { 
+      var x = '';
+
+      function myFunction () {
+         alert('Hello: ' + x);
+      }
+
+      x = 'Bob';
+      myFunction();
+
+      alert(typeof x);            // string
+      alert(typeof myFunction);   // function
+   })();  // self invoking function
+
+Whatever you declare in that self invoking function is held in a separate scope. The variable x and the function myFunction() cannot be accessed from anywhere else. The code in other-javascript.js won't see them, for example, and it would be free to declare another function myFunction() without conflicts.
+
+JavaScript Encapsulation using Anonymous Functions ---
+
+In JavaScript, programmers can define anonymous functions, which are automatically executed once 
+loaded. The standard way to do this is shown below…
+(function () {
+
+    // Code here // write all function method and variable here
+    Function HiddenFunction() {
+    }
+
+    // Declare a variable
+
+    var variable = {};
+
+    // Execute a function
+
+    HiddenFunction();
+
+} ());
+
+The purpose of the anonymous function is simply to define and execute some code but the important thing to realise is that the variables and functions contained inside the anonymous function are not visible to the outside world. That is, the variables and functions are private to the anonymous function and this is a feature we can exploit to provide object encapsulation.
+
+
+One of the first goals of the article was to have an object, which could be created using a constructor like function. In the previous section, we saw that we could define private functions in an anonymous function; but how do we define a constructor like function that can be exposed to the outside world?
+To solve this, we must first pass in a variable into the anonymous function to allow us to expose our constructor function to the outside world. We can do this by redefining the definition of the anonymous function to be…
+
+(function (window) {
+//code here
+} (window));
+
+The ‘window’ parameter part of the Browser Object Model (BOM), which allows JavaScript to communicate with the browser. Our intention is to add our constructor function to this model so it can be used throughout our JavaScript code. This allows us to export our function to the outside world.
+
+whatever we attach with window object are accessable all over. because window is a public object.
+
+
+For example, suppose we wanted to create a class called ‘Instance’ and we wanted to expose this to the BOM, we could achieve this with the following code…
+(function (window) {
+
+    function Instance() {
+    }
+
+    window.Instance = Instance;
+
+} (window));
+

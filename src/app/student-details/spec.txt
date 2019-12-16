@@ -1,0 +1,122 @@
+/* tslint:disable:no-duplicate-string */
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { WjGridModule } from 'wijmo/wijmo.angular2.grid';
+import { SharedModule } from '../../shared/shared.module';
+import { UtSoftwareConfirmationComponent } from './ut-software-confirmation.component';
+
+describe('UtSoftwareConfirmationComponent', () => {
+  let component: UtSoftwareConfirmationComponent;
+  let fixture: ComponentFixture<UtSoftwareConfirmationComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [SharedModule, WjGridModule, HttpClientTestingModule],
+      declarations: [UtSoftwareConfirmationComponent]
+    })
+      .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(UtSoftwareConfirmationComponent);
+    component = fixture.componentInstance;
+    component.confirmations = [
+      {
+        refType: 1,
+        item: '4215',
+        amount: null,
+        message: 'PaymentSuccesful',
+        statusCode: '2',
+        statusDescription: null,
+        confirmationRef: null,
+        renewedItems: [
+          {
+            productId: 380,
+            productName: 'UltraTax CS Local Area Network',
+            productCode: 'UTNET',
+            productFamily: 'UltraTax CS',
+            seats: 8,
+            price: 1180,
+            taxable: true,
+            productDisplayGroup: '',
+            source: 'RenewalProducts',
+            productStatus: 'Current',
+            productType: 'Network',
+            chargeType: null
+          },
+          {
+            productId: 164,
+            productName: '1040 Federal',
+            productCode: '4USW',
+            productFamily: 'UltraTax CS',
+            price: 3150,
+            quantity: 1,
+            taxable: true,
+            source: 'RenewalProducts',
+            productStatus: 'Current',
+            chargeType: null
+          },
+        ],
+      },
+      {
+        refType: 2,
+        renewedItems: [
+          {
+            productId: 111,
+            productName: 'Another product',
+            productFamily: 'Another Product',
+          },
+          {
+            productId: 222,
+            productName: 'Some other product',
+            productFamily: 'Another Product',
+          },
+        ],
+      }
+
+    ];
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  describe('groupProductsByFamily function', () => {
+    it('should create a product family', () => {
+      const inputData = [{ refType: 1, renewedItems: [{ productFamily: 'Sravya' }] }];
+      const products = UtSoftwareConfirmationComponent.groupProductsByFamily(inputData);
+      expect(products.Sravya).toBeDefined();
+    });
+    it('should not create a product family when refType is not 1', () => {
+      const inputData = [{ refType: 2, renewedItems: [{ productFamily: 'Sravya' }] }];
+      const products = UtSoftwareConfirmationComponent.groupProductsByFamily(inputData);
+      expect(products.Sravya).toBeUndefined();
+    });
+    it('should not fail if passed no data', () => {
+      expect(() => UtSoftwareConfirmationComponent.groupProductsByFamily(undefined)).not.toThrowError();
+    });
+  });
+
+  describe('parseProductFamilies function', () => {
+    it('should give data required for the wijmo grid in correct pattern', () => {
+      const productFamilies = { UltraTaxCS: [Object({ productFamily: 'UltraTax CS', price: 1180, }), Object({ productFamily: 'UltraTax CS', price: 3150 })] };
+      const products = UtSoftwareConfirmationComponent.parseProductFamilies(productFamilies);
+      expect(products).toBeDefined();
+      expect(products.length).toEqual(1);
+    });
+    it('should check the price to equal 4330', () => {
+      const productFamilies = { UltraTaxCS: [Object({ productFamily: 'UltraTax CS', price: 1180, }), Object({ productFamily: 'UltraTax CS', price: 3150 })] };
+      const products = UtSoftwareConfirmationComponent.parseProductFamilies(productFamilies);
+      expect(products[0].price).toEqual(4330);
+    });
+  });
+  it('should have the correct data', () => {
+
+    expect(component.productFamilies['UltraTax CS']).toBeDefined();
+    const ut = component.productFamilies['UltraTax CS'];
+    expect(ut.length).toEqual(2);
+    expect(component.productFamilies['UltraTax CS'][0].productName).toEqual('UltraTax CS Local Area Network');
+  });
+});

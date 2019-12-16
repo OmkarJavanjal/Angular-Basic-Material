@@ -1,0 +1,12 @@
+<div class="{{textSize}} {{textColor}}
+ {{textWeight}} "
+ [id]="elementId" 
+>
+{{labelText}}
+<ng-content></ng-content>
+
+<ng-content select="[header]"></ng-content>
+<ng-content select="[body]"></ng-content>
+
+
+</div>

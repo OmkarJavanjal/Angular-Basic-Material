@@ -1,0 +1,23 @@
+<p>
+  indicator works!--{{activatedRoute.snapshot.url[0].path}}
+</p>
+<!-- Below code is using module and routing in same file break concept -->
+
+<div *ngIf="activatedRoute.snapshot.url[0].path =='2018'">
+  <app-2018-primary *ngIf="activatedRoute.snapshot.url[1].path =='primary'"></app-2018-primary>
+  <app-2018-secondary *ngIf="activatedRoute.snapshot.url[1].path =='secondary'"></app-2018-secondary>
+</div>
+
+
+<div *ngIf="activatedRoute.snapshot.url[0].path =='2019'">
+  <app-2019-primary *ngIf="activatedRoute.snapshot.url[1].path =='primary'"></app-2019-primary>
+  <app-2019-secondary *ngIf="activatedRoute.snapshot.url[1].path =='secondary'"></app-2019-secondary>
+</div>
+
+
+
+<!-- Below code is using module with different routing file  concept -->
+
+  <app-2020-primary></app-2020-primary>
+  <app-2020-secondary></app-2020-secondary>
+  <app-2021-primary></app-2021-primary> 

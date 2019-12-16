@@ -1,0 +1,26 @@
+https://gist.github.com/nicbell/6081098
+ 
+//Object comparison
+var a = { blah: 1 }; 
+var b = { blah: 1 }; 
+// both a and b allocate in different memory location
+console.log(a == b);    //false
+console.log(a === b);   //false
+
+var c = a; // it copy a object into c and a and c is in same memory location. here c is equal to a.because object is call by reference
+console.log(a == c); //true // 
+
+console.log(b == c); // false // here b is not equal to c and it share different memory location.
+
+/***********************************************************************/
+ 
+ 
+var person1={"firstName":"JP","lastName":"Richardson"};
+var person2={"firstName":"JP","lastName":"Richardson"};
+var a = JSON.stringify(person1); //convert it into string
+var b = JSON.stringify(person2); // convert it into string
+console.log(a == b); // true
+console.log(a === b); // true
+
+/**********************************************************************************/
+

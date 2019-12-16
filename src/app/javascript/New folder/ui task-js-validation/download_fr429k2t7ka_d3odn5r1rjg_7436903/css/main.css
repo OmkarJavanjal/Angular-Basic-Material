@@ -1,0 +1,26 @@
+ /* CSS */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+.container {
+    background-color: lightblue;
+    height: 100%;
+    width: 100%;
+}
+
+.container__btn {
+  max-width: 330px;
+  background-color: orangered;
+  border-color: orangered;
+  border-bottom: 2px solid white;
+  position: absolute;
+  top: 50%;
+  width: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

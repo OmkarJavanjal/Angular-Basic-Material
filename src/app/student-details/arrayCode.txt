@@ -1,0 +1,90 @@
+import { Component, Input, OnInit } from '@angular/core';
+import * as _ from 'underscore';
+import * as wijmo from 'wijmo/wijmo';
+import { AmountsDto, RenewalsInfoDto } from '../../services/product/product.model';
+
+interface IProductFamilyData {
+    /** This is the structure which allows data to be  displayed in wijmo grid  */
+    name: string;
+    price: number;
+    parent: boolean;
+    children?: IProductFamilyData[];
+}
+
+interface IConfirmationData {
+    /** this is for the filtering out the confirmations and grouping them */
+    refType: number;
+    renewedItems: IConfirmationChildData[];
+}
+
+interface IConfirmationChildData {
+    /** The product family name (e.g. UltraTax CS) */
+    productFamily: string;
+}
+
+@Component({
+    selector: 'app-ut-software-confirmation',
+    templateUrl: './ut-software-confirmation.component.html',
+    styleUrls: ['./ut-software-confirmation.component.scss', '../../renewal-payment/payment-confirmation/payment-confirmation.component.scss']
+})
+export class UtSoftwareConfirmationComponent implements OnInit {
+
+    @Input() confirmations: any[];
+    @Input() totals: AmountsDto = {} as AmountsDto;
+    @Input() total: number;
+    @Input() renewalSuccess: boolean;
+
+    public confirmationView: wijmo.CollectionView;
+    public productFamilies = {};
+
+    /** This should be functional and not use local members (this.*) because it could be moved to a service */
+    static parseProductFamilies(productFamilies: any): IProductFamilyData[] {
+
+        const confirmations: IProductFamilyData[] = [];
+        Object.keys(productFamilies).forEach((key) => {
+            if (productFamilies.hasOwnProperty(key)) {
+                const checkConfirmationData = { name: key, price: 0, parent: true, children: [] } as IProductFamilyData;
+                productFamilies[key].forEach((item) => {
+                    const child = { name: item.productName, price: item.price, parent: false } as IProductFamilyData;
+                    checkConfirmationData.children.push(child);
+                    checkConfirmationData.price += item.price;
+                });
+                confirmations.push(checkConfirmationData);
+            }
+        });
+        return confirmations;
+
+    }
+
+    /** This should be functional and not use local members (this.*) because it could be moved to a service */
+    static groupProductsByFamily(confirmationData: IConfirmationData[]): any {
+        console.log('defineddata', confirmationData);
+        const productFamilies = {};
+        // Filter on ref type and enumerate each item
+        if (!!confirmationData) {
+            confirmationData.filter((confirmationItem) => confirmationItem.refType === 1).forEach((confirmationItem) => {
+                // Enumerate each renewed item
+                confirmationItem.renewedItems.forEach((renewedItem) => {
+                    // Create a new array for the product family if it doesn't exist already
+                    if (!productFamilies.hasOwnProperty(renewedItem.productFamily)) {
+                        productFamilies[renewedItem.productFamily] = [];
+                    }
+                    // Add the new product into the correct family
+                    productFamilies[renewedItem.productFamily].push(renewedItem);
+                });
+            });
+        }
+        return productFamilies;
+    }
+    constructor() {
+    }
+
+    ngOnInit() {
+
+        // Create a new view from the grouped products
+        this.productFamilies = UtSoftwareConfirmationComponent.groupProductsByFamily(this.confirmations);
+        this.confirmationView = new wijmo.CollectionView(UtSoftwareConfirmationComponent.parseProductFamilies(this.productFamilies));
+
+    }
+
+}

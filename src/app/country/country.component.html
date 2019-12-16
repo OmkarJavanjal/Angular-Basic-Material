@@ -1,0 +1,46 @@
+
+<pre>{{itemData|json}}</pre>
+
+<input type="text" name="firstName" value="Abhinav" #divBox>
+
+
+<div class="text-center">
+   <select [(ngModel)]="selectedCountry" (ngModelChange)="onCountryChange($event)" >
+   <option *ngFor="let countryName of countryData" [ngValue]="countryName.country"> {{countryName.country}} </option>
+   </select>
+   <select [(ngModel)]="selectedState" (ngModelChange)="onStateChange($event)" >
+   <option *ngFor="let stateName of stateData" [ngValue]="stateName.state"> {{stateName.state}} </option>
+   </select>
+   <select [(ngModel)]="selectedCity" (ngModelChange)="onCityChange($event)" >
+   <option *ngFor="let cityName of cityData" [ngValue]="cityName.city"> {{cityName.city}} </option>
+   </select>
+</div>
+<br>
+<br>
+<br>
+<!-- <h3>---------------------------------------------------------------------------------------</h3>	 -->
+<div class="text-center">
+   <ul>
+      <li *ngFor="let countryName of countryData ; let i=index">{{i+1}}-{{countryName.country}}</li>
+   </ul>
+   <br>
+   <br>
+   <!-- pager -->
+   <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+         <a (click)="setPage(1)">First</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+         <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+      <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+         <a (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+         <a (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+   </ul>
+</div>

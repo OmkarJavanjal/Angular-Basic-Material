@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="myH"></h1>
+<p id="myP"></p>
+
+<script>
+
+    var tag = 'tha';
+var array = [
+  {
+    "id": "308",
+    "site": [
+      {
+        "url": "cxr"
+      },
+      {
+        "url": "tha",
+        "case": [
+          {
+            "caseId": "1234"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "9995",
+    "site": [
+      {
+        "url": "thah",
+        "case": [
+          {
+            "caseId": "1234"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+var arr =[];
+var arr1 =[];
+function func() { 
+    array.forEach(function(item){ 
+	 item.site.forEach(function(items){ 
+		if (items.url === 'tha'){
+		arr.push(items.url);
+		arr1.push(item);
+		}
+    });
+    }); 
+	 console.log(arr);
+	 if (arr.length === 1){
+	 console.log('god', arr1); 
+	 	 arr1[0].site.forEach(function(itemss){ 
+		if (itemss.url === 'tha' && itemss.case.length === 1){
+		console.log('good1', arr1);
+		var obj = {
+		 "id": arr1[0].id,
+		  "url": itemss.url,
+		   "case": itemss.case
+		};
+		console.log('good3', obj); 
+		} else {
+		console.log('bad2'); 
+		}
+    });
+	 } else {
+	 console.log('bad'); 
+	 }
+}
+    // var result = array.filter(a => a.users.some(u => u.tags.some(t => t.tag.includes(tag))));
+
+console.log(func());
+</script>
+
+</body>
+</html>

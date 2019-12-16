@@ -1,0 +1,407 @@
+Zena Jose 
+
+Contact: +91-9769577694 
+
+Email: zena.jose@gmail.com 
+
+ 
+
+Career Objective: 
+
+With a strong technical skill-set, attention to detail, and 3+ years of experience, I want to work as a front-end 
+web developer where I could create, design & develop good web content and elevate user experience to the 
+next level. 
+
+ 
+
+Summary of Skills: 
+
+• Experienced in communicating with the creative team and clients clearly 
+• Over a year of experience at client side in Sweden 
+• Unique ability to improvise, grasp new skills and troubleshoot problems 
+• Very comfortable and passionate about adopting ideas and bringing them to life through technology 
+• Capability to work and flourish in a fast-paced environment 
+• Experienced in training juniors in CSS, LESS, Bootstrap and JQuery 
+
+
+ 
+
+Technical Skills: 
+
+Programming Languages 
+
+Java, JavaScript, HTML5, CSS3 
+
+Frameworks 
+
+JQuery, AngularJS, Twitter Bootstrap, BackboneJS, Dojo 
+
+Tools/DB/Packages 
+
+SQL Server 2008, MySQL, Apache Tomcat Server, Eclipse, IBM Lotus 
+
+Form Designer 
+
+
+
+ 
+
+ 
+
+Professional Certifications: 
+
+• Microsoft MTA – HTML 5 Application Development Fundamentals JAVA SE6 Certification 
+
+
+ 
+
+ 
+
+
+Work Experience Summary: 
+
+ 
+
+Project Name 
+
+ARTM 
+
+Client Name 
+
+Scania IT AB 
+
+Team Size 
+
+ 3 
+
+Start Date 
+
+Jan 2016 
+
+End Date 
+
+- 
+
+Role & 
+
+Contribution 
+
+1. Script developer for many applications across Scania. 
+2. Developed scripts based on manuscripts provided by the customers. 
+3. Involved in monitoring and maintenance of the scripts for all applications. 
+4. Involved in meetings with the owners of the applications to discuss the flow 
+and functions of the applications and the best way to test them. 
+
+
+Technologies 
+
+BDL 
+
+Tools 
+
+Silk Performer, BMC - Real User Analyzer, BMC TrueSight Operations Management 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+Project Name 
+
+SWIP2 
+
+Client Name 
+
+Scania IT AB 
+
+Team Size 
+
+ 5 
+
+Start Date 
+
+March 2015 
+
+End Date 
+
+December 2015 
+
+Role & 
+
+Contribution 
+
+1. Involved in performance improvement. 
+2. Designed the flow for all modules to enhance performance and user 
+experience. 
+3. Discussed the structure and flow with customers and provided appropriate 
+solutions to certain issues. 
+4. Worked on enhancing the UI and theming the application as per company 
+standards. 
+5. Involved in discussions with the UX team to keep track of changes or updates in 
+the company UX standards 
+
+
+Technologies 
+
+HTML5, CSS3, JavaScript, Dojo, AngularJS 
+
+Tools 
+
+Sublime Text , Chrome Developer Tools 
+
+
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Project Name 
+
+Gaming engine 
+
+Client Name 
+
+L&T Infotech 
+
+Team Size 
+
+ 7 
+
+Start Date 
+
+March 2014 
+
+End Date 
+
+December 2014 
+
+Role & 
+
+Contribution 
+
+1. Involved in design and development of UI for all the modules. 
+2. Developed Responsive UI screen for Engine management using Twitter 
+Bootstrap. 
+3. Custom developed UI screens for Leaderboard Pages using HTML5, CSS3 and 
+JQuery. 
+4. Worked on developing UI for Redeem page to display in-stock, limited-stock 
+and out-of-stock vouchers. 
+5. Worked on site theming and enhancing user experience. 
+6. Developed Redeem Module using Java, Backbone. 
+
+
+Technologies 
+
+Java, Html5, CSS, JavaScript, Resteasy, JQuery, Bootstrap, BackboneJS, LESS 
+
+Tools 
+
+Eclipse , Chrome Developer Tools, Notepad++ 
+
+
+
+ 
+
+ 
+
+Project Name 
+
+TeXchange 
+
+Client Name 
+
+L&T Infotech 
+
+Team Size 
+
+ 7 
+
+Start Date 
+
+ June 2013 
+
+End Date 
+
+ March 2014 
+
+
+
+
+Role & 
+
+Contribution 
+
+1. Developed Responsive UI screens for the site using Twitter Bootstrap. 
+2. Custom developed UI screens for Leaderboard Pages using HTML5, CSS3 and 
+JQuery. 
+3. Developed Responsive UI for Top Climbers, Quarterly Racers and Most Reputed 
+pages using Bootstrap. 
+4. Worked on developing responsive background image depending upon device 
+screen size using CSS media-screen queries. 
+5. Designed scorecard to display user information including name, image, score 
+and rank. 
+6. Developed User Profile page to display user activities in timeline format. Also 
+displayed user history in a carousel on Profile page using Slick carousel. 
+7. Added animation to home page using Spritely JavaScript library. 
+8. Worked on site theming and enhancing user experience. 
+
+
+Technologies 
+
+Java, Play Framework, Html5, CSS, LESS, JavaScript, JQuery, Bootstrap, BackboneJS 
+
+Tools 
+
+Eclipse, Chrome Developer Tools, Notepad++ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Project Name 
+
+Landscape Calculator 
+
+Client Name 
+
+L&T Infotech 
+
+Team Size 
+
+3 
+
+Start Date 
+
+March 2013 
+
+End Date 
+
+June 2013 
+
+Role & 
+
+Contribution 
+
+1. Worked on server catalogue module which maintains a list of servers and their 
+configurations. 
+2. Designed UI for calculator based on JavaScript MVC framework using Sencha 
+EXTJS library. 
+3. Designed FAQ page. 
+4. Fixed bugs reported by peers and user. 
+
+
+Technologies 
+
+Java, ExtJs 
+
+
+
+
+Tools 
+
+Eclipse 3.7, Apache Tomcat Server, Chrome Developer Tools, Notepad++ 
+
+
+
+ 
+
+ 
+
+Project Name 
+
+AIRCAN Project, Delhi. 
+
+Team Size 
+
+45 
+
+Start Date 
+
+August 2012 
+
+End Date 
+
+March 2013 
+
+Role & 
+
+Contribution 
+
+1. Form Designer - Developed over 100 forms using IBM Lotus Form Designer 
+with XML as programming language. 
+2. Bug Fixer – Performed fixes on e-forms based on Tester reviews, also 
+performed UAT fixing. 
+3. OSRMT- Created requirement tree for various Directorates and uploaded the 
+same in DB 
+4. Reviewing & Testing 
+
+
+Technologies 
+
+JAVA, XML, Oracle, Domino server, WAS Server, IBM forms. 
+
+Tools 
+
+IBM Form Designer, DBMetaDataAutomation, Instance Sheet Tool, OSRMT 
+
+
+
+ 
+
+Education Summary: 
+
+• M.Sc. in Computer Science Awarding Body: University of Mumbai Year of Passing: 2014 
+• B.Sc. in Computer Science Awarding Body: University of Mumbai 
+
+
+Year of Passing: 2011 
+
+ 
+
+ 
+
+My Details: 
+
+• Current CTC : 3,40,000/- 
+• Notice Period : 3 months(negotiable) 
+
+
+ 
+
+ 
+
+Reference: 
+
+Available on request. 
+
+

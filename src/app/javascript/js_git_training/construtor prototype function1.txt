@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<p id="demo"></p>
+ 
+<script>
+function person(first) {
+    this.firstName = first;
+}
+function person1(first1, last1, age1, eye1) {
+                //person.call(this,'Abhinav');
+    this.firstName1 = first1;
+    this.lastName1 = last1;
+    this.age1 = age1;
+    this.eyeColor1 = eye1;
+}
+ 
+person1.prototype=new person("Abhinav");
+var myFather = new person1("John", "Doe", 50, "blue");
+ 
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.age1 + ". My mother is " + myFather.firstName;
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,300 @@
+Sirsha payment (600$) -- received  valid till 5th Sept //
+
+// Rakshith (600$) -- 150 $ received for 5 days. // my SBI bank
+// Srikar for AnhularJS (600$) -- received 330$ payment valid till 30th Sept // next payment date is 1st Oct // in My Mother ICIC Account // (next payment 173$) // on 5th Oct
+// Hemanth (700$) -- received 350$ payment on 6th Sept valid till 20th Sept // next payment date is 20th Sept // in Shubham UBI Account  // wating for payments
+// Raghu backBoneJS (600$)-
+// SirRaj(700$)-- received 350$ payment valid till 13th Oct // next payment date is 13th Oct //in Shubham UBI Account // start date from 29th Sept
+// Satish- 180$ receive valid till 6 days. start date from 16th Oct and valid till 21st Oct  // in Shubham UBI Account // connected (16,17,) // 18,
+// Chetan (600$) ---  150$ receive  // valid till friday -->> 18th Oct // in Shubham UBI Account // support done now will start from 24th Oct
+// Lahari (600$)-- received 300$ payment valid till 15th Oct// next payment date is 15th Oct // in Shubham UBI Account  // provide 8 days extra -- till 30th oct (22,)
+// Venkat Ui -- for UNit testing --  (2,18,22,23,24,25) // 300$ valid till 20 days and I will provide 10 working days support only valid till 20th-25th Oct// in Shubham UBI Account //
+// Praveen(600$) ---- 150$ payment received for 5 days and start date is 12th Nov valid till 16th Nov next payment date is 16th Nov // // in Shubham UBI Account //
+
+
+
+
+Karthik for AWS (600$) -- received 600$ payment on 5th Nov valid till 5th Dec // next payment date is 5th Dec // in Shubham UBI Account //
+
+Venkat Ui -- for UNit testing --  (1st Nov, ) // 300$ receive on 1st Nov valid till 10 session and I will provide 10 working session days support // in Shubham UBI Account //
+
+
+
+
+Suraj (600$)-- received 300$ payment receive valid till 30th Nov // next payment date is 1st Dec   // in Shubham UBI Account  // --(150 reveived and 450 $ will receive on 1st Dec)
+Sirsha (600$)-- received 300$ payment valid till 5th Dec // next payment date is 5th Dec // in Shubham UBI Account  //
+yesh (600$)--  received 300$ payment support date valid till 30th Nov // next payment date is 1st Dec // in Shubham UBI Account  //
+Harish UI (600$) --  received 300$ payment valid till 30th Nov // next payment date is 1st Dec // in My Mother ICIC Account//
+Karthik forOracleFusion(600$)-- received 300$ payment valid till 30th Nov // next payment date is 1st Dec // in My Mother ICIC Account//
+jyostana (680$) - received 340$ payment valid till 30th Nov // next payment date is 1st Dec //in Shubham UBI Account //
+
+-----------------------------------------VijayDevops Support 1st Jun to 15th Jun----------------------------------------------------------------------------------------------
+2- Vijay (7010007928)-- karthik --- (1,3,4,5,6, 10, 11, 12, 14) // payment done
+---------------------------------------Payment for Jun month till 1st-15th Jun  --- 50k pay--------------------------------------------------------------------------------------------
+---------------------------------------Payment for Jun month 16-30th Jun total need to pay-- 50k--------------------------------------------------------------------------------------------
+-------------------------------Payment for July month till 1st-15th July-  42k pay---------------------------------------------------------
+---------------------------------------Payment for July month till 16th July to 31st July -- 46,160 pay -----------------------------------------------------------------------
+------------------------------------  Payment for July month till 1st Aug to 15th Aug --- 43,500 pay  ------------------------------------------------------------------
+------------------------------------  Payment for Aug month till 16th Aug to 31st Aug --- 62,000 pay  ------------------------------------------------------------------
+----------------------------------------------------------Support  1st Sept to 15th Sept----------------------------------------------------------------------------------
+
+1- Gaurav with Sirsha -->> (1,2,3,4,6,7,8,11,12)
+2- Sumit with Harish -->>   // payment 20k per months  // payment done
+3- Abhishek with Srikar -- (4,) // 15k per month // from Oct 20k per month  // 500 need to pay
+4- Nithin with Karthik for Oracle Fusion -- ()  // payment 20k per months 
+5- Arpit with yash --- support start date is 28th Aug // next payment date is 11th Sept // (3 gap,4,5,11) // 1 day cover, // payment done
+6- Nilanjana with Lahari -->> (29,30,3,6,10) // payment done // from sept 20 k per month
+7- Ankush with Hemanth -->>> (3,4,6) // for now per day basis // 15k per month // try to no need to pay because code not working
+8- Pankaj with Srikar -- (30,5,6,7,10,13)  // 15k per month till two month
+9- Madhvai with Raghu -- (5 das,9,10,11,12,13)  // 15k per month till two month // payment will be per days basis
+10- Sumit with Lahari (4,5,6,7,14);
+11- Suraj with Karthik -- (8,10,11,12) // 15k per month / payment will be per days basis
+12- Alok with Hemanth -- (6,8,9,10,11,12,13,14)  // 20k per month // payment will be per days basis
+13- Mahesh with Akisht -- (10)  // 20k per month // payment will be per days basis
+
+--------------------------------------- Payment for Sept month till 1st Sept to 15th Sept-- 53,500 pay --------------------------------------------------------------------------
+
+1- Gaurav with Sirsha -->> 4500 //  payment done  // for 9 days  // 16500
+2- Sumit with Harish -->>  10,000 // payment done // 11000
+3- Nithin with Karthik for Oracle Fusion -- 10,000 // payment done  // 11000
+4- Arpit with yash --- 10,000 // payment done // next payment is 27th Sept // 11000
+5- Pankaj with Srikar -- 3000 // payment done  // for 6 days // 16000
+6- Madhvai with Raghu -- 6000 //  payment done // for 9 days // 15000
+7- Sumit with Lahari-- 2500  // payment done //  for 5 days //
+8- Suraj with Karthik -- 2000 //payment done // for 4 days // 19000
+9- Alok with Hemanth --  5500 // payment done // for 8 days // 18000
+
+---------------------------------------------------Support  16th Sept to 30th Sept-------------------------------------------------------------------------------------------------
+
+
+1- Gaurav with Sirsha -->> (17,19,20,21,28,29,30) // 28, 29- consider 2 days
+2- Sumit with Harish -->>   // payment 20k per months
+3- Abhishek with Srikar -- (4ept,) // 15k per month // from Oct 20k per month  // 500 need to pay
+4- Nithin with Karthik for Oracle Fusion -- // payment 20k per months 
+5- Arpit with yash --- // next payment is 27th Sept 
+6- Pankaj with Srikar --   // 15k per month till two month  // not connected (16,23,24); // PAYMENT WILL BE DAILY BASIS INCLUDE SAT AND SUND
+7-  Madhvai with Raghu --  (16,17,18,19)  // 15k per month till two month // payment will be per days basis
+8- Suraj with Karthik -- (17,18,21) // 15k per month / payment will be per days basis
+9- Alok with Hemanth --   (17,18,19,20) // 20k per month // payment will be per days basis
+10- Mahesh with Akisht -- (16,30) // 20k per month // payment will be per days basis // payment done
+11- Abhishek with Suraj -- (20,24,25,26)  // 15k per month / payment will be per days basis  // 
+
+
+
+----------------------------Payment for Sept month till 16th Sept to 30th Sept--  55000 pay-------------------------------------------------------------------
+
+1- Gaurav with Sirsha -->> 3500 // pament done for 7 days
+2- Sumit with Harish -->>  10,000 // payment done
+3- Abhishek with Srikar -- 1000 / payment done for 2 days
+4- Nithin with Karthik for Oracle Fusion --  10,000 // payment done
+5- Arpit with yash ---  10,000 // payment done
+6- Pankaj with Srikar --   2500+1500 // payment done  for 5 days
+7- Madhvai with Raghu -- 7500  // payment done
+8- Suraj with Karthik -- 1500  // payment done for 3 days
+9- Alok with Hemanth -- 2700    // payment done  for 4 days  
+10- Mahesh with Akisht -- 1350  // payment done for 2 days
+11- Abhishek with Suraj -- 2000 // payment done  for 4 days 
+
+--------------------------------------------------- Support  1st Oct to 15th Oct -------------------------------------------------------------------------------------------------
+
+1- Gaurav with Sirsha -->> (1,4,5,10,11,12,13)
+2- Sumit with Harish -->>   // payment 20k per months
+3- Nithin with Karthik for Oracle Fusion --  // payment 20k per months
+4- Arpit with yash ---     // payment 20k per months // next pa on 15th Oct
+5- Pankaj with Srikar --   (1,3) // payment 15k per months // payments daily basis include sat- Sunday // now stop
+6- Suraj with Karthik -- (2,8,)  // payment 15k per months // payments daily basis
+8- Abhishek with Suraj --(8,9,14,15) // payment 15k per months // payments daily basis
+9- Puneet with Jyostana --(5,6,9,12,)  // payment 15k per months // payments daily basis
+10- Ankush with SriRaj --- (29,1) // payment 15k per months // payments daily basis
+11- Prasad with Venkat UI unit test - (2,) // // 15k per month / payment will be per days basis (vaild till oct end)
+12- Prasad with SriRaj - (2,3,4,5,7,8,9,10,11) // 20k per month / payment will be per days basis /// after 15th 20k per month
+13- prasad with Chetan -- (5,7,8,9,11,12)  // for 5 days only // 4 days remeaning only
+14- Bhawani with Lahari -- (6,)
+15- Arpit with Jyotsana - (10,11,12,15) // 
+
+
+--------------------------------------------------- Payment for Sept month till 1st Oct to 15th Oct --  pay -------------------------------------------------------------------------------------------------
+
+1- Gaurav with Sirsha -->>  3500    // for 7 days payment done
+2- Sumit with Harish -->>   10,000 // payment done
+3- Nithin with Karthik for Oracle Fusion --  10,000 // payment done
+4- Arpit with yash ---     10,000  // payment done
+5- Pankaj with Srikar --   1000   // need to pay 
+6- Suraj with Karthik --         // need to pay 
+8- Abhishek with Suraj -- 2000  //for 4 days need to pay 
+9- Puneet with Jyostana -- 2000 // for 4 days payment done
+10- Ankush with SriRaj+Hemant --- 3000   // 2+4= 6 days payment done
+12- Prasad with SriRaj -   4500 // for 9 days payment done
+13- prasad with Chetan -- 3000 // for 6 days payment done
+15- Arpit with Jyotsana - 2670 // for 4 days payment done
+
+--------------------------------------------------- Support  16th Oct to 31st Oct -------------------------------------------------------------------------------------------------
+
+1- Gaurav with Sirsha -->> (19,29,30,31)
+2- Sumit with Harish -->>   // payment 20k per months
+3- Nithin with Karthik for Oracle Fusion --  // payment 20k per months
+4- Arpit with yash ---     // payment 20k per months // next pa on 15th Oct (19th connect 2 times, 3 days extra
+5- Suraj with Karthik -- (19,22,23,24,29,30,31)  // payment 15k per months // payments daily basis
+6- Abhishek with Suraj --(21,22,) // payment 15k per months // payments daily basis
+7- Puneet with Jyostana --(16,18,21,24,29,31)  // payment 15k per months // payments daily basis
+8- Prasad with Venkat UI unit test - (2,18,22,23,24,25,29,30) // 15k per month / payment will be per days basis (vaild till oct end)
+9- Bhawani with Lahari -- (6,)  // 15k per month / payment will be per days basis 
+10- Arpit with Jyotsana - (17,22,30)    // payment 20k per months
+11- Raunauk with chetan -- (16,17,18) // 15k per month / payment will be per days basis // 1 days remeaning only
+12- Raghu with Satish -- (16,17,18) // 15 k //  payment done
+13- prasad with Lahari -- (22,)  // 15k per month / payment will be per days basis  // need to connect only 7 days now // 22 is demo 
+14- puneet with karthik -- (22,23,) // 
+15- Shivam with Siressha --- (25,26,27) //
+16- Sandeep with karthik -- (26,) // 
+
+
+--------------------------------------------------- Payment for Sept month till 16th Oct to 31th Oct --  52000 pay ----------------------------------------------------
+
+1- Gaurav with Sirsha -->>   2000+1000 // payment done //
+2- Sumit with Harish -->> 10,000 // payment done
+3- Nithin with Karthik for Oracle Fusion --  10,000 // payment done
+4- Arpit with yash ---  10,000 // payment done  
+5- Suraj with Karthik -- 3500+1000 = 4500 // (7 days+2 days)  payment done
+6- Abhishek with Suraj -- 1000+2000 = 3000 // (2 days+ 4 days) payment done
+7- Puneet with Jyostana -- 3000 // 6 days payment done
+8- Prasad with Venkat UI unit test -  4000 // 8 days payment done
+9- Arpit with Jyotsana -  2000 // 3 days  payment done
+10- Raunauk with chetan -- 1500 // 3 days needs to pay
+12- puneet with karthik --  1000 // 2 days needs to pay
+13- Shivam with Siressha ---  1000 // payment done
+14- Sandeep with karthik --  500 // 1 days payment done
+
+
+--------------------------------------------------- Support  1st Nov to 15th Nov -------------------------------------------------------------------------------------------------
+
+1- Gaurav with Sirsha -->> (2,3,5,8,9,10,12,13,14,)
+2- Sumit with Harish -->>   // payment 20k per months
+3- Nithin with Karthik for Oracle Fusion --  // payment 20k per months (not avaliable from 11th to 15th) // need to pay 5000 till 10th Nov and next startf rom 16th Nov
+4- Arpit with yash --- // payment 20k per months // (cover 2 days gap and new count start from 4th and need to complete 10 days till 15th Nov) 
+// (4,5,7,8,9,12,14,15) // 2 days manage in next slot
+5- Arpit with Jyotsana - (2,4,9,)    // payment 20k per months
+6- Suraj with Karthik -- (7,9,12,14,15)  // payment 15k per months // payments daily basis
+7- Abhishek with Suraj --(1,4,5,6,8,) // payment 15k per months // payments daily basis
+8- Puneet with Jyostana --(4,5,6,7,11,12,13,14,15)  // payment 15k per months // payments daily basis
+9- puneet with karthik -- () // 
+10- Prasad with Venkat UI unit test - (1,6,7,8,12,15) // 15k per month / payment will be per days basis (vaild till oct end)
+11- Shivam with Praveen -- (12,13,14,15,) // payment 15k per months // payments daily basis
+
+
+----------------------------------------------Payment for Sept month till 1st Nov to 15th Nov -- 49000 pay -----------------------------------------------------
+
+1- Gaurav with Sirsha -->> 4500 // payment done for 9 days
+2- Sumit with Harish -->> 10,000 // payment done
+3- Nithin with Karthik for Oracle Fusion -- 5000 // payment done
+4- Arpit with yash --- 10,000 // payment done
+5- Arpit with Jyotsana - 2000 // payment done for 3 days
+6- Suraj with Karthik -- 2500 // payment done for 5 days
+7- Abhishek with Suraj -- 2500 // need to pay for 5 days
+8- Puneet with Jyostana -- 4500 // payment done for for 9 days
+9- puneet with karthik -- 1000 // need to pay for 2 days
+10- Prasad with Venkat UI unit test - 3000 // payment done for 6 days // 4000 I have paid
+11- Shivam with Praveen -- 1500  // payment done for 3 days
+12- Raunauk with chetan -- 1500 //  payment done for 3 days
+
+--------------------------------------------------- Support  16th Nov to 30th Nov -------------------------------------------------------------------------------------------------
+
+1- Gaurav with Sirsha -->> (16,17,18,19,21,28,29)
+2- Sumit with Harish -->>   // payment 20k per months // stop support till Nov end
+3- Nithin with Karthik for Oracle Fusion --  // payment 20k per months () // need to pay 10000 in month nov end
+4- Arpit with yash --- // payment 20k per months // (cover 2 days gap and new count start from 4th and need to complete 10 days till 15th Nov)
+// (19,20, done previous pending)-- (next date start -- 21,22,25,26,27,28, ) // need to provide 12 days till Nov end from 16th to 30th Nov
+5- Arpit with Jyotsana - (22,26,)    // payment 20k per months
+6- Suraj with Karthik -- (18,20,25,27,)  // payment 15k per months // payments daily basis
+7- Abhishek with Suraj --(19,20,21,22,27,) // payment 15k per months // payments daily basis
+8- Puneet with Jyostana --(16,19,20,21,23,26,)  // payment 15k per months // payments daily basis
+9- Prasad with Venkat UI unit test - (19,21,22,) // 15k per month / payment will be per days basis (vaild till oct end) 1 days pending  till 22 need to complete
+10- Raunak with Harish -- (24,25,28,)  // 15k per month support payment daily basis
+11- Ankush with Jyostana --- (27,28,)  // payment 15k per months // payments daily basis
+
+
+----------------------------------------------Payment for Sept month till 16th Nov to 30th Nov --  pay -----------------------------------------------------
+
+1- Gaurav with Sirsha -->>    // need to pay
+2- Nithin with Karthik for Oracle Fusion --  10,000   // need to pay
+3- Arpit with yash ---    // need to pay
+4- Arpit with Jyotsana -   // need to pay
+5- Suraj with Karthik --   // need to pay
+6- Abhishek with Suraj --  // need to pay
+7- Puneet with Jyostana --   // need to pay
+8- Prasad with Venkat UI unit test -  // need to pay
+9- Raunak with Harish --  // need to pay
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+1- Jhanshi demo // 650$  - -- AI python // Anant, Vikash, Lokanath
+2- Prasharsha demo // 700$-- Devops     // Vijay, // Suraj, // Vikram  // sekhar amara
+3- Sanjay demo // 600$ -- QA, Autamation
+7- Ravali // 600$ // Angular/ React // Kush (for reactJS) // amit kumar (For Angular) // Retesh (for reactJS) // Lendra (For Angular) //
+
+6- Sunit tiwari // 600$ - // for AngularJS // Shiavm // Rajan // Pankaj // prasad // Animesh //
+
+4- Raghu -- //  prasad // Animesh // Madhavi // 
+
+4- jyostana --- (650-700) -- java/ asp.net,devops  // Alok will proide frnd
+5- Bahvana -- 600$ --- // java EJB,spring // Lokesh //
+
+6- Sravan (600) // Divya // Puneet // Rahul (8588849530) //
+7- Suraj -- // lendra //  Abhishek // Bhavesh for automation // from 16th Sept
+8- Raghu friend for BackBoneJs //  prasad // Animesh // 
+9- lahari -- / lenendra / Nitin Bharadwaj // jay / puneet // Animesh // Bhawani //
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5- Hemanth // 700$-800$- // for production Support, // Alok // Ankush //  deepk
+4- Karthik devops // 600$ -- From wednesday AWS devops   //  // Suraj, joy, mastan // 
+
+3- Jyostana -- Puneet // Bhawani //
+
+4- Ranjith (650) --- for java -- Alok
+
+----------------------------------my Support wit Ravi----------------------------------------------------------------------------------------------------------
+
+
+1- Khan - start date is --(21,)
+2- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\
+
+
+
+
+
+
+
+
+
+
+
+
+
+

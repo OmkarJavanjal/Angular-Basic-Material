@@ -1,0 +1,81 @@
+
+every object, function, array, variable, primitive has a porototype proerty.
+
+var a=[];
+var b ={};
+var c='';
+var d =function(){};
+
+all above has prototype property.
+
+
+evey object and function have a 'prototype' property . when ever we create any thing inside the object or in function is become a part of prototype.
+
+when we create instance object of parent object then it created inside the prototype property and when we try to delete this then it not delete because delete is use to delete own proerty of the object not delete property which are inside the prototye.
+
+ var person={
+ name:'Abhinav',
+ LastName:'Singh'
+ }
+ var emp={
+ name:'jhon',
+ LastName:'Saini'
+ }
+ emp.__proto__=person;
+ console.log(emp.name);  // jhon
+
+When we try to access 'name' property from emp object then it search first inside the emp object. and if 'name' property found inside the emp object then it stop searching if not found inside the emp object then it search inside the prototype property means try to search inside the parent object.
+
+
+
+
+https://timkadlec.com/2008/01/using-prototypes-in-javascript/
+
+
+
+
+Every JavaScript object has a prototype. The prototype is also an object.All JavaScript objects inherit their properties and methods from their prototype.All JavaScript objects inherit the properties and methods from their prototype.
+
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+Person.prototype.nationality = "English";
+
+
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+Person.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+
+So what ever we create using prototype then that method and object is present in all another object which are create by constructor function.
+
+
+
+
+
+
+
+
+
+
+ 
+
+

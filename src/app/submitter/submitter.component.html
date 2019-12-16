@@ -1,0 +1,148 @@
+<p>
+  submitter works!
+</p>
+
+
+<div class="row ">
+  <button type="button" class="btn btn-danger"
+   (click)="submitter()">Submitter</button>
+</div>
+
+<div class="row ">
+  <pre>{{submitterrData|json}}</pre>
+</div>
+
+<div class="container">
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading">C.S.S.Login</div>
+      <div class="panel-body">
+        <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+        <div class="row mB25">
+        <div class="col-sm-4 right p0"><span>User ID:</span></div>
+        <div class="col-sm-8"> <input type="text"  name="userId" required></div>
+      </div>
+      <div class="row mB25">
+        <div class="col-sm-4 right p0"><span>Password: </span></div>
+        <div class="col-sm-8"> <input type="password" name="password" required></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-3 button"><button type="submit">Login</button></div>
+        <div class="col-sm-9 button centre"> <button type="button" class="cancelbtn">Cancel</button></div>
+      </div>
+        </div>
+        <div class="col-sm-3"></div>
+        </div>         
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading">CSS Main Menu</div>
+      <div class="panel-body">
+        <div class="mB25 cssHeader centre"><span>C.S.S.</span></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 padding0">
+        <div class="row mB10">
+            <div class="col-sm-6"> <span class="glyphicon glyphicon-print pR20"></span><span>Invoice Recap Processing</span></div>
+            <div class="col-sm-6"><span class="glyphicon glyphicon-search pR20"></span> <span>Salescheck Inquiry</span></div>
+          </div>  
+          
+          <div class="row mB10">
+              <div class="col-sm-6"> <span class="glyphicon glyphicon-print pR20"></span><span>Invoice Recap Inquiry</span></div>
+              <div class="col-sm-6"><span class="glyphicon glyphicon-search pR20"></span> <span>Salescheck Maintenance</span></div>
+          </div> 
+  
+            <div class="row mB10">
+                <div class="col-sm-6"> <span class="glyphicon glyphicon-print pR20"></span><span>COmpleted Recap Summary</span></div>
+                <div class="col-sm-6"><span class="glyphicon glyphicon-search pR20"></span> <span>Administrative Functions</span></div>
+              </div> 
+  
+              <div class="row mB10">
+                  <div class="col-sm-6"> <span class="glyphicon glyphicon-print pR20"></span><span>Manual Recap Audit</span></div>
+                  <div class="col-sm-6"><span class="glyphicon glyphicon-search pR20"></span> <span>CSS Reports</span></div>
+                </div> 
+  
+  
+                <div class="row mB10">
+                    <div class="col-sm-6"> <span class="glyphicon glyphicon-print pR20"></span><span>Contractor Inquiry and Updates</span></div>
+                  </div> 
+                  <div class="row mB10">
+                      <div class="col-sm-6"> <span class="glyphicon glyphicon-print pR20"></span><span>Proce Quote Creation</span></div>
+                      <div class="col-sm-6"><span class="glyphicon glyphicon-search pR20"></span> <span>Price Quote Lookup</span></div>
+                  </div>
+              
+        <div class="mT20 centre">
+              <span class="glyphicon glyphicon-print pR20"></span><span>Exit CSS</span>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Window-w_sales_check_inquiry</div>
+        <div class="panel-body">
+          <div class="col-sm-12 padding0 gray dotted">
+              <fieldset class="scheduler-border">
+                  <legend class="scheduler-border">Search By</legend>
+                  <div class="control-group">
+                      <div class="controls bootstrap-timepicker">
+                          <div class="row">
+                              <div class="col-sm-5">
+                                  <div class="row">
+                                      <div class="col-sm-4 p0"><span>Salescheck Number </span></div>
+                                      <div class="col-sm-8"> <input type="text"></div>
+                                  </div>   
+                                  <div class="row">
+                                      <div class="col-sm-4 p0"><span>Customer Name </span></div>
+                                      <div class="col-sm-8"> <input type="text"></div>
+                                  </div>                              
+                              </div>
+
+                              <div class="col-sm-5">
+                                  <div class="row">
+                                      <div class="col-sm-6  right p0"><span>Customer Phone Number </span></div>
+                                      <div class="col-sm-6"> <input type="text"></div>
+                                  </div>                                
+                              </div>
+                                <div class="col-sm-2 mT6">
+                                    <div class="col-sm-12 button centre mB10"> <button type="button" class="cancelbtn">Search</button></div>
+                                    <div class="col-sm-12 button centre clear"> <button type="button" class="cancelbtn">Clear</button></div>
+                                </div>
+                             
+                            </div>
+                      </div>
+                  </div>
+              </fieldset>
+        </div>
+
+        <div class="col-sm-12 padding0  height50">
+
+        </div>
+        <div class="col-sm-12 padding0  height50">
+
+        </div>
+        <div class="col-sm-12 padding0 pT10 gray bottomBox">
+            <div class="col-sm-6 button  mB10"> <button type="button" class="cancelbtn">Cancel Salescheck</button></div>
+            <div class="col-sm-6 button rightBox clear"> <button type="button" class="cancelbtn">Close</button></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  

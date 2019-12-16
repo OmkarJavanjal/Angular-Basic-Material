@@ -1,0 +1,119 @@
+<h3>---------------------------------------------------------------------------------------------</h3>
+<div class="row"><button (click)="navigateMain()">Navigate on mainBox Page</button></div> 
+   Name: {{writerName}}
+   <!--<br/>Latest Book: {{book?.bookId}} - {{book?.bookName}}{{latestBook}}-->
+   <p  bookId="1" bookName="Java 8 Tutorials" *ngIf="latestBook">Java 8 Tutorials</p>
+  <p  bookId="2" bookName="Learning Angular 4" *ngIf="!latestBook">Learning Angular 4</p>
+  <br/><button (click)="onChangeBook()">Change Book</button> 
+
+
+<h3>---------------------------------------------------------------------------------------------</h3> 
+   
+   <h3>@ViewChildren using Directive</h3>
+    <p appPanedirective id="1">appPanedirective--1  </p>
+    <p appPanedirective id="2">appPanedirective--2</p>
+    <p appPanedirective id="3" *ngIf="shouldShow">appPanedirective--3</p>  
+    <button (click)="show()">Show 3</button>     
+    <!--<div>panes: {{serializedPanes}}</div>-->
+
+<h3>---------------------------------------------------------------------------------------------</h3>
+    <h3>@ViewChild with Template Variable using ElementRef to access Native Element </h3>
+    <div>
+       Name: <input type="text" #name> <br/>
+       City: <input type="text" #city>  
+    </div> 
+    
+<h3>---------------------------------------------------------------------------------------------</h3>
+    <h3>@ViewChild using Directive</h3>
+    Color Example:
+    <div appViewcolordirective>
+        Change my Color
+        <p>Abhinav Snigh
+            <span>Rakesh Singh</span>
+        </p>
+    </div>
+    <div>
+      Change Color:
+      <input type="radio" name="rad" (click)= "changeColor('green')"> Green
+      <input type="radio" name="rad" (click)= "changeColor('cyan')"> Cyan
+      <input type="radio" name="rad" (click)= "changeColor('blue')"> Blue
+    </div> 
+<h3>-------------------------------------------------------------------------------------------</h3>
+    
+    <div>
+        Show message after
+        <input type="radio" name="rad2" (click)= "showCpDelay= true; delayInSec = 2000"> 2 Seconds
+        <input type="radio" name="rad2" (click)= "showCpDelay= true; delayInSec = 5000"> 5 Seconds
+        <input type="radio" name="rad2" (click)= "showCpDelay= true; delayInSec = 7000"> 7 Seconds
+      </div>
+      <br/>
+      <div *appIfdirective="showCpDelay">
+         <div *appDelydirective="delayInSec">
+            <b> Hello cpDelay Directive. </b>	     
+         </div>
+      </div> 
+
+
+<h3>------------------------------------------------------------------------------------</h3>
+    
+    <ul>
+        <li *appLoopdirective="5" >
+            Hello World!
+        </li> 
+   </ul>
+
+<h3>------------------------------------------------------------------------------------</h3>
+<div>
+    <input type="radio" name="rad1" (click)= "showCpIf= true"> True
+    <input type="radio" name="rad1" (click)= "showCpIf= false"> False
+  </div>
+  <br/>
+
+  <div *appStructuraldirective="showCpIf">
+    <b>Hello cpIf Directive.</b>
+  </div>
+
+
+<h3>------------------------------------------------------------------------------------</h3>
+
+<h1 appDirectiveEventEmitter myHidden=true>Hidden Welcome</h1>
+<button type="button" class="btn" (click)="checkEvent('Abhinav')">Click me !! 
+    <span class="glyphicon glyphicon-send"></span></button>
+<h2>messagesEmit---- {{messagesEmit}}</h2>
+<h2>message=>>>{{messages}}</h2>
+<p appDirectiveEventEmitter cpColor="red"> cpDefaultTheme Directive Demo</p>
+<div class="row">
+    <h4>Enter any number</h4>
+<input type="text" id="prime"  placeholder="Enter any number" (keyup)=getAllPrimes($event) />
+</div>
+<div id="result"></div>
+<div class="row">
+   <h4>Search Student Details</h4>
+</div>
+<div class="container-1 row">
+   <span class="icon"><i class="glyphicon glyphicon-search"></i></span>
+ <input type="search" id="search"  placeholder="Search...." (keyup)=onSearchType($event) />
+</div>
+<ul *ngIf="results">
+   <li *ngFor="let result of results | slice:0:9">
+      <a href="{{ result.country }}" target="_blank">
+      {{ result.country }}
+      </a>
+   </li>
+</ul>
+<div class="row">
+   <h4>Search  by Typeahead inside a form</h4>
+</div>
+<pre class="card card-block card-header">Model: {{results2 | json}}</pre>
+<div class="container-1 row">
+<input id ="search2" [(ngModel)]="selected" (keyup)=onkeyUps($event)
+[typeahead]="states"
+class="form-control">
+</div>
+<ul *ngIf="results">
+   <li *ngFor="let result of results2 | slice:0:9">
+      <a href="{{ result.country }}" target="_blank">
+      {{ result.country }}
+      </a>
+   </li>
+</ul>

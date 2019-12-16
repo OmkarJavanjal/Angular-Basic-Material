@@ -1,0 +1,130 @@
+
+<button type="button" class="btn btn-primary" (click)="showModal()">Render auto-shown modal</button>
+<div *ngIf="isModalShown" [config]="{ show: true }" (onHidden)="onHidden()" bsModal #autoShownModal="bs-modal"
+     class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-auto-name">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-auto-name" class="modal-title pull-left">Auto shown modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>I am a modal that is shown right after initialization!</p>
+        <p>I wasn't present in DOM until you clicked the button</p>
+        <p>When you close me, I'll be removed from the DOM</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<h4>-----------**************erere******----------------------------------------------------------</h4>
+
+
+-----{{view}}
+
+<div class="row" *ngIf="view==='step1'">
+        <span class="my-element">This is :MAP</span>
+    <app-tab></app-tab>
+</div>
+<div class="row" *ngIf="view==='step2'">
+        <span class="my-element">This is :Split</span>
+    <app-tab></app-tab>
+</div>
+<div class="row" *ngIf="view==='step3'">
+        <span class="my-element">This is :grid</span>
+    <app-tab></app-tab>
+</div>
+
+
+<h4>-----------**************erere******----------------------------------------------------------</h4>
+
+
+
+
+
+
+
+
+
+
+
+<i class="fa fa-spinner fa-spin fa-fw"></i>
+<h4>-----------**************erere******----------------------------------------------------------</h4>
+<span class="my-element">This is : {{searchResult|json}}</span>
+<button type="button" class="btn btn-success">Submit 
+        <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+<br/>
+<span class="my-element">This is ffdww: {{ffdww|json}}</span>
+<span [textContent]="addata"></span>
+<h4>-----------********************----------------------------------------------------------</h4>
+<div>
+    <div>
+        <input [(ngModel)]="inputValue" />
+    </div>
+    <div>
+        <button #myButtonChild>Click me</button>
+    </div>
+  </div>
+
+/***************************************************************************/
+<div>
+  <div>
+      <input [(ngModel)]="inputValue" />
+  </div>
+  <div *ngIf="inputValue">
+      <button #myButton>Click me</button>
+  </div>
+</div>
+
+<h4>-----------********************----------------------------------------------------------</h4>
+<h2 #title class="heading">Choose Brand Colors:</h2>
+
+<div class="row">
+  <app-input-box [inputTypeText]='inputTypeText' [maxlength]='maxlength' 
+  [minlength]='minLength' [inputId]='inputId' [inputPlaceHolder]='placeHolder'></app-input-box>
+
+  <input type="text" [(ngModel)]="myModel" (blur)="onBlurMethod($event.target.value)">
+</div>
+
+
+<h4>-----------********************----------------------------------------------------------</h4>
+<div class="row  " style="padding-left: 15px;padding-right: 15px;border: 2px solid gray;"  >
+    <div class="col-xs-10 rightBox" style="border: 1px solid green;background: red;" #mainBox>
+      <app-right-box [titleData]='childTitleData'></app-right-box>
+    </div>
+    <div class="col-xs-2 left" [style.height.px]="viewHeight" >
+      <app-left-box [title]='childTitle' [studentDetails]='studentData' class="left" labelSize="regular" textColor="red"
+      (myEvent)="anyParentMehtod($event)" (myEventData)="getStudentsId($event)" (sendData)="sendDataSibLing($event)"
+      (sendProductId)="getProductId($event)" [getProductDatas]="userProductData" (update)="countChange($event)"></app-left-box>
+    </div>
+</div>
+
+<div class="row">
+    Data received by shared service using BehaviorSubject -: {{shardeDataValue|json}}
+</div>
+<div class="row">
+    Message come from child component using shared service concept using BehaviorSubject -: {{shardeDatamessage}}
+</div>
+<div class="row">
+  Message come from child component-: {{message}}
+</div>
+<br><br>
+<div class="row">
+  Inter Integer Only with no space2: 
+
+  <input type="text" name="firstName" (keypress)="onlyNumber($event)"  [(ngModel)]="integerValue">  <br>
+  Inter Integer Only with no space3: 
+  <input type="text" name="firstName" (ngModelChange)="onlyNumber($event)" maxlength="3"
+   [(ngModel)]="integerValueChange">
+  <br>
+  Inter Text only with no space: <input type="text" name="firstName" appOnlyString="true" maxlength="3"><br>
+  Inter integer and decimal with two digit only with no space: <input type="text" name="price"><br> 
+</div>
+

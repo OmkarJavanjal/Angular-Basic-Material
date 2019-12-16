@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>FOS-AOI Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+        <ul id="menu1" class="degree">              
+                <li><a href=""  target="_blank">Bachelor</a></li>
+                <li><a href="" target="_blank">Master</a></li>
+        </ul>
+        <ul id="menu2" class="option">              
+                <li><a href="" target="_blank">Business</a></li>
+                <li><a href=""  target="_blank">Business Program</a></li>
+        </ul>
+        <ul id="menu3" class="topic">              
+                <li><a href=""  target="_blank">Accounting</a></li>
+                <li><a href=""  target="_blank">Enterprice</a></li>
+        </ul>
+
+   <script>  
+   $(document).ready(function(){
+    var params = {};
+    var degree;
+    var option;
+    $("ul.degree li a").click(function() {      
+       degree =  this.innerHTML;
+       params[degree]={};
+    });
+
+    $("ul.option li a").click(function() {        
+        option = this.innerHTML;
+        params[degree][option]=[];
+    });
+    $("ul.topic li a").click(function() {
+        params[degree][option].push(this.innerHTML);   
+        updateURL(this,params);
+    });
+   
+
+
+   })
+
+   function updateURL(ss,params) {
+    sessionStorage.setItem('data', JSON.stringify(params));
+    $(ss).attr('href','file:///C:/Abhinav%20Accenture/angularPocFinal/student-data/angular2pocproject/student-data/src/app/javascript/srujana/FOS-AOI.html');
+  }
+
+   </script>         
+</div>
+</body>
+</html>

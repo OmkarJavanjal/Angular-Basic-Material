@@ -1,0 +1,49 @@
+2018-06-26 18:42:13 INFO  BOMFBLAppGenericImpl:237 AKOTHA_29- Logged in user - AKOTHA - Entering Login , CDSID - akotha Hostname : WGC1W73KDXF72.pd3.ford.com:country: USA city of the user: DEARBORN
+2018-06-26 18:43:54 INFO  BOMFBLAppGenericImpl:237 PVULPALA_96- Logged in user - PVULPALA - Entering Login , CDSID - pvulpala Hostname : WGC1W76L4FV52.itek.ford.com:country: USA city of the user: DEARBORN
+2018-06-26 18:44:27 INFO  BOMFBLAppGenericImpl:237 - Logged in user - skuldeep - Entering getFMSTickets, Programs - [Struct_PlantIntents, Struct_ServiceIntents, Struct_CPSCImport]
+2018-06-26 19:51:49 INFO  BOMFBLAppGenericImpl:237 AVISWAN9_76- Logged in user - AVISWAN9 - Entering Login , CDSID - aviswan9 Hostname : WGC110FMDD3H2.itek.ford.com:country: USA city of the user: DEARBORN
+2018-06-27 02:32:18 INFO  BOMFBLAppGenericImpl:237 SRANGAN8_60- Logged in user - SRANGAN8 - Entering Login , CDSID - srangan8 Hostname : WGC10069H9H32.chennai.ford.com:country: IND city of the user: CHENNAI
+
+   {
+    "timestamp":"2018-06-26 18:42:13",
+    "info":"BOMFBLAppGenericImpl:237 AKOTHA_29",
+    "loggedInUser ":"AKOTHA",
+    "CDSID":"akotha",
+    "Hostname":"WGC1W73KDXF72.pd3.ford.com",
+    "country":"USA",
+    "city":"DEARBORN",
+   },
+   {
+    "timestamp":"2018-06-26 18:43:54",
+    "info":"BOMFBLAppGenericImpl:237 PVULPALA_96",
+    "loggedInUser ":"PVULPALA",
+    "CDSID":"pvulpala",
+    "Hostname":"WGC1W76L4FV52.itek.ford",
+    "country":"USA",
+    "city":"DEARBORN",
+   },
+   {
+    "timestamp":"2018-06-26 18:44:27",
+    "info":"BOMFBLAppGenericImpl:237",
+    "loggedInUser ":"skuldeep",
+    "Programs":"[Struct_PlantIntents, Struct_ServiceIntents, Struct_CPSCImport]",
+    "Hostname":"WGC1W76L4FV52.itek.ford",
+   },
+   {
+    "timestamp":"2018-06-26 19:51:49",
+    "info":"BOMFBLAppGenericImpl:237 AVISWAN9_76",
+    "loggedInUser ":"AVISWAN9",
+    "CDSID":"aviswan9",
+    "Hostname":"WGC110FMDD3H2.itek.ford.com",
+    "country":"USA",
+    "city":"DEARBORN",
+   },
+   {
+    "timestamp":"2018-06-27 02:32:18",
+    "info":"BOMFBLAppGenericImpl:237 SRANGAN8_60",
+    "loggedInUser ":"SRANGAN8",
+    "CDSID":"srangan8",
+    "Hostname":"WGC10069H9H32.chennai.ford.com",
+    "country":"IND",
+    "city":"CHENNAI",
+   }

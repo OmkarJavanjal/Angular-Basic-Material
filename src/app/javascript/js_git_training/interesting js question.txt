@@ -1,0 +1,15 @@
+console.log(undefined); //undefined
+console.log(!undefined); //true
+console.log(!!undefined); //false
+
+console.log(null); //null
+console.log(!null); //true
+console.log(!!null); //false
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+1- Print all prime number between 1 to 100 by javascript
+
+2- Febonomic series using JS.
+

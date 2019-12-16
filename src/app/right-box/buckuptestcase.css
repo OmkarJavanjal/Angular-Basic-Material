@@ -1,0 +1,259 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { RouterTestingModule } from '@angular/router/testing';
+import { RightBoxComponent } from './right-box.component';
+import {
+    Component,
+    OnInit,
+    TemplateRef,
+    ViewContainerRef,
+    ElementRef,
+    AfterViewChecked,
+    ViewChild,
+    Directive,
+    Input,
+    Output,
+    EventEmitter,
+    CUSTOM_ELEMENTS_SCHEMA
+} from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { routes } from '../routing/app-routing.module';
+import { StudentRegistrationComponent } from '../student-registration/student-registration.component';
+import { StudentUpdateComponent } from '../student-update/student-update.component';
+import { StudentDetailsComponent } from '../student-details/student-details.component';
+import { StudentLoginComponent } from '../student-login/student-login.component';
+import { SearchStudentComponent } from '../search-student/search-student.component';
+import { SearchProductDetailsComponent } from '../search-product-details/search-product-details.component';
+import { LogdinUserDetailComponent } from '../logdin-user-detail/logdin-user-detail.component';
+import { LogoutComponent } from '../logout/logout.component';
+import { CountryComponent } from '../country/country.component';
+import { TimerCountComponent } from '../timer-count/timer-count.component';
+import { ControlMessagesComponent } from '../control-messages/control-messages.component';
+import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
+import { ModalcomponentComponent } from '../modalcomponent/modalcomponent.component';
+import { TypeaheadComponent } from '../typeahead/typeahead.component';
+import { SetframeComponent } from '../setframe/setframe.component';
+import { FrameInfoComponent } from '../frame-info/frame-info.component';
+import { LeftBoxComponent } from '../left-box/left-box.component';
+import { MainBoxComponent } from '../main-box/main-box.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead/typeahead.module';
+import { DelydirectiveDirective } from '../directive/delydirective.directive';
+import { IfdirectiveDirective } from '../directive/ifdirective.directive';
+import { LoopdirectiveDirective } from '../directive/loopdirective.directive';
+import { StructuraldirectiveDirective } from '../directive/structuraldirective.directive';
+import { StudentService } from '../service/student.service';
+import { StudentServiceMock } from '../service/student.service.mock';
+import { JavascriptComponent } from '../javascript/javascript.component';
+import { StockshareComponent } from '../stockshare/stockshare.component';
+fdescribe('RightBoxComponent', () => {
+    let component: RightBoxComponent;
+    let fixture: ComponentFixture<RightBoxComponent>;
+    let location: Location;
+    let router: Router;
+
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
+            imports: [
+                RouterTestingModule.withRoutes(routes),
+                FormsModule,
+                ReactiveFormsModule,
+                TypeaheadModule.forRoot(),
+            ],
+            declarations: [
+                StudentLoginComponent,
+                StudentRegistrationComponent,
+                StudentDetailsComponent,
+                StudentUpdateComponent,
+                PagenotfoundComponent,
+                SearchStudentComponent,
+                ControlMessagesComponent,
+                SearchProductDetailsComponent,
+                LogdinUserDetailComponent,
+                LogoutComponent,
+                TimerCountComponent,
+                CountryComponent,
+                TypeaheadComponent,
+                ModalcomponentComponent,
+                SetframeComponent,
+                FrameInfoComponent,
+                LeftBoxComponent,
+                RightBoxComponent,
+                MainBoxComponent,
+                DelydirectiveDirective,
+                IfdirectiveDirective,
+                LoopdirectiveDirective,
+                StructuraldirectiveDirective,
+                JavascriptComponent,
+                StockshareComponent
+
+            ],
+            providers: [
+                { provide: StudentService, useClass: StudentServiceMock }
+            ]
+        })
+            .compileComponents();
+    }));
+
+    beforeEach(() => {
+        fixture = TestBed.createComponent(RightBoxComponent);
+        component = fixture.componentInstance;
+
+        fixture.detectChanges();
+    });
+
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
+
+    it('disableFlag should be false', () => {
+        let disableFlag: boolean = false;
+        expect(component.disableFlag).toBeFalsy();
+    });
+
+    it('should have filterDepthData', () => {
+        //expect(component.filterDepthData[name]).toEqual("depth1");
+        expect(component.hasOwnProperty('filterDepthData')).toBeTruthy();
+    });
+
+    it('should create filterDepthData Array Data', () => {
+        //expect(component.filterDepthData[name]).toEqual("depth1");
+        expect(component.filterDepthData[0]['name']).toContain("depth1");
+    });
+
+    it('should call method : onFilterDepthChange()', () => {
+        let name = { name: "Allowance1" };
+        let selectedFilterDepth;
+        let filterData = [];
+        component.onFilterDepthChange(name);
+        expect(component.selectedFilterDepth).toEqual(name);
+        expect(component.filterData[0]).toEqual(name);
+        expect(component.filterData.length).toBe(3);
+    });
+    it('should call method : onFilterAllowanceChange()', () => {
+        let name = { name: "depth1" };
+        let selectedAllowanceDepth;
+        let filterData = [];
+        component.onFilterAllowanceChange(name);
+        expect(component.selectedAllowanceDepth).toEqual(name);
+        expect(component.filterData[0]).toEqual(name);
+        expect(component.filterData.length).toBe(3);
+    });
+    it('should call method : onVelocityChange()', () => {
+        let name = { name: "depth1" };
+        let selectedfilterVelocity;
+        let filterData = [];
+        component.onVelocityChange(name);
+        expect(component.selectedfilterVelocity).toEqual(name);
+        expect(component.filterData[0]).toEqual(name);
+        expect(component.filterData.length).toBe(3);
+    });
+    it('should call if part : canCounterIncrement()', () => {
+        component.canCounterIncrement();
+    });
+    it('should call else part : canCounterIncrement()', () => {
+        let maxValue = undefined;
+        component.canCounterIncrement();
+    });
+    it('should call if part : canCounterDecrement()', () => {
+        component.canCounterDecrement();
+    });
+    it('should call else part: canCounterDecrement()', () => {
+        let minQuantity = undefined;
+        component.canCounterDecrement();
+    });
+    it('should call if part  : increment() ', () => {
+        component.canIncrement = true;
+        component.increment();
+        expect(component['counterValue'].hasOwnProperty('invoiceNo')).toBeTruthy();
+    });
+    it('should check else block of incrementQty', () => {
+        let respObj = {
+            "product": "CPL PREMIER SUB PKG",
+            "productDescription": "CPL - Premier Subscription Package",
+            "startDate": "2018-08-20T00:00:00",
+            "endDate": "2019-08-19T00:00:00",
+            "renewalType": 0,
+            "totalPrice": 300,
+            "quantity": 2,
+            "productId": "PREW",
+            "productTaxCode": "180510",
+            "taxAmount": "0",
+            "shippingAmount": "0",
+            "discountPercent": "0",
+            "incrementBy": 0,
+            "itemPrice": 300,
+            "invoiceNo": "16546798",
+            "lineItemID": "16546798-PREW-1"
+        };
+        component.incrementQty(respObj);
+    });
+    it('should check else block of incrementQty', () => {
+        let counterValue = {
+            "product": "CPL PREMIER SUB PKG",
+            "productDescription": "CPL - Premier Subscription Package",
+            "startDate": "2018-08-20T00:00:00",
+            "endDate": "2019-08-19T00:00:00",
+            "renewalType": 0,
+            "totalPrice": 300,
+            "quantity": 2,
+            "productId": "PREW",
+            "productTaxCode": "180510",
+            "taxAmount": "0",
+            "shippingAmount": "0",
+            "discountPercent": "0",
+            "incrementBy": 2,
+            "itemPrice": 300,
+            "invoiceNo": "16546798",
+            "lineItemID": "16546798-PREW-1"
+        };
+        // Installs our spy
+const spy = spyOnProperty(component, 'counterValue').and.callThrough();
+// Here we expect 'John Doe', what the real method returns.
+
+// Still we can assert calls on spy
+expect(spy).toHaveBeenCalled();
+        //component.counterValue['quantity'] = 4;
+        component.decrementQty(counterValue);
+    });
+    it('should call else part  : increment() ', () => {
+        let canIncrement: boolean = false;
+        component.increment();
+    });
+    it('should call if part : decrement()', () => {
+
+    });
+    it('should call else part  : decrement()', () => {
+        component.canIncrement = true;
+        component.counterValue['quantity'] = 5;
+        component.decrement();
+        expect(component['counterValue'].hasOwnProperty('invoiceNo')).toBeTruthy();
+    });
+
+    it('should check else block of incrementQty SPY', () => {
+        let counterValue = {
+            "product": "CPL PREMIER SUB PKG",
+            "productDescription": "CPL - Premier Subscription Package",
+            "startDate": "2018-08-20T00:00:00",
+            "endDate": "2019-08-19T00:00:00",
+            "renewalType": 0,
+            "totalPrice": 300,
+            "quantity": 2,
+            "productId": "PREW",
+            "productTaxCode": "180510",
+            "taxAmount": "0",
+            "shippingAmount": "0",
+            "discountPercent": "0",
+            "incrementBy": 2,
+            "itemPrice": 300,
+            "invoiceNo": "16546798",
+            "lineItemID": "16546798-PREW-1"
+        };
+const spy = spyOnProperty(component, 'counterValue').and.callThrough();
+expect(spy).toHaveBeenCalled();
+expect(component['counterValue'].hasOwnProperty('invoiceNo')).toBeTruthy();    
+    });
+});

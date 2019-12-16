@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label formArrayName="orders" *ngFor="let order of form.controls.orders.controls; let i = index">
+    <input type="checkbox" [formControlName]="i" [(ngModel)]='orders[i].isCheck' 
+     [checked]="orders[i].isCheck" (change)="changeCheck(orders[i])"
+  >
+    {{orders[i].name}}
+  </label>
+  <button [disabled]="!form.valid">submit</button>
+</form>
+
+<form [formGroup]="form2" (ngSubmit)="submit2()">
+  <label formArrayName="orders2" *ngFor="let order of form2.controls.orders2.controls; let i = index">
+    <input type="checkbox" [formControlName]="i" [(ngModel)]='orders2[i].isCheck' 
+     [checked]="orders2[i].isCheck" (change)="changeCheck2(orders2[i])"
+  >
+    {{orders2[i].name}}
+  </label>
+</form>

@@ -1,0 +1,43 @@
+
+In case of obect we create key-value pair to store data. And object is call by reference 
+
+We can create object with two way-
+
+1-object literal:--- If we want to that value of property is not change
+dyanmicaly then in that case we can create object using object literal.
+
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+
+2- Constructor function-- 
+
+Sometimes we like to have an "object type" that can be used to create many objects of one type.
+
+The standard way to create an "object type" is to use an object constructor function:
+
+
+if we want that value of property is change dynamice.we can create multiple obect with same property name then in that case we have to use constructor function to create object.
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+var myFather = new person("John", "Doe", 50, "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+
+ here we create two object myFather and myMother object with same proerty name but with different vslue.
+
+
+Deleting Properties----
+The delete keyword deletes a property from an object:
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+delete person.age;   // or delete person["age"]; 
+
+JavaScript objects inherit the properties of their prototype.
+The delete keyword does not delete inherited properties, but if you delete a prototype property, it will affect all objects inherited from the prototype.
+
+Every JavaScript object has a prototype. The prototype is also an object.
+
+All JavaScript objects inherit their properties and methods from their prototype.
+

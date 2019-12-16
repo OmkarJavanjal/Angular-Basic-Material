@@ -1,0 +1,247 @@
+Creating Object- There are two common ways to create objects;
+1-Object Literals-
+
+var mango = {color: "yellow",shap:'circle'} // in it we can store only hard coded value not dynamic so to remove this we have to use constructor function.
+
+2-Object Constructor-- 
+
+If you want to create multile object with same property and method name.then in that case you have to create Constructor function.and by using Constructor function we can create multiple obect with same property and method name. And inside the Constructor function we use 'this' keyword which are use to find current object. And 'new' keyword is use to create object from Constructor function.
+
+var padawan = {name: 'anakin', age: 9}   //Object Literals
+
+After creating my first object I quickly realized I would need a way to construct them consistently. I didn't want each object to have a name and age hard coded, so I decided to look around the javascript community for some type of constructor. And it turns out javascript does have a basic constructor.
+
+var padawan = function(name, age) {this.name = name; this.age = age;}
+
+The only thing you need to be aware of is how you invoke this function. To create a new javascript object when you invoke it you need to use the new keyword like so.
+
+var anakin = new padawan('anakin', 9);  // we create  anakin object
+
+When you use the new keyword, the constructor function will create a new object and set 'this' inside the function so that new object and return it. and inside the Constructor function we can use three type of variable and method. private variable,public variable, private method, privalige method.
+
+function Animal() {
+var d=50; // private variable
+function sleep2() {   // this is private method
+       console.log(d);
+    };
+    this.a=20; // public variable
+    this.sleep = function () {  // privalage method
+       console.log(this.a);
+    };
+}
+var data1=new Animal(); //and this is replace with data1
+var data2=new Animal();
+var data3=new Animal();
+
+NOTE- 	the object which are created by Constructor function can only access the public variable and previlage method.not access the private variable and private method directly. and to access it first pass private variable and private method into privalage method then use privalage method to call private variable and private method.
+
+SO if we create Constructor function as a above example then it is a draback because when we create multiple object from Constructor function then that Constructor create copy for all new created object. suppose we create 3 new object from the Constructor function then Constructor function create three copy for all three new object so it take more memory space.So remove this draback we use prototype.
+
+SO prototye is the best way to create cunstructor function. we can create cunstructor function without using prototype only when we need to create private variable or private method name.
+
+Prototype--- One of the big benefits of using the objects prototype is that we have just one copy of that function for every object we create.IT means it create only single copy and use it multile object.
+
+And if we want that add more property and method into Animal constructor function without modify it then we have to use prototype method. And when we use  prototype method  to add property or method into Animal constructor method then  all property and method  which are created by using prototype are automatic added into all those object which are created by  using  Animal constructor function  using 'new' keyword.
+
+Prototypes are implemented in javascript using the prototype property of constructor functions. Any property or method that’s added to the constructor’s prototype automatically becomes part of every object created by that constructor function.
+
+The practical reason why this is important is sharing single a method between all objects uses less memory than having a separate copy for each object. This can be a big advantage when working on a complicated web application with lots of objects.
+
+The javascript object prototype also enables you use some interesting coding patterns like inheritance
+Prototype chaining is used to build new types of objects based on existing ones. It has a very similar job to inheritance in a class based language.
+
+
+The prototype property is used primarily for inheritance; you add methods and properties on a function’s prototype property to make those methods and properties available to instances of that function.
+
+
+
+
+
+
+
+/************COde without using prototye*******************************/
+example 1--
+
+function Animal() {
+        this.a=20;
+        this.b=40;
+        this.sleep = function () {
+            console.log(this.a);
+             };
+      }
+var data1=new Animal(); //and 'this' is replace with data1
+var data2=new Animal();//and 'this' is replace with data2
+var data3=new Animal();//and 'this' is replace with data3
+
+/************COde using prototye*******************************/
+example  2--
+
+function Animal() {
+//code here
+var d=30; // this is private variable
+}
+Animal.prototype.a=20; // this is public variable
+Animal.prototype.b=40; // this is public variable
+Animal.prototype.sleep=function(){ // this privilage method
+	console.log(this.a);
+};
+var data1=new Animal(); //and this is replace with data1
+var data2=new Animal();
+var data3=new Animal();
+
+in the first example you're creating a and b public variable for each new instance. In the second example there's only one a and b public variable which is shared amongst all the instances.
+
+
+In this case the second method is better, but it's good to know when to use the first method and when to use the second. A little bit of theory first:
+
+Note: There are four kinds of variables in JavaScript - private, public, shared and static.
+Private variables are inaccessible outside of the function in which they are defined. For example:
+
+1- private variable--
+function f() {
+    var x; // this is a private variable and it is not accessable out side the function
+}
+
+2- public variable--
+Public variables are defined on the this object inside a function. For example:
+function f() {
+    this.x; // this is a public variable
+}
+
+3- Shared variables -- it is best way to create variable and method because it create one coy for all new created object.
+Shared variables are shared on the prototype of the function. For example:
+function f() {}
+f.prototype.x; // this is a shared variable
+
+4- Static variables --- Static variables are properties of the function itself. For example:
+function f() {}
+
+f.x; // this is a static variable
+
+Most often it's best to declare the methods of a constructor function as shared methods since all instances of the constructor share them. However if your method needs to access a private variable then it must be declared as a public method itself.
+
+
+Public-- The members of an object are all public members. Any function can access, modify, or delete those members, or add new members. There are two main ways of putting members in a new object:
+
+   Inside the constructor function--  This technique is usually used to initialize public instance variables. The constructor's this variable is used to add members to the object.
+function Container(){
+    this.member = 20;  //member is a public variable
+}
+
+
+By using In the prototype-- This technique is usually used to add public methods. When a member is sought and it isn't found in the object itself, then it is taken from the object's constructor's prototype member. The prototype mechanism is used for inheritance. It also conserves memory. To add a method to all objects made by a constructor, add a function to the constructor's prototype:
+
+function Container(){
+  //code here
+}
+
+Container.prototype.member = 20;
+
+
+Private---  Private members are made by the constructor. Ordinary vars and parameters of the constructor becomes the private members.
+function Container(){
+    var member = 20;  //member is a public variable
+   menFun(){ // private method
+  return member;
+  }
+}
+This constructor makes one  private variables: member, they are not accessible to the outside directly.it is accessible inside the public iner function and use this public iner function to use this private variable.
+
+function Animal() { 
+    this.member = 4;  // public variable
+    var secret = 3;  //  private variable
+    this.sleep = function () {  // public method 
+    alert(secret);   //  use private variable inside the public mrthod .we cannot use it outside the function directly call sleep method out side the function to use private variable.
+};
+}
+function Dog() {
+//code here
+}
+Dog.prototype = new Animal(); //set up inheritance relation
+var dog = new Dog(); 
+dog.sleep();  //output is    --3
+alert(dog.member);  // output is ---  4
+alert(dog.secret); // output is undefined because we cannot directly access this (secret) private variable 
+
+
+Privileged ---A privileged method is able to access the private variables and methods, and is itself accessible to the public methods and the outside. Privileged methods are assigned with this within the constructor.
+function Animal() { 
+    this.member = 4;  // public variable
+    var secret = 3;   // private variable
+    function dec() {   // this is private method. It is not directly access out side the fuction we can use it only inside the public method service. And use service method outside the main function to use dec() method.
+        if (secret > 0) {
+            secret -= 1;
+            return true;
+        } else {
+            return false;
+        }
+    }
+    this. service  = function () {  //
+    alert(secret);
+   console.log(dec()); 
+};
+}
+var animal= new Animal();
+alert(animal.service  ); 
+service is a privileged method. And use the private variable. service calls the private dec method which accesses the private secret variable. service is available to other objects and methods, but it does not allow direct access to the private members.
+
+service calls the private dec method which accesses the private secret variable. does not allow direct access to the private members(variable and method) out side the function directly. To access it use service method out side the function.
+
+
+NOTE-- This pattern of public, private, and privileged members is possible because JavaScript has closures. 
+
+
+
+
+
+One of the drawbacks of creating true private methods in JavaScript is that they are very memory-inefficient, as a new copy of the method would be created for each instance.
+
+var Employee = function (name, company, salary) {
+    this.name = name || "";       //Public attribute default value is null
+    this.company = company || ""; //Public attribute default value is null
+    this.salary = salary || 5000; //Public attribute default value is null
+
+    // Private method
+    var increaseSalary = function () {
+        this.salary = this.salary + 1000;
+    };
+
+    // Public method
+    this.dispalyIncreasedSalary = function() {
+        increaseSlary();
+        console.log(this.salary);
+    };
+};
+
+// Create Employee class object
+var emp1 = new Employee("John","Pluto",3000);
+// Create Employee class object
+var emp2 = new Employee("Merry","Pluto",2000);
+// Create Employee class object
+var emp3 = new Employee("Ren","Pluto",2500);
+Here each instance variable emp1, emp2, emp3 has its own copy of the increaseSalary private method.
+
+So, as a recommendation, don’t use private methods unless it’s necessary.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

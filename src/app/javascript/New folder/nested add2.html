@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script>
+function calculateValues(o) {
+    o.valueTotal = (o.children || []).reduce(function (r, a) {
+        calculateValues(a);				
+        return r + (a.value || 0) + (a.valueTotal || 0);
+    }, 0);
+}
+
+var names = { name: 'name-1', value: 10, valueTotal: 0, children: [{ name: 'name-1.1', value: 10, valueTotal: 0, children: [] }, { name: 'name-1.2', value: 10, valueTotal: 0, children: [{ name: 'name-1.2.1', value: 10, valueTotal: 0, children: [] }, { name: 'name-1.2.2', value: 10, valueTotal: 0, children: [{ name: 'name-1.2.2.1', value: 10, valueTotal: 0, children: [] }, { name: 'name-1.2.2.2', value: 10, valueTotal: 0, children: [] }] }] }] };
+
+calculateValues(names);
+console.log(names);
+</script>
+</body>
+</html>

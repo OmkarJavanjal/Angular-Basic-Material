@@ -1,0 +1,914 @@
+
+ <table class="table table-bordered">
+            <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Description --{{editMode}}</th>
+                  <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of serviceData;let idx = index">
+                  <td>
+                      <span *ngIf="!editMode">{{data.firstName}}</span>
+                      <input type="text" *ngIf="editMode" [(ngModel)]="data1.firstName" >
+                  </td>
+                  <td>
+                      <span *ngIf="!editMode">{{data.lastName}}</span>
+                      <input type="text" *ngIf="editMode" [(ngModel)]="data1.lastName">
+                  </td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#edit" *ngIf="!editMode" (click)="editData(data)"
+                        data-uid="1" class="update btn btn-warning btn-sm btn mr-3">
+                        <span class="fa fa-pencil">edit icon</span></button>
+                        <button type="button" data-toggle="modal" data-target="#save" *ngIf="editMode" (click)="saveData(data1)"
+                        data-uid="1" class="update btn btn-warning btn-sm btn mr-3">
+                        <span class="fa fa-pencil">save icon</span></button>
+                        <button type="button" data-toggle="modal" data-target="#delete" 
+                        data-uid="1" class="delete btn btn-danger btn-sm">
+                        <span class="fa fa-trash"></span></button>
+                    </td>
+                </tr>                                 
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+<h2>-------------------------------------------------------------------------------------</h2>
+
+<button class="btn1"
+[ngClass]="{'btn btn-transparent btn-continue': borrowers.primaryBorrflag==='Y'}" *ngFor="let borrowers of borrowerList"
+					(click)="populateDetails(borrowers)"><span class="mat-button-wrapper">
+                                    {{borrowers.firstName}}&nbsp;{{borrowers.lastName}}</span></button>
+<div class="dropdown">
+      <input type="text" [(ngModel)]="changetext" readonly>
+</div>
+
+<!-- http://jsfiddle.net/viralpatel/p499h/ -->
+
+<div class="example">
+   
+<div class="displayInline width65 hideRadio" [ngClass]="radioSelecteds ? 'activeBox' : 'deactiveBox'">
+            <input type="radio" id="radio31" name="radios" value="MI" checked (change)="changeMeter($event)">
+            <label for="radio31">Mi</label>
+</div>
+<div class="displayInline width65 hideRadio" [ngClass]="radioSelecteds ? 'activeBox' : 'deactiveBox'">
+            <input type="radio" id="radio24" name="radios"value="KM" (change)="changeMeter($event)">
+            <label for="radio24">KM</label>
+</div>
+
+
+     <!--  <div class="displayInline width65" [ngClass]="radioSelecteds ? 'activeBox' : 'deactiveBox'">
+        <input id="radi1" type="radio" name="radio" value="MI" [(ngModel)]="radioSelecteds"
+        (change)="changeMeter($event)"><label for="radi1">MI</label>
+
+      </div>
+      <div class="displayInline width65 mL" [ngClass]="radioSelected ? 'activeBox' : 'deactiveBox'">
+        <input id="radi2" type="radio" name="radio" value="KM" [(ngModel)]="radioSelected"
+        (change)="changeMeter($event)"><label for="radi2">KM</label>
+      </div> -->
+</div>
+<div class="example">
+      <div class="displayInline">
+        <input id="radio11" type="radio" name="radioo" value="3"
+        (change)="changeOptionValue($event)"><label for="radio11" 
+         >3</label>
+      </div>
+      <div class="displayInline">
+        <input id="radio22" type="radio" name="radioo" value="6" 
+        (change)="changeOptionValue($event)"><label for="radio22">6</label>
+      </div>
+      <div class="displayInline">
+        <input id="3" type="radio" name="radioo" value="9" 
+        (change)="changeOptionValue($event)"><label for="radio33">9</label>
+      </div>
+</div>
+
+
+<h3>----------------------custom radio button------------------------------------</h3>
+--isAlphanumeric-{{isAlphanumeric}}
+<input type="text" class="form-control mInputBox"
+                        id="integrationNames"
+                        name="integrationName"
+                        pattern="^[a-zA-Z0-9]+$"
+                        [(ngModel)]="integrationName"
+                        (keyup)="emailValidator($event)">
+
+<h3>----------------------custom radio button------------------------------------</h3>
+<div class="example">
+      <div>
+        <input id="radio1" type="radio" name="radio" value="1"
+         checked="checkedRadio()"><label for="radio1" (change)="selectionRadio1($event)">Option 1</label>
+      </div>
+      <div>
+        <input id="radio2" type="radio" name="radio" value="2" (change)="selectionRadio1($event)"><label for="radio2">Option 2</label>
+      </div>
+      <div>
+        <input id="radio3" type="radio" name="radio" value="3" (change)="selectionRadio1($event)"><label for="radio3">Option 3</label>
+      </div>
+</div>
+
+<h3>----------------------------------------------------------</h3>
+    <div class="row ">
+      <button type="button" class="btn btn-danger"
+       (click)="navigate()">Hide Modal</button>
+    </div>
+
+
+<h3>----------------------masking for mobile no. and add extension------------------------------------</h3>
+
+<div class="row mainBox" [ngClass]="isOpenModal ? 'backgroundGray' : 'backgroundNo'" ng-repeat="data in datas">
+  <div class="row content">
+   amet, consectetur adipisicing elit. Consectetur blanditiis repudiandae voluptatum provident 
+   quaerat fugiat tenetur. Voluptates soluta unde saepe necessitatibus mollitia culpa itaque
+    tenetur alias commodi omnis fugit corrupti!Lorem ipsum dolor sit amet, consectetur adipisicing
+    <button type="button" class="btn btn-primary"
+         (click)="showModalBox()">show modal</button>
+  </div>
+  <div class="row modals" [ngClass]="isOpenModal ? 'openModal' : 'closeModal'">
+        I'm the modal window!
+        <button type="button" class="btn btn-danger"
+         (click)="hideModalBox()">Hide Modal</button>
+      </div>
+</div>
+
+
+
+<h3>----------------------masking for mobile no. and add extension------------------------------------</h3>
+
+<div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="tel" class="form-control" id="phoneNumber" [ngModel]="phoneNumber"
+          (ngModelChange)="onPhoneNumberChangeh($event)" [maxLength]='26'>
+  </div>
+
+
+<h3>----------------------masking for mobile no. and add extension------------------------------------</h3>
+
+<p id="demo">firstData-->> {{firstData}}</p>
+<p id="demo">seconDate-->> {{seconDate}}</p>
+
+<h3>----------------------masking for mobile no. and add extension------------------------------------</h3>
+<div class="input-group">
+      <input name="mobile numaber" class="amountBox"   placeholder="965___413__2611" 
+      class="form-control" [textMask]="{mask:mask}" maxlength="26"
+      type="text" id="mobileNumber" [(ngModel)]="mobileNumber" 
+      (ngModelChange)="onPhoneNumberChange(mobileNumber)">
+   </div>
+
+
+<h3>----------------------open modal on click on button------------------------------------</h3>
+
+<label> <span class="label-stacked">Testing</span> <span class="plain-select">
+      <select class="inp"  name="test">
+                  <option value="a1">Select item 1</option>
+                  <option value="a2">Select item 2</option>
+                  <option value="a3">Select item 3</option>
+      </select>
+      </span> </label>
+
+
+<h3>----------------------open modal on click on button------------------------------------</h3>
+<button type="button" class="btn btn-primary" (click)="openModalWithComponent()">Create modal with component</button>
+<button type="button" class="btn btn-primary" (click)="getSomeClass1()">getSomeClass1</button>
+<h3>----------------------active breadcrumb active------------------------------------</h3>
+
+<span *ngIf="breadcrumbLocation" id="breadcrum">
+      <span *ngIf="breadcrumbLocation.state" (click)="onBreadcrumbClick($event)">
+            <span class="icon-right-arrow"></span>{{breadcrumbLocation.state}}</span>
+      <span *ngIf="breadcrumbLocation.city" (click)="onBreadcrumbClick($event)">
+            <span class="icon-right-arrow"></span>{{breadcrumbLocation.city}}</span>
+      <span *ngIf="breadcrumbLocation.postalCode" (click)="onBreadcrumbClick($event)">
+            <span class="icon-right-arrow"></span>{{breadcrumbLocation.postalCode}}</span>
+      <span *ngIf="breadcrumbLocation.county" (click)="onBreadcrumbClick($event)">
+            <span class="icon-right-arrow"></span>{{breadcrumbLocation.county}}</span>
+      <span *ngIf="breadcrumbLocation.text">
+            <span class="icon-right-arrow"></span>{{breadcrumbLocation.text}}</span>
+</span>
+<h3>----------------------active breadcrumb active2------------------------------------</h3>
+
+<span *ngIf="breadcrumbLocation" id="breadcrum2" (domChange)="onDomChange($event)">
+      <span *ngIf="breadcrumbLocation.state" (click)="onBreadcrumbClick($event)">
+            <span class="icon-right-arrow"></span>{{breadcrumbLocation.state}}</span>
+      <span *ngIf="breadcrumbLocation.city" (click)="onBreadcrumbClick($event)">
+            <span class="icon-right-arrow"></span>{{breadcrumbLocation.city}}</span>
+      <span *ngIf="breadcrumbLocation.postalCode" (click)="onBreadcrumbClick($event)">
+            <span class="icon-right-arrow"></span>{{breadcrumbLocation.postalCode}}</span>
+      <span *ngIf="breadcrumbLocation.county" (click)="onBreadcrumbClick($event)">
+            <span class="icon-right-arrow"></span>{{breadcrumbLocation.county}}</span>
+      <span *ngIf="breadcrumbLocation.text">
+            <span class="icon-right-arrow"></span>{{breadcrumbLocation.text}}</span>
+</span>
+<h3>----------------------Check Decimal Number------------------------------------</h3>
+<p>Check Decimal Number</p>
+
+<div class="input-group">
+      <input name="contact_no" class="amountBox"   placeholder="" (keyup)="valuechange($event)"
+       class="form-control" (keypress)="isNumber($event)"
+      type="text" id="decimal" >
+   </div>
+
+
+<div class="input-group">
+      <span class="doller">$</span> 
+</div>
+<div class="input-group">
+      <span class="doller">$</span>
+      <input name="contact_no" class="amountBox"   placeholder="00.00" (ngModelChange)="valuechange($event)"
+       class="form-control" (keypress)="isNumber($event)" appMycurrency
+      type="text" id="decimal" >
+   </div>
+   <div class="input-group">
+      <span class="doller">$</span>
+      <input name="contact_no" class="amountBox"   placeholder="00.00" 
+      class="form-control" (keypress)="isNumber($event)"
+      type="text" id="decimal" [(ngModel)]="offerAmounts" (ngModelChange)="offerAmountChanges(offerAmounts)">
+   </div>
+<div class="input-group">
+   <span class="doller">$$</span>
+   <input type="text" class="amountBox" placeholder="00.00" 
+    (blur)="eventEmitBlur(offerAmount)"
+    (keypress)="isNumber($event)" 
+    (focus)="removformate(offerAmount)" 
+    (ngModelChange)="offerAmountChange(offerAmount)"
+   [(ngModel)]="offerAmount" >
+</div>
+<h3>----------------------steps indicator------------------------------------</h3>
+<ul class="" >
+   <li [ngClass]="{active: steps==='step1'}" (click)="stepsBox('1')">Step1</li>
+   <li [ngClass]="{active: steps==='step2'}"  (click)="stepsBox('2')">Step2</li>
+   <li [ngClass]="{active: steps==='step3'}" (click)="stepsBox('3')">Step3</li>
+   <li [ngClass]="{active: steps==='step4'}"  (click)="stepsBox('4')">Step4</li>
+   <li [ngClass]="{active: steps==='step5'}" (click)="stepsBox('5')">Step5</li>
+</ul>
+<div *ngIf="steps==='step1'">
+   <div class="row">
+      <form [formGroup]="step1Form" class="form-group" (ngSubmit)="submitdataStep1()">     
+      <input name="contact_no" placeholder="(639)" class="form-control" type="text" 
+         formControlName = "mobileNo">  
+      <app-next [count]="count" [isDisabled] = "!step1Form.valid" (click)="nextStep()"></app-next>
+      </form>
+   </div>
+</div>
+<div *ngIf="steps==='step2'">
+   <div class="row">
+      <form [formGroup]="step2Form" class="form-group" (ngSubmit)="submitdataStep2()">     
+      <input name="firstName" placeholder="Enter First Name" class="form-control" type="text"  
+         formControlName = "firstName">  
+      <app-next [count]="count" [isDisabled] = "!step2Form.valid" (click)="nextStep()"></app-next>
+      </form>
+   </div>
+</div>
+<div *ngIf="steps==='step3'">
+   <div class="row">
+      <form [formGroup]="step3Form" class="form-group" (ngSubmit)="submitdataStep3()">     
+      <input name="lastName" placeholder="Enter Last Name" class="form-control" type="text"  
+         formControlName = "lastName">  
+      <app-next [count]="count" [isDisabled] = "!step3Form.valid" (click)="nextStep()"></app-next>
+      </form>
+   </div>
+</div>
+<div *ngIf="steps==='step4'">
+   <div class="row">
+      <form [formGroup]="step4Form" class="form-group" (ngSubmit)="submitdataStep3()">     
+      <input name="middleName" placeholder="Enter Middle Name" class="form-control" type="text"  
+         formControlName = "middleName">  
+      <app-next [count]="count" [isDisabled] = "!step4Form.valid" (click)="nextStep()"></app-next>
+      </form>
+   </div>
+</div>
+<div *ngIf="steps==='step5'">
+   {{stepObj5|json}}
+</div>
+<button type="button" id="submit-button" class="btn btn-primary btn-block" 
+(click)="nextStep()" *ngIf="count <=3" >Next Steps</button>
+<button type="button" id="submit-button" class="btn btn-primary btn-block" 
+(click)="nextStep()" *ngIf="count == 4" >save</button>
+<button type="button" id="submit-button" class="btn btn-primary btn-block" 
+(click)="nextStep()" *ngIf="count == 5" >Submit</button>
+<h3>------------------------show box by radio click----------------------------------</h3>
+<app-radio
+radioText="Enter SSN Id"
+radioValue="ssn"
+radioName="ssna" 
+[defaultChoice]="defaultChoiceRadio" 
+id="ssn"  
+(change)="selectionRadio($event)"
+></app-radio>
+<app-radio radioText="Enter EmpId Id" radioValue="empid"  (change)="selectionRadio($event)"
+radioName="empIda" [defaultChoice]="defaultChoiceRadio" id="empid"
+></app-radio>
+<ul class="">
+   <li *ngIf="defaultChoiceRadio=='ssn'">Step1</li>
+   <li *ngIf="defaultChoiceRadio=='empid'">Step2</li>
+</ul>
+<h3>----------------------------------------------------------</h3>
+<ul class="">
+   <li [ngClass]="{active: step==='step1'}" (click)="step='step1'">Step1</li>
+   <li [ngClass]="{active: step==='step2'}"  (click)="step='step2'">Step2</li>
+   <li [ngClass]="{active: step==='step3'}" (click)="step='step3'">Step3</li>
+</ul>
+<ul class="">
+   <li [ngClass]="{active: view==='step1'}" (click)="openBox()">Step1</li>
+   <li [ngClass]="{active: view==='step2'}"  (click)="openBox()">Step2</li>
+   <li [ngClass]="{active: view==='step3'}" (click)="openBox()">Step3</li>
+</ul>
+<h3>----------------------------------------------------------</h3>
+<div class="row" >
+   <div class="col-sm-4 blockBox p0 over_flow">
+      <div class="col-sm-12 p0"  [ngClass]="isOpenBox ? 'margin_left' : 'margin_right'">
+         <div class="col-sm-4" ></div>
+         <div class="col-sm-4" ></div>
+         <div class="col-sm-4 p0" >
+            <div class="width_21">
+               <span class="display_inline">
+               <i class="fa fa-arrows-alt fa-2x"></i>           
+               </span>
+               <span class="display_inline">
+               <i class="fa fa-random fa-2x" aria-hidden="true"></i>
+               </span>
+               <span class="display_inline">
+               <i class="fa fa-th-large fa-2x" aria-hidden="true"></i>
+               </span>
+               <span class="display_inline">
+               <i class="fa fa-square-o fa-2x"></i>
+               </span>
+            </div>
+            <div class="width_21">
+               <span class="display_inline">
+               <i class="fa fa-th-large fa-2x" aria-hidden="true"></i>
+               </span>
+               <span class="display_inline">
+               <i class="fa fa-arrows-alt fa-2x"></i>           
+               </span>
+               <span class="display_inline">
+               <i class="fa fa-random fa-2x" aria-hidden="true"></i>
+               </span>
+               <span class="display_inline">
+               <i class="fa fa-square-o fa-2x"></i>
+               </span>
+            </div>
+            <div class="width_21">
+               <span class="display_inline">
+               <i class="fa fa-square-o fa-2x"></i>
+               </span>
+               <span class="display_inline">
+               <i class="fa fa-arrows-alt fa-2x"></i>           
+               </span>
+               <span class="display_inline">
+               <i class="fa fa-random fa-2x" aria-hidden="true"></i>
+               </span>
+               <span class="display_inline">
+               <i class="fa fa-th-large fa-2x" aria-hidden="true"></i>
+               </span>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12 p0" >
+         <div class="col-sm-4" ></div>
+         <div class="col-sm-4" ></div>
+         <div class="col-sm-4 p0" >
+            <button class="" (click)="openBox()" [className]="isOpenBox ? 'open' : 'close'">
+            <span class="display_inline" [className]="isOpenBox ? 'hide1' : 'show1'">
+            <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+            </span>
+            <span class="display_inline" [className]="isOpenBox ? 'show1' : 'hide1'">
+            <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+            </span>
+            </button>
+         </div>
+      </div>
+   </div>
+</div>
+<h3>-----------------------------------------------------------</h3>
+<div class="row">
+   <label *ngFor="let option of optionsRadio; let i = index">
+   <input type="radio"
+   name="{{option.name}}"
+   [value]="option.id"
+   [(ngModel)]="defaultChoice"
+   (change)="onSelectionRadio(option, $event)"/>
+   {{option.name}}
+   </label>
+</div>
+<ul class="">
+   <li *ngIf="defaultChoice==100">Step1</li>
+   <li *ngIf="defaultChoice==200">Step2</li>
+</ul>
+<h3>-----------------------------------------------------------</h3>
+----Singh---{{optionsChecked.length}}
+<div class="row">
+   <label *ngFor="let option of options; let i = index">
+   <input type="checkbox"
+   name="options"
+   value="{{option.name}}"
+   [checked]="option.isCheck"
+   [(ngModel)]='option.isCheck' 
+   (change)="updateCheckedOptions(option, $event)"/>
+   {{option.name}}
+   </label>
+</div>
+<h3>-----------------------------------------------------------</h3>
+---- {{optionsChecked2.length}}
+<div class="row">
+   <label *ngFor="let option of options2; let i = index">
+   <input type="checkbox"
+   name="options"
+   value="{{option.name}}"
+   [checked]="option.isCheck"
+   [(ngModel)]='option.isCheck' 
+   (change)="updateCheckedOptions2(option, $event)"/>
+   {{option.name}}
+   </label>
+</div>
+<div class="row">
+   <button (click)="resetsData()">Reset</button>
+   <button (click)="applyData()">Apply</button>
+</div>
+<h3>-----------------------------------------------------------</h3>
+<div class="row">
+   <label  *ngFor="let order of ordersCheck3; let i = index">
+   <input type="checkbox" [(ngModel)]='order.isCheck' 
+   [value]="order.isCheck" (ngModelChange)="changeCheck3()"/>
+   {{order.name}}
+   </label>
+</div>
+<h3>-----------------------------------------------------------</h3>
+<div class="row">
+   <label  *ngFor="let order of ordersCheck; let i = index">
+   <input type="checkbox" [(ngModel)]='order.isCheck' 
+   [value]="order.isCheck" (ngModelChange)="changeCheck()"/>
+   {{order.name}}
+   </label>
+</div>
+<h3>-----------------------------------------------------------</h3>
+<div class="row">
+   <label  *ngFor="let order of ordersCheck2; let i = index">
+   <input type="checkbox" [(ngModel)]='order.isCheck' 
+   [value]="order.isCheck" (ngModelChange)="changeCheck2()"/>
+   {{order.name}}
+   </label>
+</div>
+<h3>-----------------------------------------------------------</h3>
+<div class="row">
+   <button (click)="resets()">Reset</button>
+   <button (click)="apply()">Apply</button>
+</div>
+<h3>-----------------------------------------------------------</h3>
+<div class="row">
+   <div class="col-md-6" [ngClass]="{'active':isEnableService, 'notActive':!isEnableService}">
+      <a href="javascript:void(0)" (click)="openCity($event, 'service');">
+      London
+      </a>
+   </div>
+   <div class="col-md-6" [ngClass]="{'active':isEnableLogin, 'notActive':!isEnableLogin}">
+      <a href="javascript:void(0)" (click)="openCity($event, 'login');">
+      London
+      </a>
+   </div>
+</div>
+<div class="row">
+   <div class="col-md-6" *ngIf='isEnableService'>
+      <h4> this is service</h4>
+   </div>
+   <div class="col-md-6" *ngIf='isEnableLogin'>
+      <h4> this is Login</h4>
+   </div>
+</div>
+<p>
+   Allow only integer only: <input type="text" class="textfield" 
+      value="" id="extra7" name="extra7" (keypress)="isNumber(event)" />
+</p>
+<div class="row">
+   <div class="col-md-6">
+      <select id="role"  class="form-control"
+      [(ngModel)]="selectedRole" (ngModelChange)="onRoleChange($event)">	 
+      <option *ngFor="let roleName of roleData" 
+      [ngValue]="roleName"> {{roleName.role}} </option>
+      </select>
+   </div>
+</div>
+<div class="row panel panel-primary">
+   <div class="col-md-12 panel-heading">Panel with panel-primary class</div>
+   <div class="panel-body">
+      <div class="col-md-12" *ngFor="let feature of featureData let idx = index" >
+         <div class="col-md-4">
+            <!-- <label class="container">
+               <input type="checkbox" [(ngModel)]='feature.isEnable' 
+               [value]="feature.isEnable" (change)="isSelected($event, feature)">
+               <span class="checkmark"></span>
+               </label> -->             
+            <label class="switch">
+            <input class="switch-input" type="checkbox" [(ngModel)]='feature.isEnable' 
+            [value]="feature.isEnable"
+            (change)="isSelected($event, feature)"/>
+            <span class="switch-label" data-on="Yes" data-off="No"></span> 
+            <span class="switch-handle"></span>                
+            </label>
+            <button type="button" class="btn btn-primary" (click)="openModal(feature)" 
+            [disabled] = "!feature.isEnable">Edit</button>
+         </div>
+         <div class="col-md-8" [ngClass]="{'active':feature.isEnable, 'notActive':!feature.isEnable}">{{feature.featureName}}</div>
+      </div>
+   </div>
+</div>
+<!--  https://codepen.io/bbodine1/pen/novBm-->
+<div class="row">
+   <div class="col-md-12">
+      <div class="col-md-11">
+         <input name="deature_dec"  class="discrBox"  type="text" [(ngModel)]="textValue">
+      </div>
+      <div class="col-md-1">
+         <button type="button" class="btn btn-primary" (click)="add()">Add</button>
+      </div>
+   </div>
+   <div class="col-md-12">
+      <div class="col-md-11">
+         <div class="col-md-6">
+            <input name=""  class=""  type="text">
+         </div>
+         <div class="col-md-6">
+            <input name=""  class=""  type="text">
+         </div>
+      </div>
+      <div class="col-md-1">
+         <button type="button" class="btn btn-primary" (click)="remove()">remove</button>
+      </div>
+   </div>
+</div>
+<ng-template #template>
+   <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      This is a modal.
+   </div>
+</ng-template>
+<button type="button" class="btn btn-primary" (click)="openModals(template)">Create template modal</button>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+   <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+         </div>
+         <div class="modal-body">
+            <p>Some text in the modal.</p>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="row">
+   <div class="col-md-4">
+      <div class="input-group">
+         <span class="input-group-addon">select option-1--</span>
+         <select id="selectCountrys"  class=""
+         [(ngModel)]="selectedCount" (ngModelChange)="onCha($event)">	 
+         <option *ngFor="let countryName of countryData" 
+         [ngValue]="countryName.country" [selected]="countryName.country[0]"> {{countryName.country}} </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-md-1"></div>
+   <div class="col-md-3">
+      <div class="input-group">
+         <span class="input-group-addon">select option-2--</span>
+         <select id="selectCountrysw"  class=""
+         [(ngModel)]="selectedCountd" (ngModelChange)="onCha2($event)">	 
+         <option *ngFor="let countryName of countryData" 
+         [ngValue]="countryName.country" [selected]="countryName.country[0]"> {{countryName.country}} </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-md-1">
+      <button type="button" class="btn" (click)="save()">save 
+      <span class="glyphicon glyphicon-send"></span></button>           
+   </div>
+</div>
+<div class="row"><button (click)="navigateSearch()">Navigate on search Page</button></div>
+<div class="form-group">
+   <button type="button" class="btn"
+      (click)="nextpage()">Move on next Page 
+   <span class="glyphicon glyphicon-send"></span></button>     
+</div>
+<pre>{{newStudentData}}</pre>
+<!-- <form class="well form-horizontal"  id="contact_form" [formGroup]="signupForm" (ngSubmit)="onFormSubmit()"> -->
+<form class="form-horizontal"  [formGroup]="signupForm" (ngSubmit)="onFormSubmit()">	 
+<!-- Form Name -->
+<legend>
+   <h2> <b class="registrationHeading"> Students Registration Form</b></h2>
+</legend>
+<br>
+<!-- Text input-->
+<div class="form-group">
+   <div class="col-md-4"></div>
+   <div class="col-md-4 inputGroupContainer">
+      <label class="control-label">First Name</label> 
+      <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+         <input  name="first_name" placeholder="First Name" class="form-control"  type="text" 
+            id="inputFirstName" formControlName = "firstName">
+         <input  name="first_names" placeholder="First Name heck" class="form-control"  type="text" 
+            id="inputFirstNames" formControlName = "firstNames" (keypress)="checkSpaceS($event)">
+         {{isSpace}}
+      </div>
+      <control-messages [control]="signupForm.controls.firstName"></control-messages>
+   </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+   <label class="col-md-4 control-label" >Last Name</label> 
+   <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+         <input name="last_name" placeholder="Last Name" class="form-control"  type="text"  
+            id="inputLastName" formControlName = "lastName">
+      </div>
+      <control-messages [control]="signupForm.controls.lastName"></control-messages>
+   </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+   <label class="col-md-4 control-label">Username</label>  
+   <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+         <input  name="user_name" placeholder="Username" class="form-control"  type="text"  id="inputuser" formControlName = "userName">
+      </div>
+      <control-messages [control]="signupForm.controls.userName"></control-messages>
+   </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+   <label class="col-md-4 control-label">E-Mail</label>  
+   <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+         <input name="email" placeholder="E-Mail Address" class="form-control"  type="text"  
+            id="inputEmail" formControlName = "email" (input)="onSearchChange($event.target.value)">
+      </div>
+      <control-messages [control]="signupForm.controls.email"></control-messages>
+   </div>
+</div>
+<!-- Text input-->
+<div formGroupName = "password">
+   <div class="form-group">
+      <label class="col-md-4 control-label" >Password</label> 
+      <div class="col-md-4 inputGroupContainer">
+         <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="user_password" placeholder="Password" class="form-control"  type="password"  
+               id="inputPassword" formControlName = "pwd">
+         </div>
+      </div>
+   </div>
+   <!-- Text input-->
+   <div class="form-group">
+      <label class="col-md-4 control-label" >Confirm Password</label> 
+      <div class="col-md-4 inputGroupContainer">
+         <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="confirm_password" placeholder="Confirm Password" class="form-control" 
+               type="password"  id="inputConfirmPassword" formControlName = "confirmPwd">
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Text input-->      
+<div class="form-group">
+   <label class="col-md-4 control-label">Contact No.</label>  
+   <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+         <input name="contact_no" placeholder="(639)" class="form-control" type="text" id="inputMobile" 
+         formControlName = "mobile" [(ngModel)]="mobile" myCurrencyFormatter>
+      </div>
+      <control-messages [control]="signupForm.controls.mobile"></control-messages>
+   </div>
+</div>
+<!-- Gender Block -->
+<div class="form-group">
+   <label for="select" class="col-md-4 control-label">Gender</label>
+   <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+         <select id="select"  class="form-control" formControlName="gender">	 
+         <option *ngFor = "let g of genderList" 
+         [value] = "g"> {{g}} 
+         </option>
+         </select>
+      </div>
+   </div>
+</div>
+<!-- Country Block -->
+<div class="form-group">
+   <label for="select" class="col-md-4 control-label">Country</label>
+   <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+         <select id="selectCountry"  class="form-control" formControlName="country" 
+         [(ngModel)]="selectedCountry" (ngModelChange)="onCountryChange($event)">	 
+         <option *ngFor="let countryName of countryData" 
+         [ngValue]="countryName.country" [selected]="countryName.country[0]"> {{countryName.country}} </option>
+         </select>
+      </div>
+   </div>
+</div>
+<!-- State Block -->
+<div class="form-group">
+   <label for="select" class="col-md-4 control-label">State</label>
+   <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+         <select id="selectState"  class="form-control" formControlName="state" [(ngModel)]="selectedState" (ngModelChange)="onStateChange($event)">	 
+         <option *ngFor="let stateName of stateData" [ngValue]="stateName.state"> {{stateName.state}} </option>
+         </select>
+      </div>
+   </div>
+</div>
+<!-- City Block -->
+<div class="form-group">
+   <label for="select" class="col-md-4 control-label">City</label>
+   <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+         <select id="selectCity"  class="form-control" formControlName="city" [(ngModel)]="selectedCity" (ngModelChange)="onCityChange($event)">	 
+         <option *ngFor="let cityName of cityData" [ngValue]="cityName.city"> {{cityName.city}} </option>
+         </select>
+      </div>
+   </div>
+</div>
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message" *ngIf="isSuccess">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+<!-- Button -->
+<div class="form-group">
+   <div class="col-md-4"><br></div>
+   <div class="col-md-2"><br>
+      <button type="reset" class="btn btn-default">Cancel</button>
+   </div>
+   <div class="col-md-2"><br>
+      <button type="button" class="btn" [disabled] = "!signupForm.valid" id="formSubmitBtn" (click)="clickme()">SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+      <button type="button" class="btn"  id="formSubmitBtnn" (click)="clickme()">SUBMIT5 <span class="glyphicon glyphicon-send"></span></button>
+   </div>
+</div>
+</form> [formGroup]="form"
+<!--
+   <div class="form-group">
+       <div class="col-md-4"><br></div>
+         <div class="col-md-2"><br>
+           <button type="button" class="btn"  id="formSubmitBtn" (click)="clickme()">SUBMIT3 <span class="glyphicon glyphicon-send"></span></button>
+         </div>
+       </div>
+    <button type="button" class="btn"  id="formSubmitBtn" (click)="clickme()">
+     SUBMIT4 <span class="glyphicon glyphicon-send"></span></button> -->
+<div class="row">
+   <form [formGroup]="myForm" class="form-group">
+      <select id="selectCountryddd"  class="form-control" formControlName="range"
+      [(ngModel)]="selectedCountrysdsd" (ngModelChange)="onCountryChange($event)" required>	 
+      <option *ngFor="let countryName of countryData" 
+      [ngValue]="countryName.country" [selected]="countryName.country[0]"> {{countryName.country}} </option>
+      </select>
+      <select id="selectCountryddd2"  class="form-control" formControlName="range2"
+      [(ngModel)]="selectedCountrysdsd2" (ngModelChange)="onCountryChange($event)" required>	 
+      <option *ngFor="let countryName of countryData" 
+      [ngValue]="countryName.country" [selected]="countryName.country[0]"> {{countryName.country}} </option>
+      </select>
+      jjjjj==
+      <input name="contact_no" placeholder="(639)" class="form-control" type="text" id="inputMobileff"  
+      [(ngModel)]="inputNumber"
+      formControlName = "mobiles" myCurrencyFormatter>
+      <input name="contact_no" placeholder="(639)" class="form-control" type="text" id="inputMobileff"  
+      [(ngModel)]="inputNumber"
+      formControlName = "mobiles" myCurrencyFormatter>
+      <input name="contact_no" placeholder="(639)" class="form-control" type="text" id="inputMobileff"  
+      [(ngModel)]="inputNumber"
+      formControlName = "mobiles" myCurrencyFormatter>
+      <h6>------------currency filter---------------------</h6>
+      <input name="contact_no" placeholder="(639)" class="form-control" type="text" id="inputMobileff"  
+      [(ngModel)]="inputNumber"
+      formControlName = "mobiles" appMycurrency>
+      <input name="contact_no" placeholder="(639)" class="form-control" type="text" id="inputMobileff"  
+      [(ngModel)]="inputNumber"
+      formControlName = "mobiles" appMycurrency>
+      <button type="button" class="btn btn-primary" [disabled] = "!myForm.valid" (click)="searchStudents()">Click here--</button>
+   </form>
+</div>
+<div class="row">
+   <form [formGroup]="formUpload" (ngSubmit)="upload()">
+   <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Bob" formControlName="name">
+   </div>
+   <div class="form-group">
+      <label for="avatar">Avatar</label>
+      <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput>
+      <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+   </div>
+   <button type="submit" [disabled]="formUpload.invalid || loading" class="btn btn-success">Submit 
+   <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+   </form>
+</div>
+<div class="row">
+   <form [formGroup]="formCheckBox" (ngSubmit)="submitdata()">
+   <label  *ngFor="let order of ordersCheck; let i = index">
+   <input type="checkbox" [formControlName]="i"   [checked]="order.isCheck"
+   (change)="changeCheck(order)">
+   {{order.name}}
+   </label>
+   <div *ngIf="!formCheckBox.valid">At least one order must be selected</div>
+   <br>
+   <button [disabled]="!formCheckBox.valid">submit</button>
+   </form>
+</div>
+<div class="information">
+   <label *ngIf="!editMode">adsdsfdd</label>
+   <input *ngIf="editMode" [ngModel]="name">
+   <button (click)="editMode=true">Edit</button>
+   <button (click)="editMode=false">Save</button>
+</div>
+<h2>-----------------------------------------------------------</h2>
+<!-- @author Chandra Bhushan Tripathi -->
+<form role="form" (ngSubmit)="onSubmit()" #Form="ngForm">
+<div class="form-group">
+   <input type="text" placeholder="Last Name" class="form-control" id="lname"
+   required
+   pattern="[a-zA-Z][a-zA-Z ]+"
+   name="lname"
+   [(ngModel)]="lname"
+   #lnameText="ngModel"
+   [disabled]="accountText.value||accountText.value==' '"
+   >
+   <div [hidden]="lnameText.valid || lnameText.pristine">
+      <div [hidden]="!lnameText.hasError('required')">Name is required</div>
+      <div [hidden]="!lnameText.hasError('pattern')">Only Alphabets allowed</div>
+   </div>
+</div>
+<div class="form-group">
+   <input type="text" placeholder="Zip Code" class="form-control" id="zipcode"
+   required
+   name="zipcode"
+   [(ngModel)]="zipcode"
+   pattern="[0-9][0-9][0-9][0-9][0-9]+"
+   minlength="5"
+   maxlength="9"
+   #zipcodeText="ngModel"
+   [disabled]="accountText.value||accountText.value==' '">
+   <div [hidden]="zipcodeText.valid || zipcodeText.pristine">
+      <div [hidden]="!zipcodeText.hasError('pattern')">Use only number</div>
+      <div [hidden]="!zipcodeText.hasError('minlength')">Min length should be 6</div>
+      <div [hidden]="!zipcodeText.hasError('required')">Require zipcode field</div>
+   </div>
+</div>
+<div class="form-group">
+   <input type="text" placeholder="SSN Number" class="form-control" id="ssn"
+   required
+   name="ssn"
+   [(ngModel)]="ssn"
+   pattern="([0-9][0-9][0-9]\-?[0-9][0-9]\-?[0-9][0-9][0-9][0-9])+"
+   minlength="9"
+   maxlength="11"
+   #ssnText="ngModel"
+   [disabled]="accountText.value||accountText.value==' '">
+   <div [hidden]="ssnText.valid || ssnText.pristine" >
+      <div [hidden]="!ssnText.hasError('minlength')">Min length should be 9</div>
+      <div [hidden]="!ssnText.hasError('required')">Require ssn field</div>
+      <div [hidden]="!ssnText.hasError('pattern')">Use only number with hyphen or numbers only</div>
+   </div>
+</div>
+<div class="form-or">
+   <span class="span-or">or</span>
+</div>
+<div class="form-group">
+   <input type="text" placeholder="Account Number" class="form-control" id="account"
+   required
+   name="account"
+   [(ngModel)]="account"
+   pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]|[0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9]+"
+   minlength="11"
+   maxlength="13"
+   #accountText="ngModel"
+   [disabled]="ssnText.value||zipcodeText.value||lnameText.value||lnameText.value==' '">
+   <div [hidden]="accountText.valid || accountText.pristine" >
+      <div [hidden]="!accountText.hasError('minlength')">Min length should be 11</div>
+      <div [hidden]="!accountText.hasError('required')">Require account field</div>
+      <div [hidden]="!accountText.hasError('pattern')">Use only number</div>
+   </div>
+</div>
+<button type="submit" id="submit-button" class="btn btn-primary btn-block" [disabled]="!Form.form.valid" (click)="postForm(Form.form.valid)" >Submit</button>
+<label>{{congrats}}</label>
+</form>

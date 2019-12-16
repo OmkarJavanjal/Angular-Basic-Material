@@ -1,0 +1,166 @@
+
+  body {
+    background-color: #f1f1f1;
+  }
+  #regForm {
+    margin: 100px auto;
+    font-family: Raleway;
+    padding: 40px;
+    width: 100%;
+    min-width: 300px;
+  }
+  h1 {
+    text-align: center;  
+  }
+  
+  input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+  }
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+  
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+  button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Raleway;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  #prevBtn {
+    background-color: #bbbbbb;
+  }
+  
+  /* progres Tracker v2 */
+  ol.progres[data-steps="2"] li { width: 49%; }
+  ol.progres[data-steps="3"] li { width: 33%; }
+  ol.progres[data-steps="4"] li { width: 24%; }
+  ol.progres[data-steps="5"] li { width: 19%; }
+  ol.progres[data-steps="6"] li { width: 16%; }
+  ol.progres[data-steps="7"] li { width: 14%; }
+  ol.progres[data-steps="8"] li { width: 12%; }
+  ol.progres[data-steps="9"] li { width: 11%; }
+  
+  .progres {
+      width: 100%;
+      list-style: none;
+      list-style-image: none;
+      margin: 20px 0 20px 0;
+      padding: 0;
+  }
+  
+  .progres li {
+      float: left;
+      text-align: center;
+      position: relative;
+  }
+  
+  
+  .progres .steps {
+      color: black;
+      border: 3px solid silver;
+      background-color: silver;
+      border-radius: 50%;
+      line-height: 1.2;
+      width: 1.2em;
+      height: 1.2em;
+      display: inline-block;
+      z-index: 0;
+  }
+  
+  .progres .steps span {
+      opacity: 0.3;
+  }
+  
+  .progres .active .name,
+  .progres .active .steps span {
+      opacity: 1;
+  }
+  
+  .progres .steps:before {
+      content: "";
+      display: block;
+      background-color: silver;
+      height: 0.4em;
+      width: 50%;
+      position: absolute;
+      bottom: 0.6em;
+      left: 0;
+      z-index: -1;
+  }
+  
+  .progres .steps:after {
+      content: "";
+      display: block;
+      background-color: silver;
+      height: 0.4em;
+      width: 50%;
+      position: absolute;
+      bottom: 0.6em;
+      right: 0;
+      z-index: -1;
+  }
+  
+  .progres li:first-of-type .steps:before {
+      display: none;
+  }
+  
+  .progres li:last-of-type .steps:after {
+      display: none;
+  }
+  
+  .progres .done .steps,
+  .progres .done .steps:before,
+  .progres .done .steps:after,
+  .progres .active .steps,
+  .progres .active .steps:before {
+      background-color: yellowgreen;
+  }
+  
+  .progres .done .steps,
+  .progres .active .steps {
+      border: 3px solid yellowgreen;
+  }
+  
+  
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;  
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #4CAF50;
+  }
+
+  #nextPage{
+    display: none;
+  }

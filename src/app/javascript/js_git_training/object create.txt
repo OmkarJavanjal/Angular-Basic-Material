@@ -1,0 +1,88 @@
+
+
+How many way we can create object--
+
+Objects are variables too. But objects can contain many values.
+The values are written as key : value pairs (key and value separated by a colon).
+
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+
+
+Creating a JavaScript Object-----
+
+
+1- Define and create a single object, using an object literal.
+2- Define and create a single object, with the keyword new.
+3- Define an object constructor, and then create objects of the constructed type.
+
+
+In ECMAScript 5, an object can also be created with the function Object.create().
+
+
+1- Using an Object Literal --
+
+Using an object literal, you both define and create an object in one statement.
+
+An object literal is a list of key:value pairs (like age:50) inside curly braces {}.
+
+
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+
+or --
+
+var person = {firstName:"John", 2:"Doe", 'age':50, 'eyeColor':"blue"};
+ we can pas key like above.
+
+
+
+
+2-  Using the JavaScript Keyword new--
+
+The following example also creates a new JavaScript object with four properties:
+
+var person = new Object();
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+
+
+The two examples above do exactly the same. There is no need to use new Object().
+For simplicity, readability and execution speed, use the first one (the object literal method). It means if we create object using new Object(); then it decrease the speed also not easy to read if i have to create long object
+
+
+
+3-  Using an Object Constructor ---
+
+
+The examples above are limited in many situations. They only create a single object.and static object.
+Sometimes we like to have an "object type" that can be used to create many objects of one type.
+
+
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+
+Once you have an object constructor, you can create new objects of the same type:
+
+
+var myFather = new person("John", "Doe", 50, "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+
+
+
+/*******************************************************************************************************************/
+
+
+
+
+
+
+
+
+

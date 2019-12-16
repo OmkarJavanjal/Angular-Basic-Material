@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flex Test</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.grid-row {
+		margin-bottom: 1em
+	}
+
+	.grid-row {
+		display: flex;
+		/*   flex: 1 0 auto; */
+		/*   height: auto; */
+	}
+
+	[type="radio"] {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+	label {
+		/*display: block;*/
+		cursor: pointer;
+	}
+
+
+	/* the basic, unchecked style */
+
+	[type="radio"]+span:before {
+		content: '';
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		vertical-align: -0.25em;
+		border-radius: 50%;
+		border: 1px solid #fff;
+		margin-right: 0.75em;
+		box-shadow: 0 0 0 0.15em #555;
+		transition: 0.5s ease all;
+	}
+
+	[type="radio"]:checked+span:before {
+		background: green;
+		box-shadow: 0 0 0 0.15em green;
+	}
+
+	.terms {
+		display: block;
+		margin-left: 2rem;
+	}
+
+	.grid-row label span {
+		color: gray;
+	}
+
+	[type="radio"]:checked+span {
+		color: black;
+	}
+
+	[type="radio"]:checked+span .terms {
+		color: blue;
+	}
+
+	label {
+		border: 1px solid;
+		width: 20rem;
+	}
+
+	[type="radio"]:checked :before,
+	{
+		background: green;
+	}
+
+	label:has(+ [type="radio"]:checked) {
+		background: green;
+	}
+
+	@media (min-width: 481px) and (max-width: 767px) {
+		
+		.terms {
+			margin-left: 0rem;
+		}
+		[type="radio"]+span:before {
+			float: right;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 480px) {
+		.terms {
+			margin-left: 0rem;
+		}
+		[type="radio"]+span:before {
+			float: right;
+		}
+	}
+
+	</style>
+</head>
+<body>
+<h1>Flexible Boxes</h1>
+
+    <div class="wrapper">
+		  <div class="grid-row">
+			<label>
+			  <input type="radio" value="impact" name="consult-sig-sme">
+			  <span>Yes<span class="terms">I agree to terms and conditions</span></span>				 	
+			</label>
+		  </div>
+		  <div class="grid-row">
+			<label>
+			  <input type="radio" value="impact" name="consult-sig-sme">
+			  <span>No<span class="terms">I do not agree to terms and conditions</span></span>
+			</label>
+		  </div>
+    </div>  
+</body>
+</html>

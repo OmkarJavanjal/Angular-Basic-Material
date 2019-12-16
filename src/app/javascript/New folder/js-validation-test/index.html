@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+<div class="container center_box">
+  <!-- Trigger the modal with a button -->
+<div class="col-sm-12 center">
+  <button type="button" class="btn btn-danger pading_style" id="modalBtn" data-toggle="modal" data-target="#myModal">INTRODUCE YOURSELF</button>
+  <h2 id="inputName" class="firstName"></h2>
+</div>
+<div class="col-sm-12 center">
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <h3>Tell us your name</h3>
+		    <form>
+			   <div class="col-sm-12 center mB20 mT10">
+			    <div class="col-sm-2"></div>
+			      <div class="col-sm-8 center firstName_box padding">
+				  <input type="text" id="firstName" name="FirstName">
+				    <p id="errorMsg" class="error"></p>
+					<p id="head" class="error"></p>
+				  </div>
+				   <div class="col-sm-2"></div>
+			   </div>
+               <div class="col-sm-12 center mB30">
+			   <button id="submitButton" type="button" class="btn btn-danger pading_style">INTRODUCE YOURSELF</button>
+			   </div>
+			</form>
+        </div>
+         <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

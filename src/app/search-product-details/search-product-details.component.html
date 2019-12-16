@@ -1,0 +1,10 @@
+<div class="row">
+   <h2>Search Product Details</h2>
+</div>
+<h2>Search  by Typeahead inside a form- </h2>
+<pre class="card card-block card-header">Model: {{selected | json}}</pre>
+<input [(ngModel)]="selected" (keyup)=onSearchTypes($event)
+[typeahead]="states"
+class="form-control">
+
+ <pre class="card card-block card-header">Model: {{product | json}}</pre>

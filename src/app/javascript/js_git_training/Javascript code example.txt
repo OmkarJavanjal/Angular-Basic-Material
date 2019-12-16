@@ -1,0 +1,470 @@
+1- 
+https://www.toptal.com/javascript/interview-questions
+https://www.codementor.io/nihantanu/21-essential-javascript-tech-interview-practice-questions-answers-du107p62z
+https://www.sitepoint.com/5-typical-javascript-interview-exercises/
+
+http://www.thatjsdude.com/interview/js2.html  (best)
+
+http://www.thatjsdude.com/interview/
+
+http://www.thatjsdude.com/interview/dom.html
+http://www.thatjsdude.com/interview/js2.html
+
+
+
+
+The delete operator is used to delete properties from an object. means which object has own key-value property are deleted other wise not. and delete propery not delete the prototype property.
+delete operators don't affect local variables.
+var x = { foo : 1}; // here x has own key-value roperty so if we use delete then it delete the foo property.
+var output = (function(){
+    delete x.foo;
+    return x.foo;
+  })();
+  
+console.log(output);
+The output would be undefined. The delete operator is used to delete the property of an object. Here, x is an object which has the property foo, and as it is a self-invoking function, we will delete the foo property from object x. After doing so, when we try to reference a deleted property foo, the result is undefined.
+
+
+
+var Employee = {
+  company: 'xyz'
+}
+var emp1 = Object.create(Employee); // company is its prototype property.not direct object of emp1. means jo v object create krte hai wo parent object ke prototye ko use krega.
+
+delete emp1.company  // not delete the 'company' property because 'company' is not direct property of emp1 object.
+console.log(emp1.company);
+
+The output would be xyz. Here, emp1 object has 'company' as its prototype property. The delete operator doesn't delete prototype property.
+
+emp1 object doesn't have company as its own property. You can test it console.log(emp1.hasOwnProperty('company')); //output : false. However, we can delete the company property directly from the Employee object using delete Employee.company. Or, we can also delete the emp1 object using the __proto__ property  delete emp1.__proto__.company.
+
+/*********************************************************************************************/
+
+
+var Employee = {
+  company: 'xyz'
+}
+var emp1 = Object.create(Employee);
+//delete emp1.company; //not delete
+delete emp1.__proto__.company; // it delete
+console.log(emp1.company);
+
+/*******************************************************************?/
+
+(function(){
+  var a = b = 3;
+})();
+
+
+Since both a and b are defined within the enclosing scope of the function, out side the function a is not defined 
+
+console.log("a defined? " + (typeof a !== 'undefined')); //a defined? false
+
+console.log("b defined? " + (typeof b !== 'undefined')); //b defined? true
+
+The issue here is that most developers incorrectly understand the statement var a = b = 3; to be shorthand for:
+var b = 3;
+var a = b;
+
+But in fact, var a = b = 3; is actually shorthand for:
+b = 3;
+var a = b;
+
+As a result (if you are not using strict mode), the output of the code snippet would be:
+
+a defined? false
+b defined? true
+
+
+Note that, in strict mode (i.e., with use strict), the statement var a = b = 3; will generate a runtime error of ReferenceError: b is not defined,
+
+
+2- 
+(function(){
+  var a = b = 3;
+  console.log("value a defined? " + a);
+console.log(" value b defined? " + b);
+console.log("a defined? " + (typeof a !== 'undefined'));
+console.log("b defined? " + (typeof b !== 'undefined'));
+})();
+
+//value a defined? 3
+//value b defined? 3
+//a defined? true
+//b defined? true
+
+
+3- 
+function foo1()
+{
+  return {
+      bar: "hello"
+  };
+}
+
+
+function foo2()
+{
+  return
+  {
+      bar: "hello"
+  };
+}
+console.log("foo1 returns:");
+console.log(foo1());
+console.log("foo2 returns:");
+console.log(foo2());
+
+
+a semicolon is automatically inserted immediately after the return statement.
+
+//foo1 returns:
+Object {bar: "hello"}
+foo2 returns:
+undefined 
+
+4-
+    console.log(1);      
+    setTimeout(function(){console.log(3)}, 0); 
+    setTimeout(function(){console.log(5)}, 0);
+    console.log(4);
+    setTimeout(function(){console.log(2)}, 1000);
+
+The values will be logged in the following order:
+
+1
+4
+3
+5
+2
+
+
+
+
+
+5-
+console.log(1 +  "2" + "2");
+console.log(1 +  +"2" + "2");
+console.log(1 +  -"1" + "2");
+console.log(+"1" +  "1" + "2");
+console.log( "A" - "B" + "2");
+console.log( "A" - "B" + 2);
+
+The above code will output the following to the console:
+
+"122"
+"32"
+"02"
+"112"
+"NaN2"
+NaN
+
+
+
+6-
+var output = (function(x){
+    delete x;
+    return x;
+  })(0);
+  
+  console.log(output);
+
+The output would be 0. 
+The delete operator is used to delete properties from an object only .not delete any variable 
+Here x is not an object but a local variable. delete operators don't affect local variables.
+
+
+7-
+var x = 1;
+var output = (function(){
+    delete x;
+    return x;
+  })();
+  
+  console.log(output);
+The output would be 1. 
+The delete operator is used to delete the property of an object. 
+Here x is not an object, but rather it's the global variable of type number.
+
+8-
+var x = { foo : 1};
+var output = (function(){
+    delete x.foo;
+    return x.foo;
+  })();
+  
+  console.log(output);
+The output would be undefined. 
+The delete operator is used to delete the property of an object. 
+Here, x is an object which has the property 'foo', and as it is a self-invoking function, we will delete the foo property from object x. After doing so, when we try to reference a deleted property foo, the result is undefined.
+
+9-
+var Employee = {
+  company: 'xyz'
+}
+var emp1 = Object.create(Employee);
+delete emp1.company
+console.log(emp1.company);
+
+The output would be xyz. Here, emp1 object has company as its prototype property. The delete operator doesn't delete prototype property.
+
+emp1 object doesn't have company as its own property. You can test it console.log(emp1.hasOwnProperty('company')); //output : false. However, we can delete the company property directly from theEmployee object using delete Employee.company. Or, we can also delete the emp1 object using the __proto__ property delete emp1.__proto__.company.
+
+
+10-
+var trees = ["redwood","bay","cedar","oak","maple"];
+delete trees[3];
+When you run the code above and type console.log(trees); into your Chrome developer console, you will get ["redwood", "bay", "cedar", undefined × 1, "maple"]. When you run the code in Firefox's browser console, you will get ["redwood", "bay", "cedar", undefined, "maple"]. Thus, it's clear that the Chrome browser has its own way of displaying uninitialised indexes in arrays. However, when you check trees[3] === undefined in both browsers, you will get similar output as true.
+
+11-
+var trees = ["xyz","xxxx","test","ryan","apple"];
+delete trees[3];
+  
+  console.log(trees.length);
+The output would be 5. When we use the delete operator to delete an array element, the array length is not affected from this. This holds even if you deleted all elements of an array using the delete operator.
+
+In other words, when the delete operator removes an array element, that deleted element is not longer present in array. In place of value at deleted index undefined x 1 in chrome and undefined is placed at the index. If you do console.log(trees) output ["xyz", "xxxx", "test", undefined × 1, "apple"] in Chrome and in Firefox ["xyz", "xxxx", "test", undefined, "apple"].
+
+NOTE-- IF WE USE pop(),shift(),splice then data remove from the arrary and not desplay undefined and length is 4
+
+
+12-
+ var foo = function(){ 
+  // Some code
+ }; 
+  function bar(){ 
+  // Some code
+ }; 
+The main difference is the function foo is defined at run-time whereas function bar is defined at parse time. To understand this in better way, let's take a look at the code below:
+
+Run-Time function declaration 
+<script>
+foo(); // Calling foo function here will give an Error
+ var foo = function(){ 
+    console.log("Hi I am inside Foo");  /// In JavaScript, variable and functions are hoisted var foo move on top not all function
+ }; 
+ </script>
+ <script>
+Parse-Time function declaration 
+bar(); // Calling foo function will not give an Error
+ function bar(){ 
+  console.log("Hi I am inside Foo");
+ }; 
+ </script>
+
+
+Another advantage of this first-one way of declaration is that you can declare functions based on certain conditions. For example:
+
+<script>
+if(testCondition) {// If testCondition is true then 
+   var foo = function(){ 
+    console.log("inside Foo with testCondition True value");
+   }; 
+ }else{
+ 	 var foo = function(){ 
+    console.log("inside Foo with testCondition false value");
+   }; 
+ }
+ </script>
+However, if you try to run similar code using the format below, you'd get an error:
+
+<script>
+if(testCondition) {// If testCondition is true then 
+   function foo(){ 
+    console.log("inside Foo with testCondition True value");
+   }; 
+ }else{
+ 	 function foo(){ 
+    console.log("inside Foo with testCondition false value");
+   }; 
+ }
+ </script>
+
+
+12-
+ var salary = "1000$";
+
+ (function () {
+     console.log("Original salary was " + salary);
+
+     var salary = "5000$";
+
+     console.log("My New Salary " + salary);
+ })();
+
+The output would be undefined, 5000$. Newbies often get tricked by JavaScript's hoisting concept. In the code above, you might be expecting salary to retain its value from the outer scope until the point that salary gets re-declared in the inner scope. However, due to hoisting, the salary value was undefined instead. To understand this better, have a look of the code below:
+
+ var salary = "1000$";
+
+ (function () {
+     var salary = undefined;
+     console.log("Original salary was " + salary);
+
+     salary = "5000$";
+
+     console.log("My New Salary " + salary);
+ })();
+salary variable is hoisted and declared at the top in the function's scope. The console.log inside returns undefined. After the console.log, salary is redeclared and assigned 5000$
+
+
+13-
+
+(function() {
+   var a = b = 5;
+})();
+
+console.log(a); 
+console.log(b);
+
+14-
+function test() {
+   console.log(a);
+   console.log(foo());
+   
+   var a = 1;
+   function foo() {
+      return 2;
+   }
+}
+
+test();
+
+//The result of this code is undefined and 2.
+
+15-
+Question: How to convert JSON String to Object?
+var jsonData = '{"name":"web technology","year":2015}';
+var myobject = JSON.parse(jsonData);
+console.log(myobject);  //  Object {name: "web technology", year: 2015}
+
+16- Difference between Classic Inheritance and Prototypical Inheritance?
+
+
+17-
+ delete can delete but--
+
+
+Look at the code below, I have a property in a object and I am creating a new object where I am setting it to a new value. If I delete that property what will i get if I try to access that property?
+
+
+var myObject = {
+    price: 20.99,
+    get_price : function() {
+        return this.price;
+    }
+};
+var customObject = Object.create(myObject);
+
+customObject.price = 19.99;
+
+delete customObject.price;
+console.log(customObject.get_price());
+        
+Answer: You will see 20.99
+
+Explanation: This is very interesting question. When you create object.create(myObject) you are creating new object where the myObject will be the parent of the newly created object. Hence the price property will be at the parent.
+
+When you are assigning some value to customObject.price, you are creating a new property on the child. This means, when you delete customObject.price it deletes the price property in the customObject (in the child). However, when you call the method getprice, first it looks for this.price in the child since the customObject doesn't have price property, JavaScript executor walks through the prototype chain towards the parent. Since customObject was inherited from myObject and myObject has a price property, the get_price method returns the price from parent. Hence, you are getting 20.99
+
+
+
+18-
+http://eligeske.com/jquery/what-is-the-difference-between-document-and-window-objects-2/
+
+ what-is-the-difference-between-document-and-window-objects----
+WINDOW object and DOCUMENT object ARE NOT THE SAME!!!!!
+
+JavaScript has a global object and everything runs under it. window is that global object that holds global variables, global functions, location, history everything is under it
+
+Well, the window is the first thing that gets loaded into the browser. and window is main object which contain all other object whatever object we create all object include inside the window object.
+
+so document object is also property of window object.So when browser is load then first window object is load.
+
+
+This window object has the majority of the properties like length, innerWidth, innerHeight, name, if it has been closed, its parents, and more
+
+The document object is your html, aspx, php, or other document that will be loaded into the browser. The document actually gets loaded inside the window object and has properties available to it like title, URL, cookie, etc. What does this really mean? That means if you want to access a property for the window it is window.property, if it is document it is window.document.property which is also available in short as document.property.
+
+
+. 
+
+document is also under window. document is a property of the window object. document represents the DOM and DOM is the object oriented representation of the html markup you have written. All the nodes are part of document. Hence you can use getElementById or addEventListener on document. These methods are not present in the window object.
+
+
+window.document === document; //true
+window.getElementById; //undefined
+document.getElementById; //function getElementById() { [native code] }
+      
+
+19-
+window.onload vs document.onload--
+
+The general idea is that window.onload fires when the document's window is ready for presentation and document.onload fires when the DOM tree (built from the markup code within the document) is completed.
+
+
+window.onload is fired when DOM is ready and all the contents including images, css, scripts, sub-frames, etc. finished loaded. This means everything is loaded.
+
+document.onload is fired when DOM (DOM tree built from markup code within the document)is ready which can be prior to images and other external content is loaded.
+
+13-
+
+
+
+function fn(){
+var a=b=3;
+console.log(a);
+console.log(b);
+
+}
+fn();
+
+// 3
+3
+
+/*****************************************************************************************************/
+
+function fn(){
+console.log('1');
+settimeout(console.log('2'),1000);
+settimeout(console.log('3'),0);
+console.log('4');
+
+}
+fn();
+
+// 1 4 3 2
+
+/**************************************************************************************************/
+
+
+var a=10;
+function aa(){
+console.log(a);
+var a=20;
+}
+aa();  // undefine
+
+
+
+
+
+<script>
+var a=10;
+var b=[10,20,30];
+var c={
+"p":a,
+"q":b,
+};
+c.p=50;
+c.q.push(200);
+console.log(c.p); //50
+console.log(c.q);  //[10,20,30,200]
+
+console.log(a); //10
+console.log(b);  //[10,20,30,200]
+</script>
+
+
+/**************************************************************************************************/
+
+

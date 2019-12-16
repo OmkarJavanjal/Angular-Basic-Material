@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+ }
+h1, input.material::-webkit-input-placeholder, button {
+    font-family: 'roboto', sans-serif;
+    -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+  }
+  
+  h1 {
+    height: 100px;
+    width: 100%;
+    font-size: 18px;
+    background: #18aa8d;
+    color: white;
+    line-height: 150%;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+ /** form {
+    box-sizing: border-box;
+    width: 260px;
+    margin: 100px auto 0;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    padding-bottom: 40px;
+    border-radius: 3px;
+  }*/
+ 
+  
+  input.material {
+      width: 100%;
+    margin: 10px 0px;
+    border: none;
+    padding: 13px 0;
+    border-bottom: solid 1px #1abc9c;
+    -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+            transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+    background-position: -218px 0;
+    background-size: 218px 100%;
+    background-repeat: no-repeat;
+    color: #0e6252;
+  }
+  input.material:focus, input.material:valid {
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+  }
+  input.material:focus::-webkit-input-placeholder, input.material:valid::-webkit-input-placeholder {
+    color: #1abc9c;
+    font-size: 11px;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    visibility: visible !important;
+  }
+  
+  button {
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 4px;
+    width: 200px;
+   
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  button:hover {
+    -webkit-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+            transform: translateY(-3px);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  .p-0{
+      padding: 0px;
+  }
+  .mT21{
+      margin-top: 21px;
+  }
+  .mT21 p{
+  margin-bottom:0px;
+  }
+  .mR10{
+      margin-right: 10px;
+  }
+  .mT25{
+      
+    margin-top: 25px;
+  }
+  .center{
+  text-align: center;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container">
+<div class="row">
+	<div class="col-md-3"></div>
+	
+    <div class="col-md-6 mT25">
+	<div class="col-md-12 mT25 center">Let's get you registered.</div>
+	<div class="col-md-12 center"></div>
+       <form class="col-md-12">
+            <div class="col-md-12">
+                    <div class="col-md-6"><input placeholder="First Name" type="text" required="" class="material"></div>
+                    <div class="col-md-6"><input placeholder="Last Name" type="text" required=""  class="material"></div>
+            </div>
+            <div class="col-md-12">
+				<div class="col-md-6"><input placeholder="Date of Birth" type="text" required=""  class="material"></div>
+				<div class="col-md-6">
+						<div class="col-md-6 p-0 mT21">
+							<p><span>Gender</span></p>
+							 <p> 
+							 <input type="checkbox" name="Male" value="Male"> <span class="mR10">M</span>
+								<input type="checkbox" name="Female" value="Female"> <span>F</span>
+							 </p>
+						</div>
+						<div class="col-md-6 p-0"><input placeholder="Zip Code" type="text" required=""  class="material"></div>
+				</div>
+            </div>
+            <div class="col-md-12">
+                    <div class="col-md-6"><input placeholder="Employer" type="text" required=""  class="material"></div>
+                    <div class="col-md-6"><input placeholder="Additional" type="text" required=""  class="material"></div>
+            </div>
+            <div class="col-md-12 mT25 center"><button>NEXT</button></div>
+           
+             <div class="col-md-12 mT25 center">
+			 <p>Already have an account?</p>
+			 <p><b>LOG IN</b></p>
+			 </div>
+            
+        </form>     
+    </div>
+    <div class="col-md-3"></div>
+</div>
+</div>
+
+</body>
+</html>

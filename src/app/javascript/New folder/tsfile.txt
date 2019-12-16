@@ -1,0 +1,118 @@
+import { Component, OnInit, Input, EventEmitter, Output, OnChanges, SimpleChanges, } from '@angular/core';
+import { Product } from '../../services/cart/cart.model';
+import {PricebandService} from '../../services/priceBands/priceband.service';
+import {PriceItem} from '../../services/priceBands/priceband.model';
+
+@Component({
+  selector: 'app-counter-input',
+  templateUrl: './counter-input.component.html',
+  styleUrls: ['./counter-input.component.scss'],
+  providers : [PricebandService],
+})
+export class CounterInputComponent implements OnInit, OnChanges {
+  @Input() incrementData: any;
+  @Input() _counterValue: Product;
+  @Input() minValue: number;
+  @Input() maxValue: number;
+  @Output() update = new EventEmitter();
+  public canIncrement: boolean = false;
+  public canDecrement: boolean = false;
+  constructor( private _pricebandService: PricebandService) {
+  }
+  public minQuantity: number;
+  public maxQuantity: number;
+
+  getProductData(productCode) {
+    this._pricebandService.getPrice(productCode).subscribe(res => {
+      });
+  }
+  ngOnInit() {
+    this.minQuantity = this.minValue;
+    this.maxQuantity = this.maxValue;
+    this.canCounterIncrement();
+    this.canCounterDecrement();
+    // this.getProductData(productCo);
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    this.canCounterIncrement();
+    this.canCounterDecrement();
+  }
+  get counterValue(): Product {
+    return this._counterValue;
+  }
+
+  @Input('counterValue')
+  set counterValue(value: Product) {
+    if (value.quantity <= this.maxValue && value.quantity >= this.minValue) {
+      this._counterValue = value;
+      this.canCounterIncrement();
+      this.canCounterDecrement();
+    }
+  }
+
+  onCounterValueChange(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  private canCounterIncrement() {
+    if (typeof (this.maxValue) !== 'undefined' && typeof (this.maxValue) === 'number') {
+      this.canIncrement = this.counterValue.quantity < this.maxQuantity;
+    }
+  }
+
+  private canCounterDecrement() {
+    if (typeof (this.minValue) !== 'undefined' && typeof (this.minValue) === 'number') {
+      this.canDecrement = this.counterValue.quantity > this.minQuantity;
+    }
+  }
+
+  increment() {
+     if (this.canIncrement) {
+       if (this.counterValue['invoiceNo']  ) {
+        this._pricebandService.getPrice(this.counterValue['productId']).subscribe(res => {
+          if (this.counterValue['quantity'] < res['incrementBy']) {
+            this.counterValue['quantity'] += res['incrementBy'] - 1;
+            this.update.emit();
+        } else {
+          this.counterValue['quantity'] += res['incrementBy'];
+          this.update.emit();
+        }
+          }, error => {
+            this.counterValue.quantity++;
+            this.update.emit();
+          }
+          );
+       } else {
+        this.counterValue.quantity++;
+        this.update.emit();
+       }
+     }
+}
+
+  decrement() {
+  if (this.canIncrement) {
+    if (this.counterValue['invoiceNo']  ) {
+     this._pricebandService.getPrice(this.counterValue['productId']).subscribe(res => {
+       if (this.counterValue['quantity'] === res['incrementBy']) {
+         this.counterValue['quantity'] -= res['incrementBy'] - 1;
+         this.update.emit();
+     } else {
+       this.counterValue['quantity'] -= res['incrementBy'];
+       this.update.emit();
+     }
+       }, error => {
+         this.counterValue.quantity--;
+         this.update.emit();
+       }
+       );
+    } else {
+     this.counterValue.quantity--;
+     this.update.emit();
+    }
+  }
+  }
+
+  onValueChange() {
+    this.update.emit();
+  }
+}

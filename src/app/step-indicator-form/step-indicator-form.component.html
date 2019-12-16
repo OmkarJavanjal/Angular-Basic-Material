@@ -1,0 +1,109 @@
+<form id="regForm" class="form-horizontal"  [formGroup]="stepForm" (ngSubmit)="onFormSubmit()">
+  <h1>Register:</h1>
+  <ol class="progres" data-steps="4">
+    <li class="indicator">
+        <span class="steps"><span>1</span></span>
+    </li>
+    <li class="indicator">
+        <span class="steps"><span>2</span></span>
+    </li>
+    <li class="indicator">
+        <span class="steps"><span>3</span></span>
+    </li>
+  </ol>
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab">
+    <!-- Text input-->
+  <div class="form-group">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 inputGroupContainer">
+    <label class="control-label">First Name</label> 
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input  name="first_name" placeholder="First Name" class="form-control"  type="text" 
+     id="inputFirstName" formControlName = "firstName">  
+     </div>
+      <control-messages [control]="stepForm.controls.firstName"></control-messages>
+    </div>
+  </div>
+    <!-- Text input-->
+  <div class="form-group">
+      <label class="col-md-4 control-label" >Last Name</label> 
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="last_name" placeholder="Last Name" class="form-control"  type="text"  
+        id="inputLastName" formControlName = "lastName">
+      </div>
+      <control-messages [control]="stepForm.controls.lastName"></control-messages>
+      </div>
+    </div>
+  </div> 
+  <div class="tab">
+    <!-- Text input-->
+<div class="form-group">
+    <label class="col-md-4 control-label">E-Mail</label>  
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <input name="email" placeholder="E-Mail Address" class="form-control"  type="text"  
+          id="inputEmail" formControlName = "email">
+      </div>
+    <control-messages [control]="stepForm.controls.email"></control-messages>
+    </div>
+  </div>
+   <!-- Text input-->      
+<div class="form-group">
+    <label class="col-md-4 control-label">Contact No.</label>  
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+      <input name="contact_no" placeholder="(639)" class="form-control" type="text" id="inputMobile" 
+      formControlName = "mobile" [(ngModel)]="mobile" myCurrencyFormatter>
+      </div>
+     <control-messages [control]="stepForm.controls.mobile"></control-messages>
+    </div>
+  </div>
+  </div>
+  <div class="tab">
+   <!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label">Username</label>  
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input  name="user_name" placeholder="Username" class="form-control"  type="text"  id="inputuser" formControlName = "userName">
+          </div>
+        <control-messages [control]="stepForm.controls.userName"></control-messages>
+        </div>
+      </div>
+      <div class="form-group">
+          <label class="col-md-4 control-label" >Password</label> 
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="user_password" placeholder="Password" class="form-control"  type="password" 
+             id="inputPassword" formControlName = "pwd">
+            </div>
+          </div>
+        </div>
+  </div>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" (click)="nextPrev(-1)">Previous</button>
+      <button type="button" (click)="openModal()">OpenModal <span class="glyphicon glyphicon-send"></span></button>
+      <button type="button" id="nextBtn" (click)="nextPrev(1)">Next <span class="glyphicon glyphicon-send"></span></button>
+      <button type="button" class="nextPage" id="nextPage" (click)="nextPage()">Go to Home page <span class="glyphicon glyphicon-send"></span></button>
+      <!--<button type="submit" class="btn" [disabled] = "!stepForm.valid"
+       id="formSubmitBtn">SUBMIT <span class="glyphicon glyphicon-send"></span></button>-->
+    </div>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"><span>1</span></span>
+    <span class="step"><span>2</span></span>
+    <span class="step"><span>3</span></span>
+  </div>
+</form>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button>

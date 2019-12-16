@@ -1,0 +1,319 @@
+<div class="row" id="print-section">
+    <app-print-document [printData]='studentData'></app-print-document>
+ </div>
+ 
+
+
+
+------   {{checkConfirmationDataArraya|json}}
+ ->>>>>>>>>>>>{{titleData}}
+
+ <button (click)="toggleSnazzyInfoWindow()">Toggle SnazzyInfoWindow</button>
+ <!-- 
+<div class="row">
+    <div>
+        <span *ngIf = "isavailable;then condition1 else condition2">Condition is valid.</span>
+        <ng-template #condition1>Condition is valid from template</ng-template>
+        <ng-template #condition2>Condition is invalid from template</ng-template>
+     </div>
+</div>
+For the Span tag, we have added the if statement with the else condition and will call template condition1, else condition2.
+The templates are to be called as follows −
+<ng-template #condition1>Condition is valid from template</ng-template>
+<ng-template #condition2>Condition is invalid from template</ng-template>
+If the condition is true, then the condition1 template is called, otherwise condition2.
+The variable `isavailable` is false so the condition2 template is printed.
+This page will walk through Angular 4 <ng-template> example. <ng-template> is an angular element for rendering HTML. It is never displayed directly. It can be displayed using structural directive, ViewContainerRef etc. Suppose we have following code in our HTML template.
+
+    <ng-template>
+        <p>Hello World!</p>
+    </ng-template> 
+
+When the code runs then the code written inside <ng-template> will not be displayed but there will be a comment.
+     
+https://www.concretepage.com/angular-2/angular-4-ng-template-example
+
+Before rendering HTML, angular replaces <ng-template> with a comment. <ng-template> can be used with structural directive, ViewContainerRef etc. In our example we will discuss how to use <ng-template> with ngFor, ngIf and ngSwitch. We will also create custom structural directive that we will use with <ng-template>. Using TemplateRef and ViewContainerRef we can reuse the code of <ng-template> in our HTML template. <ng-template> example with ngFor is as follows.
+
+<ng-template ngFor let-person [ngForOf]= "allPersons" let-i="index">
+        <p>{{i + 1}}. {{person.name}} : {{person.age}} </p>
+</ng-template>
+
+1. <ng-template> with ngFor :
+     https://www.concretepage.com/angular-2/angular-4-ng-template-example
+
+2. <ng-template> with ngIf :
+    https://www.concretepage.com/angular-2/angular-4-ng-template-example
+    Here we will provide example to use <ng-template> with ngIf, ngIf-else and ngIf-then-else. 
+
+
+  https://blog.bitsrc.io/how-to-build-dynamic-components-in-angular-6-41f50abddc64
+
+  <ng-template #hello>
+        Hello, World
+  </ng-template>
+  export class AppComponent implements OnInit, AfterViewInit {
+    @ViewChild('hello') helloTemplate; 
+    heroes;
+  }
+
+  ngAfterViewInit() {
+    console.log(this.helloTemplate);
+  }
+
+  Open your browser developer tools. You will notice there is TemplateRef there that has a couple of properties inside it.
+
+  https://coursetro.com/posts/code/57/Angular-4-Templating-Basics
+  <h1>Hey guys!</h1>
+  <div *ngIf="myArr; then tmpl1 else tmpl2"></div>
+
+  <ng-template #tmpl1>I'm here</ng-template>
+  <ng-template #tmpl2>I'm not here</ng-template>
+
+
+  http://findnerd.com/list/view/ng-template-ng-container--ngTemplateOutlet---Angular-Templates-Guide-with-Example/37145/
+
+   --> 
+
+
+<pre>{{nestedArray|json}}</pre>
+<h1>---------------------------------</h1>
+----{{checkConfirmationDataa|json}}
+<!--  Print page -->
+<div class="row">
+        <div *ngFor="let eventChk of eventTypeChkBox">
+        <div class="col-md-3">
+            <label class="btn-custom">
+                <img src="https://www.w3schools.com/tags/smiley.gif" alt="{{eventChk.val}}" class="img-check img-circle" [ngClass]="{'check': eventChk.isClassVisible } "
+                            width="100" height="100">
+                        <input  [(ngModel)]="eventChk.checked"  type="checkbox" name="{{eventChk.id}}" id="{{eventChk.id}}" value="{{eventChk.val}}" class="hidden" autocomplete="off"
+                                (change)="onModelChange(eventChk)">
+                        </label>
+                        <p>{{eventChk.val}}</p>
+                    </div>
+                    </div> 
+</div>
+<div class="row">
+    ------
+    <p *ngFor='let btns of btn; let idx = index'>
+        <span class="bb" (click)="remove(btns.id)">{{btns.name}}</span>
+    </p>
+</div>
+
+
+<div class="row">      
+        <button (click)="print()">print</button>
+</div>
+
+<span class="openModalData">
+<button type="button" class="btn btn-primary" (click)="downLoad()">DownLoadData</button>
+</span>
+<div class="row">
+   <table class="table table-bordered">
+      <thead>
+         <tr>
+            <th>Student-Id</th>
+            <th>Student-FirstName</th>
+            <th>Student-LastName</th>
+            <th>Student-UserName</th>
+            <th>Student-Email</th>
+            <th>Student-Mobile</th>
+            <th>Student-Gender</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor='let studentinfo of studentData; let idx = index'>
+            <td>{{idx}}{{studentinfo.id}}</td>
+            <td>{{studentinfo.firstName}}</td>
+            <td>{{studentinfo.lastName}}</td>
+            <td>{{studentinfo.userName}}</td>
+            <td>{{studentinfo.email}}</td>
+            <td>{{studentinfo.mobile}}</td>
+            <td>{{studentinfo.gender}}</td>
+            <td colspan="5" class="updateData">
+               <span [routerLink]="['/update',studentinfo.id]" routerLinkActive="active" id="{{idx+1}}updateData">Update</span>
+               <span class="deleteData" (click)="deleteStudentDetails(studentinfo.id)" id="{{idx+1}}deleteData">Delete</span>
+               <span class="openModalData">
+               <button type="button" class="btn btn-primary" (click)="openModal(template,studentinfo.id)" id="{{idx+1}}openModal"
+                  tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." appModaldirective>Open modal</button>
+               </span>
+            </td>
+         </tr>
+         <tr *ngIf="!studentData">
+            <td colspan="7">Loading Data.....</td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+<div class="row" style="border: 1px solid green;background: pink;">
+<div class="col-xs-6" style="border: 1px solid green;background: pink;">
+   <div class="col-xs-12" style="border: 1px solid green;background: gray; margin-bottom:20px">
+      <div class="col-xs-2" style="border: 1px solid green;background: gray;"></div>
+      <div class="col-xs-10" style="border: 1px solid green;background: yellow;">
+         <div class="col-xs-6" style="border: 1px solid green;background: gray;">
+            <div class="col-xs-8">
+               <div class="col-xs-3" style="text-align: center;">
+                  <p>Flat Filter </p>
+               </div>
+            </div>
+            <div class="col-xs-4"> </div>
+         </div>
+         <div class="col-xs-6" style="border: 1px solid green;background: gray;">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10" style="text-align: center;">
+               <div class="col-xs-10">
+                  <p>Air Pressure Drop: Not Calculated </p>
+               </div>
+               <div class="col-xs-2">
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-xs-12">
+      <div class="col-xs-2" style="border: 1px solid green;background: gray;">
+         <div class="col-xs-12">
+            <p>Filter OptionS</p>
+         </div>
+         <div class="col-xs-12">
+            <ul>
+               <li>
+                  <a class="active" href="#home">Home</a>
+               </li>
+               <li>
+                  <a href="#news">News</a>
+               </li>
+               <li>
+                  <a href="#contact">Contact</a>
+               </li>
+               <li>
+                  <a href="#about">About</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="col-xs-10" style="border: 1px solid green;background: yellow;">
+         <div class="col-xs-12">
+            <div class="col-xs-5" style="border: 1px solid green;background: gray;">
+               <div class="col-xs-9">
+                  <p style="float: right; margin-right: 5px;">Filter Depth: </p>
+               </div>
+               <div class="col-xs-3">
+                  <select class="select_option" [(ngModel)]="selectedfilterDepthData" style="width: 45px;" (ngModelChange)="onFilterDepthChange($event)"
+                  id="selectedfilterDepth">
+                  <option *ngFor="let filterDepthDataName of filterDepthData" [ngValue]="filterDepthDataName">{{filterDepthDataName.name}} </option>
+                  </select>
+               </div>
+            </div>
+            <div class="col-xs-7" style="border: 1px solid green;background: gray;">
+               <div class="col-xs-5">
+                  <p style="float: right;margin-right: 5px;">Filter media: </p>
+               </div>
+               <div class="col-xs-7">
+                  <select class="select_option" style="width: 85px;">
+                     <option value="volvo">Volvo</option>
+                     <option value="saab">Saab</option>
+                     <option value="opel">Opel</option>
+                     <option value="audi">Audi</option>
+                  </select>
+               </div>
+            </div>
+         </div>
+         <div class="col-xs-12">
+            <div class="col-xs-6" style="border: 1px solid green;background: gray;">
+               <div class="col-xs-10">
+                  <div class="col-xs-6 allowance">
+                     <p style="float: right; padding-right: 10px;">Dirty Filter Allowance: </p>
+                  </div>
+                  <div class="col-xs-6">
+                     <select class="select_option" [(ngModel)]="selectedfilterAllowance" (ngModelChange)="onFilterAllowanceChange($event)" id="selectedfilterAllowance">
+                     <option *ngFor="let filterAllowanceName of filterAllowance" [ngValue]="filterAllowanceName">{{filterAllowanceName.name}} </option>
+                     </select>
+                  </div>
+               </div>
+               <div class="col-xs-7" style="border: 1px solid green;background: gray;">
+                  <div class="col-xs-5">
+                     <p style="float: right;margin-right: 5px;">Spare Media : </p>
+                  </div>
+                  <div class="col-xs-7">
+                     <select class="select_option" style="width: 85px;">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                     </select>
+                     <p style="display: inline-block;margin-left: 5px;">
+                        Qty :
+                        <input type='checkbox' [disabled]="!validName" style="float: right;">
+                        <input type="checkbox" value="Car">
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-12">
+               <div class="col-xs-5" style="border: 1px solid green;background: gray;">
+                  <div class="col-xs-9">
+                     <p style="float: right;margin-right: 5px;">Face Velocity: </p>
+                  </div>
+                  <div class="col-xs-3">
+                     <select class="select_option" [(ngModel)]="selectedVelocityName" style="width: 45px;" (ngModelChange)="onVelocityChange($event)"
+                     id="selectedfilterAllowance">
+                     <option *ngFor="let onVelocityName of filterVelocity" [ngValue]="onVelocityName">{{onVelocityName.name}} </option>
+                     </select>
+                  </div>
+               </div>
+               <div class="col-xs-7" style="border: 1px solid green;background: gray;"> </div>
+            </div>
+            <div class="col-xs-12" style="border: 1px solid green;background: red;">
+               <h3>
+                  <label>FIlter Gauges </label>
+               </h3>
+            </div>
+            <div class="col-xs-12">
+               <hr>
+            </div>
+            <div class="col-xs-12">
+               <div class="col-xs-7" style="border: 1px solid green;background: gray;">
+                  <div class="col-xs-6">
+                     <p style="float: right; margin-right: 5px;">Type: </p>
+                  </div>
+                  <div class="col-xs-6">
+                     <select class="select_option" [(ngModel)]="selectedfilterDepthData" style="width: 85px;" (ngModelChange)="onFilterDepthChange($event)"
+                     id="selectedfilterDepth">
+                     <option *ngFor="let filterDepthDataName of filterDepthData" [ngValue]="filterDepthDataName">{{filterDepthDataName.name}} </option>
+                     </select>
+                  </div>
+               </div>
+               <div class="col-xs-5" style="border: 1px solid green;background: gray;">
+                  <div class="col-xs-7">
+                     <p style="float: right;margin-right: 5px;">Primary Filter: </p>
+                  </div>
+                  <div class="col-xs-5">
+                     <input type='checkbox' [disabled]="!validName">
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-12">
+               <div class="col-xs-7" style="border: 1px solid green;background: gray;">
+                  <div class="col-xs-6">
+                     <p style="float: right; margin-right: 5px;">Range: </p>
+                  </div>
+                  <div class="col-xs-6">
+                     <select class="select_option" [(ngModel)]="selectedfilterDepthData" style="width: 85px;" (ngModelChange)="onFilterDepthChange($event)"
+                     id="selectedfilterDepth">
+                     <option *ngFor="let filterDepthDataName of filterDepthData" [ngValue]="filterDepthDataName">{{filterDepthDataName.name}} </option>
+                     </select>
+                  </div>
+               </div>
+               <div class="col-xs-5" style="border: 1px solid green;background: gray;"> </div>
+            </div>
+            <div class="col-xs-12" style="text-align: center;margin-top: 30px;">
+               <p>left-box works!left-box works!left-box works!left-box</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-xs-6" style="border: 1px solid green;background: yellow;">
+     
+   </div>
+</div>

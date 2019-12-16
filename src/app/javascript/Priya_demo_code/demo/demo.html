@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://ace.jeka.by/assets/css/ace.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<div class="container">
+  <h3>Incident Report</h3>
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Search</div>
+      <div class="panel-body">
+	  
+	  <div class="row">
+		<div class="col-xs-12">
+		<!-- Change Start  -->
+		
+		
+				<div class="col-xs-12">
+							<div class="form-group col-xs-12 col-sm-12 no-padding-left no-padding-right">
+								<label class="col-sm-3 col-xs-3 control-label width100_mobile line_height40">Report Type</label>
+								<div class="col-sm-9 width100_mobile col-xs-9 no-padding-left no-padding-right pL15">
+								<div class="col-sm-3 col-xs-6 width100_mobile width50_tablets no-padding-left no-padding-right">
+								<div class="radio">
+									<label class="pL10">
+										<input name="reportType" value="searchResults" type="radio" class="ace" />
+										<span class="lbl">Search Results</span>
+									</label>
+								</div>
+								</div>
+								<div class="col-sm-3 col-xs-6 width100_mobile width50_tablets no-padding-left no-padding-right">
+									<div class="radio">
+										<label class="pL10">
+											<input name="reportType" value="dailySummaryReport" type="radio" class="ace" />
+											<span class="lbl">Daily Summary Report</span>
+										</label>
+									</div>
+								</div>
+								<div class="col-sm-3 col-xs-6 width100_mobile width50_tablets no-padding-left no-padding-right">
+									<div class="radio">
+										<label class="pL10">
+											<input name="reportType" value="slaReport" type="radio" class="ace" />
+											<span class="lbl">SLA Report</span>
+										</label>
+									</div>
+								</div>
+								<div class="col-sm-3 col-xs-6 width100_mobile width50_tablets no-padding-left no-padding-right">
+									<div class="radio">
+										<label class="pL10">
+											<input name="reportType" value="incidentDetailsReport" type="radio" class="ace" />
+											<span class="lbl">Incident Details Report</span>
+										</label>
+									</div>
+								</div>
+								</div>
+								
+								
+								
+									
+						</div>
+				</div>
+				<div class="col-xs-12">
+				<div class="col-xs-12" id="moreSearchStringDiv">
+					<div id="searchString0" class="form-group col-xs-12 col-xs-12 no-padding-left no-padding-right">
+						<label class="col-sm-3 col-xs-12 control-label no-padding-right no-padding-left line_height40" for="form-field-1">
+						<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="More details." title="Which filed you like to search on? Please keep in mind that all queries are case sensitive">?</span>
+							Search For
+						</label>
+						<div class="col-sm-9 col-xs-12 no-padding-left no-padding-right">
+							<input type="text" name="query" class="col-xs-12 col-sm-8" placeholder="Enter Text"
+								onfocus="inputFocus(this)" onblur="inputBlur(this)" size="40" />
+						</div>
+					</div>
+					<div class="form-group col-xs-12 no-padding-left">
+						<label class="col-sm-3 control-label no-padding-right pL0">In Fields</label>
+						<div class="col-sm-9">
+							<div id="inFieldsSelector"></div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="form-group col-xs-12">
+					<label class="col-sm-3 control-label no-padding-right" for="form-field-1"></label>
+					<div class="col-sm-9">
+						<label>
+							<input name="searchStringANDORTicket" type="radio" value="OR" checked class="ace" />
+							<span class="lbl">OR</span>
+						</label>
+						<label>
+							<input name="searchStringANDORTicket" type="radio"  value="AND" class="ace" />
+							<span class="lbl">AND</span>
+						</label>
+					</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+					<label class="col-sm-3 col-xs-12 control-label no-padding-right line_height40" for="ticketNumber">Ticket Number</label>
+					<div class="col-sm-9 col-xs-12">
+						<input  type="text" id="ticketNumber" size="60" placeholder="Comma Separted Ticket Numbers" 
+							class="col-xs-12 col-sm-8" />
+					</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+					<label class="col-sm-3 col-xs-12 control-label no-padding-right line_height40" for="nbkIds">Created or Updated By User(nbkid)</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" size="30" id="nbkIds" placeholder="Comma Separated NBKs" 
+							 class="col-xs-12 col-sm-8" />
+					</div>
+				</div>
+				
+				<div id="dateOptions0" class="col-xs-12 col-sm-12">
+					<div class="form-group col-sm-3 col-xs-12">
+						<label class="col-sm-12 control-label no-padding-right no-padding-left line_height40">
+						<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="More details." title="Which date field would you like to search on? Note some dates are from Maximo and some dates are only available for myCTO managed incidents">?</span>
+						Date Type
+						</label>
+						<div class="col-sm-9">
+							<span id="dateSelector"></span>
+						</div>
+					</div>
+					<!--<div class="form-group col-sm-12"><label class="col-sm-2 control-label no-padding-right"></label></div>-->
+					<div class="form-group col-sm-9 col-xs-12" name="datePickers">
+					<div class="form-group col-sm-5 col-xs-12 width50_tablets no-padding-right no-padding-left">
+					<label class="col-sm-3 width33_tablets control-label no-padding-right no-padding-left line_height40" for="fromDate">From Date:</label>
+						<div class="col-sm-9 width66_tablets no-padding-right no-padding-left">
+							<div id="dateSelector" class="input-group col-xs-12 col-sm-12">
+								<input class="form-control date-picker" id="fromDate" name="fromDate"/>
+									<span class="input-group-addon">
+										<i class="fa fa-calendar bigger-110"></i>
+									</span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group col-sm-5 col-xs-12 width50_tablets no-padding-left pR0">
+					<label class="col-sm-3 width33_tablets control-label no-padding-right line_height40 pL0" for="toDate">To Date:</label>
+						<div class="col-sm-9 width66_tablets no-padding-right no-padding-left">
+							<div id="datePickers" class="input-group col-xs-12 col-sm-12">
+								<input class="form-control date-picker" id="toDate" name="toDate" />
+									<span class="input-group-addon">
+										<i class="fa fa-calendar bigger-110"></i>
+									</span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group col-sm-2 col-xs-12 no-padding-right no-padding-left">
+					<label class="col-sm-5 col-xs-2 control-label no-padding-left line_height40 no-padding-right no-padding-left" for="todayCheck">Today</label>
+						<div class="col-sm-5 col-xs-2 no-padding-right no-padding-left">
+							<div class="checkbox">
+								<label>
+									<input name="todayCheck" class="ace ace-checkbox-2" type="checkbox" onclick="todayDateOption('dateOptions', this)" />
+									<span class="lbl"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+						
+						
+						
+						
+						
+						
+						
+						
+					</div>
+				</div>
+				
+				<div class="form-group col-xs-12">
+					<label class="col-sm-3 control-label no-padding-right" for="ticketType"></label>
+					<div class="col-sm-9">
+						<label>
+							<input class="ace"  type="radio" name="ticketType" value="maximo" onclick="loadValues()" />
+							<span class="lbl">Maximo</span>
+						</label>
+						<label>
+							<input class="ace" type="radio" name="ticketType" value="remedy" checked="checked" onclick="loadValues()" />
+							<span class="lbl">Remedy</span>
+						</label>
+					</div>
+				</div>
+				
+				<div id="remedyBlock" style="display:none;" class="col-sm-12">
+					<div class="form-group col-sm-12">
+						<label class="col-sm-3 control-label no-padding-right" for="remedyPriority"></label>
+						<div class="col-sm-9">
+							<div class="col-sm-2">
+								<label for="form-field-select-2">Priority</label>
+								<span id="prioritySelector"> <select multiple="multiple"
+									size="4" id="remedyPriority" class="form-control">
+										<option value="ALL">ALL</option>
+										<option value="1-High">1-High</option>
+										<option value="2-Medium">2-Medium</option>
+										<option value="3-Low">3-Low</option>
+									</select>
+								</span>
+							</div>
+							<div class="col-sm-2">
+								<label for="urgency">Urgency</label>
+								<span id="urgencySelector"> <select multiple="multiple"
+									size="4" id="urgency" class="form-control">
+										<option value="ALL">ALL</option>
+										<option value="1-High">1-High</option>
+										<option value="2-Medium">2-Medium</option>
+										<option value="3-Low">3-Low</option>
+									</select>
+								</span>
+							</div>
+							<div class="col-sm-2">
+								<label for="remedyImpact">Impact</label>
+								<span id="impactSelector"> 
+									<select multiple="multiple" size="3" id="remedyImpact"  class="form-control">
+										<option value="ALL">ALL</option>
+										<option value="2-Medium">2-Medium</option>
+										<option value="3-Low">3-Low</option>
+									</select>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="maximoBlock" style="display:none;" class="col-sm-12">
+					<div class="form-group col-sm-12">
+						<div class="col-sm-9">
+							<div class="col-sm-2">
+								<label for="prioritySelector">Priority</label>
+								<span id="prioritySelector"> 
+									<select multiple="multiple" size="4" id="maximoPriority" class="form-control">
+										<option value="ALL">ALL</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</span>
+							</div>
+							<div class="col-sm-2">
+								<label for="impactSelector">Impact</label>
+								<span id="impactSelector"> 
+								<select multiple="multiple" size="4" id="maximoImpact" class="form-control">
+										<option value="ALL">ALL</option>
+										<option value="H">H</option>
+										<option value="M">M</option>
+										<option value="L">L</option>
+									</select>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>						
+				<div class="form-group col-xs-12 col-sm-12">						
+							<div class="col-sm-2 col-xs-12 no-padding-right width19_tablets mB15">
+								<label class="col-sm-12 col-xs-12  no-padding-right no-padding-left" for="lobSelector">Priority:</label>
+								<!-- <span id="lobSelector"></span>-->
+								 <select class="col-sm-12 col-xs-12 no-padding-right" size="3" multiple="multiple" tabindex="1">
+									<option value="11">eleven</option>
+									<option value="12">twelve</option>
+									<option value="13">thirette</option>
+									<option value="14">fourteen</option>
+									<option value="15">fifteen</option>
+									<option value="16">sixteen</option>
+									<option value="17">seventeen</option>
+									<option value="18">eighteen</option>
+									<option value="19">nineteen</option>
+									<option value="20">twenty</option>
+								  </select>
+							</div>
+							<div class="col-sm-2 col-xs-12 no-padding-right width19_tablets mB15">
+								<label class="col-sm-12 col-xs-12 no-padding-right no-padding-left" for="lobSelector">Urgency:</label>
+								<!-- <span id="stateSelector"></span> -->
+								 <select class="col-sm-12 col-xs-12 no-padding-right" size="3" multiple="multiple" tabindex="1">
+									<option value="11">eleven</option>
+									<option value="12">twelve</option>
+									<option value="13">thirette</option>
+									<option value="14">fourteen</option>
+									<option value="15">fifteen</option>
+									<option value="16">sixteen</option>
+									<option value="17">seventeen</option>
+									<option value="18">eighteen</option>
+									<option value="19">nineteen</option>
+									<option value="20">twenty</option>
+								  </select>
+							</div>
+							<div class="col-sm-2 col-xs-12 no-padding-right width19_tablets mB15">
+								<label class="col-sm-12 col-xs-12 no-padding-right no-padding-left" for="lobSelector">Impact:</label>
+								 <select class="col-sm-12 col-xs-12 no-padding-right" size="3" multiple="multiple" tabindex="1">
+									<option value="11">eleven</option>
+									<option value="12">twelve</option>
+									<option value="13">thirette</option>
+									<option value="14">fourteen</option>
+									<option value="15">fifteen</option>
+									<option value="16">sixteen</option>
+									<option value="17">seventeen</option>
+									<option value="18">eighteen</option>
+									<option value="19">nineteen</option>
+									<option value="20">twenty</option>
+								  </select>
+							</div>
+							<div class="col-sm-2 col-xs-12 no-padding-right width19_tablets mB15">
+								<label class="col-sm-12 col-xs-12 no-padding-right no-padding-left" for="lobSelector">Line Of Business</label>
+								 <select class="col-sm-12 col-xs-12 no-padding-right" size="3" multiple="multiple" tabindex="1">
+									<option value="11">eleven</option>
+									<option value="12">twelve</option>
+									<option value="13">thirette</option>
+									<option value="14">fourteen</option>
+									<option value="15">fifteen</option>
+									<option value="16">sixteen</option>
+									<option value="17">seventeen</option>
+									<option value="18">eighteen</option>
+									<option value="19">nineteen</option>
+									<option value="20">twenty</option>
+								  </select>
+							</div>
+							<div class="col-sm-2 col-xs-12 no-padding-right width19_tablets mB15">
+								<label class="col-sm-12 col-xs-12 no-padding-right no-padding-left" for="lobSelector">Incident State:</label>
+								 <select class="col-sm-12 col-xs-12 no-padding-right" size="3" multiple="multiple" tabindex="1">
+									<option value="11">eleven</option>
+									<option value="12">twelve</option>
+									<option value="13">thirette</option>
+									<option value="14">fourteen</option>
+									<option value="15">fifteen</option>
+									<option value="16">sixteen</option>
+									<option value="17">seventeen</option>
+									<option value="18">eighteen</option>
+									<option value="19">nineteen</option>
+									<option value="20">twenty</option>
+								  </select>
+							</div>
+							<div class="col-sm-2 col-xs-12 form-group width100_tablet">
+								<label class="col-sm-3 col-xs-5 control-label no-padding-right display_none"></label>
+								<div class="col-sm-9 pedingL0 col-xs-7 width100_mobile width100_tablet line_height120 textCentre">
+									<button class="btn btn-info width100_mobile width50_tablets" type="button" id="summaryincidentSearchButton">
+									<i class="ace-icon fa fa-check bigger-110"></i>
+									 Search
+								</button>
+								</div>						
+							</div>					
+				        </div>
+				
+				
+				<div class="form-group col-sm-12 col-xs-12">						
+							<div class="col-sm-5 col-xs-12 no-padding-right mB15 width50_tablets">
+								<label class="col-sm-12 col-xs-12 no-padding-right no-padding-left" for="lobSelector">Available Fields:</label>
+								<!-- <span id="lobSelector"></span>-->
+								<div class="col-sm-12 col-xs-8 no-padding-right no-padding-left">
+								 <select class="col-sm-8 col-xs-12 no-padding-right" size="5" multiple="multiple" tabindex="1">
+									<option value="11">eleven</option>
+									<option value="12">twelve</option>
+									<option value="13">thirette</option>
+									<option value="14">fourteen</option>
+									<option value="15">fifteen</option>
+									<option value="16">sixteen</option>
+									<option value="17">seventeen</option>
+									<option value="18">eighteen</option>
+									<option value="19">nineteen</option>
+									<option value="20">twenty</option>
+								  </select>
+								  <div class="col-sm-5 position_absolute form-group no-padding-right">
+										<div class="radio mB30">
+											<label class="pL10">
+												
+												<span class="lbl mR10">Add</span>
+												<span class="arrow_design"><i class="fa fa-arrow-right"></i></span>
+											</label>
+										</div>
+										<div class="radio">
+											<label class="pL10">
+												<span class="arrow_design mR10"><i class="fa fa-arrow-left"></i></span>
+												<span class="lbl">Remove</span>
+											</label>
+										</div>							
+							      </div>	
+								</div>							 						   
+							</div>
+							<div class="col-sm-5 col-xs-12 no-padding-right mB15 width50_tablets">
+								<label class="col-sm-12  col-xs-12 no-padding-right no-padding-left" for="lobSelector">Separated Fields:</label>
+								<!-- <span id="stateSelector"></span> -->
+								 <div class="col-sm-12 col-xs-8 no-padding-right no-padding-left">
+								 <select class="col-sm-8 col-xs-12 no-padding-right" size="5"  tabindex="1">
+									<option value="11">eleven</option>
+									<option value="12">twelve</option>
+									<option value="13">thirette</option>
+									<option value="14">fourteen</option>
+									<option value="15">fifteen</option>
+									<option value="16">sixteen</option>
+									<option value="17">seventeen</option>
+									<option value="18">eighteen</option>
+									<option value="19">nineteen</option>
+									<option value="20">twenty</option>
+								  </select>
+								  <div class="col-sm-5 position_absolute form-group no-padding-right">
+										<div class="radio mB30">
+											<label class="pL10">
+												<span class="arrow_design mR10"><i class="fa fa-arrow-up"></i></span>
+												<span class="lbl">UP</span>
+											</label>
+										</div>
+										<div class="radio">
+											<label class="pL10">
+												<span class="arrow_design mR10"><i class="fa fa-arrow-down"></i></span>
+												<span class="lbl">Down</span>
+											</label>
+										</div>							
+							      </div>	
+								</div>	
+							</div>
+							<div class="col-sm-2 col-xs-12 form-group width100_tablet mT20">
+								<div class="radio displaiInline">
+									<label class="pL10">
+										<input name="reportType" value="searchResults" type="radio" class="ace" />
+										<span class="lbl">Web Page</span>
+									</label>
+								</div>
+								<div class="radio displaiInline">
+									<label class="pL10">
+										<input name="reportType" value="searchResults" type="radio" class="ace" />
+										<span class="lbl">Word</span>
+									</label>
+								</div>
+								<div class="radio displaiInline">
+									<label class="pL10">
+										<input name="reportType" value="searchResults" type="radio" class="ace" />
+										<span class="lbl">Excel</span>
+									</label>
+								</div>								
+							</div>								
+															
+				        </div>
+						<div class="col-sm-12 col-xs-12 form-group width100_tablet textCentre">
+							<button class="btn btn-info width100_mobile width50_tablets float_R" type="button" id="summaryincidentSearchButton">									
+								Build Report
+							</button>					
+						</div>
+						
+			<!-- Change End  -->
+			</div>
+		</div>
+		 
+		 
+	  </div>
+    </div>
+
+
+  </div>
+</div>
+<script type="text/javascript">	
+	$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+      $('#datetimepicker6').datetimepicker();
+        $('#datetimepicker7').datetimepicker({
+            useCurrent: false //Important! See issue #1075
+        });
+        $("#datetimepicker6").on("dp.change", function (e) {
+            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker7").on("dp.change", function (e) {
+            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+        });	
+    });
+</script>
+</body>
+</html>

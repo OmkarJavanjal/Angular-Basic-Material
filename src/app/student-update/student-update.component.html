@@ -1,0 +1,150 @@
+
+
+<div class="row">
+  <table class="table table-bordered">
+     <thead>
+        <tr>
+           <th>Id</th>
+           <th>maxQuantity</th>
+           <th>minQuantity</th>
+           <th>incrementBy</th>
+           <th>productCode</th>
+           <th>total Price</th>
+           <th>Single price</th>
+           <th></th>
+        </tr>
+     </thead>
+     <tbody>          
+        <tr *ngFor='let studentinfo of userDataUpdated, let idx = index'>
+           <td>{{studentinfo.id}}</td>
+           <td >{{studentinfo.maxQuantity}}</td>
+           <td>
+              <span>{{studentinfo.minQuantity}}</span>
+          </td>
+          <td>
+              <span>{{studentinfo.incrementBy}}</span>
+         </td>
+          <td>
+              <span>{{studentinfo.productCode}}</span>
+         </td>
+         <td>
+            <span>{{studentinfo.totalPrice}}</span>
+        </td>
+        <td>
+            <span>{{studentinfo.price}}</span>
+        </td>
+         <td>
+          <button type="btn" class="value-button" id="decrease" (click)="decreaseNumber(studentinfo)" [disabled]="studentinfo.isminQuantity">-</button>
+          <input type="text" id="number" value="{{studentinfo.minQuantity}}"/>
+          <button type="btn" class="value-button" id="increase" (click)="increaseNumber(studentinfo)" [disabled]="studentinfo.ismaxQuantity">+</button>
+         </td>
+        </tr>
+     </tbody>
+  </table>
+  </div>
+
+
+<div class="row"> 
+  <div class="form-group">
+    <button type="button" class="btn"  id="formSubmitBtn" 
+    (click)="prevPage()">Move on previous Page 
+    <span class="glyphicon glyphicon-send"></span></button>     
+</div>
+</div>
+
+<!-- <form class="well form-horizontal"  id="contact_form" [formGroup]="signupForm" (ngSubmit)="onFormSubmit()"> -->
+<form class="form-horizontal"  [formGroup]="updateForm" (ngSubmit)="onUpdateStudentDetail()">		 
+<!-- Form Name -->
+<legend><h2><b>Update Student Registration Form</b></h2></legend><br>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="first_name" placeholder="First Name" class="form-control"  type="text"  id="inputFirstName"
+          formControlName = "firstName" [(ngModel)]='studentDetailList.firstName'>
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="last_name" placeholder="Last Name" class="form-control"  type="text"  id="inputLastName"
+         formControlName = "lastName" [(ngModel)]='studentDetailList.lastName'>
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label">Username</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="user_name" placeholder="Username" class="form-control"  type="text"  id="inputuser"
+          formControlName = "userName" [(ngModel)]='studentDetailList.userName'>
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text"  id="inputEmail" 
+         formControlName = "email" [(ngModel)]='studentDetailList.email'>
+    </div>
+  </div>
+</div>
+<!-- Text input-->      
+<div class="form-group">
+  <label class="col-md-4 control-label">Contact No.</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="contact_no" placeholder="(639)" class="form-control" type="text" id="inputMobile" 
+         formControlName = "mobile" [(ngModel)]='studentDetailList.mobile'>
+    </div>
+  </div>
+</div>
+<!-- Gender Block -->
+<div class="form-group">
+  <label for="select" class="col-md-4 control-label">Gender</label>
+	<div class="col-md-4 inputGroupContainer">
+	   <div class="input-group">
+	   <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+	   <select id="select"  class="form-control" formControlName="gender" [(ngModel)]='studentDetailList.gender'>	 
+		 <option *ngFor = "let g of genderList" 
+		   [value] = "g"> {{g}} 
+		 </option>
+	   </select>
+	  </div>
+	</div>
+</div>
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_update" *ngIf="isUpdate">Success <i class="glyphicon glyphicon-thumbs-up">
+ </i> Success!.</div>
+<!-- Button -->
+<div class="form-group">
+<div class="col-md-4"><br></div>
+  <div class="col-md-2"><br>
+    <button type="reset" class="btn btn-default">Cancel</button>
+  </div>
+  <div class="col-md-2"><br>
+    <button type="submit" class="btn updateBtn">Update Details <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+</form>
+
+
+<div class="form-group">
+    <div class="col-md-4"><br></div>
+          <div class="col-md-2"><br>
+          <button type="button" class="btn"  id="formSubmitBtn" (click)="clickme()">SUBMIT3 
+                  <span class="glyphicon glyphicon-send"></span></button>
+          </div>
+    </div>

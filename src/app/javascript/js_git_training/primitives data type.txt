@@ -1,0 +1,68 @@
+primitives data type-  Data type which store single vale are called primitive data type.
+
+A primitive value is a value that has no properties or methods.
+
+A primitive data type is data that has a primitive value.
+
+JavaScript defines 5 types of primitive data types:
+
+string
+number
+boolean
+null
+undefined
+Primitive values are immutable (they are hardcoded and therefore cannot be changed).
+
+primitives data type is call by value.
+
+null-- 
+The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values.
+
+console.log(null); //null
+console.log(!null); //true
+console.log(!!null); //false
+
+console.log(typeof(null));  // object
+
+
+var a = null;
+console.log(typeof(a)); // object
+
+
+console.log(null === null); // true
+
+console.log(null == null); // true
+
+console.log(undefined === null); // false
+console.log(undefined == null); // true
+
+typeof null        // "object" (not "null" for legacy reasons)
+typeof undefined   // "undefined"
+null === undefined // false
+null  == undefined // true
+null === null //true
+null == null //true
+!null // true
+
+
+undefined------
+The undefined property indicates that a variable has not been assigned a value.
+
+console.log(undefined); //undefined
+console.log(!undefined); //true
+console.log(!!undefined); //false
+
+var a;
+console.log(a); // undefined
+console.log(typeof(a)); // undefined
+
+
+
+
+
+
+
+
+
+
+

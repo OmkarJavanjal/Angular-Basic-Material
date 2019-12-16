@@ -1,0 +1,40 @@
+{
+"Results": {
+
+        "output1": [
+		{
+
+                "age": "29",
+
+                "fnlwgt": "77516",
+
+                "education": "Bachelors",
+
+                "education-num": "13",
+
+                "marital-status": "Never-married",
+
+                "relationship": "Not-in-family",
+
+                "race": "White",
+
+                "sex": "Male",
+
+                "capital-gain": "2174",
+
+                "capital-loss": "0",
+
+                "hours-per-week": "40",
+
+                "income": "<=50K",
+
+                "Scored Labels": "<=50K",
+
+                "Scored Probabilities": "0.00134915602393448"
+
+            }
+
+        ]
+
+    }
+}

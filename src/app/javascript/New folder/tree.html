@@ -1,0 +1,300 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Bootstrap TreeView</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+	</head>
+<body>
+
+<!--
+http://jsfiddle.net/3zza6L4v/
+https://jsfiddle.net/jakecigar/trvr7ynx/3/
+
+https://jsfiddle.net/jakecigar/trvr7ynx/2/
+
+http://www.bestjquery.com/?9_I6fGfI
+
+https://github.com/jonmiles/bootstrap-treeview  (follow this)
+https://github.com/jonmiles/bootstrap-treeview
+
+https://codepen.io/superpikar/pen/azLOEL  (dsdsd)
+
+https://gijgo.com/tree/demos/bootstrap-treeview
+
+https://www.jquery-az.com/jquery-treeview-with-checkboxes-2-examples-with-bootstrap/  (best follow this)
+-->
+
+ <div id="active"></div>
+ <div id="listContainer"></div>
+ 
+ 
+    <div class="container-fluid">
+        <div id="tree"></div>
+    </div>
+    <script type="text/javascript">
+            $(document).ready(function () {
+			var treeData = [{"ID":"1","gpanel":"sfd","ptitle":"sdffd","panel":"1,2",
+  "free":"yes","fees":"0.00"},
+  {"ID":"2","gpanel":"sdfd","ptitle":"sdfds","panel":"1",
+  "free":"yes","fees":"0.00"},
+   {"ID":"3","gpanel":"sdf","ptitle":"sdf","panel":"1",
+  "free":"yes","fees":"0.00"},
+   {"ID":"4","gpanel":"sfd","ptitle":"fes","panel":"1",
+  "free":"yes","fees":"0.00"},
+  {"ID":"5","gpanel":"bbbfff","ptitle":"hgffg","panel":"1,2",
+  "free":"yes","fees":"0.00"}
+  ];
+  
+  //$.getJSON("treeData", function(result) {
+    var panel_arr = ["", "Regular", "Reduced Fee", "Limited Assurance"];
+    var ul_block = $("<ul/>");
+    $.each(treeData, function(i, data) {
+        console.log(data);
+        var panels = data.panel.split(",");
+        var uli_block = $("<ul/>");
+        $.each(panels, function(j, jdata){
+            var ulii_block = $("<ul/>");
+            $(ulii_block).append($("<li/>").text(data.ptitle));
+            $(uli_block).append($("<li/>").text(panel_arr[panels[j]])).append(ulii_block);
+        });
+        $(ul_block).append($("<li/>").text(data.gpanel).append(uli_block));
+    });
+    $("#active").append(ul_block);
+//});
+			
+			
+			
+	var menuItems = {
+        "menu-0": {
+            "id": "menu-0",
+            "title": "Home",
+            "parentId": null,
+            "childCount": 0
+        },
+        "menu-1": {
+            "id": "menu-1",
+            "title": "About",
+            "parentId": null,
+            "childCount": 2
+        },
+        "menu-3": {
+            "id": "menu-3",
+            "title": "About Sub1",
+            "parentId": "menu-1",
+            "childCount": 2
+        },
+        "menu-5": {
+            "id": "menu-5",
+            "title": "About Sub2",
+            "parentId": "menu-1",
+            "childCount": 0
+        },
+        "menu-4": {
+            "id": "menu-4",
+            "title": "About Sub1 sub1",
+            "parentId": "menu-3",
+            "childCount": 0
+        },
+        "menu-6": {
+            "id": "menu-6",
+            "title": "Contact",
+            "parentId": null,
+            "childCount": 2
+        },
+        "menu-7": {
+            "id": "menu-7",
+            "title": "Contact sub1",
+            "parentId": "menu-6",
+            "childCount": 0
+        },
+        "menu-8": {
+            "id": "menu-8",
+            "title": "Contact sub2",
+            "parentId": "menu-6",
+            "childCount": 1
+        },
+        "menu-9": {
+            "id": "menu-9",
+            "title": "Contact sub2 sub1",
+            "parentId": "menu-8",
+            "childCount": 0
+        },
+        "menu-10": {
+            "id": "menu-10",
+            "title": "About Sub1 sub2",
+            "parentId": "menu-3",
+            "childCount": 2
+        },
+        "menu-11": {
+            "id": "menu-11",
+            "title": "About Sub1 sub2 sub1",
+            "parentId": "menu-10",
+            "childCount": 0
+        } ,
+        "menu-12": {
+            "id": "menu-11",
+            "title": "About Sub1 sub2 sub2",
+            "parentId": "menu-10",
+            "childCount": 0
+        }
+      };		
+			
+	        var url = "#";
+
+        function recurseMenu(parent) {
+            var s = '<ul>';
+            for (var x in menuItems) {
+                if (menuItems[x].parentId == parent) {
+                    s += '<li><img/><a href="' + url + '">' + menuItems[x].title + '</a>';
+
+                    if (menuItems[x].childCount > 0) {
+                        s += recurseMenu(menuItems[x].id);
+                    }
+                    s += '</li>';
+                }
+            }
+            return s + '</ul>';
+        }
+
+        $("#listContainer").html(recurseMenu());		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			var tree = [
+					  {
+						text: "Parent 1",
+						nodes: [
+						  {
+							text: "Child 1",
+							nodes: [
+							  {
+								text: "Grandchild 1"
+							  },
+							  {
+								text: "Grandchild 2"
+							  }
+							]
+						  },
+						  {
+							text: "Child 2",
+							nodes: [
+							  {
+								text: "Grandchild 1"
+							  },
+							  {
+								text: "Grandchild 2"
+							  }
+							]
+						  }
+						]
+					  },
+					  {
+						text: "Parent 2"
+					  },
+					  {
+						text: "Parent 3"
+					  },
+					  {
+						text: "Parent 4"
+					  },
+					  {
+						text: "Parent 5"
+					  }
+					];
+					function getTree() {
+						  // Some logic to retrieve, or generate tree structure
+						  return tree;
+						}
+                /**$('#tree').tree({
+                    uiLibrary: 'bootstrap',
+                    dataSource: tree,
+                });*/
+				
+				$('#tree').treeview({
+				  data: tree,         // data is not optional
+				  levels: 5,
+				  backColor: 'green'
+				});
+				
+				//$('#tree').treeview({data: getTree()});
+            });
+			
+/*************************************************************************************************************************/
+/**
+var ff= [
+  {
+    "ID": 1,
+    "ReportName": "Sales Dashboard",
+    "GroupName": "Sales",
+    "ReportID": "d37e240d-ec3a-4f28-b790-ab4a85638b6b",
+    "GroupID": "526bfdc5-c309-49fe-b50e-2d2cba56220d"
+  },
+  {
+    "ID": 2,
+    "ReportName": "Corporate Executive Summary",
+    "GroupName": "Finance",
+    "ReportID": "329dc5e5-360a-4acb-b23d-8ea5f3519ab9",
+    "GroupID": "526bfdc5-c309-49fe-b50e-2d2cba56220d"
+  },
+  {
+    "ID": 3,
+    "ReportName": "Customers Sales Analysis",
+    "GroupName": "Finance",
+    "ReportID": "cda67309-196c-4d4d-b917-23d8ff44aa27",
+    "GroupID": "526bfdc5-c309-49fe-b50e-2d2cba56220d"
+  },
+  {
+    "ID": 18,
+    "ReportName": "Map Report",
+    "GroupName": "Sales",
+    "ReportID": "8717cd98-4c4e-4614-a2c2-14785664366b",
+    "GroupID": "526bfdc5-c309-49fe-b50e-2d2cba56220d"
+  }
+];
+var dd= [
+ {
+	"GroupName": "Finance",
+	"GroupID": "526bfdc5-c309-49fe-b50e-2d2cba56220d",
+	nodes: [
+			 {
+			"ReportName": "Corporate Executive Summary",
+			"ReportID": "329dc5e5-360a-4acb-b23d-8ea5f3519ab9",
+			  },
+			  {
+				"ReportName": "Customers Sales Analysis",
+				"ReportID": "cda67309-196c-4d4d-b917-23d8ff44aa27",
+			  },
+	     ]
+  },
+
+]*/
+	
+
+	
+			
+    </script>
+</body>
+</html>

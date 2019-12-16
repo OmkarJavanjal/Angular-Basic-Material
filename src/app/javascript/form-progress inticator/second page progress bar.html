@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+.grad4 {
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(-90deg, #ff0000ba, #ffc800); /* Standard syntax (must be last) */
+}
+.grad3 {
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(-90deg, #847117bf, #8bc34aa6);/* Standard syntax (must be last) */
+}
+.border{
+    border: 1px solid #ccc;
+}
+ .mT25{
+      
+    margin-top: 25px;
+  }
+  .center{
+  text-align: center;
+  }
+  button {
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 4px;
+    width: 200px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.display_block{
+    display: inline-block;
+}
+.border_left{
+  border-left: 1px solid #ccc;
+}
+.border_right{
+       border-right: 1px solid #ccc;
+}
+.pR5{
+padding-right: 5px;
+}
+.pL5{
+padding-left: 5px;
+}
+.mT20{      
+    margin-top: 25px;
+  }
+  .mB30{
+      margin-bottom: 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="col-md-1"></div>
+<div class="col-md-10">
+<div class="col-md-12 center mB30"><h3>Welcome to Your Health Overview</h3></div>
+<div class="col-md-12">
+	<div class="col-md-6 center border">
+		<div class="col-md-12 center"><h3>Your next Appointment</h3></div>
+		<div class="col-md-12 center mT20"><span>April 28,2018</span></div>
+		<div class="col-md-12 center mT20"><span class="display_block pR5">Preventive Exam</span><span>|</span> <span class="display_block pL5">Pap Test</span></div>
+		<div class="col-md-12 center mT20">
+			<div class="progress">
+			<div class="progress-bar progress-bar-warning" role="progressbar" style="width:80%"></div>
+			<div class="progress-bar " role="progressbar" style="width:20%">23 Days</div>
+		  </div>
+		</div>
+		<div class="col-md-12 mT20 center mB30"><button>MODIFY APPOINTMENT</button></div>
+	</div>
+	<div class="col-md-6 center border">
+		<div class="col-md-12 center"><h3>Health Snapshot</h3></div>
+		<div class="col-md-12 center mT20"><span>March 31,2017</span></div>
+		<div class="col-md-12 center mT20">
+		<span class="display_block pR5">BMI | 23.3</span> 
+		<span class="display_block pL5">Weight | 145Ibs</span>
+		<span class="display_block pL5">Cholesterol | 159 mg/dL</span>
+		</div>
+		<div class="col-md-12 center mT20">
+			<div class="progress">
+				<div class="progress-bar grad3" role="progressbar" style="width:80%"></div>
+				<div class="progress-bar grad4" role="progressbar" style="width:20%"></div>
+			  </div>
+		</div>
+		<div class="col-md-12 mT25 center mB30"><button>HEALTH RECORD</button></div>
+	</div>
+	</div>
+</div>
+<div class="col-md-1"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+
+<div class="row">
+ <div class="col-md-3"></div>
+    <div class="col-md-6">
+       <form>
+            <div class="col-md-12">
+                    <div class="col-md-6"><input placeholder="First Name" type="text" required=""></div>
+                    <div class="col-md-6"><input placeholder="Last Name" type="text" required=""></div>
+            </div>
+            <div class="col-md-12">
+                    <div class="col-md-6"><input placeholder="Date of Birth" type="text" required=""></div>
+                    <div class="col-md-6">
+                            <div class="col-md-6">
+                                <span>Gender</span>
+                                    <input type="checkbox" name="Male" value="Male"> M
+                                    <input type="checkbox" name="Female" value="Female"> F 
+                            </div>
+                            <div class="col-md-6"><input placeholder="Zip Code" type="text" required=""></div>
+                    </div>
+            </div>
+            <div class="col-md-12">
+                    <div class="col-md-6"><input placeholder="Employer" type="text" required=""></div>
+                    <div class="col-md-6"><input placeholder="Additional" type="text" required=""></div>
+            </div>
+            <div class="col-md-12"></div>
+           
+            
+            <button>NEXT</button>
+        </form>     
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+<div class="row" style="padding-left: 15px;padding-right: 15px;"  >
+    <div class="col-md-10" style="border: 1px solid green;background: red;">
+        <app-daterange></app-daterange>       
+    </div>
+    <div class="col-md-2 left"></div>
+</div>
+<br><br>
+<div class="row" style="padding-left: 15px;padding-right: 15px;">
+  <div class="col-md-10" style="border: 1px solid green;background: red;">
+     <!-- <input type="text" name="daterange" value="01/01/2018 - 01/15/2018"  #dateInput/>-->
+      <app-date-picker></app-date-picker>
+  </div>
+  <div class="col-md-2 left">
+        <button type="submit" (click) = 'addmethod()'>Add method in date-picker</button>
+        <!--<button type="submit" (click) = 'addTodateRange(dateInput.value)'>Add</button>-->
+    <h4 class="title">
+        Hi Abhinav!--
+    </h4>
+    <p>Click me too!</p>
+  </div>
+</div>
+<br>
+<div class="row" style="padding-left: 15px;padding-right: 15px;height: 300px;"  >
+    <div class="col-md-10" style="border: 1px solid green;background: red;">
+        <!--<app-stockshare [dateRangeSelect]="selectedRange"></app-stockshare>-->
+    </div>
+    <div class="col-md-2 left"></div>
+  </div>

@@ -1,0 +1,49 @@
+<div class="row">
+<div class="col-sm-5">    	  
+  <select [(ngModel)]="selectedColor" (ngModelChange)="onColorChange($event)" id="selectedColor">
+  <option *ngFor="let colorName of allColorData" [ngValue]="colorName.name">{{colorName.name}} </option>
+  </select>
+   <select [(ngModel)]="selectedBorder" (ngModelChange)="onBorderChange($event)" id="selectedBorder">
+  <option *ngFor="let borderName of allBorderData" [ngValue]="borderName.name">{{borderName.name}} </option>
+  </select>
+   <select [(ngModel)]="selectedBackground" (ngModelChange)="onBackgroundChange($event)" id="selectedBackground">
+  <option *ngFor="let backgroundName of allBackgroundData" [ngValue]="backgroundName.name">{{backgroundName.name}} </option>
+  </select>
+  <button class="btn cal"  (click)="calculate()">Calculate price</button>	  
+ <table>
+  <tr>
+	<th>Id</th>
+	<th>Selected Item </th>
+	<th>Price</th>
+  </tr>
+  <tr *ngFor="let selectedData of finalData">
+	<td>{{selectedData.id}}</td>
+	<td>Total Price of Selected :{{selectedData.name}} </td>
+	<td>{{selectedData.price}}</td>
+  </tr>
+  <tr>
+	<td></td>
+	<td> Total Amount</td>
+	<td class="totalAmt"> {{totalAmounts(finalData)}}</td>
+  </tr>
+  <tr>
+	<td></td>
+	<td> GST Tax %</td>
+	<td class="tax">18%</td>
+  </tr>
+  <tr>
+	<td></td>
+	<td> Total Tax on amount </td>
+	<td class="tax">{{totalTax}}</td>
+  </tr>
+  <tr>
+	<td></td>
+	<td> Total amount after tax include </td>
+	<td class="totalAmt">{{totalAmtWithTax}}</td>
+  </tr>
+</table>
+<button class="btn pdf"  (click)="saveAsPDF()">Save as PDF</button>
+</div>
+<div class="col-sm-1"></div>
+<div class="col-sm-6 setBroder" [ngStyle]="myStyle"></div>
+</div>

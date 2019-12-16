@@ -1,0 +1,28 @@
+	<div class="row">
+    <h4>This is page for Emp details to show employee data</h4>
+    </div>
+	<div class="row">
+    <p *ngFor="let employee of emp">
+	<a 
+	  [routerLink]="['/employee', employee.id]" routerLinkActive="active"> 
+	  {{ employee.name }}
+	</a>
+	<!-- <a  -->
+	  <!-- (click)='goToEmpDetails(employee.id)'> -->
+	  <!-- {{ employee.name }} -->
+	<!-- </a> -->
+	</p>
+    </div>
+  <div class="row">
+	<ul>
+	  <li>
+		<a routerLink="./firstChild" routerLinkActive="active">Emp First Child</a>
+	  </li>
+	  <li>
+		<a routerLink="./secondChild" routerLinkActive="active">Emp Second Child</a>
+	  </li>    
+	</ul>
+  </div>
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>

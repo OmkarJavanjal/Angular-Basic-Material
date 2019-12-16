@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+.grad4 {
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(-90deg, #ff0000ba, #ffc800); /* Standard syntax (must be last) */
+}
+.grad3 {
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(-90deg, #847117bf, #8bc34aa6);/* Standard syntax (must be last) */
+}
+.border{
+    border: 1px solid #ccc;
+}
+ .mT25{
+      
+    margin-top: 25px;
+  }
+  .center{
+  text-align: center;
+  }
+  button {
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 4px;
+    width: 200px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.display_block{
+    display: inline-block;
+}
+.border_left{
+  border-left: 1px solid #ccc;
+}
+.border_right{
+       border-right: 1px solid #ccc;
+}
+.pR5{
+padding-right: 5px;
+}
+.pL5{
+padding-left: 5px;
+}
+.mT20{      
+    margin-top: 25px;
+  }
+  .mB30{
+      margin-bottom: 30px;
+  }
+  .mB40{
+      margin-bottom: 40px;
+  }
+  .mB20{
+      margin-bottom: 20px;
+  }
+  .border_bottom{
+  border-bottom:1px solid #ccc;
+  }
+  .isActive{
+   border-bottom: 3px solid #337ab7;
+   color: #337ab7;
+  }
+  .grayBox{
+  background: #ccc;
+  }
+  .p0{
+      padding: 0;
+  }
+.box { display: -webkit-flex; display: -ms-flexbox; display: flex; overflow: hidden;}
+.box .column { flex: 1; margin-right: 10px;}  
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">HEALTH RECORD</a></li>
+      <li><a href="#">COACHING</a></li>
+      <li><a href="#">LATEST</a></li>
+	   <li><a href="#">SCHEDULE AN EXAM</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+      <li><a href="#">Christina</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+
+<div class="col-md-1"></div>
+<div class="col-md-10">
+<div class="col-md-12 center mB30 mT20">
+<h4 class="display_block">Christina Healthgal here are you exam results: </h4> 
+<span class="display_block">Monday, December 10, 2016</span>
+</div>
+   <div class="col-md-12 mB30">
+	<div class="col-md-6 center border_bottom isActive">
+		<div class="col-md-12 center"><h4>Health Exam Summary</h4></div>
+	</div>
+	<div class="col-md-6 center border_bottom">
+		<div class="col-md-12 center"><h4>Health Exam Summary Comparative</h4></div>
+	</div>
+	</div>	
+<div class="col-md-12 box">
+	<div class="col-md-6 border p0 column">
+			<div class="col-md-4 grayBox p0">
+			   <div class="col-md-12 mB20 mT20"><span>Patient</span></div>
+			   <div class="col-md-12 mB30"><span>Employee ID</span></div>
+			   <div class="col-md-12 mB30"><span>Physician</span></div>
+			   <div class="col-md-12 mB30"><span>Location</span></div>
+			</div>
+			<div class="col-md-8">			  
+			  <div class="col-md-12 mB20 mT20"><span>Christina Healthgal</span></div>
+			  <div class="col-md-12 mB30"><span>10987367</span></div>
+			  <div class="col-md-12 mB30"><span>Dr. Betty bestcare</span></div>
+			  <div class="col-md-12 mB30"><span>Christina Healthgal</span></div>
+			</div>
+    </div>
+	<div class="col-md-6 border p0 column">
+			<div class="col-md-4 grayBox p0">
+			   <div class="col-md-12 mB20 mT20"><span>Patient</span></div>
+			   <div class="col-md-12 mB30"><span>Employee ID</span></div>
+			   <div class="col-md-12 mB30"><span>Physician</span></div>
+			   <div class="col-md-12 mB30"><span>Location</span></div>
+			   <div class="col-md-12 mB30"><span>Location</span></div>
+			   <div class="col-md-12 mB30"><span>Location</span></div>
+			</div>
+			<div class="col-md-8">			  
+			  <div class="col-md-12 mB20 mT20"><span>Christina Healthgal</span></div>
+			  <div class="col-md-12 mB30"><span>10987367</span></div>
+			  <div class="col-md-12 mB30"><span>Dr. Betty bestcare</span></div>
+			  <div class="col-md-12 mB30"><span>Christina Healthgal</span></div>
+			  <div class="col-md-12 mB30"><span>Christina Healthgal</span></div>
+			  <div class="col-md-12 mB30"><span>Christina Healthgal</span></div>
+			</div>
+    </div>
+</div>
+</div>
+<div class="col-md-1"></div>
+</div>
+
+</body>
+</html>

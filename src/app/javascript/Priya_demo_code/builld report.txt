@@ -1,0 +1,121 @@
+<div id="reportBuilder" style="width:900px;">
+				<table style="width:90%; height: 244px;">
+					<tbody>
+						<tr>
+							<td style="width:140px;"><br></td>
+							<td>
+								<div id="availableFieldsDiv" class="fieldSelector">
+									<div class="fieldSelectortitle">
+										<p class="selectorTitle"> Available Fields </p>
+										<span id="availableFieldsSelector"></span>
+									</div>
+								</div>
+							</td>
+							<td style="width:90px;">
+								<div>
+									<table style="width:90%">
+										<tbody>
+											<tr>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td>
+													<p style="margin:0;">Add</p>
+												</td>
+												<td>
+													<button 
+															class="ui-icon ui-widget ui-state-default ui-icon-circle-arrow-e"
+															style="float:left; padding0px; width: 16px; height:16px;"
+															type="button" id=addFieldButton">
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td>
+													<button 
+															class="ui-icon ui-widget ui-state-default ui-icon-circle-arrow-w"
+															style="float:left; padding0px; width: 16px; height:16px;"
+															type="button" id=removeFieldButton">
+													</button>
+												</td>
+												<td>
+													<p style="margin:0;">Remove</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</td>
+							<td>
+								<div id="selectedFieldsDiv" class="fieldSelector">
+									<div class="fieldSelectorTitle">
+										<p class="selectorTitle">Selected Fields</p>
+									</div>
+									<span id="selectedFieldssSelector"></span>
+								</div>
+							</td>
+							<td style="width: 90px;">
+								<div>
+									<table style="width:80%">
+										<tbody>
+											<tr>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td>
+													<button class="ui-icon ui-widget ui-state ui-icon-circle-arrow-n"
+													style="float:left; padding:0px; height:16px; width:16px;"
+													type="button" id="moveUpButton"><</button>
+												</td>
+												<td><p style="margin:0px;">Up</td>
+											</tr>
+											<tr>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td><br></td>
+											</tr>
+											<tr>
+												<td>
+													<button class="ui-icon ui-widget ui-state ui-icon-circle-arrow-s"
+													style="float:left; padding:0px; height:16px; width:16px;"
+													type="button" id="moveDownButton">Move Down</button>
+												</td>
+												<td><p style="margin:0px;">Down</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</td>
+							<td>
+								<div>
+									<input name="reportFormat" value="HTML" checked="checked"
+									type="radio"> Web Page <br> <input 
+									name ="reportFileFormat" value="Word" checked="checked" 
+									type="radio"> Word <br> <nput 
+										name="reportFileFormat" value="excel" type="radio">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<button class="ui-icon ui-widget ui-state-default ui-corner-all ui-button-text-only"
+						style="float:right; padding:5px; margin-bottom:10px;"
+						type="button" id="buildReportButton">Build Report</button>
+
+			</div>
+		</div>
+	</div>
+	

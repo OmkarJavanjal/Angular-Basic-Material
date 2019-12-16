@@ -1,0 +1,16 @@
+
+ng serve --host 192.168.0.101
+1- SUnit@12345
+json-server --watch country.json
+
+rj13sigh
+rco786
+
+-----------------------
+https://www.udemy.com/
+id- mr.anujgarg@gmail.com
+pas- anujgarg1234
+-----------------------------------------------------------------------------
+
+
+

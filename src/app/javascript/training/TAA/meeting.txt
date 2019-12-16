@@ -1,0 +1,45 @@
+------------------try to complete tomot-------------------------------------------
+1- input/Output
+2- subject /BehaviourSubJect
+3- laziloading
+4- Module level Break
+5- Observable  -- is nothing only http responce which we get asynchronously over time, http responce
+https://www.youtube.com/watch?v=vj0kUzKOgGQ&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=20
+6- hook lyfecycle
+7- super and extedns -- use for inherantance
+8- difference between Observables and Promises:
+9- Observable/Observer/Subscription/Operators/Subject/Schedulers
+10- ngZone in Angular6:
+11- Ng templae and ng contentent use in Angular4:
+12- Use of ::ng-deep in Angular6
+13- Share data between header component to any other component:
+// new Subject and  // new BehaviorSubject
+14- The Benefits of Using TypeScript:
+// implement is use for infterface use in side class
+// exted is use for class use in another class
+15- Why we use typeScript in place of JS if same thing do using JS:
+16- What is the difference between Subject and BehaviorSubject?:
+17-  @input/@output
+18- Promise vs Observable?
+19- @ViewChild
+20- ElementRef/templateref
+21- template driven and reactive forms.:  reactive forms generally provide you with more control andform validation can be unit tested as 
+opposed to template driven forms.
+22- Singleton: 
+
+
+### Difference in attribute and property of element? -:
+
+
+## @ViewChild and @ViewChildren : 
+
+Pruthvi
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+https://urldefense.proofpoint.com/v2/url?u=https-3A__meet.thehartford.com_brian.kohn_98NQ8RJ5&d=DwMFAw&c=eIGjsITfXP_y-DLLX0uEHXJvU8nOHrUK8IrwNKOtkVU&r=9xUhkPqWrdDKLWQQh2m1YXzpji8BEJbjvJMzAc5OJqI&m=TpysMpE9MVgoWodZrPDMndWkXNn30FLRsDrT16u8Sk4&s=LwRETYix1mA8S5T_DM1W15QTkD82opjJFRc2K4wP-NM&e=

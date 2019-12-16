@@ -1,0 +1,30 @@
+{
+  "registration": [
+    {
+      "firstName": "Abhinv",
+      "lastName": "Singh",
+      "userName": "abhinavsingh34",
+      "email": "abhinavsingh34@gmail.com",
+      "password": {
+        "pwd": "1123456789",
+        "confirmPwd": "1123456789"
+      },
+      "mobile": "9654132611",
+      "gender": "Male",
+      "id": 2
+    },
+    {
+      "firstName": "Satwant",
+      "lastName": "Singh",
+      "userName": "stawantsingh34",
+      "email": "abhinavsingh34@gmail.com",
+      "password": {
+        "pwd": "123456789",
+        "confirmPwd": "123456789"
+      },
+      "mobile": "9654132611",
+      "gender": "Male",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+.btn {
+    border: 1px solid;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.selectedBtn{
+	background-color: coral;
+}
+.showBox{
+	display:inline-block;
+}
+.hideBox{
+	display:none;
+}

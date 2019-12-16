@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script>
+
+function sumUp(object){
+object.totalValue=0;
+for(child of object.children){
+ object.totalValue+=sumUp(child);
+}
+return object.totalValue+object.value;
+}
+var names = {
+    name: 'name-1',
+    value: 10,  
+    valueTotal: 0, // should be 60 (name-1.1 + name-1.2 + name-1.2.1 + name-1.2.2 + name-1.2.2.1 + name-1.2.2.2)
+    children: [{
+        name: 'name-1.1',
+        value: 30,
+        valueTotal: 0,
+        children: [{
+        name: 'name-1.1',
+        value: 40,
+        valueTotal: 0,
+        children: [{
+        name: 'name-1.1',
+        value: 40,
+        valueTotal: 0,
+        children: []
+    },{
+        name: 'name-1.1',
+        value: 40,
+        valueTotal: 0,
+        children: []
+    }]
+    }]
+    }, {
+        name: 'name-1.2',
+        value: 10,
+        valueTotal: 0, // should be 40 (name-1.2.1 + name-1.2.2 + name-1.2.2.1 + name-1.2.2.2)
+        children: [{
+            name: 'name-1.2.1',
+            value: 10,
+            valueTotal: 0,
+            children: []
+        }, {
+            name: 'name-1.2.2',
+            value: 10,
+            valueTotal: 0, // should be 20 (name-1.2.2.1 + name-1.2.2.2)
+            children: [{
+                name: 'name-1.2.2.1',
+                value: 10,
+                valueTotal: 0,
+                children: []
+            }, {
+                name: 'name-1.2.2.2',
+                value: 10,
+                valueTotal: 0,
+                children: []
+            }]
+        }]
+    }, {
+        name: 'name-2',
+        value: 10,
+        valueTotal: 0,
+        children: []
+    }]
+};
+console.log(sumUp(names),names);
+
+console.log(names);
+</script>
+</body>
+</html>

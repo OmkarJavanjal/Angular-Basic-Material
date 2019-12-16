@@ -1,0 +1,38 @@
+.large{
+    width: 12rem;
+}
+
+.medium{
+    width: 6rem;
+}
+
+.small{
+    width: 6rem;
+}
+.color-red{
+background: red;
+}
+.color-pink{
+    background: pink;
+    }
+    .color-gray{
+        background: gray;
+        }
+        .color-green{
+            background: green;
+            }
+            .bold{
+                font-weight: bold;
+            }
+            .normal{
+                font-weight: normal;
+            }
+            .small{
+                font-size: 12px;
+            }
+            .medium{
+                font-size: 16px;
+            }
+            .large{
+                font-size: 24px;
+            }

@@ -1,0 +1,172 @@
+<div class="block  rounded p-2">
+        <div class="heading" (click)="showLoanCloses()">
+          <p class="text-center card "><span class="position d-none d-lg-block"><i
+                class="{{showLoanClose?'fas fa-chevron-up':'fas fa-chevron-down'}}"></i></span> What can I expect after my loan closes
+          </p>
+        </div>
+        <div class="flex-container" *ngIf=showLoanClose>
+          <div class="heading-body text-justify p-2">
+            <p> We strongly believe the way we do things is just as important as what we do. 
+              Every team member is guided by our Core Values which define how we work, 
+              how we interact with each other, and guide us in determining how we best 
+              serve our customers, team members and local communities.
+              <br><br>
+              Around the 20th business day after your loan funds, Fairway’s Concierge team 
+              will attempt to make a Welcome Call to you. During the Welcome Call,
+                one of our Concierge team members will discuss the following information with you:
+              </p>
+
+              <ul style="list-style-type:square;">
+                  <li>Verify your contact information, 
+                    including mailing address, email address, 
+                    and phone numbers</li>
+                  <li>Provide information on your first payment due</li>
+                  <li>Offer details regarding your new mortgage servicer</li>
+                </ul>
+                <p class="small" style="line-height: inherit;">
+                  The Notice of Servicing Transfer letter relating to your new Servicer 
+                  is mailed to you in a Fairway green envelope. 
+                  The notice is sent prior to the servicing transfer date for your 
+                  mortgage loan. If you do not receive this information, 
+                  please feel free to email us at <a href="mailto:servicing@fairwaymc.com">servicing@fairwaymc.com</a>
+                  , or call our Concierge Department at 1-800-201-7544, Monday – Friday from 8:30am to 5:00pm Central Time. 
+                  We will be happy to send a copy of your transfer information.</p>   
+            
+          </div>
+          <div class="text-center view"> <img src="/assets/images/Core_Values-Horizontal-35f78e2e.jpeg" width="420" height="345" alt="loating-house-iso"
+            class="img-thumbnail rounded"></div>
+
+        </div>
+      </div>
+      <div class="block  rounded p-2">
+          <div class="heading" (click)="showGreenEnvelope()">
+            <p class="text-center card "><span class="position d-none d-lg-block"><i
+                  class="{{showEnvelope?'fas fa-chevron-up':'fas fa-chevron-down'}}"></i></span> Look for the Green Envelope!
+            </p>
+          </div>
+          <div class="flex-container" *ngIf=showEnvelope>
+            <div class="heading-body text-justify p-2">
+              <p> Remember to watch for the Transfer of 
+                Servicing notice from Fairway in your mail. 
+                You can’t miss it - look for the bright Fairway green envelope!
+                </p>
+  
+
+              
+            </div>
+            <div class="text-center view"> <img src="/assets/images/green-envelope-transfer-notice.png" width="420" height="345" alt="green-envelope-iso"
+              class="img-thumbnail rounded"></div>
+  
+          </div>
+        </div>   
+
+        <div class="block  rounded p-2">
+            <div class="heading" (click)="showNewServicer()">
+              <p class="text-center card "><span class="position d-none d-lg-block"><i
+                    class="{{showServicer?'fas fa-chevron-up':'fas fa-chevron-down'}}"></i></span> Who is my new servicer?
+              </p>
+            </div>
+            <div class="flex-container" *ngIf=showServicer>
+              <div class="heading-body text-justify p-2">
+                <p> Your Notice of Servicing Transfer (mailed in the bright Fairway green envelope) 
+                  will provide you all of the contact information for your new Servicer. 
+                  To assist you, below are a few of the industry leading servicers 
+                  who may receive servicing transferred by Fairway:
+                  </p>
+    
+  
+                
+              </div>
+              <div class="media-flex">
+                  <div class="text-center border p-3">
+                    <h6 class = "">CENLAR</h6>
+                    <p class="text-justify">Performs servicing activities on behalf of Fairway Independent Mortgage Corporation. 
+                      Cenlar FSB, the nation’s leading loan servicing provider for more than 40 years.</p>
+                      <p>Toll Free<br><a href="tel:18777454942">1-877-745-4942</a></p> 
+                      <a class="btn col-md-6 btn-lg btn-primary" href="https://fairwayindependentmc.loanadministration.com/" target="_blank">Visit Website</a>
+                  </div>
+                  <div class="text-center border p-3">
+                    <h6 class = "">Dovenmuehle(DMI)</h6>
+                    <p class="text-justify">Dovenmuehle Mortgage, Inc. 
+                      is the oldest mortgage banking company in the 
+                      Midwest and one of the oldest mortgage companies 
+                      in the United States, founded in 1844.
+                      </p>
+                      <p>Toll Free<br><a href="tel:18006694268">1-800-669-4268</a></p> 
+                      <a class="btn col-md-6 btn-lg btn-primary" href="http://www.dovenmuehle.com/" target="_blank">Visit Website</a>
+                  </div>
+                  <div class="text-center border p-3">
+                    <h6 class = "">LoanCare</h6>
+                    <p class="text-justify">LoanCare provides full residential 
+                      mortgage servicing using advanced technology 
+                      while delivering personalized service since 1991.
+                    </p>
+                    <br>
+                      <p>Toll Free<br><a href="tel:18002746600">1-800-274-6600</a></p> 
+                      <a class="btn col-md-6 btn-lg btn-primary" href="https://fairwayindependentmc.loanadministration.com/" target="_blank">Visit Website</a>
+                  </div>
+                </div>
+                <!-- Second row of Investors -->
+                <div class="media-flex">
+                    <div class="text-center border p-3">
+                      <h6 class = "">Round Point Mortgage</h6>
+                      <p class="text-justify">RoundPoint Mortgage was founded in 2007 and is 
+                        dedicated to creating the simplest, 
+                        fastest, efficient and most satisfying experience for borrowers.
+                      </p>
+                        <p>Toll Free<br><a href="tel:18774268805">1-877-426-8805</a></p> 
+                        <a class="btn col-md-6 btn-lg btn-primary" href="http://www.rpmservicing.com/" target="_blank">Visit Website</a>
+                    </div>
+                    <div class="text-center border p-3">
+                      <h6 class = "">PNC</h6>
+                      <p class="text-justify">PNC works to provide a great customer 
+                        experience with secure and convenient access 
+                        to online information and customer care.
+                        </p>
+                        <p>Toll Free<br><a href="tel:18008225626">1-800-822-5626</a></p> 
+                        <a class="btn col-md-6 btn-lg btn-primary" href="http://www.pncmortgage.com/" target="_blank">Visit Website</a>
+                    </div>
+                    <div class="text-center border p-3">
+                      <h6 class = "">NewRez</h6>
+                      <p class="text-justify">NewRez is a national 
+                        mortgage servicer founded in 2008 
+                        and committed to a strong standard 
+                        of excellence in customer service.
+                      </p>
+                        <p>Toll Free<br><a href="tel:18663172347">1-866-317-2347</a></p> 
+                        <a class="btn col-md-6 btn-lg btn-primary" href="http://www.newrez.com/" target="_blank">Visit Website</a>
+                    </div>
+                  </div>
+    
+            </div>
+          </div>   
+          <div class="block  rounded p-2">
+              <div class="heading" (click)="showChangeServicer()">
+                <p class="text-center card "><span class="position d-none d-lg-block"><i
+                      class="{{changeServicer?'fas fa-chevron-up':'fas fa-chevron-down'}}"></i></span> Can the servicing of my loan be switched to 
+                      a Servicer other than the one it has been transferred to?
+                </p>
+              </div>
+              <div class="flex-container" *ngIf=changeServicer>
+                <div class="heading-body text-justify p-2">
+                  <p> 
+                      Fairway is unable to change whom your loan 
+                      is sold to and who services it. After t
+                      he servicing of your mortgage loan 
+                      transfers, your new servicer controls 
+                      the activities and decisions supporting 
+                      your mortgage loan. With written authorization 
+                      (as per your new servicer’s requirements), 
+                      Fairway may be able to be an advocate for you.
+                        Even if your servicing transfers, your relationship 
+                        is important to each of us at Fairway.
+                  </p>
+                </div>
+                <hr>
+                <div class="text-center view"> 
+                  <p>If you have questions, you can reach us 
+                      <a href="mailto:servicing@fairwaymc.com">servicing@fairwaymc.com</a></p>
+                </div>
+              </div>
+            </div>  
+  </div>

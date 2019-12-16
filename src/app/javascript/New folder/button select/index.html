@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<button class="btn" value="tax election" id="election" onclick="selectedBtn('election')">tax election</button>
+<button class="btn" value="payroll tax" id="payroll" onclick="selectedBtn('payroll')">payroll tax</button>
+<button class="btn" value="No Thanks" id="noThanks" onclick="selectedBtn('noThanks')">No Thanks</button>
+<button class="btn" value="next" id="next" onclick="next()">Next</button>
+
+ <div id="questionnaire">
+        <span class="profCustomizedDemo-close" onclick="showModal(false)">CLOSE X</span>
+        <div class="prof-custom-demo-questionnaire-inner-div" style="background-image: url('{bundle_dir}/images/questionnaire.png');">
+          <div class="questionnaire-container">
+            <section class="questionnaire" id="questionnaire01">
+              <h5>1 of 2</h5>
+              <h3>Tell us which
+                <b>types of returns</b> you prepare or plan to prepare. Select all that apply.</h3>
+              <div class="questionContainer" id="questionContainer01">
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire01" class="profCustomDemo-option" id="A1" value="A1"
+                  autocomplete="off" />
+                <label for="A1" class="profCustomDemo-answer">Individual</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire01" class="profCustomDemo-option" id="B1" value="B1"
+                  autocomplete="off" />
+                <label for="B1" class="profCustomDemo-answer">Partnerships</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire01" class="profCustomDemo-option" id="C1" value="C1"
+                  autocomplete="off" />
+                <label for="C1" class="profCustomDemo-answer">Corporations</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire01" class="profCustomDemo-option" id="D1" value="D1"
+                  autocomplete="off" />
+                <label for="D1" class="profCustomDemo-answer">Trust</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire01" class="profCustomDemo-option" id="E1" value="E1"
+                autocomplete="off" />
+              <label for="E1" class="profCustomDemo-answer">Other</label>
+                <!-- <textarea id="profCustomDemo-other-textArea" placeholder="Please write your response here" class="profCustomDemo-other-textArea"></textarea> -->
+              </div>
+            </section>
+            <section class="questionnaire" id="questionnaire02">
+              <h5>2 of 3</h5>
+              <h3>Of the returns you prepare, which do you
+                <b>typically file</b> for clients? Select all that apply.</h3>
+              <div class="questionContainer">
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire02" class="profCustomDemo-option" id="A2" value="A2"
+                  autocomplete="off" />
+                <label for="A2" class="profCustomDemo-answer  hideBox">1040</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire02" class="profCustomDemo-option " id="B2" value="B2"
+                  autocomplete="off" />
+                <label for="B2" class="profCustomDemo-answer  hideBox">1065</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire02" class="profCustomDemo-option" id="C2" value="C2"
+                  autocomplete="off" />
+                <label for="C2" class="profCustomDemo-answer  hideBox">1120 and 1120S</label>
+                <input type="checkbox" onclick7="checkboxValue(this.name);" name="questionnaire02" class="profCustomDemo-option" id="D2"
+                  value="D2" autocomplete="off" />
+                <label for="D2" class="profCustomDemo-answer  hideBox">1041</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire02" class="profCustomDemo-option" id="E2" value="E2"
+                  autocomplete="off" />
+                <label for="E2" class="profCustomDemo-answer hideBox">706/709</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire02" class="profCustomDemo-option" id="F2" value="F2"
+                  autocomplete="off" />
+                <label for="F2" class="profCustomDemo-answer hideBox">5500</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire02" class="profCustomDemo-option" id="G2" value="G2"
+                  autocomplete="off" />
+                <label for="G2" class="profCustomDemo-answer hideBox">990</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire02" class="profCustomDemo-option" id="H2" value="H2"
+                  autocomplete="off" />
+                <label for="H2" class="profCustomDemo-answer">Tax Elections</label>
+                <input type="checkbox" onclick="checkboxValue(this.name);" name="questionnaire02" class="profCustomDemo-option" id="I2" value="I2"
+                  autocomplete="off" />
+                <label for="I2" class="profCustomDemo-answer">Payroll tax</label>
+              </div>
+            </section>
+            <section class="questionnaire playlist-ready-page" id="questionnaire03">
+              <h3>Your package
+                <b>recommendation</b> is ready </h3>
+              <h2>Thank you for taking the quiz! Based on your answers, we have found the solution that is right for your firm.
+                Click on the button below to see which package best meets your firm’s specific needs.
+              </h2>
+            </section>
+            <div class="profCustomDemo-navButtonContainer">
+              <input type="button" id="previous" value="Previous" class="profCustomDemo-navButton float-left profCustomDemo-btn-previous"
+                onclick="previousQuestionnaire()">
+              <input type="button" id="next" value="Next" class="profCustomDemo-navButton float-right" onclick="nextQuestionnaire()">
+            </div>
+          </div>
+        </div>
+      </div>
+<script src="main.js"></script>	
+<!--<script src="jsfile.js"></script>-->	
+</body>
+</html>

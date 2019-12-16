@@ -1,0 +1,780 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication1.Default" %>
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://jsearchdropdown.sourceforge.net//jquery.searchabledropdown.js"></script>
+
+    <style>
+         th, td, p, input {
+         font:14px Verdana;
+         
+         }
+         table, th, td 
+         {
+         border: solid 1px #DDD;
+         border-collapse: collapse;
+         padding: 2px 3px;
+         text-align: center;
+         
+         }
+         th {
+         font-weight:bold;
+         background-color:black;
+         color:white;
+         }
+
+        #tblCustomers {
+            font-family:'Courier New'
+        
+        }
+        input{
+            width:140px !important;
+            height:30px;
+        }
+      </style>
+
+    <script type="text/javascript">
+        //www.aspsnippets.com/Articles/Populate-Bind-ASPNet-DropDownList-using-jQuery-AJAX-and-JSON-in-C-and-VBNet.aspx
+        //https//stackoverflow.com/questions/22955839/how-to-fill-a-dropdown-using-jquery-ajax-call
+        //www.joe-stevens.com/2010/02/23/populate-a-select-dropdown-list-using-jquery-and-ajax/
+
+
+        $(document).ready(function () {
+            $("select").searchable({
+                maxListSize: 200, // if list size are less than maxListSize, show them all
+                maxMultiMatch: 300, // how many matching entries should be displayed
+                exactMatch: false, // Exact matching on search
+                wildcards: true, // Support for wildcard characters (*, ?)
+                ignoreCase: true, // Ignore case sensitivity
+                latency: 200, // how many millis to wait until starting search
+                warnMultiMatch: 'top {0} matches ...',
+                warnNoMatch: 'no matches ...',
+                zIndex: 'auto'
+            });
+            //metho();
+
+
+           
+        });
+
+        $(function () {
+            $.ajax({
+                type: "POST",
+                url: "Default.aspx/GetCustomers",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                    var ddlCustomers = $("[id*=myselect]");
+                    ddlCustomers.empty().append('<option selected="selected" value="0">Please select</option>');
+                    $.each(r.d, function () {
+                        ddlCustomers.append($("<option></option>").val(this['Value']).html(this['Text']));
+                    });
+
+                }
+            });
+        });
+
+        function skillset() {
+            //var valu = document.getElementById('myselect').value;
+            var valu = $("#myselect option:selected").val();
+            var txt = $("#myselect option:selected").text();
+            var params = '{"ID":"' + valu + '"}';
+            //alert(valu + ',' + txt);
+
+            $.ajax({
+                type: "POST",
+                url: "Default.aspx/GetSkill",
+                data: params,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+
+                    var ddlskill = $("[id*=myskill]");
+                    ddlskill.empty().append('<option selected="selected" value="0">Please select</option>');
+                    $.each(data.d, function () {
+                        ddlskill.append($("<option></option>").val(this['Value']).html(this['Text']));
+                    });
+
+
+                },
+                failure: function (response) {
+                    //alert('No');
+                }
+            });
+
+        }
+
+        function Details() {
+            var valu = $("#myselect option:selected").val();
+            var skl = $("#myskill option:selected").val();
+            var params = '{"ID":"' + valu + '","Skill":"' + skl + '"}';
+            //alert(valu + ',' + skl);
+
+            $.ajax({
+                type: "POST",
+                url: "Default.aspx/GetEmpl",
+                data: params,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    document.getElementById('txtSkill_Rating').value = data.d[0].Skill_Rating;
+                    document.getElementById("txtExperience").value = data.d[0].Experience;
+                    document.getElementById("txtGender").value = data.d[0].Gender;
+                    document.getElementById("txtAge").value = data.d[0].Age;
+                    document.getElementById("txtMarital_status").value = data.d[0].Marital_status;
+                    document.getElementById("txtLocation").value = data.d[0].Location;
+                    document.getElementById("txtTimezones").value = data.d[0].Timezones;
+                    document.getElementById("txtVehicle_type").value = data.d[0].Vehicle_type;
+                    //document.getElementById("txtSuccess_rate").value = data.d[0].Success_rate;
+
+
+                },
+                failure: function (response) {
+
+                }
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+  
+    <form id="form1" runat="server">
+          <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div>
+            <div align="right">
+                <a href ="Default.aspx">Refresh</a>
+            </div>
+            <br /><br />
+            <div>
+
+            <table id="tblCustomers" cellpadding="4" cellspacing="0" border="1">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Skill</th>
+                        <th style="display:none">Skill_Rating</th>
+                        <th>Experience</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Marital_status</th>
+                        <th>Location</th>
+                        <th>Timezones</th>
+                        <th>Vehicle_type</th>
+                        <%--<th>Success_rate</th>--%>
+                        <%--<th></th>--%>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <select id="myselect" style="width: 142px;height:30px" onchange="skillset()">
+                            </select>
+
+                        </td>
+                        <td>
+                            <select id="myskill" style="width: 142px;height:30px" onchange="Details()"></select>
+                        </td>
+                        <td  style="display:none">
+                            <input type="text" id="txtSkill_Rating" /></td>
+                        <td>
+                            <input type="text" runat="server" id="txtExperience" /></td>
+                        <td>
+                            <input type="text" runat="server" id="txtGender" /></td>
+                        <td>
+                            <input type="text" runat="server" id="txtAge" /></td>
+                        <td>
+                            <input type="text" runat="server" id="txtMarital_status" /></td>
+                        <td>
+                            <input type="text" runat="server" id="txtLocation" /></td>
+                        <td>
+                            <input type="text" runat="server" id="txtTimezones" /></td>
+                        <td>
+                            <input type="text" runat="server" id="txtVehicle_type" /></td>
+                        <%--<td>
+                            <input type="text" runat="server" id="txtSuccess_rate" /></td>--%>
+                        <td>
+                            <input type="button" onclick="Add()" value="Add" /></td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+                </div>
+                
+                <div>
+                    <br />
+                   
+                <asp:Button ID="btnPrd" Text="Predict" runat="server" OnClick="btnPrd_ServerClick" OnClientClick="getcount()" /> 
+                    
+               <%-- <input type="button" id="btnPrd" value="Predict" onclick="getcount()"  / OnClientClick="addTAg();getcount()>--%>
+
+            </div>
+        </div>
+        <asp:HiddenField ID="hdn" runat="server" />
+
+        <div  style="display:none">
+            <asp:Label ID="lb" runat="server"></asp:Label>
+        </div>
+
+        <br />
+        <br />
+        <p id="showData1" class="showData"></p>
+       
+        <br />
+        
+
+        <div>
+            <br />
+            <br />
+            <h1>Output</h1>
+            <p id="output"></p>
+        </div>
+
+         <div>
+            <asp:Label ID="Label1" runat="server"></asp:Label>
+        </div>
+
+         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+        <ContentTemplate>
+    
+     <%-- <asp:Button ID="Button1" Text="Add Data" runat="server" OnClientClick="addTAg();" />--%>
+    <%--<input type="button" onclick="addTAg();" />--%>
+     <div id="container1">
+            <%-- <p id="showData1" class="showData"></p>--%>
+        </div>
+            </ContentTemplate>
+             
+        </asp:UpdatePanel>
+    </form>
+
+   
+    
+</body>
+<script type="text/javascript">
+
+    function Add() {
+
+        if ($("#myselect option:selected").text() == "Please select" || $("#myskill option:selected").text() == "Please select" || $("#myskill option:selected").text() == "")
+        {
+            alert('Please Select Some Value');
+        }
+        else {
+            var txtName = document.getElementById("myselect");//$( "#myselect option:selected" ).text();//document.getElementById("txtName");
+            var txtSkill = document.getElementById("skillselect");
+            var txtSkill_Rating = document.getElementById("txtSkill_Rating");
+            var txtExperience = document.getElementById("txtExperience");
+            var txtGender = document.getElementById("txtGender");
+            var txtAge = document.getElementById("txtAge");
+            var txtMarital_status = document.getElementById("txtMarital_status");
+            var txtLocation = document.getElementById("txtLocation");
+            var txtTimezones = document.getElementById("txtTimezones");
+            var txtVehicle_type = document.getElementById("txtVehicle_type");
+            //var txtSuccess_rate = document.getElementById("txtSuccess_rate");
+            AddRow($("#myselect option:selected").text(), $("#myskill option:selected").text(), txtSkill_Rating.value, txtExperience.value, txtGender.value, txtAge.value, txtMarital_status.value, txtLocation.value, txtTimezones.value, txtVehicle_type.value);
+            //$("#myselect").val() = "0";
+            //txtSkill.value = "";
+            txtSkill_Rating.value = "";
+            txtExperience.value = "";
+            txtGender.value = "";
+            txtAge.value = "";
+            txtMarital_status.value = "";
+            txtLocation.value = "";
+            txtTimezones.value = "";
+            txtVehicle_type.value = "";
+            //txtSuccess_rate.value = "";
+        }
+    };
+
+    function Remove(button) {
+        //Determine the reference of the Row using the Button.
+        var row = button.parentNode.parentNode;
+        var name = row.getElementsByTagName("TD")[0].innerHTML;
+        if (confirm("Do you want to delete: " + name)) {
+
+            //Get the reference of the Table.
+            var table = document.getElementById("tblCustomers");
+
+            //Delete the Table row using it's Index.
+            table.deleteRow(row.rowIndex);
+        }
+    };
+
+    function AddRow(name, skill, Skill_Rating, Experience, Gender, Age, Marital_status, Location, Timezones, Vehicle_type) {
+        //Get the reference of the Table's TBODY element.
+        var tBody = document.getElementById("tblCustomers").getElementsByTagName("TBODY")[0];
+
+        //Add Row.
+        row = tBody.insertRow(-1);
+
+        //Add Name cell.
+        var cell = row.insertCell(-1);
+        cell.innerHTML = name;
+
+        //Add skill cell.
+        cell = row.insertCell(-1);
+        cell.innerHTML = skill;
+
+        //Add skillrate cell.
+        cell = row.insertCell(-1);
+        cell.innerHTML = Skill_Rating;
+        cell.setAttribute('style', 'display:none;');
+
+        //Add exp cell.
+        cell = row.insertCell(-1);
+        cell.innerHTML = Experience;
+
+        //Add gender cell.
+        cell = row.insertCell(-1);
+        cell.innerHTML = Gender;
+
+        //Add age cell.
+        cell = row.insertCell(-1);
+        cell.innerHTML = Age;
+
+        //Add martial cell.
+        cell = row.insertCell(-1);
+        cell.innerHTML = Marital_status;
+
+        //Add location cell.
+        cell = row.insertCell(-1);
+        cell.innerHTML = Location;
+
+        //Add Timezones cell.
+        cell = row.insertCell(-1);
+        cell.innerHTML = Timezones;
+
+        //Add Vehicle_type cell.
+        cell = row.insertCell(-1);
+        cell.innerHTML = Vehicle_type;
+
+        //Add Success_rate cell.
+        //cell = row.insertCell(-1);
+        //cell.innerHTML = Success_rate;
+
+        //Add Button cell.
+        cell = row.insertCell(-1);
+        var btnRemove = document.createElement("INPUT");
+        btnRemove.type = "button";
+        btnRemove.value = "Remove";
+        btnRemove.setAttribute("onclick", "Remove(this);");
+        cell.appendChild(btnRemove);
+    }
+
+    function getcount() {
+        var rc = $('#tblCustomers tbody tr').length;
+        //alert(rc);
+        var myRows = [];
+        if (rc > 0) {
+            //debugger;
+
+            var $headers = $("#tblCustomers th");
+            var $rows = $("#tblCustomers tbody tr").each(function (index) {
+                $cells = $(this).find("td");
+                myRows[index] = {};
+                $cells.each(function (cellIndex) {
+                    myRows[index][$($headers[cellIndex]).html()] = $(this).html();
+                });
+            });
+ 
+            var myObj = {};
+             var inptData = {};
+            //console.log(myRows);
+            var dd = myRows;
+            myRows.forEach(item => {       
+                delete item['undefined'];
+               delete item[""];
+               console.log('item', item);
+            });
+             console.log('myRows', myRows);
+            //console.log(dd);
+            myObj.input1 = myRows;
+            inptData.Inputs = myObj;
+            console.log(inptData);
+            var jobj = JSON.stringify(inptData)
+            //alert(JSON.stringify(inptData));
+            //document.getElementById('lblb').value = JSON.stringify(myObj)
+
+
+            console.log(jobj);
+
+            document.getElementById('hdn').value = jobj.toString();
+            //alert(document.getElementById('hdn').value);
+            // };
+        }
+
+    }
+    </script>
+
+    <script>
+     //function addTAg() {
+         var dataInfo;
+        //console.log(document.getElementById('lb').innerText);
+        var dd = document.getElementById('lb').innerText;
+
+        var id = 1;
+        //if ($('.showData').length >= 0) {
+        //    var iCnt = $('.showData').length;
+           
+        //    var txt1 = "<p id='showData" + id + "' class='showData'></p>";    
+        //    //txt1.innerHTML = "this is test";
+        //   // $(txt1).attr('id', "showData" + id);
+            
+        //    //var divCon = document.getElementById("container1");//.appendChild(txt1);
+        //   // divCon.append("<p id='showData" +id +"' class='showData'></p>");
+        //   // divCon.app
+        //    $("#container1").append(txt1);
+        //     id = iCnt +1;
+        //    alert(id);
+        //}
+        //window.onload = function() {
+            //id = 1;
+          console.log("ID :" + id);
+        
+        //var i = 2;
+         debugger;
+            if (dd != '') {
+                var dataDetail = JSON.parse(dd);
+                //console.log(dataDetail);
+                dataDetail.Results.output1.forEach(item => {
+                    //dataInfo.push(item);
+                    dataInfo = JSON.parse(sessionStorage.getItem('dataItem')) || [];
+                    dataInfo.push(item);
+                    sessionStorage.setItem('dataItem', JSON.stringify(dataInfo));
+                    console.log(dataInfo);
+                    debugger;
+                    if (dataInfo.length > 0) {
+
+                        dataDetails(dataInfo, id);
+                        
+                        //alert('ID =' + id);
+                    }
+                    
+                    document.getElementById('lb').innerText = '';
+                });
+                //console.log('dd--', dataInfo);
+
+                function dataDetails(dataInfo,id) {
+                    if (dataInfo.length > 0) {
+                        var col = [];
+                        for (var i = 0; i < dataInfo.length; i++) {
+                            for (var key in dataInfo[i]) {
+                                if (col.indexOf(key) === -1) {
+                                    col.push(key);
+                                }
+                            }
+                        }
+                        // CREATE DYNAMIC TABLE.
+                        var table = document.createElement("table");
+
+                        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+                        var tr = table.insertRow(-1);                   // TABLE ROW.
+
+                        for (var i = 0; i < col.length-1; i++) {
+                            var th = document.createElement("th");      // TABLE HEADER.
+                            th.innerHTML = col[i];
+                            tr.appendChild(th);
+                        }
+
+                        // ADD JSON DATA TO THE TABLE AS ROWS.
+                        for (var i = 0; i < dataInfo.length; i++) {
+
+                            tr = table.insertRow(-1);
+
+                            for (var j = 0; j < col.length-1; j++) {
+                                var tabCell = tr.insertCell(-1);
+                                tabCell.innerHTML = dataInfo[i][col[j]];
+                            }
+                        }
+
+                        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+                        debugger;
+                        //alert("showData" + id);
+                        //if ($('.showData').length > 0) {
+                            //alert(id);
+                            var divContainer = document.getElementById("showData1");
+                            //var divContainer = document.getElementsByClassName("showData");
+                            //var divContainer = $('.showData');
+                            divContainer.innerHTML = "";
+                            //divContainer.innerHTML = "";
+                            divContainer.appendChild(table);
+                       // }
+
+                        
+
+                        var sum = 0;
+                        for (var i = 0; i < dataInfo.length; i++) {
+
+                            //alert();
+
+                            sum += parseFloat(dataInfo[i][col[col.length - 1]]);
+                        }
+                        //alert(sum);
+                        var avg = parseFloat(sum) / parseInt(dataInfo.length);
+                        //alert('Avg: ' + avg);
+
+                        var out = document.getElementById("output");
+                        out.innerHTML = "Team 1 - Score Prediction: "+ avg;
+                        //divContainer.appendChild(avg);
+                        
+                        
+                    }
+                    //if (true) {
+                    //        alert(ID + 'Final');
+                    //    }
+                }
+               // id++;
+                sessionStorage.clear();
+            }
+            else {
+                sessionStorage.clear();
+            }
+        
+         
+    //}
+
+    
+
+</script>
+
+  
+
+</html>
+
+
+
+
+
+////////////////////// CSCODE//////////////////////////////
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.Script.Serialization;
+using System.Web.Script.Services;
+using System.Web.Services;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Configuration;
+using Newtonsoft.Json;
+using System.Json;
+using RestSharp;
+namespace WebApplication1
+{
+
+    public partial class Default : System.Web.UI.Page
+    {
+        SqlConnection con = new SqlConnection(@"Data Source=aimlproject.database.windows.net;Initial Catalog=AIML;User ID=AIMLAdmin;Password=Admin@2018");
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                lb.Text = "";
+            //Label1.Text = "1";
+            }
+        }
+        //public void bindStatusDropDownList()
+        //{
+
+        //    SqlCommand cmd = new SqlCommand("Select ID,Name from dbo.Updated_Project_Data Group By ID,Name", con);
+        //    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+        //    DataTable dt = new DataTable();
+        //    sda.Fill(dt);
+        //    //myselect.Items.Add(new ListItem("Select","N.A.",true));
+        //    myselect.DataSource = dt;
+        //    //myselect.Items.Insert(0, new ListItem("--Select--", "0"));
+        //    myselect.DataTextField = "Name";
+        //    myselect.DataValueField = "ID";
+        //    myselect.DataBind();
+        //}
+
+
+        public class EmployeesRecord
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public string Skill { get; set; }
+            public string Skill_Rating { get; set; }
+            public string Experience { get; set; }
+            public string Gender { get; set; }
+            public string Age { get; set; }
+            public string Marital_status { get; set; }
+            public string Location { get; set; }
+            public string Timezones { get; set; }
+            public string Vehicle_type { get; set; }
+            public string Success_rate { get; set; }
+
+        }
+
+
+        [WebMethod]
+        public static List<ListItem> GetCustomers()
+        {
+            string query = "Select top 500 ID,Name from Updated_Project_Data Group BY ID,Name";
+            string constr = "Data Source=aimlproject.database.windows.net;Initial Catalog=AIML;User ID=AIMLAdmin;Password=Admin@2018";
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    List<ListItem> customers = new List<ListItem>();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            customers.Add(new ListItem
+                            {
+                                Value = sdr["ID"].ToString(),
+                                Text = sdr["Name"].ToString()
+                            });
+                        }
+                    }
+                    con.Close();
+
+                    return customers;
+
+                }
+            }
+        }
+
+
+        [WebMethod]
+        public static List<ListItem> GetSkill(string ID)
+        {
+            int IDi = Convert.ToInt32(ID);
+            string query = "Select Skill from [dbo].[Updated_Project_Data] where ID = " + IDi;
+            string constr = "Data Source=aimlproject.database.windows.net;Initial Catalog=AIML;User ID=AIMLAdmin;Password=Admin@2018";
+
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand(query,con))
+                {
+                    List<ListItem> Skills = new List<ListItem>();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    foreach (DataRow item in dt.Rows)
+                    {
+                        Skills.Add(new ListItem
+                        {
+                            Value = item["Skill"].ToString(),
+                            Text = item["Skill"].ToString()
+                        });
+                    }
+
+                    return Skills;
+
+                }
+            }
+        }
+
+        [WebMethod]
+        public EmployeesRecord GetDetails(string ID,string skill)
+        {
+            string query = "Select Skill_Rating,Experience,Gender,Age,Marital_Status,Location,Timezones,Vehicle_type,Success_rate from [dbo].[Updated_Project_Data] where ID = "+ID+" AND Skill = '"+skill+"'";
+            string constr = "Data Source=aimlproject.database.windows.net;Initial Catalog=AIML;User ID=AIMLAdmin;Password=Admin@2018";
+            
+
+            EmployeesRecord emp = new EmployeesRecord();
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        con.Open();
+                        SqlDataReader sdr = cmd.ExecuteReader();
+                        if (sdr.Read())
+                        {
+                            emp.Skill_Rating = sdr["Skill_Rating"].ToString();
+                            emp.Experience = sdr["Experience"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return emp;
+        }
+
+        [WebMethod]
+        public static List<EmployeesRecord> GetEmpl(string ID,string Skill)
+        {
+            string constr = "Data Source=aimlproject.database.windows.net;Initial Catalog=AIML;User ID=AIMLAdmin;Password=Admin@2018";
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select Skill_Rating, Experience, Gender, Age, Marital_Status, Location, Timezones, Vehicle_type from[dbo].[Updated_Project_Data] where ID = "+ID+" AND Skill = '"+Skill+"'"))
+                {
+                    cmd.Connection = con;
+                    List<EmployeesRecord> emp = new List<EmployeesRecord>();
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            emp.Add(new EmployeesRecord
+                            {
+                                Skill_Rating = sdr["Skill_Rating"].ToString(),
+                                Experience = sdr["Experience"].ToString(),
+                                Gender = sdr["Gender"].ToString(),
+                                Age = sdr["Age"].ToString(),
+                                Marital_status = sdr["Marital_status"].ToString(),
+                                Location = sdr["Location"].ToString(),
+                                Timezones = sdr["Timezones"].ToString(),
+                                Vehicle_type = sdr["Vehicle_type"].ToString(),
+                                //Success_rate = sdr["Success_rate"].ToString()
+                            });
+                        }
+                    }
+                    con.Close();
+                    return emp;
+                }
+            }
+        }
+
+        protected void btnPrd_ServerClick(object sender, EventArgs e)
+        {
+            
+            string inp = hdn.Value.ToString();
+            lb.Text = "";
+            var client = new RestClient("https://ussouthcentral.services.azureml.net/workspaces/8d7c1ca2924d425fa1d29b201d94e2dd/services/952fa8014b194f1880aaccad939ddba3/execute?api-version=2.0&format=swagger");
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("postman-token", "93950066-4ea4-65f3-3f34-8e6546434c48");
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("authorization", "Bearer mevYkicmv+cW8GE3MKhQbcE7NMAUwJSisq7Tb5BxpfgV/r7Dnbvhj3fanPmk9PwtNHt6fuEZrxlQLZFl+Ip51A==");
+            request.AddHeader("content-type", "application/json");
+            request.AddParameter("application/json", inp, ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+
+            lb.Text = response.Content.ToString();
+
+
+
+            //{"Inputs":{"input1":[{"Name":"Erna","Skill":"SQL","Skill_Rating":"64","Experience":"10","Gender":"Female","Age":"35","Marital_status":"Unmarried","Location":"North Carolina","Timezones":"EDT","Vehicle_type":"no","Success_rate":"77"},{"Name":"Bentlee","Skill":"POWERBI","Skill_Rating":"60","Experience":"7","Gender":"Male","Age":"34","Marital_status":"Unmarried","Location":"Iowa","Timezones":"CDT","Vehicle_type":"4-Wheeler","Success_rate":"93"},{"Name":"Joli","Skill":"SQL","Skill_Rating":"69","Experience":"8","Gender":"Female","Age":"32","Marital_status":"Married","Location":"Iowa","Timezones":"CDT","Vehicle_type":"Cycle","Success_rate":"93"},{"Name":"Bordie","Skill":"SHAREPOINT","Skill_Rating":"90","Experience":"12","Gender":"Male","Age":"35","Marital_status":"Married","Location":"Washington","Timezones":"EDT","Vehicle_type":"no","Success_rate":"82"}]}}
+
+
+            //lb.Text = "";
+
+            hdn.Value = "";
+
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{{#fosData}}
+	<div class="ac">
+		
+		<h2 class="ac-q left" tabindex="0">
+			<span>{{name}}</span>
+		</h2>
+		
+		<div class="ac-a">
+			<div class="panel-body pL0">
+			{{#aoiList}}
+				<div class="custom-checkbox">
+				<input type="checkbox" value="{{value}}" id="{{id}}">
+				<label for="{{id}}">{{name}}</label>
+				</div>
+			{{/aoiList}}
+			</div>
+		</div>
+
+	</div>
+{{/fosData}}

@@ -1,0 +1,117 @@
+.mB25{
+    margin-bottom: 25px;
+}
+
+.button button {
+    background-color: #f8f9fa;
+    /* color: white; */
+    /* padding: 14px 20px; */
+    /* margin: 8px 0; */
+    /* border: none; */
+    /* cursor: pointer; */
+ 
+    padding: 3px 10px;
+    border: 1px solid #c8c8c8;
+}
+.clear button{
+    padding: 0px 16px;
+    border: 1px solid #c8c8c8;
+    background-color: #f8f9fa;
+}
+.centre {
+    text-align: center;
+}
+
+.right span{
+    float: right;
+}
+.rightBox button{
+    float: right;
+}
+.p0{
+    padding: 0;
+    line-height: 40px;
+}
+.padding0{
+    padding: 0;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 0;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.cssHeader span {
+    text-decoration: underline;
+    color: blue
+}
+
+.pR20{
+    padding-right: 20px;
+}
+.mB10{
+    margin-bottom: 10px;
+}
+.mT20{
+    margin-top: 20px;
+}
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+    legend.scheduler-border {
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        width:auto;
+        padding:0 10px;
+        border-bottom:none;
+    }
+
+    fieldset.scheduler-border[_ngcontent-c3] {
+        padding: 0 1.4em 0.4em 1.4em !important;
+    }
+    legend {
+        margin-bottom: 0px;
+    }
+    .mT6{
+        margin-top: 6px;
+    }
+    legend.scheduler-border {
+        font-size: 1em !important;
+        font-weight: bold!important;
+    }
+    .gray {
+        background: #80808085;
+    }
+    .dotted{
+        border-style: solid;
+        border-top-style: none;
+        border-left-style: none ;
+        border-right-style: dotted;
+        border-bottom: 2px dashed #777;
+    }
+    .height50{
+        height: 130px;
+        border: 1px solid;
+        overflow: scroll;
+    }
+    fieldset.scheduler-border {
+        margin: 0 0 0.3em 0 !important;
+    }
+    .pT10{
+        padding-top: 10px;
+    }
+
+    .bottomBox {
+        background: linear-gradient(90deg, red (22px - 2px), transparent 1%) center,linear-gradient(red (22px - 2px), transparent 1%) center, #3882E8;
+        background-size: 22px 22px;
+    }

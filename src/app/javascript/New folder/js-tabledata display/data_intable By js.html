@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Convert JSON Data to HTML Table</title>
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+	  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+     
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+         th, td, p, input {
+         font:14px Verdana;
+         }
+         table, th, td 
+         {
+         border: solid 1px #DDD;
+         border-collapse: collapse;
+         padding: 2px 3px;
+         text-align: center;
+         }
+         th {
+         font-weight:bold;
+         }
+      </style>
+   </head>
+   <body>
+      <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" />
+      <p id="showData"></p>
+      <select class="js-example-basic-single"  style='display:inline-block; width:15vw' name="state" 
+         id="programDataBox" onchange="checkPermissions(this.value, 'program')">
+         <option value="">Select Program</option>
+      </select>
+      <select class="js-example-basic-single"  style='display:inline-block; width:15vw' name="sub_state" 
+         id="subDataBox">
+         <option value="">Select Program</option>
+      </select>
+      <div>
+         FirstName: <input type ="text" id = "first" class="firName"><br/><br/>
+         LastName:  <input type ="text" id = "last" class="lastName"><br/><br/>
+         MiddleName: <input type ="text" id = "mid" class="midleName"><br/><br/>		
+      </div>
+      <input type = "button" id="button" value = "Submit" onclick="createJSON()"><br/>
+      <div>
+         <table id="empTable">
+            <tr>
+               <th>ID</th>
+               <th>Employee Name</th>
+               <th>Age</th>
+            </tr>
+            <tr>
+               <td>01</td>
+               <td>Alpha</td>
+               <td>37</td>
+            </tr>
+            <tr>
+               <td>02</td>
+               <td>Bravo</td>
+               <td>29</td>
+            </tr>
+         </table>
+      </div>
+      <p id="info"></p>
+      <p><input type="button" id="bt" value="Show Table Data" onclick="showTableData()" /></p>
+      <!--  -->
+      <div>
+         <table id="Table">
+            <tr>
+               <th>ID</th>
+               <th>Employee Name</th>
+               <th>Age</th>
+            </tr>
+            <tr>
+               <td>01</td>
+               <td>Alpha</td>
+               <td>37</td>
+            </tr>
+            <tr>
+               <td>02</td>
+               <td>Bravo</td>
+               <td>29</td>
+            </tr>
+         </table>
+      </div>
+      <p><input type="button" id="btn" value="Show json data" onclick="showjsonData()" /></p>
+	  
+	  <!-------------------------------------------------------------->
+	  
+	  <div id="tree"></div>
+   </body>
+   <script>
+      //https://www.encodedna.com/javascript/populate-json-data-to-html-table-using-javascript.htm
+      // https://stackoverflow.com/questions/8567114/how-to-make-an-ajax-call-without-jquery
+       var dataInfo = [];
+      function CreateTableFromJSON() {	 
+      var xmlhttp = new XMLHttpRequest();
+       xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+      	 if (xmlhttp.status == 200) {
+         JSON.parse(xmlhttp.responseText).Results.output1.forEach(item => {
+      		  dataInfo.push(item);
+      	  });
+      	dataDetails(dataInfo);
+      	 }
+      	 else if (xmlhttp.status == 400) {
+      		alert('There was an error 400');
+      	 }
+      	 else {
+      		 alert('something else other than 200 was returned');
+      	 }
+        }
+       };
+      
+       xmlhttp.open("GET", "ajax_info.txt", true);
+       xmlhttp.send();
+       }
+      
+      function dataDetails(dataInfo){
+      if(dataInfo.length>0){
+      	var col = [];
+        for (var i = 0; i < dataInfo.length; i++) {
+      	  for (var key in dataInfo[i]) {
+      		  if (col.indexOf(key) === -1) {
+      			  col.push(key);
+      		  }
+      	  }
+        }
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+      
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+      
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+      
+        for (var i = 0; i < col.length; i++) {
+      	  var th = document.createElement("th");      // TABLE HEADER.
+      	  th.innerHTML = col[i];
+      	  tr.appendChild(th);
+        }
+      
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < dataInfo.length; i++) {
+      
+      	  tr = table.insertRow(-1);
+      
+      	  for (var j = 0; j < col.length; j++) {
+      		  var tabCell = tr.insertCell(-1);
+      		  tabCell.innerHTML = dataInfo[i][col[j]];
+      	  }
+        }
+      
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+      }
+      }
+      
+      
+      var jsonData =[  
+        {  
+        "UniqueId":"hpeter2",
+        "hpeter2":[  
+      	 "grant_pcB515-1",
+      	 "grant_pcP703A-1"
+        ]
+        },
+        {  
+        "UniqueId":"hpeter3",
+        "hpeter3":[  
+      	 "grant_pcB515-2",
+      	 "grant_pcP703A-2"
+        ]
+        },
+        {  
+        "UniqueId":"hpeter4",
+        "hpeter4":[  
+      	 "grant_pcB515-3",
+      	 "grant_pcP703A-3"
+        ]
+        },
+        {  
+        "UniqueId":"hpeter5",
+        "hpeter5":[  
+      	 "grant_pcB515-4",
+      	 "grant_pcP703A-4"
+        ]
+        },
+        {  
+        "UniqueId":"hpeter6",
+        "hpeter6":[  
+      	 "grant_pcB515-5",
+      	 "grant_pcP703A-5"
+        ]
+        }
+      ];
+      var programDataBox = '<option value="">Please Select</option>';
+      var subDataBox = '<option value="">Please Select sub data</option>';
+      var predictData=[];
+      (function() {
+      // your page initialization code here
+      // the DOM will be available here
+      
+      for (i = 0; i < jsonData.length; ++i) {
+      		   programDataBox += "<option>" + jsonData[i].UniqueId + "</option>";
+      		   document.getElementById("programDataBox").innerHTML = programDataBox;   					   
+      		}
+      
+      })();
+      function checkPermissions(selectedAccess) {
+      var subData=[];
+      document.getElementById("subDataBox").title='Please Select';
+      document.getElementById("subDataBox").textContent='Please Select';
+      document.getElementById("subDataBox").innerHTML = '';
+      
+      var select = document.getElementById("subDataBox");
+      document.getElementById("subDataBox").length = 1;
+      
+      var obj = jsonData.find(obj => obj.UniqueId === selectedAccess);
+      subData.push(obj);
+      //console.log(subData[0][selectedAccess]);
+      if(document.getElementById("subDataBox").options.length<2){
+      document.getElementById("subDataBox").options.length = 1;
+      for (i = 0; i < subData[0][selectedAccess].length; ++i) {
+      		   subDataBox += "<option>" + subData[0][selectedAccess][i]+ "</option>";
+      		   document.getElementById("subDataBox").innerHTML = subDataBox; 
+      		  console.log(document.getElementById("subDataBox").options.length);  					   
+      		}
+      }else{
+       document.getElementById("subDataBox").options.length = 1;
+      
+      }
+      	
+      }
+      
+      function createJSON(){
+      console.log(document.getElementById('first').value);
+      var jsonDetails ={
+      "first_Name": document.getElementById('first').value,
+      "last_Name": document.getElementById('last').value,
+      "middle_Name": document.getElementById('mid').value
+      };
+      
+      console.log(jsonDetails);
+      predictData.push(jsonDetails);
+      
+      console.log(predictData);
+      }
+      
+      function showTableData() {
+      document.getElementById('info').innerHTML = "";
+      var myTab = document.getElementById('empTable');
+      
+      // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
+      for (i = 1; i < myTab.rows.length; i++) {
+      // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+      var objCells = myTab.rows.item(i).cells;
+      // LOOP THROUGH EACH CELL OF THE CURENT ROW TO READ CELL VALUES.
+      for (var j = 0; j < objCells.length; j++) {
+      	info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
+      	 var dateTime=objCells.item(j).innerHTML.split(" ");
+      	console.log(dateTime);
+      }
+      info.innerHTML = info.innerHTML;     // ADD A BREAK (TAG).
+      }
+      var thisIsObject= {
+        undefined : 'Moo',
+        'Cat' : 'Meow',
+        "" : 'Bark'
+      };
+      delete thisIsObject['']; 
+      delete thisIsObject['undefined'];
+      console.log(thisIsObject);
+      
+      
+      
+      /****************table data into object****************************************************************************/   
+      function showjsonData(){}
+      
+      
+    /*****************************************************************************************************************/  
+    var tree = [
+  {
+    text: "Parent 1",
+    nodes: [
+      {
+        text: "Child 1",
+        nodes: [
+          {
+            text: "Grandchild 1"
+          },
+          {
+            text: "Grandchild 2"
+          }
+        ]
+      },
+      {
+        text: "Child 2"
+      }
+    ]
+  },
+  {
+    text: "Parent 2"
+  },
+  {
+    text: "Parent 3"
+  },
+  {
+    text: "Parent 4"
+  },
+  {
+    text: "Parent 5"
+  }
+];
+
+	function getTree() {
+  // Some logic to retrieve, or generate tree structure
+  return data;
+}
+
+$('#tree').treeview({data: getTree()});
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   </script>
+</html>

@@ -1,0 +1,77 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, OnInit, Input, EventEmitter, Output, OnChanges, SimpleChanges, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CounterInputComponent } from './counter-input.component';
+import {PricebandService} from '../../services/priceBands/priceband.service';
+import {PricebandServiceMock} from '../../services/priceBands/priceband.service.mock';
+import { HttpClientModule} from '@angular/common/http';
+// import { RouterTestingModule } from '@angular/router/testing';
+// import { Router } from '@angular/router';
+
+fdescribe('CounterInputComponent', () => {
+  let component: CounterInputComponent;
+  let fixture: ComponentFixture<CounterInputComponent>;
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ CounterInputComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [
+        {provide: PricebandService, useClass: PricebandServiceMock}
+      ],
+      imports: [
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule
+        ]
+      })
+      .compileComponents();
+    }));
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CounterInputComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+});
+  it('should create the CounterInputComponent', async(() => {
+    expect(component).toBeTruthy();
+  }));
+  it('should call  set Input', () => {
+    const product = {
+      'id': 2,
+      'productCode': '706Q',
+      'incrementBy': 5,
+      'minQuantity': 1,
+      'MaxQuantity': 100
+    };
+
+  });
+  it('should call getProductData', () => {
+    const productCode = '706Q';
+    component.getProductData(productCode);
+  });
+  it('should call canCounterIncrement', () => {
+    component.canCounterIncrement();
+  });
+  it('should call canCounterDecrement', () => {
+     component.canCounterDecrement();
+  });
+  it('should call onCounterValueChange', () => {
+    component.onCounterValueChange(Event);
+  });
+  it('should call increment', () => {
+    const canIncrement: boolean = true;
+    // const counterValue = {invoiceNo: '16546798'};
+    const counterValue = {
+      'id': 2,
+      'productCode': '706Q',
+      'incrementBy': 5,
+      'minQuantity': 1,
+      'MaxQuantity': 100
+    };
+    component.increment();
+  });
+  it('should call increment', () => {
+    const canDecrement: boolean = true;
+    component.decrement();
+  });
+});
+

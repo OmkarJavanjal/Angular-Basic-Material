@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p>Click the button several times to see if the time changes, or if the file is cached.</p>
+
+<p id="demo"></p>
+
+<script>
+//https://medium.freecodecamp.org/here-is-the-most-popular-ways-to-make-an-http-request-in-javascript-954ce8c95aaa
+//https://www.w3schools.com/xml/tryit.asp?filename=tryajax_get2
+//https://stackoverflow.com/questions/9713058/send-post-data-using-xmlhttprequest
+// https://www.w3schools.com/js/js_json_http.asp
+// https://stackoverflow.com/questions/24468459/sending-a-json-to-server-and-retrieving-a-json-in-return-without-jquery  (best)
+
+function loadDoc() {
+  const Http = new XMLHttpRequest();
+  const url='https://jsonplaceholder.typicode.com/posts';
+  Http.open("GET", url);
+  Http.send();
+  Http.onreadystatechange=function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+}
+
+var BrowserDetect = function() { 
+var nav = window.navigator, 
+ua = window.navigator.userAgent.toLowerCase(); 
+// detect browsers (only the ones that have some kind of quirk we need to work around) 
+if (ua.match(/ipad/i) !== null) 
+return "iPod"; 
+if (ua.match(/iphone/i) !== null) 
+return "iPhone"; 
+if (ua.match(/android/i) !== null) 
+return "Android"; 
+if ((nav.appName.toLowerCase().indexOf("microsoft") != -1 || nav.appName.toLowerCase().match(/trident/gi) !== null)) 
+return "IE"; 
+if (ua.match(/chrome/gi) !== null) 
+return "Chrome"; 
+if (ua.match(/firefox/gi) !== null) 
+return "Firefox"; 
+if (ua.match(/webkit/gi) !== null) 
+return "Webkit"; 
+if (ua.match(/gecko/gi) !== null) 
+return "Gecko"; 
+if (ua.match(/opera/gi) !== null) 
+return "Opera"; 
+//If any case miss we will return null 
+return null 
+} 
+document.write(BrowserDetect()); 
+
+</script>
+
+</body>
+</html>

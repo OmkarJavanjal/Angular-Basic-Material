@@ -1,0 +1,17 @@
+1- what is undeclare and undefined?
+2- how many times we can use selector in html?
+3- how many types we can use html in componetn - templateURL and trmplate?
+4- what is templatereferance?
+5- what is use of ng-template?
+6- what is tranclude in angular?
+7- what is in background after ng-serve?
+8- what is use of polyfile.js
+9- how browser convert typeScript code in JS?
+10- what is map and set in typeScript?
+11- what is diff in promice and obserable ,
+12- what is subscribe?
+13- what is diff in document and window?
+14- what is BOM?
+15- what is innerHtml and innerText?
+16- angular lifeCylce hook in angular4?
+17- 

@@ -1,0 +1,17 @@
+<div class="card-header">
+    <div class="clearfix">
+      <div class="card-image pull-left mr-2" 
+      [style.backgroundImage]="'url(src/assets/image/'+product.image+')'"></div> 
+        <h4 class="card-title" (click)="checkClicked()">{{product.name | lowercase}}--- {{product.image}}</h4>
+      </div>
+</div>
+<ul>
+    <li *ngFor="let item of products">
+        <h3>{{item.username}}</h3>
+          <div class="card-image pull-left mr-2" 
+          [ngStyle]="{'background': '#fff url(' + item['fileLocation'] + ') no-repeat 0 0'}"
+   
+></div> 
+          <img [src]="item.fileLocation"/>
+    </li>
+  </ul>

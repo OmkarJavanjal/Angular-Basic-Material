@@ -1,0 +1,34 @@
+1->> What is Technology Architecture?
+  1- The technology architecture describes the infrastructure required to support applications, operations, and reporting requirements
+  2- A framework for building an enterprise including networking, hardware, operating systems, 
+     database management systems, and application development standards. 
+
+2->> The Role of a Technology Architect?
+
+Technology architects are responsible for designing the high-level structure of new technology solutions, 
+including the emerging technologies that development teams may use. This also includes planning the resources needed to 
+implement the new solution and identifying potential roadblocks.
+
+3->> Technology Architecture Concerns and Principles?
+
+
+4->>  Technical Architect Responsibilities?
+
+1- Designing functional technology solutions
+2- Overseeing development and implementation of programs
+3- Providing technical leadership and support to software development teams
+
+5->> 
+
+
+https://pubs.opengroup.org/architecture/togaf8-doc/arch/chap10.html
+https://pubs.opengroup.org/architecture/togaf9-doc/arch/chap11.html
+
+1- Hotel Mohan palace
+2- SN Resort Hotel dharmshala
+3- Hotel Ranjeet Sagar
+
+
+1- Zara Resort
+2- SN Resort
+3- Shining star

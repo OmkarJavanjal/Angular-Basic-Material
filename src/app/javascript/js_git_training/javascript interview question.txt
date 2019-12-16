@@ -1,0 +1,278 @@
+1-what is prototype in javascript and why we use it?
+2-if we create prototype for any cunstructor function and we create multiple object from that function then how many instance of prototype is create?
+2-what is incapsulation in javascript?
+4-is only prototype is create for inherentece?
+5- what is three pilers in javascript?
+6- Any specific resaon to use prototype in javascript?
+7- how to remove duplicate number from aaray
+8- what is callback in javascript any why we have to use it?
+9- What is Polymorphism?
+10-Creating object Inheritance?
+11- event counter program
+
+
+///////protype is not hoisting but cunstruction funcetin is hoisting. 
+1--------------------------------------------
+1-- console.log('this is'+  " --->>"+ typeof 4.5) //this is --->>number
+2- console.log('this is'+  " --->>"+ typeof []) // this is --->>object
+3- console.log('this is'+  " --->>"+ typeof argument) // this is --->>undefined
+4- console.log('this is'+  " --->>"+ typeof 2+true) // this is --->>numbertrue
+5-console.log('this is'+  " --->>"+ typeof 2+false) // this is --->>numberfalse
+6- console.log('this is'+  " --->>"+ typeof '2'+false) // this is --->>stringfalse
+7- console.log('this is'+  " --->>"+ typeof null+false) // this is --->>objectfalse
+8- console.log('this is'+  " --->>"+ typeof null+true) //  this is --->>objecttrue
+9- console.log('this is'+  " --->>"+ typeof undefined +true) // this is --->>undefinedtrue
+10- console.log('this is'+  " --->>"+ typeof '45'+'3') // this is --->>string3
+11- console.log('this is'+  " --->>"+ typeof 45+'3') // this is --->>number3
+12- console.log('this is'+  " --->>"+ typeof 45+3) // this is --->>number3
+13-console.log('this is'+  " --->>"+ typeof 45+'3') // this is --->>number3
+14-console.log('this is'+  " --->>"+ typeof '45'+33) // this is --->>string33
+15-console.log('this is'+  " --->>"+ typeof +'45'+33) // this is --->>number33
+16- console.log('this is'+  " --->>"+ typeof -'45'+33) // this is --->>number33
+17-console.log('this is'+  " --->>"+ typeof -45+33) // this is --->>number33
+18- console.log('this is'+  " --->>"+ typeof -'45') // this is --->>number
+19-console.log('this is'+  " --->>"+ typeof -45) // this is --->>number
+20-console.log('this is'+  " --->>"+ typeof +'abhi') // this is --->>number
+21-console.log('this is'+  " --->>"+ typeof +abhi) // Uncaught ReferenceError: abhi is not defined
+22-console.log('this is'+  " --->>"+ typeof +22)// this is --->>number
+23-console.log('this is'+  " --->>"+ typeof !22) //this is --->>boolean
+24-console.log('this is'+  " --->>"+ typeof !'22') // this is --->>boolean
+25-console.log('this is'+  " --->>"+ typeof !'abhi') // this is --->>boolean
+26- console.log('this is'+  " --->>"+ typeof !-'abhi') // this is --->>boolean
+27-console.log('this is'+"->>"+ typeof parseFloat("10")) // this is->>number
+28- console.log('this is'+"->>"+ typeof parseFloat(10)) // this is->>number
+29-console.log('this is'+"->>"+ typeof parseFloat(10.3)) // this is->>number
+30-console.log('this is'+"->>"+ typeof parseFloat('10.3')) // this is->>number
+31-console.log('this is'+"->>"+ typeof parseInt('10.3')) // this is->>number
+32-console.log('this is'+"->>"+ typeof parseInt(10.3)) // this is->>number
+33-console.log('this is'+"->>"+ typeof (null==undefined )) //this is->>boolean
+32-console.log('this is'+"->>"+ typeof (null===undefined )) //this is->>boolean
+35-console.log('this is'+"->>"+ typeof (null!==undefined )) // this is->>boolean
+36-console.log('this is'+"->>"+ typeof (1+2 !=3))  // this is->>boolean
+37-console.log('this is'+"->>"+ typeof (4..toString())) //this is->>string
+38-console.log('this is'+"->>"+ typeof ('4'.toString())) //this is->>string
+39-console.log('this is'+"->>"+ typeof (true+false)>2+true) // false
+40-console.log('this is'+"->>"+typeof (true+false)<2+true) // false
+41-console.log('this is'+"->>"+typeof ('a'-'m'+2)) //this is->>number
+42-console.log('this is'+"->>"+typeof (+'1'-'1'+2)) //this is->>number
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Numbers-- 
+You can convert a string to an integer using the built-in parseInt() function.
+parseInt("123", 10); // 123
+A special value called NaN (short for "Not a Number") is returned if the string is non-numeric
+parseInt("hello", 10); // NaN
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Other types-----
+JavaScript has a boolean type, with possible values true and false (both of which are keywords.) Any value can be converted to a boolean according to the following rules:
+---->>> false, 0, empty strings (""), NaN, null, and undefined all become false.
+----->>>All other values become true.
+You can perform this conversion explicitly using the Boolean() function:
+Boolean("");  // false
+Boolean(234); // true
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Comparisons in JavaScript can be made using <, >, <= and >=. These work for both strings and numbers
+123 == "123"; // true
+1 == true; // true
+
+123 === "123"; // false
+1 === true;    // false
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Object literal syntax can be used to initialize an object in its entirety:
+
+var obj = {
+  name: "Carrot",
+  "for": "Max",
+  details: {
+    color: "orange",
+    size: 12
+  }
+}
+Attribute access can be chained together:
+
+obj.details.color; // orange
+obj["details"]["size"]; // 12
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+array ----
+Arrays in JavaScript are actually a special type of object.they have one magic property called 'length'. This is always one more than the highest index in the array.
+A more convenient notation is to use an array literal:
+
+var a = ["dog", "cat", "hen"];
+a.length; // 3
+
+Note that array.length isn't necessarily the number of items in the array. Consider the following:
+
+var a = ["dog", "cat", "hen"];
+a[100] = "fox";
+a.length; // 101
+
+Remember — the length of the array is one more than the highest index.
+
+If you query a non-existent array index, you'll get a value of undefined returned:
+
+typeof a[90]; // undefined
+
+If you take the above into account, you can iterate over an array using the following:
+var a = ["dog", "cat", "hen"];
+a[10] = "fox";
+a.length; // 101
+for (var i = 0; i < a.length; i++) {
+ var b=a[i];
+console.log(b);
+}
+//dog cat
+ hen
+ undefined
+ undefined undefined undefined undefine dundefined--97times  fox
+
+
+var a = ["dog", "cat", "hen"];
+a[10] = "fox";
+a.length; // 101
+var b =a.toLocaleString();
+console.log(b);
+
+//dog,cat,hen,,,,,,,,fox
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Functions---
+
+Custom objects----
+In classic Object Oriented Programming, objects are collections of data and methods that operate on that data. JavaScript is a prototype-based language that contains no class statement.
+
+
+Inner functions---
+JavaScript function declarations are allowed inside other functions. An important detail of nested functions in JavaScript is that they can access variables in their parent function's scope:
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Objects Only - No Classes----
+Prototypal Inheritance-----
+In Javascript, there is no class inheritance, instead objects can inherit directly from other objects. The way this works is that each object has an implicit property that points to a 'parent' object.
+That property is called __proto__, and the parent object is called the object's prototype, hence the name Prototypal Inheritance.
+
+How does prototype work?--
+
+When looking up a property, Javascript will try to find the property in the object itself. If it does not find it then it tries in it's prototype, and so on. For example:
+
+
+__proto__ ---->>
+__proto__ is the actual object that is used in object.It is a property that all objects have. This is the property which is used by the JavaScript engine for inheritance.It is use with object to inherit.
+
+
+prototype---->>prototype is a property belonging only to functions.
+There are two interrelated concepts with prototype in JavaScript:----
+1--First, every JavaScript function has a prototype property (this property is empty by default), and you attach properties and methods on this prototype property when you want to implement inheritance. The prototype property is used primarily for inheritance; you add methods and properties on a function’s prototype property to make those methods and properties available to instances of that function.
+
+
+JS - Why use Prototype?------>>>>
+Using the prototype makes for faster object creation, since that function does not have to be re-created each time a new object is created.
+When you do this:
+
+function animal(){
+    this.name = 'rover';
+    this.set_name = function(name){
+         this.name = name;
+    }
+}
+The set_name function is created de novo each and every time you create an animal
+ But when you do this
+
+animal.prototype.set_name = function(name){
+    this.name = name;
+}
+The function does not have to be re-created each time; it exists in one place in the prototype. So when you call someAnimal.set_name("Ubu");
+
+There is one advantage to using the first syntax though: functions created in this manner will have access to private data:
+
+function animal(){
+    var privateData = 'foo'
+
+    this.name = 'rover';
+    this.set_name = function(name){
+         this.name = name;
+         alert(privateData); //will alert 'foo'
+    }
+}
+
+
+Prototypes allow you to easily define methods to all instances of a particular object. The beauty is that the method is applied to the prototype, so it is only stored in the memory once, but every instance of the object has access to it
+
+
+Put functions on a prototype object when you're going to create lots of copies of a particular kind of object and they all need to share common behaviors. By doing so, you'll save some memory by having just one copy of each function, but that's only the simplest benefit.
+
+
+One reason to use the built-in prototype object is if you'll be duplicating an object multiple times that will share common functionality. By attaching methods to the prototype, you can save on duplicating methods being created per each new instance. But when you attach a method to the prototype, all instances will have access to those methods.
+
+
+Say you have a base Car() class/object.
+
+function Car() {
+    // do some car stuff
+}
+then you create multiple Car() instances.
+
+var volvo = new Car(),
+    saab = new Car();
+Now, you know each car will need to drive, turn on, etc. Instead of attaching a method directly to the Car() class (which takes up memory per each instance created), you can attach the methods to the prototype instead (creating the methods only once), therefore giving access to those methods to both the new volvo and saab.
+// just mapping for less typing
+Car.fn = Car.prototype;
+
+Car.fn.drive = function () {
+    console.log("they see me rollin'");
+};
+Car.fn.honk = function () {
+    console.log("HONK!!!");
+}
+
+volvo.honk();
+// => HONK!!!
+saab.drive();
+// => they see me rollin'
+
+
+The Benefits of JavaScript Prototype----->>
+1) Inheritance--
+2) Memory Efficiency---
+Of course, there are "drawbacks" as well:
+
+No closures in prototype
+
+Another side effect of creating methods inside the constructor is poorer performance. Each method has to be created every time the constructor function runs. Methods on the prototype chain are created once and then "inherited" by each instance. 
+
+Encapsulation ---->>
+Encapsulation is one of the main concepts in object oriented programming. It allows an object to group both private and public members under a single name.
+All the object oriented programming languages support this. Since JavaScript is also an object oriented programming language, it supports it too.
+
+
+
+
+To run the cunstructor functiion first we have to create instance Of the that function.
+function greeter(name, age) {
+  var message = name + ", who is " + age + " years old, says hi!";
+
+  return function greet() {
+    console.log(message);
+  };
+}
+
+// Generate the closure
+var bobGreeter = greeter("Bob", 47);
+
+// Use the closure
+bobGreeter();

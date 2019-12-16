@@ -1,0 +1,57 @@
+
+  /**
+  ** use below code in srp component file.
+  **/
+  ngOnInit() {
+  
+    this.sharedServiceService.listen().subscribe((m:any) => {    
+     if(m=='default message'){
+       // write logic here at the time of page load which return 50 data first time
+      // this.searchResult = await this._apiEndPoint code;
+     }else{
+      // write logic here which return data based on search data
+      this.studentserviceService.getselectArray4(m)
+          .subscribe(
+          data => {
+            this.searchResult = data;
+          });
+        }
+    });
+  }
+/***
+** code inside the http service file
+***/
+
+	getselectArray4(combinedData) {	
+		console.log('combinedData--', combinedData);	
+			let params = new HttpParams()
+			.set('country', combinedData.country)
+			.set('state', combinedData.state)
+			.set('city', combinedData.city)						
+			console.log('params---', params);
+		return this.http.get('http://localhost:3000/ProductDetails',{params})
+			.map(this.extractData)//map as a middle-ware which transforms the response into json.. if we remove it the response comes into string format.
+			.catch(this.handleErrorObservable);
+	}
+
+    
+  /**
+ * insid shared service
+ */
+
+  private filterMessageSource = new BehaviorSubject('default message'); 
+  //filterCurrentMessage = this.filterMessageSource.asObservable();
+  listenn(): Observable<any> {
+    return this.filterMessageSource.asObservable();
+ }
+  filterData(message: any) {
+    this.filterMessageSource.next(message)
+  }
+
+
+/** Inside regular component***********/
+
+   updateCheckedOptions(option, event) {
+      this.sharedServiceService.filterData(this.optionsChecked);
+     }
+   

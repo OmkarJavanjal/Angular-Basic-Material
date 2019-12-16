@@ -1,0 +1,44 @@
+<div class="row" *ngIf="isCheck">
+  <app-search-input></app-search-input>
+</div>
+----{{isCheck}}
+<div class="row">
+<nav> 
+  <ul> 
+   <li> 
+   <a routerLink="/registration" routerLinkActive="active">Employee Details</a> 
+  </li> 
+  <li>
+     <a routerLink="/update" routerLinkActive="active">Product Details</a> 
+ </li>
+ <li> 
+     <a routerLink="/" routerLinkActive="active">LazyLoading Component</a> 
+  </li>
+  <li> 
+    <a routerLink="/loginModule" routerLinkActive="active">loginModule</a> 
+ </li>  
+ </ul> 
+  </nav>
+</div>
+<div class="row">
+    <ul>
+      <li>
+      <a routerLink="/lazyloadingfirstChild" routerLinkActive="active">Lazy Loading First Child</a>
+      </li>
+      <li>
+      <a routerLink="/lazyloadingsecondChild" routerLinkActive="active">Lazy Loading Second Child</a>
+      </li>    
+    </ul>
+    </div>
+<div class="row">
+  <label *ngFor="let option of options; let i = index">
+      <input type="checkbox"
+             name="options"
+             value="{{option.name}}"
+             [checked]="option.isCheck"
+             [(ngModel)]='option.isCheck' 
+             (change)="updateCheckedOptions(option, $event)"/>
+      {{option.name}}
+  </label>
+</div>
+<h3>-----------------------------------------------------------</h3>

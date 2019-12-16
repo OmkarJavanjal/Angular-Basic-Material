@@ -1,0 +1,256 @@
+<!-- Responsive Data Data-->
+
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4">
+            <app-label-text textSize="large" textColor="green" textWeight="bold" elementId="id-1" labelText="this is your name--">
+                <p >my article body2</p>
+                <h3 header>My Article 2</h3>
+                <p body>my article body 1</p>
+            </app-label-text>
+          <app-label-text textSize="large" textColor="green" textWeight="bold" elementId="id-1" labelText="this is your name--"><p>Hi Abhinav</p></app-label-text>
+          <app-label-text textSize="large" textColor="red" textWeight="bold" elementId="id-2" labelText="this is your name"></app-label-text>
+          <app-ternary-text textSize="large" textColor="green" textWeight="bold" elementId="id-3" labelText=""></app-ternary-text>
+        </div>
+        <div class="col-md-4">
+            <app-button btnId="editTable" btnColor="red" textWeight="bold" textSize="small" 
+            btnText="Edit Table" btnSize="small" (click)="editTable()" ></app-button>
+          </div>
+          <div class="col-md-4">
+            <app-button btnId="saveTable" btnColor="green" textWeight="bold" textSize="small" 
+            btnDisabled="isSavetable"
+            btnText="Save Table" btnSize="small" (click)="saveTable()" ></app-button>
+          </div>
+    </div>
+
+    <div class="row"> <h4>Direct Payment History</h4> </div>
+    <div class="row">
+    <div class="col-md-10 pL0">
+    <div class="col-md-12 pL0">
+      <div class="col-md-4 pL0"><span>ROPE Date</span></div>
+      <div class="col-md-8 pL0"><span>MM/DD/YYYY</span></div>
+    </div>
+    <div class="col-md-12 pL0">
+      <div class="col-md-4 pL0"><span>ROPE  Start Date</span></div>
+      <div class="col-md-8 pL0"><span>MM/DD/YYYY</span></div>
+    </div>
+    </div>
+    <div class="col-md-2"><button type="button" class="btn btn-primary pull-right">Grant Amounts</button> </div>
+    </div>
+
+    <div class="row">                                                                                   
+    <!--Table-->
+    <table class="table table-striped w-auto text-nowrap">
+        <!--Table head   https://mdbootstrap.com/content/bootstrap-table-responsive/
+      https://www.w3schools.com/bootstrap/bootstrap_forms_inputs2.asp
+      -->
+        <thead>
+            <tr>
+                <th>Pay Date</th>
+                <th>Notify Date</th>
+                <th>Pay Amount</th>
+                <th>Pay Type</th>
+                <th>History</th>
+                <th>Clear</th>
+            </tr>
+        </thead>
+        <!--Table head-->
+    
+        <!--Table body-->
+        <tbody>
+            <tr class="table-info" *ngFor="let i of helperArray">
+                <td>
+              <div class="input-group">
+              <input type="text" class="form-control" placeholder="03/25/2015" name="calendar">
+              <div class="input-group-btn">
+                <span class="calendar" type="button" style="width: 2rem;padding: .37rem;"><i class="fa fa-calendar" style="font-size:24px"></i></span>
+              </div>
+            </div>
+          </td>
+                <td>
+              <div class="input-group">
+              <input type="text" class="form-control" placeholder="03/25/2015" name="calendar">
+              <div class="input-group-btn">
+                <span class="calendar" type="button" style="width: 2rem;padding: .37rem;"><i class="fa fa-calendar" style="font-size:24px"></i></span>
+              </div>
+            </div>
+          </td>  
+                <td class="w18"> 
+            <div class="input-group">
+             <div class="input-group-btn">
+              <span class="usd" type="button" style="width: 2rem;padding: .37rem;"><i  style="font-size:18px">$</i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="72.1" name="usd">			 
+            </div>
+          </td>
+                <td class="w18">
+              <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" name="search">
+              <div class="input-group-btn">
+                <span class="down" type="button" style="width: 2rem;padding: 0.37rem;"><i class="fa fa-sort-down" style="font-size:24px"></i></span>
+              </div>
+            </div>
+          </td>
+                <td>Y</td>
+                <td><i class="fa fa-trash-o" style="font-size:24px" (click)=deleterow($event)></i></td>
+            </tr>
+        </tbody>
+        <!--Table body-->
+    </table>
+    <!--Table-->
+    </div>
+    
+    <div class="row"> 
+    <div class="col-md-8"></div>
+    <div class="col-md-4 btnGroup">
+      <p class="pull-right">
+        <app-button btnId="editTable" btnColor="red" textWeight="bold" textSize="small" 
+        btnText="Add page" btnSize="small"></app-button>
+
+        <app-button btnId="editTable" btnColor="green" textWeight="bold" textSize="small" 
+            btnText="Edit Table" btnSize="small"></app-button>
+
+            <app-button btnId="editTable" btnColor="gray" textWeight="bold" textSize="small" 
+            btnText="Save Table" btnSize="small"></app-button>
+      </p>
+    </div>
+    </div>
+    </div>
+    
+/*********************************Edit Table******************************************/
+
+<!-- Responsive Data Data-->
+<div class="container">
+  <div class="row"> <h4>Direct Payment History</h4> </div>
+  <div class="row">                                                                                   
+  <!--Table-->
+  <table class="table table-striped w-auto text-nowrap">
+      <thead>
+          <tr>
+              <th>Pay Date</th>
+              <th>Notify Date</th>
+              <th>Pay Amount</th>
+              <th>Pay Type</th>
+              <th>History</th>
+              <th>Clear</th>
+          </tr>
+      </thead>
+      <!--Table head-->
+  
+      <!--Table body-->
+      <tbody>
+          <tr class="table-info" *ngFor="let employe of employees; let idx = index">
+            <td>
+              <span *ngIf="!isEditable">{{employe.PayDate}}</span>
+              <div class="input-group"  *ngIf="!isSavetable">
+                <input type="text" class="form-control" placeholder="03/25/2015" name="calendar" [(ngModel)]="PayDate" value="{{employe.PayDate}}">
+                <div class="input-group-btn">
+                  <span class="calendar" type="button" style="width: 2rem;padding: .37rem;"><i class="fa fa-calendar" style="font-size:24px"></i></span>
+                </div>
+              </div>
+           </td>
+            <td>
+              <span *ngIf="!isEditable">{{employe.NotifyDate}}</span>            
+            <div class="input-group" *ngIf="!isSavetable">
+            <input type="text" class="form-control" placeholder="03/25/2015" name="calendar" [(ngModel)]="NotifyDate" value="{{employe.NotifyDate}}">
+            <div class="input-group-btn">
+              <span class="calendar" type="button" style="width: 2rem;padding: .37rem;"><i class="fa fa-calendar" style="font-size:24px"></i></span>
+            </div>
+          </div>
+        </td>  
+         <td class="w18">
+            <span *ngIf="!isEditable">{{employe.PayAmount}}</span>          
+          <div class="input-group" *ngIf="!isSavetable">
+           <div class="input-group-btn">
+            <span class="usd" type="button" style="width: 2rem;padding: .37rem;"><i  style="font-size:18px">$</i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="72.1" [(ngModel)]="PayAmount" value="{{employe.PayAmount}}">			 
+          </div>
+        </td>
+         <td class="w18">
+            <span *ngIf="!isEditable">{{employe.PayType}}</span> 
+            <app-button btnId="editTable" btnColor="red" textWeight="bold" textSize="small" 
+            btnText="Add page" btnSize="small" *ngIf="!isSavetable"></app-button>         
+            <div class="input-group" *ngIf="!isSavetable">
+            <select id="payType" class="form-control" placeholder="Search"
+                  [(ngModel)]="payType" (ngModelChange)="onPayTypeChange($event)">	 
+                <option *ngFor="let payTypeName of payTypes" [ngValue]="payTypeName.card"> 
+                  {{payTypeName.card}} </option>
+            </select>
+            <div class="input-group-btn">
+              <span class="down" type="button" style="width: 2rem;padding: 0.37rem;"><i class="fa fa-sort-down" style="font-size:24px"></i></span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <span *ngIf="!isEditable">{{employe.history}}</span>
+          <input type="text" *ngIf="!isSavetable"  [(ngModel)]="history" value="{{employe.history}}"/>
+        </td>
+              <td><i class="fa fa-trash-o" style="font-size:24px" (click)=deleterow($event)></i></td>
+          </tr>
+      </tbody>
+      <!--Table body-->
+  </table>
+  <!--Table-->
+  </div>
+  
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"><button type="button" class="btn btn-success">Add page</button></div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-info" (click)="editTable()"  [disabled]="isEditable">Edit Table</button>
+      
+      </div>
+      <div class="col-md-2"><button type="button" class="btn btn-primary" (click)="saveTable()"  [disabled]="isSavetable">Save</button></div>
+  </div>
+  </div>
+  
+
+
+
+
+
+<div class="row boxShadow" *ngFor="let selectedData of frameData">
+<div class="col-sm-6 pL0">
+ <table>
+  <tr>
+	<th>Selected Item </th>
+	<th>Price</th>
+  </tr>
+  <tr>
+	<td>Total Price of Selected :{{selectedData.ColorName}} </td>
+	<td>{{selectedData.colorPrice}} </td>
+  </tr>
+   <tr>
+	<td>Total Price of Selected :{{selectedData.borederName}} </td>
+	<td>{{selectedData.borderPrice}} </td>
+  </tr>
+   <tr>
+	<td>Total Price of Selected :{{selectedData.backgroundName}} </td>
+	<td>{{selectedData.backgroundPrice}} </td>
+  </tr>
+   <tr>
+	<td> Total Amount</td>
+	<td class="totalAmt"> {{selectedData.totalAmounts}}</td>
+  </tr>
+  <tr>
+	<td> GST Tax %</td>
+	<td class="tax">18%</td>
+  </tr>
+   <tr>
+	<td> Total Tax on amount </td>
+	<td class="tax">00</td>
+  </tr>
+  <tr>
+	<td> Total amount after tax include </td>
+	<td class="totalAmt">000</td>
+  </tr>
+</table>
+</div>
+ <div class="col-sm-6 setBroder" [ngStyle]="{'background-color':selectedData.colorCode ,'border-image':selectedData.borderImage ,'background-image':selectedData.backgroundImage}"></div>
+</div>

@@ -1,0 +1,511 @@
+
+
+<div class="row ">
+
+      <button type="button" class="btn btn-danger"
+       (click)="navigate()">Hide Modal</button>
+    </div>
+
+    <p>
+      <a [routerLink]="['./tracks']" routerLinkActive="active">Tracks</a> |
+      <a [routerLink]="['./albums']" routerLinkActive="active">Albums</a>
+    </p>
+    
+  <div class="row">
+      <router-outlet></router-outlet>
+  </div>  
+
+
+<div class="col-md-10" style="border: 1px solid green;background: red;"> 
+
+      
+     <a href="/mainBox" target="_blank">print lInk</a>
+
+
+      <button type="btn" (click) = 'next2020page()'>next2020page</button>
+      <button type="btn" (click) = 'next2019page()'>next2019page</button>
+      <button type="btn" (click) = 'next2018page()'>next2018page</button>
+      <button type="btn" (click) = 'next2018pagewrong()'>next2018pagewrong</button>
+ </div>
+
+<div class="col-md-12" style="border: 1px solid green;background: red;">
+      <app-left-box></app-left-box>
+</div>
+
+      
+
+<div class="col-md-12" style="border: 1px solid green;background: red;" (onScroll)="handleScroll($event)">
+      <div class="col-md-3" style="border: 1px solid green;background: red;"> </div>
+      <div class="col-md-6">    
+      <div  *ngFor='let studentinfo of getUpdatedData; let idx = index'>
+      </div>              
+      </div>
+      <div class="col-md-3" style="border: 1px solid green;background: red;"></div>   
+</div>
+<div class="col-md-12" style="border: 1px solid green;background: red;">
+      <div class="col-md-3" style="border: 1px solid green;background: red;"> </div>
+      <div class="col-md-6">    
+      <div class="form-group">
+            <label class="lineHeight">PHONE NUMBER</label>	
+            <span class="bracket">(</span><input value="" class="input-control phoneBox" placeholder="000"/><span class="bracket">)</span>
+                  <input value="" class="input-control phoneBox mL10" placeholder="000"/>
+                  <input value="" class="input-control phoneBox mL10" placeholder="0000"/>
+      </div>              
+      </div>
+      <div class="col-md-3" style="border: 1px solid green;background: red;"></div>   
+</div>
+<div class="col-md-12" style="border: 1px solid green;background: red;">
+      <div class="col-md-3" style="border: 1px solid green;background: red;"> </div>
+       <div class="col-md-6 scrollBox" id="style-15">    
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+               <div class="force-overflow"></div>
+      </div>
+      <div class="col-md-3" style="border: 1px solid green;background: red;"></div>   
+</div>
+       
+<div class="container">
+            <h2>Accordion Example</h2>
+            <p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+            <div class="panel-group" id="accordion">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+                  </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                  <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+                  </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                  <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+                  </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                </div>
+              </div>
+            </div> 
+          </div>
+
+<div class="row">
+      <table class="table table-bordered">
+         <thead>
+            <tr>
+               <th>Id</th>
+               <th>quantity</th>
+               <th>price</th>
+               <th>invoiceNo</th>
+               <th>productId</th>
+            </tr>
+         </thead>
+         <tbody>          
+            <tr *ngFor='let studentinfo of checkConfirmationData; let idx = index'>
+               <td>{{idx}}{{studentinfo.id}}</td>
+               <td [ngClass]="{'bold':studentinfo.isChangeQt}">{{studentinfo.quantity}}--{{studentinfo.isChangeQt}}</td>
+               <td>
+                  <span [ngClass]="{'bold':studentinfo.isChangeQt}">{{studentinfo.price}}--{{studentinfo.isChangeQt}}</span>
+              </td>
+              <td>
+                  <span>{{studentinfo.invoiceNo}}</span>
+             </td>
+              <td>
+                  <span>{{studentinfo.productId}}</span>
+             </td>
+            </tr>
+         </tbody>
+      </table>
+      </div>
+<h4>-----------------------Replace all for loop------------------------------------------</h4>
+<h1>Hello from PrimeNG!</h1>
+<input type="text" pInputText placeholder="Enter your name"
+(change)="onChangeEvent($event)" />
+<button pButton type="text" 
+     (click)="greetMe()" icon="fa-check" label="Greet me"></button>
+
+<p> {{theUserSaid}}
+ 
+<p-confirmDialog width="400"></p-confirmDialog>
+
+
+<h4>-----------------------------------------------------------------</h4>
+<p>Organization with advanced customization.</p>
+<p-organizationChart [value]="data" selectionMode="single"
+    styleClass="company">
+    <ng-template let-node pTemplate="person">
+        <div class="node-header ui-corner-top">{{node.label}}</div>
+        <div class="node-content">
+            <img src="assets/image/{{node.data.avatar}}" width="32">
+            <div>{{node.data.name}}</div>
+        </div>
+    </ng-template>
+    <ng-template let-node pTemplate="department">
+        {{node.label}}
+    </ng-template>
+</p-organizationChart>
+<h4>/**************PrimeNG Example**********************/</h4>
+<p-accordion>
+      <p-accordionTab header="Salads">
+        Salads...
+      </p-accordionTab>
+      <p-accordionTab header="Pasta">
+        Pasta...
+      </p-accordionTab>
+      <p-accordionTab header="Pizza" [selected]="true">
+        <p-radioButton
+          label="Double cheese 🧀🧀"
+          name="pizza"
+          value="double-cheese"
+          [(ngModel)]="pizzaSelection">
+        </p-radioButton><br>
+    
+        <p-radioButton
+          label="Anchovy"
+          name="pizza"
+          value="anchovy"
+          [(ngModel)]="pizzaSelection">
+        </p-radioButton><br>
+    
+        <p-radioButton
+          label="Meat lover's 🍖"
+          name="pizza"
+          value="meat-lover"
+          [(ngModel)]="pizzaSelection">
+        </p-radioButton>
+      </p-accordionTab>
+    </p-accordion>
+    
+    <br>
+
+<h4>--------------------------------------------------------------------------</h4>
+
+<div [ngClass]="{'active': isGC, 'notActive': !isGC}">
+      <span class="ag-icon ag-icon-expanded"></span>
+      <span class="ag-icon ag-icon-contracted"></span>
+</div>
+
+<br><br><br>
+
+/**
+* daterange picker impleemnt in stockchange.component.ts file
+*/
+
+<div class="col-md-10" style="border: 1px solid green;background: red;">
+     <input type="text" name="datebaseRange" value="01/01/2018 - 01/15/2018"  #dateBaseInput/>    
+     <button type="submit" (click) = 'extendaddmethod()'>Add method in stockchange</button>
+     <pre>{{businessDaat|json}}</pre>
+</div>
+
+<div class="row">
+            <table class="table table-bordered">
+               <thead>
+                  <tr>
+                     <th>Id</th>
+                     <th>quantity</th>
+                     <th>price</th>
+                     <th>invoiceNo</th>
+                     <th>productId</th>
+                  </tr>
+               </thead>
+               <tbody>          
+                  <tr *ngFor='let studentinfo of getUpdatedData; let idx = index'>
+                     <td>{{idx}}{{studentinfo.id}}</td>
+                     <td [ngClass]="{'bold':studentinfo.isChangeQt}">{{studentinfo.quantity}}--{{studentinfo.isChangeQt}}</td>
+                     <td>
+                        <span [ngClass]="{'bold':studentinfo.isChangeQt}">{{studentinfo.price}}--{{studentinfo.isChangeQt}}</span>
+                    </td>
+                    <td>
+                        <span>{{studentinfo.invoiceNo}}</span>
+                   </td>
+                    <td>
+                        <span>{{studentinfo.productId}}</span>
+                   </td>
+                  </tr>
+               </tbody>
+            </table>
+            </div>
+<pre>{{updatedBusinessDaat|json}}</pre>
+
+<p>Here is a data bound FlexGrid control with four columns:</p>
+<div class="row"><button (click)="changeinprice()">Change price data</button></div>
+             
+<h3>-------------------------Above code is using wijmo flexgrid angular 2 example----------------------</h3>
+
+<div class="row"><button (click)="navigateOnRegistration()">Navigate on Registration Page</button></div>
+<!--  
+    Below code use to call method and navigate on another page when path name and param name is present  
+-->
+<div class="form-group">
+      <button type="button" class="btn"  id="formSubmitBtn" 
+      (click)="nextpage()">Move on next Page update page
+      <span class="glyphicon glyphicon-send"></span></button>     
+</div>
+<!--  
+    Below code use to navigate on another page when path name and param name is present  
+-->
+<div class="form-group">
+      <button type="button" class="btn"  
+            [routerLink] ="['/update','5']"
+            routerLinkActive="active" > Sumbit3
+      </button>
+</div>
+
+<div class="row">
+            <table class="table table-bordered">
+               <thead>
+                  <tr>
+                     <th>Student-Id</th>
+                     <th>Student-FirstName</th>
+                     <th>totalAmounts</th>
+                     <th>totalQty</th>
+                     <th>Student-LastName</th>
+                     <th>Student-UserName</th>
+                     <th>Student-Email</th>
+                     <th>Student-Mobile</th>
+                     <th>Student-Gender</th>
+                  </tr>
+               </thead>
+               <tbody>          
+                  <tr *ngFor='let studentinfo of tableData; let idx = index'>
+                     <td>{{idx}}{{studentinfo.id}}</td>
+                     <td [ngClass]="{'bold':studentinfo.isChangeQty}">{{studentinfo.firstName}}</td>
+                     <td>
+                        <span [ngClass]="{'bold':studentinfo.isChangeQty}">{{studentinfo.totalAmounts}}</span>
+                        <span *ngIf="studentinfo.isChangeQty" 
+                        [ngClass]="{'bold':studentinfo.isChangeQty}"><del>{{studentinfo.totalAmounts}}</del></span>
+                    </td>
+                    <td>
+                        <span [ngClass]="{'bold':studentinfo.isChangeQty}">{{studentinfo.totalQty}}</span>
+                        <span *ngIf="studentinfo.isChangeQty" 
+                        [ngClass]="{'bold':studentinfo.isChangeQty}"><del>{{studentinfo.totalQty}}</del></span>
+                    </td>
+                     <td>{{studentinfo.userName}}</td>
+                     <td>{{studentinfo.email}}</td>
+                     <td>{{studentinfo.mobile}}</td>
+                     <td>{{studentinfo.gender}}</td>
+                  </tr>
+               </tbody>
+            </table>
+</div>
+<div class="row mainBox">
+<div class="col">Lorem ipsum dolor sit amet, consectetur adipisic</div>
+<div class="col">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad omnis quae expedita ipsum nobis praesentium velit animi minus amet perspiciatis laboriosam similique debitis iste ratione nemo ea at corporis aliquam.</div>
+</div>
+
+<div class="row  " style="padding-left: 15px;padding-right: 15px;">
+<!--<div class="col-xs-2">
+      <div class="col-xs-12" style="border: 1px solid gray;background: gray;" 
+      [style.height.px]="contentHeight" leftScreen>
+      </div>
+</div>
+<div class="col-xs-10 "  [style.height.px]="contentHeight" appSetHeight heightBox='rightBox'>-->
+      <h2>------------------------Search Student-----------------------------------------------------------</h2>
+      
+      <div class="container-1 row">
+      <input id ="searchStudent" [(ngModel)]="selected" (keyup)=onkeySearch($event)
+      [typeahead]="states"
+      class="form-control">
+      </div>
+      <h2>--------------------------------------------------------------------------</h2>
+      <button (click)="newMessage()">New Message</button>
+      
+      <div class="row">
+      <form [formGroup]="myForm" class="form-group">
+            <input type="text" class="form-control" placeholder="Daterangepicker" bsDaterangepicker formControlName="range" />
+      </form>
+      <button type="button" class="btn btn-primary" (click)="searchStudents()">Click here</button>
+      </div>
+      <div class="row">
+          <pre class="code-preview">{{fromDate}}-----{{toDate}}</pre>
+      </div>
+      <div class="row">
+      <table class="table table-bordered">
+         <thead>
+            <tr>
+               <th>Student-Id</th>
+               <th>Student-FirstName</th>
+               <th>totalAmounts</th>
+               <th>totalQty</th>
+               <th>Student-LastName</th>
+               <th>Student-UserName</th>
+               <th>Student-Email</th>
+               <th>Student-Mobile</th>
+               <th>Student-Gender</th>
+            </tr>
+         </thead>
+         <tbody>
+      
+            <tr *ngFor='let studentinfo of studentData; let idx = index'>
+               <td>{{idx}}{{studentinfo.id}}</td>
+               <td [ngClass]="{'bold':isChangeQty}">{{studentinfo.firstName}}</td>
+               <td>
+                  <span>{{studentinfo.totalAmounts}}</span>
+                  <span *ngIf="isChangeQty"><del>{{oldAmtValue}}</del></span>
+              </td>
+               <td>
+                  <tbody class="fixed_header">
+                  <tr>
+                        <td class="height bl">{{studentinfo.userName}}</td>
+                        <td  class="height br">{{studentinfo.email}}</td>
+                  </tr>
+                  </tbody>
+               </td>
+               <td>{{studentinfo.userName}}</td>
+               <td>{{studentinfo.email}}</td>
+               <td>{{studentinfo.mobile}}</td>
+               <td>{{studentinfo.gender}}</td>
+               <td colspan="5" class="updateData">        
+                  <span [routerLink] ="['/update',studentinfo.id]" routerLinkActive="active"  
+                  id="{{idx+1}}updateData">Update</span>
+                  <span  class="deleteData" (click)="deleteStudentDetails(studentinfo.id)" 
+                  id="{{idx+1}}deleteData">Delete</span>
+                  <span class="openModalData"><button type="button" class="btn btn-primary" 
+                        (click)="openModal(template,studentinfo.id)"  id="{{idx+1}}openModal"
+                     tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." 
+                     appModaldirective >Open modal</button></span>
+               </td>
+            </tr>
+            <tr *ngIf="!studentData">
+               <td colspan="7">Loading Data.....</td>
+            </tr>
+         </tbody>
+      </table>
+      </div>
+      <div class="row">
+      <div class="col-md-4 border boxCenrter" *ngFor='let studentinfos of studentData'>
+      <h3 class="fontWight blue" appSetHeight heightBox='nameBox'>{{studentinfos.firstName}}</h3>
+      <p class="green emailBox" appSetHeight heightBox='emailBox'>{{studentinfos.email}}</p>
+      <hr>
+      <p class="maxHeight" appSetHeight heightBox='discriptionBox'>     
+            {{studentinfos.description}}
+      </p>
+      <button type="button" class="btn btn-primary" (click)="openModal(template,studentinfo.id)"
+                     tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." appModaldirective>Open modal</button>
+      </div>
+      </div>
+      <!-- First slider box -->
+      <div class="row mT30 mainBox"  style="border:1px solid" >
+            <i class="fa fa-chevron-left preVArrow" style="font-size:24px;color:red" (click)="prevSlide()"></i>
+            <div class="slider">          
+                  <div class="holder">
+                  <ul class="sliderUl" #containerBox  appCarouseldirective carouselBox='containerBox'>   
+                        <li class="slide" *ngFor='let studentinfos of studentData' #box>
+                        <div class=" border boxCenrter marginStyle">
+                              <h3 class="fontWight blue" appSetHeight heightBox='nameBox'>{{studentinfos.firstName}}</h3>
+                              <p class="green emailBox" appSetHeight heightBox='emailBox'>{{studentinfos.email}}</p>
+                              <hr>
+                              <p class="maxHeight">     
+                                    {{studentinfos.mobile}}
+                              </p>
+                              <button type="button" class="btn btn-primary" (click)="openModal(template,studentinfo.id)"
+                              tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." appModaldirective>Open modal</button>
+                              </div>
+                        </li>   
+                  </ul>
+                  </div>           
+            </div>
+            <i class="fa fa-chevron-right nextArrow" style="font-size:24px;color:red" (click)="nextSlide()"></i>
+      </div>
+      <!-- Second slider box -->
+      <div class="row mT30 mainBox"  style="border:1px solid">
+            <i class="fa fa-chevron-left preVArrow" style="font-size:24px;color:red" (click)="prevSlide2()"></i>
+            <div class="slider">          
+                  <div class="holder">
+                  <ul class="sliderUl" #containerBox2>   
+                        <li class="slide" *ngFor='let studentinfos of studentData' #box>
+                        <div class=" border boxCenrter marginStyle">
+                              <h3 class="fontWight blue" appSetHeight heightBox='nameBox'>{{studentinfos.firstName}}</h3>
+                              <p class="green emailBox" appSetHeight heightBox='emailBox'>{{studentinfos.email}}</p>
+                              <hr>
+                              <p class="maxHeight">     
+                                    {{studentinfos.mobile}}
+                              </p>
+                              <button type="button" class="btn btn-primary" (click)="openModal(template,studentinfo.id)"
+                              tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." appModaldirective>Open modal</button>
+                              </div>
+                        </li>   
+                  </ul>
+                  </div>           
+            </div>
+            <i class="fa fa-chevron-right nextArrow" style="font-size:24px;color:red" (click)="nextSlide2()"></i>
+      </div>
+      <!-- <div class="col-md-2"><br><br> -->
+      <!-- <button type="button" class="btn">Save As PDF <span class="glyphicon glyphicon-send"></span></button> -->
+      <!-- </div> -->
+      <!-- Success delete -->
+      <div class="alert alert-success" role="alert" id="success_delete" *ngIf="isDelete">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+      <ng-template #template>
+         <div class="modal-body text-center">
+            <p>Do you want to update the Student information?</p>
+            <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+            <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+         </div>
+      </ng-template>
+      <!-- Define modal html code part into modalcomponent and use it inside the ng-template ad send dynamic data -->
+      
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

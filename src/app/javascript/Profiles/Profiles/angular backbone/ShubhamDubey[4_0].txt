@@ -1,0 +1,173 @@
+SHUBHAM DUBEY 
+
+Mobile: 7259744661; E-mail: shubhamd129@gmail.com 
+SYNOPSIS 
+
+
+. 
+Currently working with MaterCard as a consultant while employed with Altimetrik India Pvt. Ltd. as UI developer 
+since Oct, 2014. 
+
+. 
+Past Amadeus Software Labs from July 2012 – Oct 2014 
+
+. 
+4 yrs of experience in UI development. 
+
+. 
+Co-founder of nightgrill.com 
+
+. 
+Responsibilities handled: Initiating requirements gathering and analysis, sizing, coding & unit testing, delivering theproject, maintaining it by fixing bugs in all different phases of SDLC. 
+
+. 
+Key projects handled: Masterpass, Visa Merchant & Visa Cloud Based Payments , Sell Connect, Sell Classic. 
+
+SKILL SET 
+
+1. Technical 
+Programming Languages : JavaScript, JSP, CSS, HTML, core Java, XML 
+Frameworks/libraries : Spring Web Flow, jQuery, Aria Templates, Angularjs, Backbone, Nodejs, Jasmine 
+IDE : Eclipse 
+Test Management Tool : Quality Centre (QC) 
+Database Language : SQL with SQL Server 2008, MongoDb 
+Build Management Tool : ClearCase, Maven, Git 
+Server : WebLogic, iPlanet, Tomcat 
+
+2. Functional 
+. 
+Interacting with the Business Analysts and marketing team for requirement gathering and analysis. 
+. 
+Involved in coding for Product Development - UI. 
+. 
+Mapping of Product Behaviour to the Requirements. 
+. 
+Worked extensively with fixing problems reported during development, testing and production phases. 
+
+
+ACADEMIC CREDENTIALS 
+
+2012 : B. Tech in Computer Science from Kurukshetra University with 66% 
+2008 : 12th from Halwasiya vidya vihar, Bhiwani, HR (CBSE) with 81% 
+2006 : 10th from Halwasiya vidya vihar, Bhiwani, HR (CBSE) with 83% 
+
+
+Title MasterPass 
+Organization MasterPass 
+Role Senior Software Developer 
+Tools & Technology JavaScript, CSS, HTML, Angular, Grunt, Bower, Nodejs, Sass 
+Team size 2 
+Duration Feb 2016– Till date 
+Description This is an online wallet for storing multiple cards to make payment process easier. 
+Responsibilities • 
+Understanding the Business requirements and technical specifications. 
+• 
+Sizing as per resource availability. 
+• 
+Writing Js , HTML, CSS to construct UI for given requirement using Angular 
+• 
+Unit Testing - Jasmine 
+
+
+PROJECTS UNDERTAKEN 
+
+
+Title Visa Merchant and Cloud Based Payments 
+
+Organization Visa Inc 
+
+Role Software Developer 
+
+Tools & Technology JavaScript, CSS, HTML, Backbone, Handlebars, 
+
+Team size 
+
+5 
+
+Duration Oct 2014 – Jan 2016 
+
+Description This product is for merchants who enrol to visa to allow visa gateway into their application. 
+This product enrols them and gives them access to choose between varieties of services. Thisproduct also allows them to activate cloud based payments into their application. 
+
+Responsibilities 
+
+• 
+Understanding the Business requirements and technical specifications. 
+• 
+Sizing as per resource availability. 
+• 
+Writing Js , HTML, CSS to construct UI for given requirement using backbone, 
+marionette, handlebars. 
+• 
+Unit Testing, fixing bugs against tickets raised by QA, project mgt and User. 
+PROJECT # 2 
+
+
+Title SELLing Platform Classic 
+Organization Amadeus Labs 
+Role Software Developer 
+Tools & Technology JavaScript, CSS, HTML, Java, JSP, jQuery, Spring Web flow, XML 
+Team size 1 
+Duration July 2012 – Till date 
+Description SELL Classic provides the independent travel booking agents facility to book tickets onlinefor multiple airlines, ferries, hotels and cars. The web based modules have components likeCentral System, Back End and UI. The last one is taken care by my team.
+For more information : http://www.amadeus.com/us/x212000.html 
+Responsibilities • 
+Understanding the Business requirements and technical specifications. 
+• 
+Sizing as per resource availability. 
+• 
+Writing JSPs, CSSs, OO Java Scripts and Java code to construct XML ajax requests and 
+processing the response + Code delivery. 
+• 
+Unit Testing, fixing bugs against tickets raised by QA, project mgt and User. 
+
+PROJECT # 3 
+
+
+Title SELLing Platform Connect 
+Organization Amadeus Labs 
+Role Software Developer 
+Tools & Technology JavaScript, CSS, Core Java, JSP, XML, Spring Web flow 
+Team size 9 
+Duration July 2012 – Till date 
+
+
+Description The web-based Amadeus Selling Platform gives you access to a full range of services -fromadvice on the booking until mid-office, with fully integrated payment functionality, including 
+flight, hotel, car, train, travel packages, ferries, cruises. See: http://www.amadeus.com/us/ 
+x212000.html 
+Responsibilities • 
+Understanding the Business requirements and technical specifications. 
+• 
+Writing JSPs, CSSs, OO Java Scripts and Java code to construct XML ajax requests and 
+processing the response + Code delivery. 
+• 
+Unit Testing, fixing bugs against tickets raised by QA, project mgt and User. 
+
+Title 
+Role 
+nightgrill.com 
+Co-founded 
+Tools & Technology 
+Team size 
+JavaScript, AngularJs, Bootstrap, Java, SQL 
+2 
+Duration 
+Description 
+July 2015 – Till date 
+Nightgill will help to deliver food and goods at night. 
+PERSONAL PROFILE 
+
+Brief Profile : I am a self-motivated person with a zest for learning and an urge to prove myself. 
+Date of Birth : April 29th, 1991 
+Sex : Male 
+Strengths : Fast learner, excellent analytical capabilities, a team player, adaptive to conditions. 
+Hobbies & interests : Writing blogs about life and poetry, Playing badminton and cricket. 
+Temporary Address : B3-103, Eden Gardens, Viman Nagar, Pune (511014) 
+Permanent Address : H.no. 58, Bhagat singh marg, Vidya nagar, Bhiwani-127021, Haryana. 
+
+
+I hereby declare that the information given above is true to the best of my knowledge & belief.
+Place: Bangalore Shubham Dubey 
+
+
+

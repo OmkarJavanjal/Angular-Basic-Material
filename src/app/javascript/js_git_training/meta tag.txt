@@ -1,0 +1,44 @@
+https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+
+
+
+The <meta> tag is used to provide such additional information. This tag is an empty element and so does not have a closing tag but it carries information within its attributes.
+
+You can include one or more meta tags in your document based on what information you want to keep in your document but in general, meta tags do not impact physical appearance of the document so from appearance point of view, it does not matter if you include them or not. So meta tag is use to provide some additional information about the page.
+
+<meta name="keywords" content="HTML, Meta Tags, Metadata" />
+<meta name="keywords" content="HTML, Meta Tags, Metadata" />
+<meta name="description" content="Learning about Meta Tags." />
+<meta name="revised" content="Tutorialspoint, 3/7/2014" />
+<meta http-equiv="refresh" content="5; url=https://www.tutorialspoint.com" />
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+And we can use more attribute in meta tag as per requirement.
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+
+The initial-scale property controls the zoom level when the page is first loaded. The maximum-scale, minimum-scale, and user-scalable properties control how users are allowed to zoom the page in or out.
+
+if you assign it to "user-scalable=no", it means the website is not allowing the user to zoom in or zoom out.
+user-scalable=yes (default) to allow the user to zoom in or zoom out on the web page;
+user-scalable=no to prevent the user from zooming in or zooming out.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5,
+ maximum-scale=3.0,user-scalable=yes">
+
+
+
+
+<meta charset="UTF-8">
+
+UTF-8 (U from Universal Character Set + Transformation Format—8-bit) is a character encoding capable of encoding all possible characters (called code points) in Unicode. The encoding is variable-length and uses 8-bit code units.means unic code for all character.
+

@@ -1,0 +1,6 @@
+
+<!-- {{countryData|json}} -->
+<pre class="card card-block card-header">Model: {{selected | json}}</pre>
+<input [(ngModel)]="selected"
+       [typeahead]="states" (keyup)="searchTerm$.next($event.target.value)" 
+       class="form-control"/>

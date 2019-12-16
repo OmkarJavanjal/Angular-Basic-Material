@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.param demo</title>
+  <style>
+  div {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ <button onclick="updateURL();">Update</button>
+<div id="results"></div>
+ 
+<script>
+//var params = { Bachelor:1680, height:1050 };
+//var params = {Bachelor:{Business:"Accounting"},Bachelor1:{Business:"Accounting"}};
+var params = {Bachelor:["Accounting","Accounting2"], Master:["Accounting3","Accounting23"]};
+//var params = {selection:[{ Bachelor:["Accounting","Accounting2"], height:1050 },{ Bachelor:1680, height:1050 }]};
+//var str = ((jQuery.param(params)).replace(/%5B/g, "/")).replace(/%5D/g, "").replace(/%5D%5B%5D/g, "");
+//var str = (jQuery.param(params)).replace(/%5D%5B%5D/g, "").replace(/%5B/g, "/");
+var str = (jQuery.param(params));
+$( "#results" ).text( str );
+function updateURL() {
+      if (history.pushState) {
+          var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?'+ str;
+          window.history.pushState({path:newurl},'',newurl);
+      }
+    }
+</script>
+ 
+</body>
+</html>

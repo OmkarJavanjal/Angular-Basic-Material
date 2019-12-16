@@ -1,0 +1,142 @@
+Rajat Sharma 
+Current Job: Senior Software Engineer @To The New Digital, Noida 
+Experience: 3.6+ years. 
+Email : rsharma.career@gmail.com 
+Mobile : 9167554489 
+DOB : 16/09/1988 
+Address : 387E, 
+Pocket2, 
+Mayur Vihar, Phase1, 
+Delhi110091 
+Education 
+201012 
+Dhirubhai Ambani Institute of Information and Communication 
+Technology, Gandhinagar (Gujarat) 
+M.Sc. IT - CPI 7.87/10 
+200710 
+A.R.S.D College, University of Delhi 
+B.Sc. (Honours) Computer Science 60.97 
+% 
+200607 
+A.S.N. Sr. Sec. School, Delhi, 
+12 th (CBSE) 83.40 
+% ( ScienceStream 
+with maths) 
+200405 
+A.S.N. Sr. Sec. School, Delhi, 
+10 th (CBSE). 87.00 
+% 
+Skills 
+Expertise Area 
+Programming 
+Language 
+Javascript, AngularJs, Grunt, Bower, Backbone, D3, jQuery, 
+Underscore, Handlebars, requireJs, Ajax, MV*, HTML5, CSS3, SCSS 
+javascript, C# (Script #),C++, Qt, have some knowledge on NodeJS, 
+Express. 
+Tools & 
+Technologies 
+Visual Studio 2012, Webstorm, Brackets, MSOffice, 
+Jaws 
+Version Control :Git 
+Extensions, SVN, TFS 
+Bug Tracking :Jira, 
+Bugzilla 
+Summary 
+I have been working on the frontend 
+technologies for the past 3+ years. I have mostly 
+worked on javascript. Using B ackbone, AngularJS for single page applications, h andlebar 
+as a templating engine for backbone, G runt for project automation, r equire for 
+implementing AMD modules, and preloading 
+javascript files, D 3 f or charting visualizations, 
+I have worked on NodeJS ( Express Framework) for about a month. 
+Experience 
+Senior Software Engineer, To The New Digital (Jan 2016 - Present) 
+Noida, NCR 
+Software Engineer (G2) , Xoriant (Oct 2014 - Jan 2016) 
+Mumbai, Maharashtra 
+Senior Software Engineer, Zeus Learning (July 2014 - Sept 2014) 
+Mumbai, Maharashtra 
+Software Programmer, Zeus Learning (June 2012 - June 2014) 
+Mumbai, Maharashtra 
+Page 1 of 3 
+
+System Trainee, mCarbon Tech Innovation (Jan 2012 - May 2012) 
+Noida, NCR 
+Projects 
+#Fame (Feb 2016 - Present) 
+Organization: To The New Digital 
+Description: Fame is media website which allows user to go live (using their webcams) and connect 
+with the followers through live chat. 
+Framework/Language/Environment : Javascript, Angular JS, Bower, Grunt, HTML5, CSS3, GIT 
+Role : working as a Senior Software Engineer, adding features to the desktop website, fixing bugs, 
+developing the mobile website. 
+Duration : 1 months + 
+OpticsRE Bernoulli Web Application (Oct 2014 - Jan 2016) 
+Organization: Xoriant 
+Description: It is a web app to provide device monitoring & controlling services to client’s end users. 
+Framework/Language/Environment : Javascript, HTML5, jQuery, CSS3, SCSS, AngularJs, D3, 
+Underscore, .NET MVC4, Microsoft Azure, Grunt 
+Role : working as a UI developer, Implementing and testing features on the front End, resolving bugs, 
+performance optimization, interacting directly with the clients (on calls) 
+Duration : 12 months + 
+TEI (Technically Enhanced Interactives) (Jan 2014 - Sept 2014) 
+Organization: Zeus Learning 
+Description: I t is a question answer based single-page web application, in which 29 types of questions 
+(TEI) may exist, ranging from connections based questions to graph based questions, Each question 
+has different different UI, and possible set of interactions. 
+Framework/Language : Javascript, HTML5, jQuery, CSS3, Backbone, Underscore, Handlebar, requirejs, 
+JsPlumb, grunt 
+Role : Made the base class architecture for the templates, process optimization using grunt, as a Sr. 
+Programmer, design and build TEI with a team of 2 junior programmers, W orking close with them, 
+achieving internal deadlines, maintaining tickets for the functionalities to be implemented on 
+a weekly basis to meet the internal deadlines, code review, attend client calls, fixing bugs. 
+Duration : 9 months 
+PKB ( Keyboarding) (April 2013 - Dec 2013) 
+Organization: Zeus Learning 
+Description: I t is web based typing tutor application which contains different types of activities 
+focusing on typing techniques, accuracy and speed to enhance typing skills. It analyzes the user input 
+to point out the weak areas, suggest activities accordingly. 
+Framework/Language : We used Script#. Script# library compiles C# code into pure javascript code. 
+Role : Contributed in development of framework, base class architecture for the different type of 
+typing activities, implementing the activities; creating the various UI controls, interactive keyboard, 
+Designing and implementing the architecture for supporting accessibility, automation tool for 
+generation of XMLs from Excel sheet using PHP. 
+Duration : 9 months. 
+Page 2 of 3 
+
+Kepler (July 2012 - March 2013) 
+Organization : Zeus Learning 
+Description : It is a web based Windows 8 and MS office simulation project have features like exams, 
+allowing grades, accessibility in each type of question/exams. 
+Framework/Language : We used Script#. Script# library compiles C# code into pure javascript code. 
+Role : Contributed in development of framework; creating the various UI controls, dialog boxes; 
+Designing and implementing the architecture for supporting accessibility, automation tool for 
+generation of XMLs from Excel sheet using PHP. 
+Duration : 10 months. 
+Msc IT Industrial Project (Jan 2012 May 
+2012) 
+Organization: mCarbon 
+Framework/Language: C, Java 
+Role : I worked in C and Java as a system trainee in mCarbon Tech Innovation Pvt. Ltd. I 
+was involved in Scheduler part of the CallManager 
+Project. 
+Duration : 4 months. 
+Awards and Achievements 
+. Got a scholarship of Rs 10,000 in 10 th for academic performance. 
+. Got Gold Medal in Social Studies in 10 th . 
+. Got Gold Medals for Maths in 10 th and 12 th . 
+Interests and Hobbies 
+. Reading 
+. Music 
+. Movies 
+References 
+Anish Ghumara : ( Module Lead, Zeus Learning ) 
+9833407143 
+Declaration : The above information is correct to the best of my knowledge. 
+Rajat 
+Sharma 
+Date :12/
+03/2016 
+Page 3 of 3 
+

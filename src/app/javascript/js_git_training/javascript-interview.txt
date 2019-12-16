@@ -1,0 +1,1667 @@
+http://www.quackit.com/javascript/tutorial/javascript_switch_statement.cfm (for havascript with code)
+
+The Assignment Operator----the equal sign (=) is an "assignment" operator, not an "equal to" operator.
+x = x + 5
+it makes perfect sense: it assigns the value of x + 5 to x.
+
+<< Shift left	x << 2----
+>> Shift right	x >> 2----
+
+Difference Between Undefined and Null
+typeof undefined             // undefined
+typeof null                  // object
+null === undefined           // false
+null == undefined            // true
+
+Extracting String Parts
+There are 3 methods for extracting a part of a string:
+slice(start, end)//Use a negative number to select from the end of the string.
+substring(start, end) //not accept negative value.
+substr(start, length)
+
+Converting a String to an Array---
+A string can be converted to an array with the split() method:
+
+var txt = "a,b,c,d,e";   // String
+txt.split(",");          // Split on commas
+txt.split(" ");          // Split on spaces
+txt.split("|");          // Split on pipe
+
+  
+JavaScript Objects are Mutable----->>>
+Objects are mutable: They are addressed by reference, not by value.
+
+<script>
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+
+var x = person;
+x.age = 10;
+
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+</script>
+o/p--  John is 10 years old.
+
+Deleting Properties-------->>>
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+delete person.age;   // or delete person["age"]; 
+.............................................................................................................................
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+preventDefault()---->>> preventDefault() method is use to prevent the dedault action property of any element.
+The preventDefault() method prevent default action property that belongs to the element.
+For example, this can be useful when:
+
+<a id="myAnchor" href="http://w3schools.com/">Go to W3Schools.com</a>
+<script>
+document.getElementById("myAnchor").addEventListener("click", function(event){
+    event.preventDefault();
+});
+</script>
+
+
+Clicking on a "Submit" button, prevent it from submitting a form
+Clicking on a link, prevent the link from following the URL
+
+Note: The preventDefault() method does not prevent further propagation of an event through the DOM. Use the stopPropagation() method to handle this. means to prevent the propagation of event through the DOM.
+
+it means div1 is inside the div2 when we click on div1 then not reflect click event on div2 so for  that we have to use stopPropagation() method to handle this.
+
+stopPropagation()---->>>>The event.stopPropagation() method stops the bubbling of an event to parent elements from child event, 
+event.stopPropagation();
+.........................................................................................................................
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+1-- how to count click in javascript.
+2--what is difference between $.ajax and $http.
+
+
+
+1-What is query selectors?
+The querySelector() method returns the first element that matches a specified CSS selector(s) in the document.
+Note: The querySelector() method only returns the first element that matches the specified selectors. To return all the matches, use the querySelectorAll() method instead.
+<script>
+function myFunction() {
+    document.querySelector(".example").style.backgroundColor = "red";
+}
+</script>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This is a p element.</p>
+<p>This is also a p element.</p>
+<p>Click the button to add a back.</p>
+<button onclick="myFunction()">Try it</button>
+<script>
+function myFunction() {
+    document.querySelector("p").style.backgroundColor = "red";
+}
+</script>
+</body>
+</html>
+ from the above code it is clear that when we apply querySelector then it is select first match element from the given element.so only first first P background is red. And this process is called querySelector.
+
+
+2- what is scope?
+Scope is the set of variables you have access to. In javascript there are two scope ..local scope and globale scope. local scope means we assign variable as a locally and globale scope means we assign the scope as globally.
+
+javascript/jquery
+http://www.toptal.com/javascript/interview-questions
+http://www.web-technology-experts-notes.in/2015/04/javascript-interview-questions-and-answers-for-experienced-2.html
+http://www.sitepoint.com/5-typical-javascript-interview-exercises/
+
+
+6-how to call and create  public function in javascript.
+
+http://phrogz.net/JS/Classes/OOPinJS.html
+http://www.stoimen.com/blog/2011/07/28/oop-javascript-accessing-public-methods-in-private-methods/ (OOP JavaScript: Accessing Public Methods in Private Methods)
+http://www.stoimen.com/blog/2011/05/30/object-oriented-javascript-inheritance/  (Object Oriented JavaScript: Inheritance)
+http://robertnyman.com/2008/10/14/javascript-how-to-get-private-privileged-public-and-static-members-properties-and-methods/  (JavaScript: How To Get Private, Privileged, Public And Static Members (Properties And Methods))
+http://robertnyman.com/2008/10/06/javascript-inheritance-how-and-why/ (JavaScript Inheritance – How And Why)
+http://stackoverflow.com/questions/6420825/call-private-method-from-public-method
+http://stackoverflow.com/questions/55611/javascript-private-methods
+http://www.i-programmer.info/programming/javascript/3722-private-functions-in-javascript.html
+
+public Objects & private Objects in JavaScript
+
+Actually in JavaScript functions can be also objects. Any variable defined with the “var” keyword becomes private, because it’s only visible inside the function body, while by using the “this” keyword we can define global variables visible outside the function body.
+
+var f = function() 
+{
+	var a = 10; //private  variable
+	this.b = 5; // public variable
+alert(a); //because private variable execute only inside the function
+}
+var myfunc = new f();
+alert(myfunc.a); // is undefined because a is private variable
+alert(myfunc.b); // equals to 5 because b is public variable
+
+
+Public and Private Methods in JavaScript----->>>>>>>
+But this in fact defines a local (private) function into myClass and we cannot access it from the outside world. Here’s a fully functional class with one public and one private method.
+var myClass = function()
+{
+	// public method
+	this.a = function() {
+		return 10;
+	} 
+	// private method
+	var b = function() {
+		return 5;
+	}
+alert(b()); //because private function execute only inside the function
+} 
+var c = new myClass();
+alert(c.a()); // will return 10
+alert(c.b()); // is undefined, because b() is private // c.b is not a function
+
+
+Accessing Private Methods from Public Methods-----Accessing Public Methods from Private Methods-------
+
+Easily we can access private methods from public methods ones.
+var myClass = function()
+{
+	// public method
+	this.a = function() {
+		return b();
+	}
+ 
+	// private method
+	var b = function() {
+		return 5;
+	}
+alert(b());
+}
+var c = new myClass();
+alert(c.a()); // will return 5 
+alert(c.b()); // is undefined, because b() is private // c.b is not a function
+
+However accessing public mtehods in private methods ones is more difficult. That’s because we cannot use “this” into the private methods,
+var myClass = function()
+{
+	// public method
+	this.a = function() {
+		return 10;
+	}
+ 
+	// private method
+	var b = function() {
+		return this.a(); // this will result in an error this.a is not a function
+	}
+    alert(b());
+}
+
+var c = new myClass();
+c.a(); // will return 10
+c.b(); // is undefined, because b() is private // c.b is not a function
+
+To access public methods in private methods you need to define a variable that points to the global “this” object.
+
+var myClass = function()
+{
+	var self = this; 
+ 
+	// public method
+	this.a = function() {
+		return 10;
+	}
+ 
+	// private method
+	var b = function() {
+		`return self.a(); // this will return 10
+	}
+     alert(b()); /// // will return 10 
+}
+This variable gives you the bridge between private methods and global “this” pointer.
+.............................................................................................................................
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+JavaScript closures in brief--------------->>>>>>>>>>>>>>>>.
+http://www.stoimen.com/blog/2009/07/08/javascript-closures-in-brief/
+http://www.sitepoint.com/demystifying-javascript-closures-callbacks-iifes/
+What is a closure?
+
+A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain. The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function’s variables, and it has access to the global variables.
+A closure is a function defined within another scope that has access to all the variables within the outer scope.
+
+Immediately-Invoked Function Expressions(IIFEs)------>>>> http://www.sitepoint.com/demystifying-javascript-closures-callbacks-iifes/
+An Immediately-invoked function expression, or IIFE (pronounced “iffy”), is a function expression (named or anonymous) that is executed right away after its creation.
+There are two slightly different syntax variations of this pattern:
+// variant 1
+
+(function () {
+  alert('Woohoo!');
+})();
+
+// variant 2
+
+(function () {
+  alert('Woohoo!');
+}());
+
+There are also three more things to bear in mind:
+First, if you assign the function to a variable, you don’t need to enclose the whole function in parentheses, because it is already an expression:
+
+var sayWoohoo = function () {
+  alert('Woohoo!');
+}();
+
+Second, a semicolon is required at the end of an IIFE, as otherwise your code may not work properly.
+
+And third, you can pass arguments to an IIFE (it’s a function, after all), as the following example demonstrates:
+
+(function (name, profession) {
+  console.log("My name is " + name + ". I'm an " + profession + ".");
+})("Jackie Chan", "actor");   // output: My name is Jackie Chan. I'm an actor.
+
+1-When we  submit data form then in which format data are send to server?
+3-what is event bubling and eventdeligation?
+4-what is type of var x;
+7-what is difference $ and jquery?
+8-what is call back function in jquery?
+9-what is call by value and call by reference in javascrit?
+
+2-what is difference between null and undifine?
+undefined means a variable has been declared but has not yet been assigned a value. On the other hand, null is an assignment value. It can be assigned to a variable as a representation of no value
+Also, undefined and null are two distinct types: undefined is a type itself (undefined) while null is an object..
+
+5-What is difference between document.ready(); and document.load?
+JQuery’s document.ready() method gets called as soon as DOM is ready (means browser has parsed the HTML and built the DOM tree).
+pageLoad() method gets called when images and all associated resources of the page have been fully loaded. Suppose your web page has large size images then until all the images are not fully loaded on the page, pageLoad() method will not called. pageLoad() method is not browser compatible. We can have only one pageLoad() method on a web page.
+
+8-what is difference between call and apply in javascrit/  
+(http://www.anujgakhar.com/2012/11/13/difference-between-call-and-apply/)
+(http://hangar.runway7.net/javascript/difference-call-apply) 
+(http://www.tothenew.com/blog/difference-between-call-and-apply-method-of-javascript/)
+ http://www.anujgakhar.com/2012/11/13/difference-between-call-and-apply/
+.call() means :-  Calls a function with a given this value and arguments provided individually.
+.apply() means :- Calls a function with a given this value and arguments provided as an array (or an array like object).
+
+call() and apply() both are use to inherit base class into sub class.
+
+The main difference is the apply() takes arguments as an array and call() takes arguments as comma separated list. e.g. 
+if you were to use apply(), your code would look like this :- 
+ 
+myfunction.apply(valueForThis, [arrayOfArgs]);
+ex-- 
+var numersToCompare = [45, 34, 23, 109, 345, 567];
+var maxNumber = Math.max.apply(null, numersToCompare);
+console.log(maxNumber); // output is 567
+
+Whereas, if you were to use call(), your code would look like this :-
+myfunction.call(valueForThis, arg1, arg2, ...);
+ex--- 
+var maxNumber = Math.max.call(null, 45, 34, 23, 109, 345, 567);
+document.write(maxNumber)? // output is 567
+Note--You can use apply() if you do not know the number of arguments.
+
+..............................................................................................................................//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+9-What is primitive data type in javascrit (http://vicfriedman.github.io/blog/2013/09/15/the-difference-between-javascript-primitive-data-types-and-objects/)
+Javascript has five primitive data types: and all primitive data is call by value.
+1. Number
+2. String
+3. Boolean
+4. Undefined
+5. Null
+Anything that doesn’t belong to any of these five primitive types is considered an object.
+
+10-How to check that which is object and which is array in javascript?
+
+<script>
+var carsArray = ["Saab", "Volvo", "BMW"];
+var nameObject = {name:'john', age:34};
+document.getElementById("demo").innerHTML = 
+typeof carsArray + "<br>" +
+typeof nameObject ;
+
+if(Array.isArray(carsArray)) {
+    alert("carsArray is an array!");
+} else {
+    alert("a is not an array!");
+}
+</script>
+o/p---
+object (var carsArray = ["Saab", "Volvo", "BMW"];)
+object  (var nameObject = {name:'john', age:34};)
+
+11- what is difference between object and array?
+Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+But, JavaScript arrays are best described as arrays.
+Arrays use numbers to access its "elements". In this example, person[0] returns John:
+<script>
+var person = ["John", "Doe", 46];
+document.getElementById("demo").innerHTML = person[0];
+</script>
+Objects use names to access its "members". In this example, person.firstName returns John:
+<script>
+var person = {firstName:"John", lastName:"Doe", age:46};
+document.getElementById("demo").innerHTML = person["firstName"];
+</script>
+
+11-why we are use use strict?
+the short and most important answer here is that use strict is a way to voluntarily enforce stricter parsing and error handling on your JavaScript code at runtime.
+Some of the key benefits of strict mode include:
+--Prevents accidental globals.
+---Disallows duplicate property names or parameter values. ---Strict mode throws an error when it detects a duplicate named property in an object (e.g., var object = {foo: "bar", foo: "baz"};) or a duplicate named argument for a function (e.g., function foo(val1, val2, val1){}),
+
+12-Question: What is the best way to detect a mobile device in jQuery?
+ 
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+}
+
+12-what is nested for loop in javascript and why we need to use it?
+Loops can be nested; meaning one or more loops can be placed inside of another loop. 
+nested for loop means define for loop inside the other for loop.
+
+var times = [
+            ["04/11/10", "86kg"], 
+            ["05/12/11", "90kg"],
+            ["06/12/11", "89kg"]
+];
+ var newTimes = [];
+for (var i = 0; i < times.length; i++) {     
+        for(var x = 0; x < times[i].length; x++) {
+            newTimes.push(times[i][x]);
+        }
+    }
+    console.log(newTimes); 
+
+.......................................................................................
+
+var times = [[
+            ["04/11/10", "86kg"], 
+            ["05/12/11", "90kg"],
+            ["06/12/11", "89kg"]
+]];
+ var newTimes = [];
+for (var i = 0; i < times.length; i++) {     
+        for(var x = 0; x < times[i].length; x++) {
+            for(var j = 0; j < times[i][x].length; j++) {
+            newTimes.push(times[i][x][j]);
+           }
+        }
+    }
+    console.log(newTimes);
+
+
+
+Returns: ["04/11/10", "86kg", "05/12/11", "90kg", "06/12/11", "89kg"]
+
+
+
+for(var i = 0; i < length; i++) {
+    for(var j = 0; j < length; j++) {
+        for(var k = 0; k < length; k++) {
+            // More loops?
+        }
+    }
+}
+
+
+.........................................................................................................................
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+13-what is sorting in javascript?
+The sort() method sorts the items of an array.
+The sort order can be either alphabetic or numeric, and either ascending (up) or descending (down).
+By default, the sort() method sorts the values as strings in alphabetical and ascending order. it work with good with alphabetic  but return wrong output in case of number.
+
+ 
+Sort an array alphabetically by default it return accending order.
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+    fruits.sort();
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+o/p--- Apple,Banana,Mango,Orange
+Sort an array alphabetically, and then reverse the order of the sorted items (descending):
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+    fruits.sort();
+    fruits.reverse();
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+o/p--- Orange,Mango,Banana,Apple
+
+You can fix this(return wrong output in case of number.) by providing a "compare function"
+---->> array.sort(compareFunction)
+
+Sort numbers in an array in ascending order:
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+
+function myFunction() {
+    points.sort(function(a, b){return a-b});
+    document.getElementById("demo").innerHTML = points;
+}
+</script>
+o/p--  1,5,10,25,40,100 // return as a accending order...
+
+Sort numbers in an array in descending order:
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+
+function myFunction() {
+    points.sort(function(a, b){return b-a});
+    document.getElementById("demo").innerHTML = points;
+}
+</script>
+o/p---  100,40,25,10,5,1  // return as a decending order...
+
+14-how can we find smalll and large no. using javascript?
+Get the highest value in an array:
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+
+function myFunction() {
+    var points = [40, 100, 1, 5, 25, 10];
+    points.sort(function(a, b){return b-a});
+    document.getElementById("demo").innerHTML = points[0];
+}
+</script>
+o/p--  100
+
+Get the lowest value in an array:
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+
+function myFunction() {
+    var points = [40, 100, 1, 5, 25, 10];
+    points.sort(function(a, b){return a-b});
+    document.getElementById("demo").innerHTML = points[0];
+}
+</script>
+o/p--- 1
+
+...........................................................................................................................
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+16- What typeof returns for a null value?
+It returns "object".
+
+17-What is Error handling in javascript?
+http://www.tutorialspoint.com/javascript/javascript_error_handling.htm
+There are three types of errors in programming: (a) Syntax Errors, (b) Runtime Errors, and (c) Logical Errors.
+
+---->>>Syntax Errors
+Syntax errors, also called parsing errors, occur at compile time in traditional programming languages and at interpret time in JavaScript.
+For example, the following line causes a syntax error because it is missing a closing parenthesis.
+<script type="text/javascript">
+   <!--
+      window.print(;
+   //-->
+</script>
+When a syntax error occurs in JavaScript, only the code contained within the same thread as the syntax error is affected and the rest of the code in other threads gets executed assuming nothing in them depends on the code containing the error.
+
+---->>>> Runtime Errors:ReferenceError
+Runtime errors, also called exceptions, occur during execution (after compilation/interpretation).
+For example, the following line causes a runtime error because here the syntax is correct, but at runtime, it is trying to call a method that does not exist.
+
+<script type="text/javascript">
+   <!--
+      window.printme();
+   //-->
+</script>
+Exceptions also affect the thread in which they occur, allowing other JavaScript threads to continue normal execution.
+
+----->>>Logical Errors
+Logic errors can be the most difficult type of errors to track down. These errors are not the result of a syntax or runtime error. Instead, they occur when you make a mistake in the logic that drives your script and you do not get the result you expected.
+You cannot catch those errors, because it depends on your business requirement what type of logic you want to put in your program.
+
+18- What is  debugging in javascrit?
+A mistake in a program or a script is referred to as a bug.
+The process of finding and fixing bugs is called debugging and is a normal part of the development process.
+
+19-What is JavaScript - Dialog Boxes?
+JavaScript supports three important types of dialog boxes. These dialog boxes can be used to raise and alert, or to get confirmation on any input or to have a kind of input from the users.
+---->>>>Alert Dialog Box
+An alert dialog box is mostly used to give a warning message to the users.
+an alert box can still be used for friendlier messages. Alert box gives only one button "OK" to select and proceed.
+
+------>>>>Confirmation Dialog Box
+A confirmation dialog box is mostly used to take user's consent on any option. It displays a dialog box with two buttons: Cancel and ok,
+If the user clicks on the OK button, the window method confirm() will return true. If the user clicks on the Cancel button, then confirm() returns false. 
+
+----->>>>>>Prompt Dialog Box
+The prompt dialog box is very useful when you want to pop-up a text box to get user input.
+This dialog box has two buttons: OK and Cancel. If the user clicks the OK button, the window method prompt() will return the entered value from the text box. If the user clicks the Cancel button, the window method prompt() returns null.
+
+..........................................................................................................................
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+9. What are undeclared and undefined variables?
+Undeclared variables are those that do not exist in a program and are not declared. If the program tries to read the value of an undeclared variable, then a runtime error is encountered.
+Undefined variables are those that are declared in the program but have not been given any value. If the program tries to read the value of an undefined variable, an undefined value is returned.
+
+13. What is ‘this’ keyword in JavaScript?
+‘This’ keyword is used to point at the current object in the code.  also use to make public method and variable.
+
+14. Explain the working of timers in JavaScript? Also elucidate the drawbacks of using the timer, if any?
+Timers are used to execute a piece of code at a set time or also to repeat the code in a given interval of time. This is done by using the functions setTimeout, setInterval and clearInterval.
+The setTimeout(function, delay) function is used to start a timer that calls a particular function after the mentioned delay. The setInterval(function, delay) function is used to repeatedly execute the given function in the mentioned delay and only halts when cancelled. The clearInterval(id) function instructs the timer to stop.
+Timers are operated within a single thread, and thus events might queue up, waiting to be executed.
+
+32. What is the use of Void(0)?
+Void(0) is used to prevent the page from refreshing and parameter “zero” is passed while calling.
+Void(0) is used to call another method without refreshing the page.
+
+41. What is break and continue statements?
+Break statement exits from the current loop.
+<script>
+var text = "";
+var i;
+for (i = 0; i < 10; i++) {
+    if (i === 3) { break;}
+    text += "The number is " + i + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+o/p--- A loop with a break.
+
+The number is 0
+The number is 1
+The number is 2
+
+Continue statement continues with next statement of the loop. it means escape that state and continue with another state.
+
+<script>
+var text = "";
+var i;
+for (i = 0; i < 10; i++) {
+    if (i === 3) { continue; }
+    text += "The number is " + i + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+o/p---  A loop which will skip the step where i = 3.
+
+The number is 0
+The number is 1
+The number is 2
+The number is 4
+The number is 5
+The number is 6
+The number is 7
+The number is 8
+The number is 9
+................................................................................................................................////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+9) What is the use of history object?
+
+The history object of browser can be used to switch to history pages such as back and forward from current page or another page. There are three methods of history object.
+
+history.back()
+history.forward()
+history.go(number): number may be positive for forward, negative for backward.
+
+18) What does the isNaN() function?
+The isNan() function returns true if the variable value is not a number.
+
+2. What is the difference between == and === ?
+The == checks for value equality, but === checks for both type and value.
+
+5. How do you change the style/class on any element?
+document.getElementById(“myText”).style.fontSize = “20”;
+-or-
+document.getElementById(“myText”).className = “anyclass”;
+
+..........................................................................................................................
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+7-In JavaScript, are objects passed by reference or by value?
+In JavaScript, all objects are passed by reference. When you make a change to a reference to an object, you change the actual object. 
+Primitive types are passed by value.
+Here is a jsFiddle.net example: http://jsfiddle.net/pmMLc/
+----->>>primitive type variable like string,number are always pass as pass by value.
+function myfunction(x)
+{
+      // x is equal to 4
+      x = 5;
+     alert(x); // x is now equal to 5
+}
+
+var x = 4;
+alert(x); // x is equal to 4
+myfunction(x); 
+alert(x); // x is still equal to 4
+
+----->>> Array and Object is passed as pass by reference or pass by value based on these two condition.
+     ------>>> if you are changing value of that Object or array with new Object or Array then it is pass by Value.
+  object1 = {item: "car"};
+  array1=[1,2,3];
+
+EX--
+<script>
+function changeObject(x) {
+  x = {member:"bar"};
+  alert("in changeObject1: " + x.member);
+}
+var x = {member:"foo"};
+alert("before changeObject2: " + x.member);
+changeObject(x);
+alert("after changeObject3: " + x.member); /* change did not persist value is not change */
+</script>
+
+here you are assigning new object or array to old one.you are not changing the value of property of old object.so it is pass by value.
+       ------->>>>>if you are changing a property name of an object or array then it is pass by Reference. in case of pass by reference old value is change with new value
+
+  object1.item= "car";
+  array1[0]=9;
+
+EX---->>.  <script>
+function changeMember(x) {
+  x.member = "bar";
+  alert("in changeMember1: " + x.member);
+}
+var x = {member:"foo"};
+
+alert("before changeMember2: " + x.member);
+changeMember(x);
+alert("after changeMember3: " + x.member); /* change persists value is change */
+</script>
+
+here you are changing a property value of old object.you are not assigning new object or array to old one.so it is pass by reference.
+
+8-What is call by value and call by reference in javascript?
+http://www.jon-carlos.com/2013/is-javascript-call-by-value-or-call-by-reference/
+
+Primitives: When you access a primitive type you work directly on its value
+string
+number
+boolean
+null
+undefined
+
+Complex: When you access a complex type you work on a reference to its value
+
+object
+array
+function
+
+When passing in a primitive type variable like a string or a number, the value is passed in call-by-value. This means that any changes to that variable while in the function are completely separate from anything that happens outside the function.means if we change value of x inside the function then it is not refelect change outside the function  Let’s take a look at the following example:
+function myfunction(x)
+{
+      // x is equal to 4
+      x = 5;
+      // x is now equal to 5
+}
+
+var x = 4;
+alert(x); // x is equal to 4
+myfunction(x); 
+alert(x); // x is still equal to 4
+
+In a non-constructor function, “this” refers to the global context or if the function is a method, it refers to the object to which the method belongs. In the instance object that is returned by a constructor function, “this” refers to the instance object itself.
+
+..............................................................................................................................////////////////////////////cunstructor/prototype/inheretance/////////////////////////////////////////////////////////////
+
+10-What is the name of the property that allows you to add properties and methods to an object, as well as every object that inherits from it?
+Ans-The ‘prototype’ property.
+
+11-What is cunstructor/prototype/inheretance in javascript?
+
+12-How to check that which object belongs to which cunstructor function in javascript?
+http://javascript.info/tutorial/constructor
+https://blog.pivotal.io/labs/labs/javascript-constructors-prototypes-and-the-new-keyword
+
+<script>
+function Rabbit() { };
+function Rabbit2() { };
+var rabbit1 = new Rabbit();
+var rabbit2 = new Rabbit2();
+var hh=rabbit1.constructor;
+var hh2=rabbit2.constructor;
+alert(hh) // function Rabbit() { }
+alert(hh2) // function Rabbit2() { }
+</script>
+
+13- What is prototype in javascript?
+Prototype Properties
+JavaScript objects inherit the properties of their prototype.All JavaScript objects inherit their properties and methods from their prototype.
+function person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+person.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+
+function person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+person.prototype.nationality = "English";
+
+..........................................................................................................................
+/////////////////////////////////////function declaration////////////////////////////////////////////////////////////////////
+
+14-JavaScript Function Definitions?
+You can use a function declaration or a function expression.
+Function Declarations-----Declared functions are not executed immediately. They are "saved for later use", and will be executed later, when they are invoked (called upon).
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+
+Function Expressions-----A JavaScript function can also be defined using an expression.A function expression can be stored in a variable:
+<script>
+var x = function (a, b) {return a * b};
+document.getElementById("demo").innerHTML = x;
+</script>
+After a function expression has been stored in a variable, the variable can be used as a function:
+<script>
+var x = function (a, b) {return a * b};
+document.getElementById("demo").innerHTML = x(4, 3);
+</script>
+The function above is actually an anonymous function (a function without a name).
+Functions stored in variables do not need function names. They are always invoked (called) using the variable name.
+The function above ends with a semicolon because it is a part of an executable statement.
+
+23-- Function Declarations vs. Function Expressions
+The difference is that functionOne is defined at run-time, whereas functionTwo is defined at parse-time(compile time) for a script block. For example:
+
+<script>
+  // Error
+  functionOne();
+
+  var functionOne = function() {   }  //Function Expressions
+</script>
+
+<script>
+  // No error
+  functionTwo();
+
+  function functionTwo() {   //Function Declarations
+  }
+</script>
+
+..function declaration..........
+abc here is defined everywhere in the current scope:
+
+// We can call it here
+abc(); // Works
+
+// Yet, it is defined down there.
+function abc(){}
+
+// We can call it again
+abc(); // Works
+.....................................
+This is a function expression:
+
+var xyz = function(){};
+xyz here is defined from the point of assignment:
+
+// We can't call it here
+xyz(); // UNDEFINED!!!
+
+// Now it is defined
+xyz = function(){}
+
+// We can call it here
+xyz(); // works
+...............................................
+...........................................................................................................................
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+15-JavaScript Window - The Browser Object Model?
+The Browser Object Model (BOM) allows JavaScript to "talk to" the browser.
+Even the document object (of the HTML DOM) is a property of the window object:
+
+window.document.getElementById("header");
+is the same as:
+
+document.getElementById("header");
+Window Size
+Three different properties can be used to determine the size of the browser window (the browser viewport, NOT including toolbars and scrollbars).
+
+For Internet Explorer, Chrome, Firefox, Opera, and Safari:
+
+window.innerHeight - the inner height of the browser window
+window.innerWidth - the inner width of the browser window
+For Internet Explorer 8, 7, 6, 5:
+
+document.documentElement.clientHeight
+document.documentElement.clientWidth
+or
+document.body.clientHeight
+document.body.clientWidth
+
+<script>
+var w = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+var h = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+
+var x = document.getElementById("demo");
+x.innerHTML = "Browser inner window width: " + w + ", height: " + h + ".";
+</script>
+16-JavaScript Window Screen?
+
+The window.screen object contains information about the user's screen.
+The window.screen object can be written without the window prefix.
+
+Properties:
+
+screen.width  -----The screen.width property returns the width of the visitor's screen in pixels.
+screen.height
+screen.availWidth
+screen.availHeight
+screen.colorDepth
+screen.pixelDepth
+
+17-JavaScript Window Location?
+The window.location object can be used to get the current page address (URL) and to redirect the browser to a new page.
+Window Location
+The window.location object can be written without the window prefix.
+
+Some examples:
+
+window.location.href returns the href (URL) of the current page
+window.location.hostname returns the domain name of the web host
+window.location.pathname returns the path and filename of the current page
+window.location.protocol returns the web protocol used (http:// or https://)
+window.location.assign loads a new document
+
+18-how to delete parameter from constructor  function in javascript?
+http://javascript.info/tutorial/objects
+<p id="demo"></p>
+
+<script>
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+suppose we want to delete parameter from cunstructor function then firest we have to create new object then use 'delete objectname.parametername'.
+so by using this method we can delete prameter from new object but not delete proerty from main cunstructor function.
+
+var myFather = new person("John", "Doe", 50, "blue");
+delete myFather.age;
+var myMother = new person("Sally", "Rally", 48, "green");
+delete myMother.age;
+
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+delete person.age;   // or delete person["age"]; 
+
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.age + ". My mother is " + myMother.age; 
+</script>
+o/p---  My father is undefined. My mother is undefined
+
+
+19-how many type we can get dom using javascript?
+1-- var x = document.getElementsByTagName("LI");
+2-- var x = document.getElementById("demo");
+3--var x = document.getElementsByName("fname");
+4-- var x = document.getElementsByClassName("example");
+
+20- javascript  function?
+Semicolons are used to separate executable JavaScript statements.Since a function declaration is not an executable statement, it is not common to end it with a semicolon.
+
+A JavaScript function can also be defined using an expression.
+
+A function expression can be stored in a variable:
+
+Example--  var x = function (a, b) {return a * b};
+
+Function Hoisting-----
+
+Earlier in this tutorial, you learned about "hoisting".
+
+Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.
+
+Hoisting applies to variable declarations and to function declarations.
+
+Because of this, JavaScript functions can be called before they are declared:
+
+myFunction(5);
+
+function myFunction(y) {
+    return y * y;
+}
+
+24--how to find function name which varianle is belong to which variable..
+var xyz = function abc(){};
+console.log(xyz.name); // Prints "abc"
+.....................................................................................................................
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+25-What is Bubbling and capturing?
+the handler of the parent works even if you click on it’s child.The reason is event bubbling.
+
+Bubbling--->>>>
+
+The main principle of bubbling states:
+After an event triggers on the deepest possible element, it then triggers on parents in nesting order.
+
+<!DOCTYPE HTML>
+<html>
+<body>
+<link type="text/css" rel="stylesheet" href="example.css">
+<div class="d1">1  <!-- the topmost -->
+
+    <div class="d2">2
+
+        <div class="d3">3 <!-- the innermost -->
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+The bubbling guarantees that click on Div 3 will trigger onclick first on the innermost element 3 (also caled the target), then on the element 2, and the last will be element 1.
+The order is called a bubbling order, because an event bubbles from the innermost element up through parents, like a bubble of air in the water.
+
+this and event.target----->>>>
+The deepest element which triggered the event is called the target or, the originating element.
+
+Internet Explorer has the srcElement property for it, all W3C-compliant browsers use event.target. The cross-browser code is usually like this:
+var target = event.target || event.srcElement
+When handlers trigger on parents:
+
+event.target/srcElement - remains the same originating element.
+this - is the current element, the one event has bubbled to, the one which runs the handler.
+
+Note that:
+
+the target is constant through all bubbling process,
+this changes and gets highlighted.
+
+Stopping the bubbling....>>>>.
+http://www.quirksmode.org/js/events_order.html
+
+26-What is The addEventListener() method?
+The addEventListener() method attaches an event handler to the specified element.
+<!DOCTYPE html>
+<html>
+<body>
+<p>This example uses the addEventListener() method to attach a click event to a button.</p>
+<button id="myBtn">Try it</button>
+<p id="demo"></p>
+<script>
+document.getElementById("myBtn").addEventListener("click", displayDate);
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+</script>
+</body>
+</html> 
+The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.
+
+You can add many event handlers to one element.
+
+You can add many event handlers of the same type to one element, i.e two "click" events.
+Syntax
+element.addEventListener(event, function, useCapture);
+The first parameter is the type of the event (like "click" or "mousedown").
+
+The second parameter is the function we want to call when the event occurs.
+
+The third parameter is a boolean value specifying whether to use event bubbling or event capturing. This parameter is optional.
+
+------>>>>	Note that you don't use the "on" prefix for the event; use "click" instead of "onclick"
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the addEventListener() method to attach a click event to a button.</p>
+
+<button id="myBtn">Try it</button>
+
+<script>
+document.getElementById("myBtn").addEventListener("click", function(){
+    alert("Hello World!");
+});
+</script>
+</body>
+</html>
+or-----
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the addEventListener() method to execute a function when a user clicks on a button.</p>
+
+<button id="myBtn">Try it</button>
+
+<script>
+document.getElementById("myBtn").addEventListener("click", myFunction);
+
+function myFunction() {
+    alert ("Hello World!");
+}
+</script>
+
+</body>
+</html>
+
+Add Many Event Handlers to the Same Element------->>>>> The addEventListener() method allows you to add many events to the same element, without overwriting existing events:
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the addEventListener() method to add two click events to the same button.</p>
+
+<button id="myBtn">Try it</button>
+
+<script>
+var x = document.getElementById("myBtn");
+x.addEventListener("click", myFunction);
+x.addEventListener("click", someOtherFunction);
+
+function myFunction() {
+    alert ("Hello World!");
+}
+
+function someOtherFunction() {
+    alert ("This function was also executed!");
+}
+</script>
+
+</body>
+</html>
+
+You can add events of different types to the same element:
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the addEventListener() method to add many events on the same button.</p>
+
+<button id="myBtn">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("myBtn");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("click", mySecondFunction);
+x.addEventListener("mouseout", myThirdFunction);
+
+function myFunction() {
+    document.getElementById("demo").innerHTML += "Moused over!<br>";
+}
+
+function mySecondFunction() {
+    document.getElementById("demo").innerHTML += "Clicked!<br>";
+}
+
+function myThirdFunction() {
+    document.getElementById("demo").innerHTML += "Moused out!<br>";
+}
+</script>
+
+</body>
+</html>
+
+Event Bubbling or Event Capturing?------------>>>>>>>>>>> it is the process of event propogation.
+
+There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+Event propagation is a way of defining the element order when an event occurs. If you have a <p> element inside a <div> element, and the user clicks on the <p> element, which element's "click" event should be handled first?
+
+In bubbling the inner most element's event is handled first and then the outer: the <p> element's click event is handled first, then the <div> element's click event.
+
+In capturing the outer most element's event is handled first and then the inner: the <div> element's click event will be handled first, then the <p> element's click event.
+
+With the addEventListener() method you can specify the propagation type by using the "useCapture" parameter:
+
+addEventListener(event, function, useCapture);
+The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation.
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+    background-color: coral;
+    border: 1px solid;
+    padding: 50px;
+}
+</style>
+</head>
+<body>
+
+<p>This example demonstrates the difference between bubbling and capturing when adding event listeners.</p>
+
+<div id="myDiv">
+  <p id="myP">Click this paragraph, I am Bubbling.</p>
+</div><br>
+
+<div id="myDiv2">
+  <p id="myP2">Click this paragraph, I am Capturing.</p>
+</div>
+
+<script>
+document.getElementById("myP").addEventListener("click", function() {
+    alert("You clicked the P element!");
+}, false);
+
+document.getElementById("myDiv").addEventListener("click", function() {
+    alert("You clicked the DIV element!");
+}, false);
+
+document.getElementById("myP2").addEventListener("click", function() {
+    alert("You clicked the P element!");
+}, true);
+
+document.getElementById("myDiv2").addEventListener("click", function() {
+    alert("You clicked the DIV element!");
+}, true);
+</script>
+
+</body>
+</html>
+............................................................................................................................
+////////////////////////////////////window.addEventListener//////////////////////////////////////////////////////////////////
+
+
+Add an Event Handler to the Window Object-----
+Add an event listener that fires when a user resizes the window:
+You can add event listeners to any DOM object not only HTML elements. i.e the window object.
+window.addEventListener("resize", function(){
+    document.getElementById("demo").innerHTML = sometext;
+});
+
+<script>
+window.addEventListener("click", function(){
+    alert("Hello World!");
+});
+</script>
+The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation.
+document.getElementById("myP").addEventListener("click", myFunction, true);
+document.getElementById("myDiv").addEventListener("click", myFunction, true);
+
+Example
+Browser Support----
+Note: The addEventListener() and removeEventListener() methods are not supported in IE 8 and earlier versions and Opera 6.0 and earlier versions. However, for these specific browser versions, you can use the attachEvent() method to attach an event handlers to the element, and the detachEvent() method to remove it:
+
+element.attachEvent(event, function);
+element.detachEvent(event, function);
+
+Cross-browser solution:
+
+var x = document.getElementById("myBtn");
+if (x.addEventListener) {                    // For all major browsers, except IE 8 and earlier
+    x.addEventListener("click", myFunction);
+} else if (x.attachEvent) {                  // For IE 8 and earlier versions
+    x.attachEvent("onclick", myFunction);
+}
+
+
+attachEvent----
+
+..............................Window Screen.................................................................................
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+JavaScript Window Screen---- it is use to find width and height of screen of device not for browser.
+The window.screen object contains information about the user's screen.
+The window.screen object can be written without the window prefix.
+
+Properties:
+
+screen.width
+screen.height
+screen.availWidth
+screen.availHeight
+screen.colorDepth
+screen.pixelDepth
+
+NOTE--- We can also use if condition with screen to apply function on different-2 screen size.
+
+............................Browser Object Model (BOM)...............................................................
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+NOTE--- We can also use if condition with window.outerWidth to apply function on different-2 browser size.
+
+The Browser Object Model (BOM) allows JavaScript to "talk to" the browser. 
+it is use to find width and height of browser.
+The window object is supported by all browsers. It represents the browser's window.
+The window object represents an open window in a browser.
+
+Window Size---------->>>>>>>>..
+Two properties can be used to determine the size of the browser window.
+
+Both properties return the sizes in pixels:
+
+window.innerHeight - the inner height of the browser window (in pixels)
+window.innerWidth - the inner width of the browser window (in pixels)
+
+Other Window Methods
+Some other methods:
+
+window.open() - open a new window
+window.close() - close the current window
+window.moveTo() -move the current window
+window.resizeTo() -resize the current window
+
+Find the outerWidth and outerHeight of browser when we resize the browser also  use addEventListener-----
+<p id="demo"></p>
+<script>
+window.addEventListener("resize", 
+function(){
+   var w = window.outerWidth;
+    var h = window.outerHeight;
+    document.getElementById("demo").innerHTML = "Width: " + w + "<br>Height: " + h;
+});
+</script>
+
+
+innerWidth, innerHeight, outerWidth and outerHeight in one example:
+<p id="demo"></p>
+..........................
+<p id="demo1"></p>
+<script>
+window.addEventListener("resize", 
+function(){
+   var w = window.outerWidth;
+    var h = window.outerHeight;
+    document.getElementById("demo").innerHTML = "Width: " + w + "<br>Height: " + h;
+
+var wi = window.innerWidth ;
+    var hi = window.innerHeight ;
+    document.getElementById("demo1").innerHTML = "Width: " + wi + "<br>Height: " + hi;
+});
+</script>
+
+
+.........................................................................................................................
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+hOW TO CREATE Cookies IN JAVASCRIPT.....>>>>>>
+
+
+
+..............................................................................................................
+/////////////////////////////////////JavaScript replace/regex////////////////////////////////////////
+https://davidwalsh.name/string-replace-javascript
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
+http://javascript.info/tutorial/regular-expressions-methods
+
+The replace() method can also take a regular expression as the search value.
+
+By default, the replace() function replaces only the first match. To replace all matches, use a regular expression with a g flag (for global match):
+
+The replace() method does not change the string it is called on. It returns a new string.
+
+...................................................................................................................
+/////////JavaScript match ,search,trim split///////////////////////////////////////////////////////////////////////////
+
+
+https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/match
+
+----->>>>>The match() method retrieves the matches when matching a string against a regular expression.
+The match() method searches a string for a match against a regular expression, and returns the matches, as an Array object.
+Note: If the regular expression does not include the g modifier (to perform a global search), the match() method will return only the first match in the string.
+
+search()_------The search() method searches a string for a specified value, and returns the position of the match.
+
+The search value can be string or a regular expression.
+
+This method returns -1 if no match is found.
+
+
+Converting a String to an Array--->>>  A string can be converted to an array with the split() method:
+...................................................................................................................
+////////////////////////////Array and Array method in javascript///////////////////////////////////////////////////
+http://www.w3schools.com/js/js_array_methods.asp
+- slice() same as slice(start, end) ---  The slice() method slices out a piece of an array into a new array.
+2- splice()
+
+Converting Arrays to Strings----The JavaScript method toString() converts an array to a string of (comma separated) array values.
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+o/p-- Banana,Orange,Apple,Mango
+
+
+join() method---- The join() method also joins all array elements into a string.
+It behaves just like toString(), but in addition you can specify the separator:
+var fruits = ["Banana", "Orange","Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+
+o/p-- Banana * Orange * Apple * Mango
+
+
+Popping---
+The pop() method removes the last element from an array:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();              // Removes the last element ("Mango") from fruits
+
+Pushing------>>>>>>
+The push() method adds a new element to an array (at the end):
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+    fruits.push("Kiwi");
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+o/p--  Banana,Orange,Apple,Mango,Kiwi
+
+
+Shifting Elements---- Shifting is equivalent to popping, working on the first element instead of the last.
+The shift() method removes the first array element and "shifts" all other elements to a lower index.
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+    fruits.shift();
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+o/p-- Orange,Apple,Mango
+
+
+The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+    fruits.unshift("Lemon");
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+o/p-- Lemon,Banana,Orange,Apple,Mango
+
+
+
+Splicing an Array------>>>>
+The splice() method can be used to add new items to an array:
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+function myFunction() {
+    fruits.splice(2, 0, "Lemon", "Kiwi");
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+o/p-- Banana,Orange,Lemon,Kiwi,Apple,Mango
+The first parameter (2) defines the position where new elements should be added (spliced in).
+The second parameter (0) defines how many elements should be removed.
+The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+
+
+Using splice() to Remove Elements------------
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+function myFunction() {
+    fruits.splice(0, 1);
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+o/p--  Orange,Apple,Mango
+The first parameter (0) defines the position where new elements should be added (spliced in).
+The second parameter (1) defines how many elements should be removed.
+The rest of the parameters are omitted. No new elements will be added.
+
+
+Slicing an Array----->>>>  The slice() method slices out a piece of an array into a new array.
+<script>
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1);
+document.getElementById("demo").innerHTML = fruits + "<br>" + citrus;
+</script>
+o/p-- Banana,Orange,Lemon,Apple,Mango
+Orange,Lemon,Apple,Mango
+
+The slice() method can take two arguments like slice(1,3).
+The method then selects elements from the start argument, and up to (but not including) the end argument.
+<script>
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1,3);
+document.getElementById("demo").innerHTML = fruits + "<br>" + citrus;
+</script>
+o/p-- Banana,Orange,Lemon,Apple,Mango
+Orange,Lemon
+
+
+
+.................................................................................................................
+///////////////////////////////////JavaScript Comparison and Logical Operators///////////////////////////////////
+
+http://www.w3schools.com/js/js_comparisons.asp
+
+Comparison and Logical operators are used to test for true or false.
+
+Conditional (Ternary) Operator---- variablename = (condition) ? value1:value2
+
+<script>
+function myFunction() {
+    var age, voteable;
+    age = document.getElementById("age").value;
+    voteable = (age < 18) ? "Too young":"Old enough";
+    document.getElementById("demo").innerHTML = voteable + " to vote.";
+}
+</script>
+
+----------->>>>>>>>>.When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison. An empty string converts to 0. A non-numeric string converts to NaN which is always false.
+
+When comparing two strings, "2" will be greater than "12", because (alphabetically) 1 is less than 2.
+"2" < "12"	false
+"2" > "12"	true
+
+JavaScript Bitwise Operators----------->>>>>>>>>>>>..
+
+....................................................................................................................
+/////////////////////////////////////////function chaining//////////////////////////////////////////////////////////
+
+http://schier.co/blog/2013/11/14/method-chaining-in-javascript.html
+
+Chaining Methods, also known as Cascading, refers to repeatedly calling one method after another on an object, in one continuous line of code.
+
+Writing code like this:
+
+$("#wrapper").fadeOut().html("Welcome, Sir").fadeIn();
+
+str.replace("k", "R").toUpperCase().substr(0,4); 
+
+.....................................................................................................................
+//////////////////////////////////JavaScript Window Navigator//////////////////////////////////////////////////////////
+
+
+JavaScript Window Navigator------------->>>> The window.navigator object contains information about the visitor's browser.
+Some examples:
+
+navigator.appName
+navigator.appCodeName
+navigator.platform
+
+The properties appName and appCodeName return the name of the browser:
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = 
+    "Name is " + navigator.appName +
+    "<br>Code name is " + navigator.appCodeName;
+}
+</script>
+
+
+...........................................................................................................................
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+JavaScript Window Location---->>
+The window.location object can be used to get the current page address (URL) and to redirect the browser to a new page.
+
+Window Location
+The window.location object can be written without the window prefix.
+
+Some examples:
+
+window.location.href returns the href (URL) of the current page
+window.location.hostname returns the domain name of the web host
+window.location.pathname returns the path and filename of the current page
+window.location.protocol returns the web protocol used (http:// or https://)
+window.location.assign loads a new document
+
+
+.................................................................................................................
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+JavaScript Switch Statement--->>
+https://www.tjvantoll.com/2013/03/14/better-ways-of-comparing-a-javascript-string-to-multiple-values/
+https://www.kirupa.com/html5/switch_statements_javascript.htm
+http://www.tutorialspoint.com/javascript/javascript_switch_case.htm
+---->>>The switch statement is used to perform different actions based on different conditions.
+and switch case is use a single exression return different-2 value and on each different value we have execute different block of code.
+<script>
+var day;
+switch (new Date().getDay()) { // The getDay() method returns the weekday as a number between 0 and 6. (Sunday=0, Monday=1,                                   Tuesday=2,wednesday=3,Thursday=4,Friday=5,Saturday=6) and compair value with each case and                                   return code of that case which case value is math.
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case  6:
+        day = "Saturday";
+        break;
+}
+document.getElementById("demo").innerHTML = "Today is " + day;
+</script>
+switch(expression) {
+    case n:
+        code block
+        break;
+    case n:
+        code block
+        break;
+    default:
+        default code block
+}
+This is how it works:
+
+The switch expression is evaluated once.
+The value of the expression is compared with the values of each case.
+If there is a match, the associated block of code is executed.
+where n is the value of each case and we compair each case value n with expression value.
+
+The default Keyword--->>>>
+The default keyword specifies the code to run if there is no case match:
+<script>
+var text;
+switch (new Date().getDay()) {
+    case 3:
+        text = "Today is Saturday";
+        break;
+    case 0:
+        text = "Today is Sunday";
+        break;
+    default:
+        text = "Looking forward to the Weekend";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+Checking Multiple Cases in a Switch Statement----......>>>
+
+switch (myVariable)
+{
+  case "A":
+  case "B":
+  case "C": 
+    // Do something
+    break;
+  case "D":
+  case "E":
+    // Do something else
+    break;
+  default: 
+    // Default case
+    break;
+}
+
+
+switch(x){
+   case 0:
+   case 1:
+   case 67:
+   case 82:
+   alert('Oink');
+   break;
+ 
+   case 42:
+   case 89:
+   case 108:
+   case 83:
+   case 1234:
+   case 123456:
+   alert('Moo!');
+   break;
+}
+
+..........................................................................................................................
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+for loop -->.Loops can execute a block of code a number of times.if you want to run the same code over and over again, each time with a different value. loops through a block of code a number of times
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var text = "";
+var i;
+for (i = 0; i < cars.length; i++) {
+    text += cars[i] + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+o/p--BMW
+Volvo
+Saab
+Ford
+
+..............................................................................................................................///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+

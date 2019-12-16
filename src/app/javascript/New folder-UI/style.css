@@ -1,0 +1,64 @@
+.border_radius{
+    border-radius: 6px;
+}
+.mT20{
+    margin-top: 20px;
+}
+.mB20{
+    margin-bottom: 20px;
+}
+.mT20{
+    margin-top: 20px;
+}
+    
+.background-gray{
+    background-color: #eee;
+}
+.background-white{
+    background-color: white;
+}
+.border_bottom{
+    border-bottom: 2px solid #bdbdbd96;
+}
+.float_right{
+    float: right;
+}
+.padding0{
+    padding: 0;
+}
+.text_align{
+    text-align: center;
+}
+.padding{
+    border: 1px solid;
+    padding-bottom: 25px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.padding15{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+.price_box p{
+    float: right;
+}
+.pT15{
+    padding-top: 15px;
+}
+.mR30{
+    margin-right: 30px;
+}
+.mB0{
+    margin-bottom: 0px;
+}
+.pT10{
+    padding-top: 10px;
+}
+.pL40{
+    padding-left: 40px;
+}
+.pR40{
+    padding-right: 40px;
+}

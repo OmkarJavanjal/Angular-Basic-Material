@@ -1,0 +1,117 @@
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+@font-family-sans-serif: Arial, "Helvetica Neue", Helvetica, sans-serif;
+@font-family-grotesk:    "Tele-Grotesk", sans-serif;
+
+@font-size-base:            16px;
+@line-height:               20px;
+
+@font-size-lead:            18px;
+@font-size-small:           14px;
+@font-size-xsmall:          12px;
+@font-size-legal:           11px;
+
+@font-size-lead-above-768:  22px;
+// Headlines
+@font-size-h1:              44px;
+@font-size-h2:              28px;
+@font-size-h3:              24px;
+@font-size-h4:              22px;
+@font-size-h5:              20px;
+@font-size-h6:              18px;
+@font-size-h7:              15px;
+
+@font-size-h1-above-768:    80px;
+@font-size-h2-above-768:    32px;
+@font-size-h3-above-768:    24px;
+@font-size-h4-above-768:    22px;
+@font-size-h5-above-768:    20px;
+@font-size-h6-above-768:    18px;
+@font-size-h7-above-768:    15px;
+
+//Breakpoints
+@screen-xs:             ~"(max-width: 767px)";
+@screen-small-tablet:   ~"(min-width: 600px) and (max-width: 767px)";
+@screen-sm:             ~"(min-width: 768px) and (max-width: 991px)";
+@screen-md:             ~"(min-width: 992px) and (max-width: 1199px)";
+@screen-lg:             ~"(min-width: 1200px)";
+
+@screen-sm-upper:   ~"(min-width: 768px)";
+@screen-md-upper:   ~"(min-width: 992px)";
+
+@screen-sm-lower:   ~"(max-width: 991px)";
+@screen-md-lower:   ~"(max-width: 1199px)";
+
+//Breakpoints for fonts sizes
+@above-768: ~"(min-width: 768px)";
+@below-768: ~"(max-width: 768px)";
+
+//Color palette
+@brand-magenta:          #E20074;  //Magenta type is reserved for headlines and active links.
+@dark-magenta:           #BA0060;  //Used sparingly. This is currently reserved for hover states only.
+@wine:                   @dark-magenta;
+@green:                  #09B119;  //Used as a discrete accent for informative feedback which isn’t priority.
+
+// Greys scale
+@black:                  #000000;
+@gray-darker:            #555555;
+@gray-dark:              #6A6A6A;  // Standard body copy
+@gray:                   #9B9B9B;
+@gray-light:             #C8C8C8;
+@gray-lighter:           #F5F5F5;
+@white:                  #FFFFFF;
+
+@link-hover:             #A3095F;  // Links hover state
+@item-border:            #d7d7d7;
+
+//Bootstrap colors
+@brand-success:         #5CB85C;
+@brand-info:            #5BC0DE;
+@brand-warning:         #F0AD4E;
+@brand-danger:          #D9534F;
+
+//Font-size
+@lighter:               100;    // Same as say: font-family: "Tele-GroteskNor";
+@normal:                200;     // Same as say: font-family: "Tele-GroteskHal";
+@bold:                  300;       // Same as say: font-family: "Tele-GroteskFet";
+@bolder:                500;     // Same as say: font-family: "Tele-GroteskUlt";
+
+// For image path location
+@common-path:           ".."; // usage background: url("@{common-path}/img/img.jpg")
+@common-path-pages:     "../.."; // This is used to point the common folder but for the CSS used in the pages
+
+
+//== Progress bars
+@progress-bg:                 @gray-lighter;
+//** Progress bar text color
+@progress-bar-color:          #fff;
+
+//** Default progress bar color
+@progress-bar-bg:             @brand-magenta;
+//** Success progress bar color
+@progress-bar-success-bg:     @brand-success;
+//** Warning progress bar color
+@progress-bar-warning-bg:     @brand-warning;
+//** Danger progress bar color
+@progress-bar-danger-bg:      @brand-danger;
+//** Info progress bar color
+@progress-bar-info-bg:        @brand-info;
+
+//== Custom Range input
+@range-thumb-color: @brand-magenta;
+@range-track-color: @gray-lighter;
+
+@range-thumb-radius: 20px;
+@range-thumb-height: 20px;
+@range-thumb-width: 20px;
+@range-thumb-border-width: 0;
+@range-thumb-border-color: transparent;
+
+@range-track-width: 100%;
+@range-track-height: 20px;
+@range-track-border-width: 0;
+@range-track-border-color: transparent;
+
+@range-track-radius: 20px;
+@range-contrast: 0%;

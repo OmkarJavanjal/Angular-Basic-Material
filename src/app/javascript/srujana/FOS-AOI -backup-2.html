@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>FOS-AOI Page</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="script.js"></script>
+      <link href='style.css' rel='stylesheet'>
+      <link rel="stylesheet" href="accordion.css">
+      <script src="accordion.js"></script>
+   </head>
+   <body>
+      <div class="container">
+      <div class="row position_relative">
+         <!-- /navbar wrapper -->
+         <!-- Carousel
+            ================================================== -->
+         <div class="overlay font_65">
+            <h1>Let's get down to business</h1>
+         </div>
+         <div id="myCarousel" class="carousel slide">
+            <!-- Indicators -->
+            <div class="carousel-inner">
+               <div class="item active">
+                  <img src="http://lorempixel.com/1500/600/abstract/1" class="img-responsive">
+                  <div class="container">
+                     <div class="carousel-caption"> </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Controls -->
+         </div>
+         <!-- /.carousel -->
+      </div>
+      <div class="row mB20">
+         <h3 class="text-center hidden-xs">Explore our business degrees & programs to take your career to new heights</h3>
+         <h3 class="text-center visible-xs">Business Program</h3>
+      </div>
+      <!-- copy below code++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <div class="row mB20 background_gray pT30">
+         <div class="col-sm-3 visible-xs">
+            <div class="col-sm-12 mB20 panel0">
+               <span class="program_select plain-select">
+                  <select class="inp selectProgram"  name="test">
+                     <option value="Select">Refine Results</option>
+                     <option value="Business">Business</option>
+                     <option value="Business Program">Business Program</option>
+                  </select>
+               </span>
+            </div>
+         </div>
+         <div class="col-sm-3 hidden-xs">
+            <div class="col-sm-12 mB20 zipBox panel0 ">
+               <label>
+               <span class="tooltips">
+               <input type="text" class="inp zipCodeInputBox"  name="test" value="85014" maxlength="5">
+               </input>
+               <span class="tooltiptext"><span class="triangle left border"></span><span class="error_msg"></span></span>
+               </span>
+               <span class="fa fa-map-marker plain-select_location"></span>
+               </label>
+            </div>
+            <div class="col-sm-12 mB20 panel0">
+               <div class="custom-checkbox">
+                  <input type="checkbox" id="cb1" value="Online" name="degree1">
+                  <label for="cb1">Online</label>
+               </div>
+               <div class="custom-checkbox">
+                  <input type="checkbox" id="cb2" value="On Campus" name="degree2">
+                  <label for="cb2">On Campus</label>
+               </div>
+            </div>
+            <div class="col-sm-12 mB20 panel0">
+               <span class="program_select plain-select">
+                  <select class="inp selectProgram"  name="test">
+                     <option value="Select">Select</option>
+                     <option value="Business">Business</option>
+                     <option value="Business Program">Business Program</option>
+                  </select>
+               </span>
+            </div>
+            <div class="col-sm-12 mB20 panel0 hidden-xs">
+               <div class="accordion-container-left">
+                  <div class="ac">
+                     <h2 class="ac-q left" tabindex="0">
+                        <span>BACHELOR'S</span> 
+                     </h2>
+                     <div class="ac-a">
+                        <div class="panel-body pL0">
+                           
+                           <!-- <div class="custom-checkbox">
+                              <input type="checkbox" id="checkAllbachelor" value="All">
+                              <label for="checkAllbachelor">All</label>
+                           </div>-->
+
+                           <div class="custom-checkbox">
+                            <input type="checkbox" id="checkAllBachelors" value="All" name=checkAllBachelors>
+                            <label for="checkAllBachelors">All</label>
+                         </div>
+
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="bachelor-1" value="master1" name="bachelor1">
+                              <label for="bachelor-1">master1</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="bachelor-2" value="Enterprice" name="bachelor2">
+                              <label for="bachelor-2">Enterprice</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="bachelor-3" value="Finnance" name="bachelor3">
+                              <label for="bachelor-3">Finnance</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="bachelor-4" value="Human Resources" name="bachelor4">
+                              <label for="bachelor-4">Human Resources</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="bachelor-5" value="marketing" name="bachelor5">
+                              <label for="bachelor-5">marketing</label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--Second collapse box-->
+                  <div class="ac">
+                     <h2 class="ac-q left" tabindex="0">
+                        <span>MASTER'S</span> 
+                     </h2>
+                     <div class="ac-a">
+                        <div class="panel-body pL0">
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="checkAllMasters" value="All">
+                              <label for="checkAllMasters">All</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="master-1" value="master1" name="master1">
+                              <label for="master-1">master1</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="master-2" value="master2" name="master2">
+                              <label for="master-2">master2</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="master-3" value="master3" name="master3">
+                              <label for="master-3">master3</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="master-4" value="master4" name="master4">
+                              <label for="master-4">master4</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="master-5" value="master5" name="master5">
+                              <label for="master-5">master5</label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--third collapse box-->
+                  <div class="ac">
+                     <h2 class="ac-q left" tabindex="0">
+                        <span> DOCTORATE</span> 
+                     </h2>
+                     <div class="ac-a">
+                        <div class="panel-body pL0">
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="checkAllDoctorate" value="All">
+                              <label for="checkAllDoctorate">All</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="doctorate-1" value="master1" name="doctorate1">
+                              <label for="doctorate-1">master1</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="doctorate-2" value="doctorate2" name="doctorate2">
+                              <label for="doctorate-2">doctorate2</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="doctorate-3" value="doctorate3" name="doctorate3">
+                              <label for="doctorate-3">doctorate3</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="doctorate-4" value="doctorate4" name="doctorate4">
+                              <label for="doctorate-4">doctorate4</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="doctorate-5" value="doctorate5" name="doctorate5">
+                              <label for="doctorate-5">doctorate5</label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--fourth collapse box-->
+                  <div class="ac">
+                     <h2 class="ac-q left" tabindex="0">
+                        <span> ASSOCIATE'S</span> 
+                     </h2>
+                     <div class="ac-a">
+                        <div class="panel-body pL0">
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="checkAllAssociate" value="All">
+                              <label for="checkAllAssociate">All</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="associate1" value="associate1" name="associate1">
+                              <label for="associate1">associate1</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="associate2" value="associate2" name="associate2">
+                              <label for="associate2">associate2</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="associate3" value="associate3" name="associate3">
+                              <label for="associate3">associate3</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="associate4" value="associate4" name="associate4">
+                              <label for="associate4">associate4</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="associate5" value="associate5" name="associate5">
+                              <label for="associate5">associate5</label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--fiveth collapse box-->
+                  <div class="ac">
+                     <h2 class="ac-q left" tabindex="0">
+                        <span>CERTIFICATES</span> 
+                     </h2>
+                     <div class="ac-a">
+                        <div class="panel-body pL0">
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="checkAllCertificates" value="All">
+                              <label for="checkAllCertificates">All</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="certificate1" value="Accounting" name="certificates1">
+                              <label for="certificate1">certificate1</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="certificate2" value="Enterprice" name="certificates2">
+                              <label for="certificate2">certificate2</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="certificate3" value="Finnance" name="certificates3">
+                              <label for="certificate3">certificate3</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="certificate4" value="Human Resources" name="certificates4">
+                              <label for="certificate4">certificate4</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="certificate5" value="marketing" name="certificates5">
+                              <label for="certificate5">certificate5</label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--Six collapse box-->
+                  <div class="ac">
+                     <h2 class="ac-q left" tabindex="0">
+                        <span>SINGLE COURSES</span> 
+                     </h2>
+                     <div class="ac-a">
+                        <div class="panel-body pL0">
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="checkAllSingleCourses" value="All">
+                              <label for="checkAllSingleCourses">All</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="courses1" value="Accounting" name="singleCourses1">
+                              <label for="courses1">courses1</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="courses2" value="Enterprice" name="singleCourses2">
+                              <label for="courses2">courses2</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="courses3" value="Finnance" name="singleCourses3">
+                              <label for="courses3">courses3</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="courses4" value="Human Resources" name="singleCourses4">
+                              <label for="courses4">courses4</label>
+                           </div>
+                           <div class="custom-checkbox">
+                              <input type="checkbox" id="courses5" value="marketing" name="singleCourses5">
+                              <label for="courses5">courses5</label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-12 mB20 panel0 hidden-xs text-center">			
+               <button type="button" class="col-xs-12 btn btn-default link">Search</button>		
+            </div>
+         </div>
+         <div class="col-sm-9">
+                <input type=hidden id="fosUrlMapping" name="fosUrlMapping" 
+                value="tytyt"/>
+            <div class="col-sm-12 clearTeaxt mB20 panel0">
+               <ul start="1" id="activeUserAccess" class="panel0"> </ul>
+            </div>
+            <div class="col-sm-12 mT20 panel0">
+               <div class="accordion-container">
+                  <div class="ac">
+                     <h2 class="ac-q ac-r" tabindex="0">
+                        <span>Bachelor of Science in Accounting</span> 
+                     </h2>
+                     <div class="ac-a">
+                        <div class="panel-body">
+                           <div class="col-sm-9">
+                              <div class="col-sm-12">
+                                 <p>
+                                    From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career.
+                                 </p>
+                                 <p>
+                                    From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.
+                                 </p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <ul class="list-group">
+                                    <li class=""><span>Auditor</span></li>
+                                    <li class=""><span>Tax Examiner</span></li>
+                                    <li class=""><span>Examining Officer</span></li>
+                                 </ul>
+                              </div>
+                              <div class="col-sm-12">
+                                 <button type="button" class="btn btn-danger btnSpace">See program details</button>
+                              </div>
+                           </div>
+                           <div class="col-sm-3">
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 "><i class="glyphicon glyphicon-user"></i></p>
+                                 <p class="text-center">Online Course</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span> 5</span></p>
+                                 <p class="text-center">Week Cources</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span> 4</span></p>
+                                 <p class="text-center">Year Program</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span>120</span></p>
+                                 <p class="text-center">Credit Hours</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="ac">
+                     <h2 class="ac-q ac-r" tabindex="0">
+                        <span>Bachelor of Science in Accounting</span> 
+                        <ul class="right_collapse_arrow pL15">
+                           <li class=""><span><i>with an Associate of Arts in Business Fundamentals</i></span></li>
+                        </ul>
+                     </h2>
+                     <div class="ac-a">
+                        <div class="panel-body">
+                           <div class="col-sm-9">
+                              <div class="col-sm-12">
+                                 <p>
+                                    From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career.
+                                 </p>
+                                 <p>
+                                    From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.
+                                 </p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <ul class="list-group">
+                                    <li class=""><span>Auditor</span></li>
+                                    <li class=""><span>Tax Examiner</span></li>
+                                    <li class=""><span>Examining Officer</span></li>
+                                 </ul>
+                              </div>
+                              <div class="col-sm-12">
+                                 <button type="button" class="btn btn-danger btnSpace">See program details</button>
+                              </div>
+                           </div>
+                           <div class="col-sm-3">
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 "><i class="glyphicon glyphicon-user"></i></p>
+                                 <p class="text-center">Online Course</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span> 5</span></p>
+                                 <p class="text-center">Week Cources</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span> 4</span></p>
+                                 <p class="text-center">Year Program</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span>120</span></p>
+                                 <p class="text-center">Credit Hours</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- copy above code only++++++++++++++++++++++++++++++++++++++++++-->
+         <div class="row mB20 mT20">
+            <h3 class="text-center">Reasons to get your degree at UoPx</h3>
+         </div>
+         <div class="row">
+            <div class="col-sm-4">
+               <p class="text-center font30"><i class="glyphicon glyphicon-user"></i></p>
+               <p class="text-center greenColor">Career Preparation</p>
+               <p class="text-center">
+                  A general bussiness foundation can educationally prepare you to pursue a wide variety of opprtunities in the bussiness field.
+               </p>
+               <p class="text-center">
+                  <button type="button" class="btn btn-default link">Learn more</button>
+               </p>
+            </div>
+            <div class="col-sm-4">
+               <p class="text-center font30"><i class="glyphicon glyphicon-user"></i></p>
+               <p class="text-center greenColor">Transfer Credits</p>
+               <p class="text-center">
+                  You will have opprtunities to receive credit for your prior acadamic and professional experience, potentionally shortening your time to completion and saving your money.
+               </p>
+               <p class="text-center">
+                  <button type="button" class="btn btn-default link">Learn more</button>
+               </p>
+            </div>
+            <div class="col-sm-4">
+               <p class="text-center font30"><i class="glyphicon glyphicon-user"></i></p>
+               <p class="text-center greenColor">Tuition Guarantee</p>
+               <p class="text-center">
+                  We've lowered tution and locked it in. So you can count on tutions that's as dependable as your education.
+               </p>
+               <p class="text-center">
+                  <button type="button" class="btn btn-default link">Learn more</button>
+               </p>
+            </div>
+         </div>
+      </div>
+      <script>
+         var accordion = new Accordion('.accordion-container');
+         var accordionLeft = new Accordion('.accordion-container-left');
+      </script>
+   </body>
+</html>

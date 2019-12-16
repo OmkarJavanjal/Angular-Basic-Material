@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>FOS-AOI Page</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="script.js"></script>
+      <link href='style.css' rel='stylesheet'>
+      <link rel="stylesheet" href="accordion.css">
+      <script src="accordion.js"></script>
+      <script type="text/javascript" src="data.json"></script>
+   </head>
+   <body>
+      <div class="container">
+      <div class="row position_relative">
+         <!-- /navbar wrapper -->
+         <!-- Carousel
+            ================================================== -->
+         <div class="overlay font_65">
+            <h1>Let's get down to business</h1>
+         </div>
+         <div id="myCarousel" class="carousel slide">
+            <!-- Indicators -->
+            <div class="carousel-inner">
+               <div class="item active">
+                  <img src="http://lorempixel.com/1500/600/abstract/1" class="img-responsive">
+                  <div class="container">
+                     <div class="carousel-caption"> </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Controls -->
+         </div>
+         <!-- /.carousel -->
+      </div>
+      <div class="row mB20">
+         <h3 class="text-center hidden-xs">Explore our business degrees & programs to take your career to new heights</h3>
+         <h3 class="text-center visible-xs">Business Program</h3>
+      </div>
+      <!-- copy below code++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <div class="row mB20 background_gray pT30">
+         <div class="col-sm-3 visible-xs">
+            <div class="col-sm-12 mB20 panel0">
+               <span class="program_select plain-select">
+                  <select class="inp selectProgram"  name="test">
+                     <option value="Select">Refine Results</option>
+                     <option value="Business">Business</option>
+                     <option value="Business Program">Business Program</option>
+                  </select>
+               </span>
+            </div>
+         </div>
+         <div class="col-sm-3 hidden-xs">
+            <div class="col-sm-12 mB20 zipBox panel0 ">
+               <label>
+               <span class="tooltips">
+               <input type="text" class="inp zipCodeInputBox"  name="test" value="85014" maxlength="5">
+               </input>
+               <span class="tooltiptext"><span class="triangle left border"></span><span class="error_msg"></span></span>
+               </span>
+               <span class="fa fa-map-marker plain-select_location"></span>
+               </label>
+            </div>
+            <div class="col-sm-12 mB20 panel0">
+               <div class="custom-checkbox">
+                  <input type="checkbox" id="cb1" value="Online" name="degree1">
+                  <label for="cb1">Online</label>
+               </div>
+               <div class="custom-checkbox">
+                  <input type="checkbox" id="cb2" value="On Campus" name="degree2">
+                  <label for="cb2">On Campus</label>
+               </div>
+            </div>
+            <div class="col-sm-12 mB20 panel0">
+               <span class="program_select plain-select">
+                  <select class="inp selectProgram"  name="test">
+                     <option value="Select">Select</option>
+                     <option value="Business">Business</option>
+                     <option value="Communications">communications</option>
+                  </select>
+               </span>
+            </div>
+
+            <!---->
+            <div class="col-sm-12 mB20 panel0">             
+              <div class="col-sm-12 panel0">
+               <h2 class="">
+                 <span>DEGREES & PROGRAMS</span> 
+              </h2>
+              </div>
+                 <div class="col-sm-12 mB20 panel0">
+                   <div class="custom-checkbox">
+                     <input type="checkbox" id="degreeAll" value="All" name=degreAll>
+                     <label for="degreeAll">All</label>
+                   </div>
+                   <div class="custom-checkbox">
+                     <input type="checkbox" id="bachelor" class="degree" value="bachelors" name="bachelors">
+                     <label for="bachelor">BACHELOR'S</label>
+                 </div>
+                 <div class="custom-checkbox">
+                   <input type="checkbox" id="master" value="masters" class="degree" name="masters">
+                   <label for="master">MASTER'S</label>
+               </div> 
+                   <div class="custom-checkbox">
+                     <input type="checkbox" id="doctorate" value="doctoral" class="degree" name="doctoral">
+                     <label for="doctorate">DOCTORATE</label>
+                 </div>
+                 <div class="custom-checkbox">
+                   <input type="checkbox" id="associate" value="associates" class="degree" name="associates">
+                   <label for="associate">ASSOCIATE'S</label>
+               </div>
+             <div class="custom-checkbox">
+               <input type="checkbox" id="certificate" value="certificate" class="degree" name="certificate">
+               <label for="certificate">CERTIFICATES</label>
+             </div>
+             <div class="custom-checkbox">
+               <input type="checkbox" id="singleCourses" value="singleCourses" class="degree" name="singleCourses">
+               <label for="singleCourses">SINGLE COURSES</label>
+             </div>
+             </div>
+           </div>
+
+
+            <div class="col-sm-12 mB20 panel0">             
+             <div class="col-sm-12 panel0">
+              <h2 class="">
+                <span>AREAS OF INTEREST</span> 
+             </h2>
+             </div>
+                <div class="col-sm-12 mB20 panel0">
+                  <div class="custom-checkbox">
+                    <input type="checkbox" id="accounting" value="accounting" class="aoi" name="accounting">
+                    <label for="accounting">Accounting</label>
+                </div>
+                <div class="custom-checkbox">
+                  <input type="checkbox" id="administration" value="business-administration" class="aoi" name="business-administration">
+                  <label for="administration">Business Administration</label>
+              </div>
+                  <div class="custom-checkbox">
+                    <input type="checkbox" id="analytics" value="analytics" class="aoi" name="analytics">
+                    <label for="analytics">Business Analytics</label>
+                </div>
+                <div class="custom-checkbox">
+                  <input type="checkbox" id="fundamentals" value="fundamentals" class="aoi"  name="fundamentals">
+                  <label for="fundamentals">Business Fundamentals</label>
+              </div>
+            <div class="custom-checkbox">
+              <input type="checkbox" id="businessManagements" value="business-management" class="aoi" name="business-management">
+              <label for="businessManagements">Business Managements</label>
+            </div>
+            <div class="custom-checkbox">
+              <input type="checkbox" id="entrepreneurship" value="entrepreneurship" class="aoi"  name="entrepreneurship">
+              <label for="entrepreneurship">Entrepreneurship</label>
+            </div>
+            <div class="custom-checkbox">
+              <input type="checkbox" id="financial" value="finance" class="aoi" name="finance">
+              <label for="financial">Financial Planning</label>
+            </div>
+            <div class="custom-checkbox">
+              <input type="checkbox" id="generalManagement" value="generalManagement" class="aoi" name="generalManagement">
+              <label for="generalManagement">General Management</label>
+            </div>
+            <div class="custom-checkbox">
+              <input type="checkbox" id="human-resources" value="human-resources" class="aoi" name="human-resources">
+              <label for="human-resources">human-resources</label>
+            </div>
+            <div class="custom-checkbox">
+              <input type="checkbox" id="project-management" value="project-management" class="aoi" name="project-management">
+              <label for="project-management">project-management</label>
+            </div>
+            <div class="custom-checkbox">
+              <input type="checkbox" id="supply-chain-management" value="supply-chain-management" class="aoi" name="supply-chain-management">
+              <label for="supply-chain-management">supply-chain-management</label>
+            </div>
+            <div class="custom-checkbox">
+              <input type="checkbox" id="health" value="health" class="aoi" name="health">
+              <label for="health">Health & Business Admin</label>
+            </div>
+            <div class="custom-checkbox">
+              <input type="checkbox" id="management" value="management" class="aoi" name="management">
+              <label for="management">Management</label>
+            </div>
+            <div class="custom-checkbox">
+              <input type="checkbox" id="marketing" value="marketing" class="aoi" name="marketing">
+              <label for="marketing">Marketing</label>
+            </div>
+            </div>
+          </div>   
+          
+          
+          
+         </div>
+         <div class="col-sm-9">
+                <input type=hidden id="fosUrlMapping" name="fosUrlMapping" 
+                value="tytyt"/>
+            <div class="col-sm-12 mT20 panel0">
+               <div class="accordion-container">
+                  <div class="ac">
+                     <h2 class="ac-q ac-r" tabindex="0">
+                        <span>Bachelor of Science in Accounting</span> 
+                     </h2>
+                     <div class="ac-a">
+                        <div class="panel-body">
+                           <div class="col-sm-9">
+                              <div class="col-sm-12">
+                                 <p>
+                                    From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career.
+                                 </p>
+                                 <p>
+                                    From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.
+                                 </p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <ul class="list-group">
+                                    <li class=""><span>Auditor</span></li>
+                                    <li class=""><span>Tax Examiner</span></li>
+                                    <li class=""><span>Examining Officer</span></li>
+                                 </ul>
+                              </div>
+                              <div class="col-sm-12">
+                                 <button type="button" class="btn btn-danger btnSpace">See program details</button>
+                              </div>
+                           </div>
+                           <div class="col-sm-3">
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 "><i class="glyphicon glyphicon-user"></i></p>
+                                 <p class="text-center">Online Course</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span> 5</span></p>
+                                 <p class="text-center">Week Cources</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span> 4</span></p>
+                                 <p class="text-center">Year Program</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span>120</span></p>
+                                 <p class="text-center">Credit Hours</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="ac">
+                     <h2 class="ac-q ac-r" tabindex="0">
+                        <span>Bachelor of Science in Accounting</span> 
+                        <ul class="right_collapse_arrow pL15">
+                           <li class=""><span><i>with an Associate of Arts in Business Fundamentals</i></span></li>
+                        </ul>
+                     </h2>
+                     <div class="ac-a">
+                        <div class="panel-body">
+                           <div class="col-sm-9">
+                              <div class="col-sm-12">
+                                 <p>
+                                    From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career.
+                                 </p>
+                                 <p>
+                                    From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.
+                                 </p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <ul class="list-group">
+                                    <li class=""><span>Auditor</span></li>
+                                    <li class=""><span>Tax Examiner</span></li>
+                                    <li class=""><span>Examining Officer</span></li>
+                                 </ul>
+                              </div>
+                              <div class="col-sm-12">
+                                 <button type="button" class="btn btn-danger btnSpace">See program details</button>
+                              </div>
+                           </div>
+                           <div class="col-sm-3">
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 "><i class="glyphicon glyphicon-user"></i></p>
+                                 <p class="text-center">Online Course</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span> 5</span></p>
+                                 <p class="text-center">Week Cources</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span> 4</span></p>
+                                 <p class="text-center">Year Program</p>
+                              </div>
+                              <div class="col-sm-12">
+                                 <p class="text-center font30 greenColor"><span>120</span></p>
+                                 <p class="text-center">Credit Hours</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+         var accordion = new Accordion('.accordion-container');
+         var accordionLeft = new Accordion('.accordion-container-left');
+      </script>
+   </body>
+</html>

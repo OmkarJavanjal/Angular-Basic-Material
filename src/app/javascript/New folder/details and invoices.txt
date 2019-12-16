@@ -1,0 +1,38 @@
+
+
+
+
+
+
+[
+  {
+    "invoiceNumber": "16546798",
+    "invoiceSource": 0,
+    "title": "NA",
+    "noOfProducts": 1,
+    "dueDate": "2018-08-20T00:00:00",
+    "totalDue": 300,
+    "detail": null,
+    "invoiceTotal": 300
+  }
+]
+
+Details:[
+  {
+    "product": "CPL PREMIER SUB PKG",
+    "productDescription": "CPL - Premier Subscription Package",
+    "startDate": "2018-08-20T00:00:00",
+    "endDate": "2019-08-19T00:00:00",
+    "renewalType": 0,
+    "totalPrice": 300,
+    "quantity": 1,
+    "productId": "PREW",
+    "productTaxCode": "180510",
+    "taxAmount": "0",
+    "shippingAmount": "0",
+    "discountPercent": "0",
+    "itemPrice": 300,
+    "invoiceNo": "16546798",
+    "lineItemID": "16546798-PREW-1"
+  }
+]

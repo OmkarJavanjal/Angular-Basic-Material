@@ -1,0 +1,13 @@
+<div class="row">
+        <div class="container">
+            <a routerLink="/searchChild" routerLinkActive="active">LOAD CHILD COMPONENT</a>
+        </div>
+        <button (click)="fireGetRequest($event)">Create Request</button>
+</div>
+
+<div class="row">
+        isauthorize --  {{userDetails|json}}
+    <div class="container" [style.background-color] = "userDetailss.isauthorize ? 'blue' : 'red'">
+        <button (click)="navigate()" [disabled] = "!userDetailss.isauthorize">Click on button to move on next page</button>
+    </div> 
+</div>
